@@ -19,12 +19,8 @@ bash config/configure.sh
 ```
 
 Home-manager
-a) Try to do it without
-b) Automate installation
-
-## Personalization
-
-For more information on dotfiles check out [Repository Link](https://github.com/fabian-gubler/.dotfiles)
+- a) Try to do it without
+- b) Automate installation
 
 
 ## Structure
