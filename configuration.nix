@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./vm-configuration.nix ];
+  imports = [ <nixpkgs/nixos/modules/installer/virtualbox-demo.nix> ];
 
 # TODO: User variable = fabian -> implement in dwm path
 # TODO: xprofile declared or copied
@@ -24,19 +24,6 @@ services = {
     windowManager.dwm.enable = true;
   };
 };
-
-# Default Grub setup
-boot.loader.grub.enable = true;
-boot.loader.grub.version = 2;
-boot.loader.grub.device = "/dev/sda";
-# Dual booting made easy (Optional)
-boot.loader.grub.useOSProber = true;
-# Dual booting made a bit harder (Extra Optional)
-boot.loader.grub.extraEntries = ''
-  menuentry "Windows 10" {
-    chainloader (hd0,1)+1
-  }
-'';
 
 # TODO: deactivate pulseaudio module
 # Pipewire
