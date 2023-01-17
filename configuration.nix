@@ -21,23 +21,21 @@
   # SSH key generation, add to github
   # Neovim clone
 
-  # Display
-  services = {
-    xserver = {
-      enable = true;
-      layout = "ch";
-      libinput.enable = true;
-      modules = [ pkgs.xf86_input_wacom ];
-      wacom.enable = true;
+  # Display Server
+  services.xserver = {
+    enable = true;
+    layout = "ch";
+    libinput.enable = true;
+    modules = [ pkgs.xf86_input_wacom ];
+    wacom.enable = true;
 
-      displayManager = {
-        sddm.enable = true;
-        defaultSession = "none+dwm";
-      };
-
-      desktopManager.xfce.enable = true;
-      windowManager.dwm.enable = true;
+    displayManager = {
+      sddm.enable = true;
+      defaultSession = "none+dwm";
     };
+
+    desktopManager.xfce.enable = true;
+    windowManager.dwm.enable = true;
   };
 
   # TODO: deactivate pulseaudio module
@@ -75,7 +73,7 @@
   services = {
     unclutter.enable = true;
     touchegg.enable = true;
-    # gnome.gnome-keyring.enable = true;
+    gnome.gnome-keyring.enable = true;
     # tlp.enable = true;
 
     picom = {
@@ -91,7 +89,23 @@
       brightness.night = "0.7";
     };
 
+    cron = {
+      enable = true;
+      systemCronJobs = [
+        #Ansible: sync mailbox (every 5 minutes)
+        "*/5 * * * * killall mbsync &>/dev/null; mbsync protonmail"
+        #Ansible: trash downloads (at 5 AM)
+        "0 5 * * * trash $HOME/Downloads/*"
+        #Ansible: push dotfiles (at 5 AM)
+        "0 5 * * * cd $HOME/.dotfiles && git add . && git commit -m 'automated update' && git push origin main"
+        #Ansible: push neovim (at 5 AM)
+        "0 5 * * * cd $HOME/.config/nvim && git add . && git commit -m 'automated update' && git push origin main"
+        #Ansible: empty trash older than 30 days (every week)
+        "0 8 * * 0 trash-empty 30"
+      ];
+    };
   };
+
 
   # List packages installed in system profile. To search, run:
   # \$ nix search wget
@@ -155,16 +169,25 @@
     msmtp
     qutebrowser
     spicetify-cli
-	khal
-	markdown-anki-decks
-	khard
-	vdirsyncer
+    khal
+    markdown-anki-decks
+    khard
+    vdirsyncer
+    zplug
+    signal-desktop
+    xdragon
+    todo-txt-cli
+    devour
+    clipnotify
+    clipmenu
+    volctl
+    gotop
+    spotify
   ];
 
   nixpkgs.config.allowUnfree = true;
   virtualisation.virtualbox = {
     host.enable = true;
-    host.enableExtensionPack = true;
     guest.enable = true;
     guest.x11 = true;
   };
@@ -175,71 +198,45 @@
     tmux.enable = true;
     autojump.enable = true;
     # seahorse.enable = true;
+
     firefox = {
       enable = true;
       # Preferences to set from about:config
       preferences = { };
     };
+
     java = {
       enable = true;
     };
-  };
 
-
-  home-manager.users.demo = {
-    home.username = "demo";
-    home.homeDirectory = "/home/demo";
-    home.stateVersion = "22.11";
-    programs.home-manager.enable = true;
-
-    home.packages = with pkgs; [
-      pure-prompt
-    ];
-
-    programs.zsh = {
+    zsh = {
       enable = true;
-      enableAutosuggestions = true;
+      autosuggestions.enable = true;
+      syntaxHighlighting.enable = true;
       enableCompletion = true;
+      histSize = 100000;
+
       shellAliases = {
         ll = "exa -a";
         build = "sudo nixos-rebuild switch";
       };
-      history = {
-        size = 10000;
-        path = ".config/zsh/history";
-      };
-      zplug = {
-        enable = true;
-        plugins = [
-          { name = "Aloxaf/fzf-tab"; }
-          { name = "hlissner/zsh-autopair"; }
-          { name = "zsh-users/zsh-syntax-highlighting"; }
-        ];
-      };
-      initExtra = ''
-        			source ${pkgs.pure-prompt}/share/zsh/site-functions/prompt_pure_setup
-        			autoload -U promptinit; promptinit
-        			zstyle ':prompt:pure:prompt:*' color "#D8DEE9"
-        			source ~/.config/lf/lfcd.sh
-        			bindkey -s '^f' 'lfcd\n'
+
+      #     zplug = {
+      #       enable = true;
+      #       plugins = [
+      #         { name = "Aloxaf/fzf-tab"; }
+      #         { name = "hlissner/zsh-autopair"; }
+      #       ];
+
+      shellInit = '' 
+		source ~/.zplug/init.zsh
+		source ${pkgs.pure-prompt}/share/zsh/site-functions/prompt_pure_setup
+		autoload -U promptinit; promptinit
+		zstyle ':prompt:pure:prompt:*' color "#D8DEE9"
+		source ~/.config/lf/lfcd.sh
+		bindkey -s '^f' 'lfcd\n'
       '';
     };
-  };
-
-  services.cron = {
-    enable = true;
-    systemCronJobs = [
-      #Ansible: sync mailbox (every 5 minutes)
-      "*/5 * * * * killall mbsync &>/dev/null; mbsync protonmail"
-      #Ansible: trash downloads (at 5 AM)
-      "0 5 * * * trash $HOME/Downloads/*"
-      #Ansible: push dotfiles (at 5 AM)
-      "0 5 * * * cd $HOME/.dotfiles && git add . && git commit -m 'automated update' && git push origin main"
-      #Ansible: push neovim (at 5 AM)
-      "0 5 * * * cd $HOME/.config/nvim && git add . && git commit -m 'automated update' && git push origin main"
-      #Ansible: empty trash older than 30 days (every week)
-      "0 8 * * 0 trash-empty 30"
-    ];
   };
 
   users.users.demo = {
@@ -247,10 +244,6 @@
     extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" ];
     shell = pkgs.zsh;
   };
-
-  # users.extraUsers.demo = {
-  # 	shell = pkgs.zsh;
-  # };
 
 
   nixpkgs.overlays = [
