@@ -16,7 +16,6 @@
   };
 
   # TODO: Configuration
-  # Automatic .dotfiles configuration
   # SSH key generation, add to github
   # Neovim clone
 
@@ -29,11 +28,11 @@
     wacom.enable = true;
 
     displayManager = {
-      sddm.enable = true;
+	  # TODO: switch to lightdm + onboard
+      startx.enable = true;
       defaultSession = "none+dwm";
     };
 
-    desktopManager.xfce.enable = true;
     windowManager.dwm.enable = true;
   };
 
@@ -157,6 +156,7 @@
     qbittorrent
     pavucontrol
     rofi
+	# TODO: setup protonvpn
     openvpn
     networkmanager-openvpn
     gnome.networkmanager-openvpn
@@ -181,6 +181,7 @@
     volctl
     gotop
     spotify
+	protonmail-bridge
   ];
 
   nixpkgs.config.allowUnfree = true;

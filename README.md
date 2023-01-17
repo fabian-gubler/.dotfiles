@@ -24,4 +24,7 @@ bash config/configure.sh
 # Clone Neovim Configuration
 git clone https://github.com:fabian-gubler/nvim-config ~/.config/nvim
 
+# Reboot system
+systemctl reboot
+
 ```
