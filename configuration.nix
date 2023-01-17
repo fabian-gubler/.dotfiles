@@ -6,26 +6,24 @@
   imports = [
     <nixpkgs/nixos/modules/installer/virtualbox-demo.nix>
     ./home.nix
-	./timers.nix
+    ./timers.nix
   ];
 
-
-
-  # FLAKE:
-  # - Benefit: nixos-rebuild switch --flake github:owner/repo
-
-  # TODO: Added Value
-  # - Directly Edit from VM
-  # - SSH key generation, add to github
-  # - Debug Cron Jobs (user level?)
-  # - Get away from virtualbox module
-  # - Activate Pipewire
+  # TODO:
+  # Matthias
+  # - User Creation
+  # - User variable = fabian -> implement in dwm path
+  # - Maximum Generations
 
   # EXTRA: Nice
   # - Remove unnecessary submodules
-  # - User variable = fabian -> implement in dwm path
-  # - Modularize configuration.nix 
-  # - Modern Cursom Theme
+  # - Modern Cursor Theme
+
+  # AFTER: Hardware Installation
+  # - Activate Pipewire
+
+  # FLAKE:
+  # - Benefit: nixos-rebuild switch --flake github:owner/repo
 
   networking = {
     hostName = "nixos";
@@ -125,6 +123,7 @@
 
     EDITOR = "nvim";
     PAGER = "less";
+	OPENER = "handlr open";
     ANKI_BASE = "\${HOME}/nextcloud/apps/anki-data";
 
     PATH = [
@@ -164,6 +163,7 @@
     xfce.thunar
     foliate
     xournalpp
+	file
     handlr
     # TODO: handlr xdg-open replacement
     zsa-udev-rules

@@ -41,8 +41,27 @@ NixOS
 ? Backup Fedora -> Dualboot?
 ? Change of Configuration / Hardware Configuration
 
-## Aside: Create Personal Nixpkg
-- Examples: typora, harsh, pdf-stapler, zsa-wally, fahrplan
+## Aside: Contributions
+### Personal Packaging
+Builds (based on priority): 
+- typora
+- pdf-stapler,
+- harsh
+- zsa-wally (depends on udev-rules)
+- fahrplan
+
+### Personal Services
+service.handlr {
+	enable = true; 
+	replaceXdgOpen = true; *default*
+	// symlink handlr open to xdg-open binary
+	set = [
+		Datatype = Attribute Set;
+		'text/*' = nvim.desktop;
+		application/pdf = evince.desktop;
+	]
+	// check validity of attributes and existance of .desktop file
+	// include nice error statements
 
 # Additional Resources
 General Guides
