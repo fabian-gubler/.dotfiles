@@ -5,7 +5,6 @@
 
   imports = [
     <nixpkgs/nixos/modules/installer/virtualbox-demo.nix>
-    <home-manager/nixos>
   ];
 
   # TODO: User variable = fabian -> implement in dwm path
@@ -173,7 +172,6 @@
     markdown-anki-decks
     khard
     vdirsyncer
-    zplug
     signal-desktop
     xdragon
     todo-txt-cli
@@ -221,18 +219,16 @@
         build = "sudo nixos-rebuild switch";
       };
 
-      #     zplug = {
-      #       enable = true;
-      #       plugins = [
-      #         { name = "Aloxaf/fzf-tab"; }
-      #         { name = "hlissner/zsh-autopair"; }
-      #       ];
-
       shellInit = '' 
-		source ~/.zplug/init.zsh
+		source ${pkgs.zplug}/init.zsh
+
+		zplug "Aloxaf/fzf-tab"
+		zplug "hlissner/zsh-autopair"
+
 		source ${pkgs.pure-prompt}/share/zsh/site-functions/prompt_pure_setup
 		autoload -U promptinit; promptinit
 		zstyle ':prompt:pure:prompt:*' color "#D8DEE9"
+
 		source ~/.config/lf/lfcd.sh
 		bindkey -s '^f' 'lfcd\n'
       '';
