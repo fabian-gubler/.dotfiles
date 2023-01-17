@@ -69,10 +69,14 @@
   location.longitude = 9.1;
 
   services = {
-    unclutter.enable = true;
     touchegg.enable = true;
     gnome.gnome-keyring.enable = true;
     # tlp.enable = true;
+
+    unclutter = {
+		enable = true;
+		timeout = 1;
+	};
 
     picom = {
       enable = true;
@@ -113,7 +117,7 @@
     git
     dmenu
     kitty
-    xorg.xsetroot
+	hsetroot
     xorg.xbacklight
     xclip
     arandr
