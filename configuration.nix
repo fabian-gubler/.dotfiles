@@ -5,19 +5,32 @@
 
   imports = [
     <nixpkgs/nixos/modules/installer/virtualbox-demo.nix>
+    ./home.nix
+	./timers.nix
   ];
 
-  # TODO: User variable = fabian -> implement in dwm path
-  # TODO: xprofile declared or copied
+
+
+  # FLAKE:
+  # - Benefit: nixos-rebuild switch --flake github:owner/repo
+
+  # TODO: Added Value
+  # - Directly Edit from VM
+  # - SSH key generation, add to github
+  # - Debug Cron Jobs (user level?)
+  # - Get away from virtualbox module
+  # - Activate Pipewire
+
+  # EXTRA: Nice
+  # - Remove unnecessary submodules
+  # - User variable = fabian -> implement in dwm path
+  # - Modularize configuration.nix 
+  # - Modern Cursom Theme
 
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
   };
-
-  # TODO: Configuration
-  # SSH key generation, add to github
-  # Neovim clone
 
   # Display Server
   services.xserver = {
@@ -28,7 +41,7 @@
     wacom.enable = true;
 
     displayManager = {
-	  # TODO: switch to lightdm + onboard
+      # TODO: switch to lightdm + onboard
       startx.enable = true;
       defaultSession = "none+dwm";
     };
@@ -36,7 +49,6 @@
     windowManager.dwm.enable = true;
   };
 
-  # TODO: deactivate pulseaudio module
   # Pipewire
   # services = {
   #   pipewire = {
@@ -74,12 +86,22 @@
     # tlp.enable = true;
 
     unclutter = {
-		enable = true;
-		timeout = 1;
-	};
+      enable = true;
+      timeout = 1;
+    };
+
+    jellyfin = {
+      enable = true;
+      user = "demo";
+      openFirewall = false;
+    };
 
     picom = {
       enable = true;
+      fadeSteps = [
+        0.06
+        0.06
+      ];
       fade = true;
     };
 
@@ -91,23 +113,26 @@
       brightness.night = "0.7";
     };
 
-    cron = {
-      enable = true;
-      systemCronJobs = [
-        #Ansible: sync mailbox (every 5 minutes)
-        "*/5 * * * * killall mbsync &>/dev/null; mbsync protonmail"
-        #Ansible: trash downloads (at 5 AM)
-        "0 5 * * * trash $HOME/Downloads/*"
-        #Ansible: push dotfiles (at 5 AM)
-        "0 5 * * * cd $HOME/.dotfiles && git add . && git commit -m 'automated update' && git push origin main"
-        #Ansible: push neovim (at 5 AM)
-        "0 5 * * * cd $HOME/.config/nvim && git add . && git commit -m 'automated update' && git push origin main"
-        #Ansible: empty trash older than 30 days (every week)
-        "0 8 * * 0 trash-empty 30"
-      ];
-    };
+
   };
 
+  environment.sessionVariables = rec {
+    XDG_CACHE_HOME = "\${HOME}/.cache";
+    XDG_CONFIG_HOME = "\${HOME}/.config";
+    XDG_BIN_HOME = "\${HOME}/.local/bin";
+    XDG_DATA_HOME = "\${HOME}/.local/share";
+    XDG_DOWNLOAD_DIR = "\${HOME}/Downloads";
+
+    EDITOR = "nvim";
+    PAGER = "less";
+    ANKI_BASE = "\${HOME}/nextcloud/apps/anki-data";
+
+    PATH = [
+      "\${XDG_BIN_HOME}"
+      "\${HOME}/.dotfiles/scripts/utils"
+      "\${HOME}/.dotfiles/scripts/tmux"
+    ];
+  };
 
   # List packages installed in system profile. To search, run:
   # \$ nix search wget
@@ -115,23 +140,25 @@
     wget
     neovim
     git
-    dmenu
     kitty
-	hsetroot
+    hsetroot
     xorg.xbacklight
     xclip
     arandr
     python
+    lua
+    gcc
     gnumake
     lf
     fzf
     stylua
     rbw
     sqlite
+    # TODO: onboard configuration
     onboard
     exa
     ripgrep
-    ncdu
+    unzip
     gimp
     chromium
     xfce.thunar
@@ -141,18 +168,15 @@
     # TODO: handlr xdg-open replacement
     zsa-udev-rules
     texlive.combined.scheme-basic
-    nodejs
-    rustc
-    rustup
     networkmanagerapplet
     blueberry
     pasystray
     nextcloud-client
     autorandr
     dunst
-    pandoc
     newsboat
     yt-dlp
+    trash-cli
     mpv
     mpvScripts.mpris
     playerctl
@@ -160,32 +184,37 @@
     qbittorrent
     pavucontrol
     rofi
-	# TODO: setup protonvpn
+    # TODO: setup protonvpn
     openvpn
     networkmanager-openvpn
     gnome.networkmanager-openvpn
     blanket
     lazygit
+    # TODO: neomutt home-manager declaration
     neomutt
     isync
     notmuch-mutt
     msmtp
     qutebrowser
     spicetify-cli
+    spotify
     khal
     markdown-anki-decks
     khard
     vdirsyncer
     signal-desktop
+    sxiv
     xdragon
     todo-txt-cli
-    devour
     clipnotify
     clipmenu
     volctl
     gotop
-    spotify
-	protonmail-bridge
+    protonmail-bridge
+    anki
+    zsh
+    sioyek
+    pandoc
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -199,7 +228,6 @@
 
   programs = {
     tmux.enable = true;
-    autojump.enable = true;
     # seahorse.enable = true;
 
     firefox = {
@@ -212,32 +240,6 @@
       enable = true;
     };
 
-    zsh = {
-      enable = true;
-      autosuggestions.enable = true;
-      syntaxHighlighting.enable = true;
-      enableCompletion = true;
-      histSize = 100000;
-
-      shellAliases = {
-        ll = "exa -a";
-        build = "sudo nixos-rebuild switch";
-      };
-
-      shellInit = '' 
-		source ${pkgs.zplug}/init.zsh
-
-		zplug "Aloxaf/fzf-tab"
-		zplug "hlissner/zsh-autopair"
-
-		source ${pkgs.pure-prompt}/share/zsh/site-functions/prompt_pure_setup
-		autoload -U promptinit; promptinit
-		zstyle ':prompt:pure:prompt:*' color "#D8DEE9"
-
-		source ~/.config/lf/lfcd.sh
-		bindkey -s '^f' 'lfcd\n'
-      '';
-    };
   };
 
   users.users.demo = {
@@ -250,6 +252,7 @@
   nixpkgs.overlays = [
     (final: prev: {
       dwm = prev.dwm.overrideAttrs (old: { src = /home/demo/.dotfiles/config/suckless/dwm; });
+      dmenu = prev.dmenu.overrideAttrs (old: { src = /home/demo/.dotfiles/config/suckless/dmenu; });
     })
   ];
 
@@ -260,5 +263,9 @@
   # This does NOT define the NixOS version. The channel does.
   # https://nixos.wiki/wiki/FAQ#When_do_I_update_stateVersion
   system.stateVersion = "22.11"; # Did you read the comment?
+
+
+  # TODO: test when logging in (probably with lightdm)
+  security.pam.services.startx.enableGnomeKeyring = true;
 
 }
