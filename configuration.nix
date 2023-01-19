@@ -9,6 +9,8 @@
     ./timers.nix
   ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # TODO: Matthias
   # - User Creation
   # - Maximum Generations (7d)

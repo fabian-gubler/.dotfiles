@@ -72,6 +72,7 @@ General Guides
 [Nix Ecosystem](https://nixos.wiki/wiki/Nix_Ecosystem)
 [Why Nix](https://revelry.co/insights/development/nix-time/)
 [Nix Flakes](https://xeiaso.net/blog/nix-flakes-1-2022-02-21)
+[Deterministic](https://www.bekk.christmas/post/2021/13/deterministic-systems-with-nix)
 
 Philosophy
 [I was wrong about nix](https://xeiaso.net/blog/i-was-wrong-about-nix-2020-02-10)
