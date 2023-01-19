@@ -1,17 +1,13 @@
 { config, pkgs, lib, ... }:
 
-
 {
-
   imports = [
-    # <nixpkgs/nixos/modules/installer/virtualbox-demo.nix>
     ./hardware-configuration.nix
-    ./modules/home.nix
     ./modules/timers.nix
   ];
 
   nix = {
-    package = pkgs.nixFlakes;
+    package = pkgs.nixUnstable;
     # settings = {
     #   experimental-features = [ "nix-command" "flakes" ];
     # };
