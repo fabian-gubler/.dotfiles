@@ -7,13 +7,10 @@ in
     (import "${home-manager}/nixos")
   ];
 
-  # TODO: replace dotbot to manage dotfiles
-  # DOCS: `man home-configuration.nix`
-
-  home-manager.users.fabian = {
+  home-manager.users.demo = {
     home.stateVersion = "22.11";
-    home.username = "fabian";
-    home.homeDirectory = "fabian";
+    home.username = "demo";
+    home.homeDirectory = "/home/demo";
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
@@ -22,6 +19,15 @@ in
     home.packages = [
       pkgs.htop
     ];
+
+    gtk = {
+      enable = true;
+      theme = {
+        # TODO: Change to Nord
+        name = "Materia-dark";
+        package = pkgs.materia-theme;
+      };
+    };
 
     programs.zsh = {
       enable = true;
@@ -47,7 +53,7 @@ in
 
       history = {
         size = 10000;
-        path = "/home/fabian/zsh/history";
+        path = "/home/demo/zsh/history";
       };
 
       zplug = {
@@ -100,8 +106,19 @@ in
       };
     };
 
+    #  programs.mpv = {
+    #    enable = true;
+    #    scripts = [ pkgs.mpvScripts.mpris ];
+    #    config = { };
+    # bindings = { };
+    #  };
+
     # GUIDE: Manage Dotfiles 
     # https://rgoulter.com/blog/posts/programming/2022-02-20-using-home-manager-to-manage-symlinks-to-dotfiles.html
+
+    # xdg.configFile."alacritty/alacritty.yml" = {
+    #   source = "/home/demo/.dotfiles/config/alacritty/alacritty.yml";
+    # };
 
   };
 }

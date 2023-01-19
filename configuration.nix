@@ -4,13 +4,14 @@
 {
 
   imports = [
-    # <nixpkgs/nixos/modules/installer/virtualbox-fabian.nix>
+    # <nixpkgs/nixos/modules/installer/virtualbox-demo.nix>
     ./hardware-configuration.nix
     ./modules/home.nix
     ./modules/timers.nix
   ];
 
   nix = {
+    package = pkgs.nixFlakes;
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
     };
@@ -21,16 +22,13 @@
     };
   };
 
-  # TOD: Variables 
-  # <user> = fabian (can set as flag?)
-  # <version> = 22.11 (understand better) 
-  # <hardware> = x84-64-Linux
-
-  # EXTRA: Nice
-  # - Remove unnecessary submodules
-
   # FLAKE:
   # - One line install: nixos-rebuild switch --flake github:owner/repo
+
+  # TODO: Variables 
+  # <user> = demo (can set as flag?)
+  # <version> = 22.11 (understand better) 
+  # <hardware> = x84-64-Linux
 
   networking = {
     hostName = "nixos";
@@ -107,19 +105,19 @@
 
     jellyfin = {
       enable = true;
-      user = "fabian";
+      user = "demo";
       openFirewall = false;
     };
 
 
     sonarr = {
       enable = true;
-      user = "fabian";
+      user = "demo";
     };
 
     radarr = {
       enable = true;
-      user = "fabian";
+      user = "demo";
     };
 
     prowlarr.enable = true;
@@ -275,18 +273,19 @@
 
   };
 
-  users.users.fabian = {
+  users.users.demo = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" ];
+    initialPassword = "password";
     shell = pkgs.zsh;
   };
 
-  users.extraGroups.vboxusers.members = [ "fabian" ];
+  users.extraGroups.vboxusers.members = [ "demo" ];
 
   nixpkgs.overlays = [
     (final: prev: {
-      dwm = prev.dwm.overrideAttrs (old: { src = /home/fabian/.dotfiles/config/suckless/dwm; });
-      dmenu = prev.dmenu.overrideAttrs (old: { src = /home/fabian/.dotfiles/config/suckless/dmenu; });
+      dwm = prev.dwm.overrideAttrs (old: { src = /home/demo/.dotfiles/config/suckless/dwm; });
+      dmenu = prev.dmenu.overrideAttrs (old: { src = /home/demo/.dotfiles/config/suckless/dmenu; });
     })
   ];
 
@@ -301,5 +300,6 @@
 
   # TODO: test when logging in (probably with lightdm)
   security.pam.services.startx.enableGnomeKeyring = true;
+
 
 }

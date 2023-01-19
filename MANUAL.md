@@ -50,6 +50,7 @@ Builds (based on priority):
 - harsh
 - zsa-wally (depends on udev-rules)
 - fahrplan
+- mpvScripts.{ seek-to, uosc  }
 
 Difficult builds
 - pdf.js (where to put)
