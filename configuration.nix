@@ -4,19 +4,22 @@
 {
 
   imports = [
-    <nixpkgs/nixos/modules/installer/virtualbox-demo.nix>
-    ./home.nix
-    ./timers.nix
+    # <nixpkgs/nixos/modules/installer/virtualbox-fabian.nix>
+    ./hardware-configuration.nix
+    ./modules/home.nix
+    ./modules/timers.nix
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # TODO: Matthias
-  # - User Creation
-  # - Maximum Generations (7d)
-  # - Switch to lightdm + onboard
-  # - Setup autojump
-
+  nix = {
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+  };
 
   # TOD: Variables 
   # <user> = fabian (can set as flag?)
@@ -25,10 +28,6 @@
 
   # EXTRA: Nice
   # - Remove unnecessary submodules
-  # - Modern Cursor Theme
-
-  # AFTER: Hardware Installation
-  # - Activate Pipewire & tlp
 
   # FLAKE:
   # - One line install: nixos-rebuild switch --flake github:owner/repo
@@ -45,27 +44,38 @@
     libinput.enable = true;
     modules = [ pkgs.xf86_input_wacom ];
     wacom.enable = true;
-
+    windowManager.dwm.enable = true;
     displayManager = {
-      startx.enable = true;
       defaultSession = "none+dwm";
+      lightdm = {
+        enable = true;
+        greeters.gtk = {
+          enable = true;
+          extraConfig = "keyboard=onboard";
+        };
+      };
     };
 
-    windowManager.dwm.enable = true;
   };
 
   # Pipewire
-  # services = {
-  #   pipewire = {
-  #     enable = true;
-  #     alsa = {
-  #       enable = true;
-  #       support32Bit = true;
-  #     };
-  #     pulse.enable = true;
-  #     jack.enable = true;
-  #   };
-  # };
+  services = {
+    pipewire = {
+      enable = true;
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+      pulse.enable = true;
+      jack.enable = true;
+    };
+  };
+
+  # Service management
+  services.logind.extraConfig = ''
+    # don’t shutdown when power button is short-pressed
+    HandlePowerKey=ignore
+  '';
 
   # Bluetooth
   hardware = {
@@ -88,7 +98,7 @@
   services = {
     touchegg.enable = true;
     gnome.gnome-keyring.enable = true;
-    # tlp.enable = true;
+    tlp.enable = true;
 
     unclutter = {
       enable = true;
@@ -97,19 +107,19 @@
 
     jellyfin = {
       enable = true;
-      user = "demo";
+      user = "fabian";
       openFirewall = false;
     };
 
 
     sonarr = {
       enable = true;
-      user = "demo";
+      user = "fabian";
     };
 
     radarr = {
       enable = true;
-      user = "demo";
+      user = "fabian";
     };
 
     prowlarr.enable = true;
@@ -142,6 +152,7 @@
     XDG_DOWNLOAD_DIR = "\${HOME}/Downloads";
 
     EDITOR = "nvim";
+    MANPAGER = "nvim +Man!";
     PAGER = "less";
     OPENER = "handlr open";
     ANKI_BASE = "\${HOME}/nextcloud/apps/anki-data";
@@ -158,7 +169,6 @@
   environment.systemPackages = with pkgs; [
     wget
     neovim
-    git
     kitty
     hsetroot
     xorg.xbacklight
@@ -236,9 +246,8 @@
     gotop
     protonmail-bridge
     qt6.qt5compat
-    zsh
     # TODO: Fix text rendering
-    # sioyek
+    sioyek
     pandoc
   ];
 
@@ -249,7 +258,6 @@
     guest.x11 = true;
   };
 
-  users.extraGroups.vboxusers.members = [ "demo" ];
 
   programs = {
     tmux.enable = true;
@@ -267,17 +275,18 @@
 
   };
 
-  users.users.demo = {
+  users.users.fabian = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" ];
     shell = pkgs.zsh;
   };
 
+  users.extraGroups.vboxusers.members = [ "fabian" ];
 
   nixpkgs.overlays = [
     (final: prev: {
-      dwm = prev.dwm.overrideAttrs (old: { src = /home/demo/.dotfiles/config/suckless/dwm; });
-      dmenu = prev.dmenu.overrideAttrs (old: { src = /home/demo/.dotfiles/config/suckless/dmenu; });
+      dwm = prev.dwm.overrideAttrs (old: { src = /home/fabian/.dotfiles/config/suckless/dwm; });
+      dmenu = prev.dmenu.overrideAttrs (old: { src = /home/fabian/.dotfiles/config/suckless/dmenu; });
     })
   ];
 
