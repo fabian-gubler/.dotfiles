@@ -9,15 +9,14 @@
     ./timers.nix
   ];
 
-  # TODO:
-  # Matthias
+  # TODO: Matthias
   # - User Creation
   # - Maximum Generations (7d)
   # - Switch to lightdm + onboard
   # - Setup autojump
 
 
-  # - Variables 
+  # TOD: Variables 
   # <user> = fabian (can set as flag?)
   # <version> = 22.11 (understand better) 
   # <hardware> = x84-64-Linux

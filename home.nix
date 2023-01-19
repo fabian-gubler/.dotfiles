@@ -7,6 +7,7 @@ in
     (import "${home-manager}/nixos")
   ];
 
+# TODO: replace dotbot to manage dotfiles
 # DOCS: `man home-configuration.nix`
 
   home-manager.users.demo = {
