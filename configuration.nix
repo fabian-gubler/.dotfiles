@@ -169,6 +169,7 @@
     xclip
     arandr
     # python
+	cargo
     lua
     gcc
     gnumake
