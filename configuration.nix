@@ -12,9 +12,9 @@
 
   nix = {
     package = pkgs.nixFlakes;
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-    };
+    # settings = {
+    #   experimental-features = [ "nix-command" "flakes" ];
+    # };
     gc = {
       automatic = true;
       dates = "weekly";
@@ -243,9 +243,8 @@
     dmenu
     gotop
     protonmail-bridge
-    qt6.qt5compat
     # TODO: Fix text rendering
-    sioyek
+    # sioyek
     pandoc
   ];
 
@@ -261,11 +260,11 @@
     tmux.enable = true;
     # seahorse.enable = true;
 
-    firefox = {
-      enable = true;
-      # Preferences to set from about:config
-      preferences = { };
-    };
+    # firefox = {
+    #   enable = true;
+    #   # Preferences to set from about:config
+    #   preferences = { };
+    # };
 
     java = {
       enable = true;

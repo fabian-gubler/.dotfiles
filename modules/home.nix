@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+  home-manager = builtins.fetchTarball {
+    url = "https://github.com/nix-community/home-manager/archive/888eac32bd657bfe0d024c8770130d80d1c02cd3.tar.gz";
+    sha256 = "0kj49bdl67d1yf5wvqfcrlhf13jmqgvrl33k2bscw1crinab9na9";
+  };
 in
 {
   imports = [
@@ -8,7 +11,7 @@ in
   ];
 
   home-manager.users.demo = {
-    home.stateVersion = "22.11";
+    home.stateVersion = "21.11";
     home.username = "demo";
     home.homeDirectory = "/home/demo";
 
