@@ -28,7 +28,7 @@ in
       enableCompletion = true;
       enableSyntaxHighlighting = true;
       shellAliases = {
-        ll = "exa";
+        ll = "exa -a";
         build = "sudo nixos-rebuild switch";
       };
 

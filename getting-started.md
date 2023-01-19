@@ -1,3 +1,8 @@
+# Things to do before Installation
+- Bootable ISO
+- Push all repos
+- Backup?
+
 # How to start
 NixOS in a VM. Make your custom config, 
 	but don't use flakes since you're a beginner. 
@@ -37,10 +42,6 @@ NixOS
 [NixOS Manual](https://nixos.org/manual/nixos/stable/)
 [NixOS Guide on Github](https://github.com/mikeroyal/NixOS-Guide#getting-started)
 
-## Transfer from VM to Personal Device
-? Backup Fedora -> Dualboot?
-? Change of Configuration / Hardware Configuration
-
 ## Aside: Contributions
 ### Personal Packaging
 Builds (based on priority): 
@@ -49,6 +50,9 @@ Builds (based on priority):
 - harsh
 - zsa-wally (depends on udev-rules)
 - fahrplan
+
+Difficult builds
+- pdf.js (where to put)
 
 ### Personal Services
 service.handlr {

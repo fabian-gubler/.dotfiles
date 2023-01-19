@@ -12,18 +12,25 @@
   # TODO:
   # Matthias
   # - User Creation
-  # - User variable = fabian -> implement in dwm path
-  # - Maximum Generations
+  # - Maximum Generations (7d)
+  # - Switch to lightdm + onboard
+  # - Setup autojump
+
+
+  # - Variables 
+  # <user> = fabian (can set as flag?)
+  # <version> = 22.11 (understand better) 
+  # <hardware> = x84-64-Linux
 
   # EXTRA: Nice
   # - Remove unnecessary submodules
   # - Modern Cursor Theme
 
   # AFTER: Hardware Installation
-  # - Activate Pipewire
+  # - Activate Pipewire & tlp
 
   # FLAKE:
-  # - Benefit: nixos-rebuild switch --flake github:owner/repo
+  # - One line install: nixos-rebuild switch --flake github:owner/repo
 
   networking = {
     hostName = "nixos";
@@ -39,7 +46,6 @@
     wacom.enable = true;
 
     displayManager = {
-      # TODO: switch to lightdm + onboard
       startx.enable = true;
       defaultSession = "none+dwm";
     };
@@ -94,6 +100,19 @@
       openFirewall = false;
     };
 
+
+    sonarr = {
+      enable = true;
+      user = "demo";
+    };
+
+    radarr = {
+      enable = true;
+      user = "demo";
+    };
+
+    prowlarr.enable = true;
+
     picom = {
       enable = true;
       fadeSteps = [
@@ -123,7 +142,7 @@
 
     EDITOR = "nvim";
     PAGER = "less";
-	OPENER = "handlr open";
+    OPENER = "handlr open";
     ANKI_BASE = "\${HOME}/nextcloud/apps/anki-data";
 
     PATH = [
@@ -158,12 +177,13 @@
     exa
     ripgrep
     unzip
+    unrar
     gimp
     chromium
     xfce.thunar
     foliate
     xournalpp
-	file
+    file
     handlr
     # TODO: handlr xdg-open replacement
     zsa-udev-rules
@@ -196,9 +216,10 @@
     notmuch-mutt
     msmtp
     qutebrowser
-    spicetify-cli
     spotify
+    spicetify-cli
     khal
+    anki
     markdown-anki-decks
     khard
     vdirsyncer
@@ -209,11 +230,14 @@
     clipnotify
     clipmenu
     volctl
+    # TODO: fix dmenu
+    dmenu
     gotop
     protonmail-bridge
-    anki
+    qt6.qt5compat
     zsh
-    sioyek
+    # TODO: Fix text rendering
+    # sioyek
     pandoc
   ];
 
