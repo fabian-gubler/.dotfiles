@@ -168,7 +168,7 @@
     xorg.xbacklight
     xclip
     arandr
-    python
+    # python
     lua
     gcc
     gnumake
@@ -192,23 +192,23 @@
     handlr
     # TODO: handlr xdg-open replacement
     zsa-udev-rules
-    texlive.combined.scheme-basic
-    networkmanagerapplet
-    blueberry
-    pasystray
-    nextcloud-client
-    autorandr
-    dunst
-    newsboat
-    yt-dlp
-    trash-cli
-    mpv
-    mpvScripts.mpris
-    playerctl
-    xbindkeys
-    qbittorrent
-    pavucontrol
-    rofi
+    # texlive.combined.scheme-basic
+    # networkmanagerapplet
+    # blueberry
+    # pasystray
+    # nextcloud-client
+    # autorandr
+    # dunst
+    # newsboat
+    # yt-dlp
+    # trash-cli
+    # mpv
+    # mpvScripts.mpris
+    # playerctl
+    # xbindkeys
+    # qbittorrent
+    # pavucontrol
+    # rofi
     # TODO: setup protonvpn
     openvpn
     networkmanager-openvpn
@@ -220,20 +220,20 @@
     isync
     notmuch-mutt
     msmtp
-    qutebrowser
-    spotify
-    spicetify-cli
-    khal
-    anki
-    markdown-anki-decks
-    khard
-    vdirsyncer
-    signal-desktop
-    sxiv
-    xdragon
-    todo-txt-cli
-    clipnotify
-    clipmenu
+    # qutebrowser
+    # spotify
+    # spicetify-cli
+    # khal
+    # anki
+    # markdown-anki-decks
+    # khard
+    # vdirsyncer
+    # signal-desktop
+    # sxiv
+    # xdragon
+    # todo-txt-cli
+    # clipnotify
+    # clipmenu
     volctl
     # TODO: fix dmenu
     dmenu
