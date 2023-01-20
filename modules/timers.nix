@@ -1,7 +1,10 @@
 { config, pkgs, lib, ... }:
 
 # TODO: Remove dependency on user <name>
-
+let
+  user = "fabian";
+  homeDirectory = "/home/${user}";
+in
 {
 
   # Trash Downloads on boot / daily
@@ -17,11 +20,11 @@
   systemd.services."trash-downloads" = {
     serviceConfig = {
       Type = "oneshot";
-      User = "fabian";
+      User = "${user}";
     };
     path = with pkgs; [ trash-cli ];
     script = ''
-      		trash $HOME/Downloads/*
+      		trash ${homeDirectory}/Downloads/*
     '';
   };
 
@@ -38,14 +41,14 @@
   systemd.services."push-dotfiles" = {
     serviceConfig = {
       Type = "oneshot";
-      User = "fabian";
+      User = "${user}";
     };
     path = with pkgs; [ git ];
     script = ''
-      	cd $HOME/.dotfiles 
+      	cd ${homeDirectory}/.dotfiles 
       	git add . 
-      	git commit -m 'automated update'
-      	git push origin main
+      	git commit -m 'automated update' --allow-empty
+      	(git push) || exit 0
     '';
   };
 
@@ -62,14 +65,14 @@
   systemd.services."push-neovim" = {
     serviceConfig = {
       Type = "oneshot";
-      User = "fabian";
+      User = "${user}";
     };
     path = with pkgs; [ git ];
     script = ''
-      		cd $HOME/.config/nvim
+      		cd ${homeDirectory}/.config/nvim
       		git add . 
-      		git commit -m 'automated update'
-      		git push origin main
+      		git commit -m 'automated update' --allow-empty
+      		(git push) || exit 0
     '';
   };
 
@@ -85,7 +88,7 @@
   systemd.services."empty-trash" = {
     serviceConfig = {
       Type = "oneshot";
-      User = "fabian";
+      User = "${user}";
     };
     path = with pkgs; [ trash-cli ];
     script = ''

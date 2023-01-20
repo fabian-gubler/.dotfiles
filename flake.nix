@@ -3,13 +3,14 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+    hosts.url = github:StevenBlack/hosts;
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, hosts, ... }:
     let
       username = "fabian";
       homeDirectory = "/home/fabian";
@@ -35,6 +36,10 @@
               home-manager.users.fabian = {
                 imports = [ ./home.nix ];
               };
+            }
+            hosts.nixosModule
+            {
+              networking.stevenBlackHosts.enable = true;
             }
           ];
         };

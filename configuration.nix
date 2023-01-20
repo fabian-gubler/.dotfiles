@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 let
-	user = "fabian";
+  user = "fabian";
 in
 {
   imports = [
@@ -25,6 +25,12 @@ in
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
+    stevenBlackHosts = {
+      blockFakenews = true;
+      blockGambling = true;
+      blockPorn = true;
+      blockSocial = false;
+    };
   };
 
   # Display Server
@@ -37,13 +43,14 @@ in
     windowManager.dwm.enable = true;
     displayManager = {
       defaultSession = "none+dwm";
-      lightdm = {
-        enable = true;
-        greeters.gtk = {
-          enable = true;
-          extraConfig = "keyboard=onboard";
-        };
-      };
+      # lightdm = {
+      #   enable = true;
+      #   greeters.gtk = {
+      #     enable = true;
+      #     extraConfig = "keyboard=onboard";
+      #   };
+      # };
+      gdm.enable = true;
     };
 
   };
@@ -148,7 +155,7 @@ in
     EDITOR = "nvim";
     MANPAGER = "nvim +Man!";
     PAGER = "less";
-    OPENER = "handlr open";
+    OPENER = "xdg-open";
     ANKI_BASE = "\${HOME}/nextcloud/apps/anki-data";
     QT_SCALE_FACTOR = "1.5";
 
@@ -212,7 +219,7 @@ in
     qbittorrent
     pavucontrol
     rofi
-    protonvpn-cli
+    # FIX: protonvpn-cli (ncmli -> ipv6leakprotection)
     blanket
     lazygit
     neomutt
@@ -243,10 +250,13 @@ in
 
   security.pam.services.startx.enableGnomeKeyring = true;
 
-  virtualisation.virtualbox = {
-    host.enable = true;
-    # guest.enable = true;
-    # guest.x11 = true;
+  virtualisation = {
+    docker.enable = true;
+    virtualbox = {
+      host.enable = true;
+      # guest.enable = true;
+      # guest.x11 = true;
+    };
   };
 
 
@@ -268,7 +278,7 @@ in
 
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" ];
+    extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" "docker" ];
     initialPassword = "password";
     shell = pkgs.zsh;
   };
