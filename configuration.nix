@@ -18,14 +18,6 @@
     };
   };
 
-  # FLAKE:
-  # - One line install: nixos-rebuild switch --flake github:owner/repo
-
-  # TODO: Variables 
-  # <user> = demo (can set as flag?)
-  # <version> = 22.11 (understand better) 
-  # <hardware> = x84-64-Linux
-
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
@@ -237,7 +229,6 @@
     clipnotify
     clipmenu
     volctl
-    # TODO: fix dmenu
     dmenu
     gotop
     protonmail-bridge
@@ -292,8 +283,6 @@
   # https://nixos.wiki/wiki/FAQ#When_do_I_update_stateVersion
   system.stateVersion = "22.11"; # Did you read the comment?
 
-
-  # TODO: test when logging in (probably with lightdm)
   security.pam.services.startx.enableGnomeKeyring = true;
 
 
