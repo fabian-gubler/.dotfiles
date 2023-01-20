@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }:
 let
   user = "fabian";
+  PROJECT_ROOT = builtins.getEnv "PWD";
 in
 {
   imports = [
@@ -167,9 +168,9 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    alacritty
     wget
     neovim
-    kitty
     hsetroot
     xorg.xbacklight
     xclip
@@ -233,13 +234,13 @@ in
     khard
     vdirsyncer
     signal-desktop
+    dmenu
     sxiv
     xdragon
     todo-txt-cli
     clipnotify
     clipmenu
     volctl
-    dmenu
     gotop
     protonmail-bridge
     sioyek
@@ -262,6 +263,7 @@ in
 
   programs = {
     tmux.enable = true;
+    slock.enable = true;
     seahorse.enable = true;
 
     firefox = {
@@ -283,10 +285,12 @@ in
     shell = pkgs.zsh;
   };
 
+
   nixpkgs.overlays = [
     (final: prev: {
-      dwm = prev.dwm.overrideAttrs (old: { src = /home/${user}/.dotfiles/config/suckless/dwm; });
-      dmenu = prev.dmenu.overrideAttrs (old: { src = /home/${user}/.dotfiles/config/suckless/dmenu; });
+      dwm = prev.dwm.overrideAttrs (old: { src = ./config/dmenu; });
+      dmenu = prev.dmenu.overrideAttrs (old: { src = ./config/dmenu; });
+      # slock = prev.slock.overrideAttrs (old: { src = ./config/slock; });
     })
   ];
 

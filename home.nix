@@ -19,8 +19,32 @@
   qt = {
     enable = true;
     platformTheme = "gnome";
-	style.name = "adwaita-dark";
-	style.package = pkgs.adwaita-qt;
+    style.name = "adwaita-dark";
+    style.package = pkgs.adwaita-qt;
+  };
+  programs.kitty = {
+    enable = true;
+    theme = "Nord";
+    font = {
+      size = 14.0;
+      name = "SF Mono";
+    };
+    settings = {
+      enable_audio_bell = false;
+      open_url_modifiers = "ctrl";
+      window_margin_width = 5;
+      cursor_shape = "block";
+      cursor_blink_interval = 0;
+      confirm_os_window_close = 0;
+      listen_on = "unix:/tmp/kitty";
+      allow_remote_control = "socket-only";
+
+    };
+    keybindings = {
+      "ctrl+2" = "change_font_size all +1.0";
+      "ctrl+1" = "change_font_size all -1.0";
+      "ctrl+0" = "change_font_size all 0";
+    };
   };
 
   programs.zsh = {
@@ -62,15 +86,10 @@
       ];
     };
 
-    # envExtra = ''
-    #   MANPAGER='nvim +Man!'
-    # '';
-
     initExtra = '' 
-		source ~/.dotfiles/config/zsh/pure_fix
 		source ${pkgs.pure-prompt}/share/zsh/site-functions/prompt_pure_setup
+		source ~/nixos-config/config/misc/prompt_fix
 		PURE_CMD_MAX_EXEC_TIME=99999999999999
-		autoload -U promptinit; promptinit
 		zstyle ':prompt:pure:prompt:*' color "#D8DEE9"
 
 		source ~/.config/lf/lfcd.sh

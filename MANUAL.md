@@ -58,17 +58,14 @@ Package debugging:
 - sioyek blur (hardware, dependency issue?)
 
 ### Personal Services
-service.handlr {
-	enable = true; 
-	replaceXdgOpen = true; *default*
-	// symlink handlr open to xdg-open binary
-	set = [
-		Datatype = Attribute Set;
-		'text/*' = nvim.desktop;
-		application/pdf = evince.desktop;
-	]
-	// check validity of attributes and existance of .desktop file
-	// include nice error statements
+serivce.dunst {
+	enable = true;
+	dimensions = X:Y;
+	font = "String";
+	frame = "3";
+	background = "String";
+	foreground = "String";
+};
 
 # Additional Resources
 General Guides
