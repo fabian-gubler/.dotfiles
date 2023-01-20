@@ -101,19 +101,19 @@
 
     jellyfin = {
       enable = true;
-      user = "demo";
+      user = "fabian";
       openFirewall = false;
     };
 
 
     sonarr = {
       enable = true;
-      user = "demo";
+      user = "fabian";
     };
 
     radarr = {
       enable = true;
-      user = "demo";
+      user = "fabian";
     };
 
     prowlarr.enable = true;
@@ -127,13 +127,13 @@
       fade = true;
     };
 
-    redshift = {
-      enable = true;
-      temperature.day = 6500;
-      temperature.night = 3500;
-      brightness.day = "1";
-      brightness.night = "0.7";
-    };
+#    redshift = {
+#      enable = true;
+#      temperature.day = 6500;
+#      temperature.night = 3500;
+#      brightness.day = "1";
+#      brightness.night = "0.7";
+#    };
 
 
   };
@@ -168,8 +168,9 @@
     xorg.xbacklight
     xclip
     arandr
-    # python
-	cargo
+    python
+    cargo
+	nodejs
     lua
     gcc
     gnumake
@@ -193,23 +194,23 @@
     handlr
     # TODO: handlr xdg-open replacement
     zsa-udev-rules
-    # texlive.combined.scheme-basic
-    # networkmanagerapplet
-    # blueberry
-    # pasystray
-    # nextcloud-client
-    # autorandr
-    # dunst
-    # newsboat
-    # yt-dlp
-    # trash-cli
-    # mpv
-    # mpvScripts.mpris
-    # playerctl
-    # xbindkeys
-    # qbittorrent
-    # pavucontrol
-    # rofi
+    texlive.combined.scheme-basic
+    networkmanagerapplet
+    blueberry
+    pasystray
+    nextcloud-client
+    autorandr
+    dunst
+    newsboat
+    yt-dlp
+    trash-cli
+    mpv
+    mpvScripts.mpris
+    playerctl
+    xbindkeys
+    qbittorrent
+    pavucontrol
+    rofi
     # TODO: setup protonvpn
     openvpn
     networkmanager-openvpn
@@ -221,47 +222,47 @@
     isync
     notmuch-mutt
     msmtp
-    # qutebrowser
-    # spotify
-    # spicetify-cli
-    # khal
-    # anki
-    # markdown-anki-decks
-    # khard
-    # vdirsyncer
-    # signal-desktop
-    # sxiv
-    # xdragon
-    # todo-txt-cli
-    # clipnotify
-    # clipmenu
+    qutebrowser
+    spotify
+    spicetify-cli
+    khal
+    anki
+    markdown-anki-decks
+    khard
+    vdirsyncer
+    signal-desktop
+    sxiv
+    xdragon
+    todo-txt-cli
+    clipnotify
+    clipmenu
     volctl
     # TODO: fix dmenu
     dmenu
     gotop
     protonmail-bridge
     # TODO: Fix text rendering
-    # sioyek
+    sioyek
     pandoc
   ];
 
   nixpkgs.config.allowUnfree = true;
-  virtualisation.virtualbox = {
-    host.enable = true;
-    guest.enable = true;
-    guest.x11 = true;
-  };
+#virtualisation.virtualbox = {
+#  host.enable = true;
+#  guest.enable = true;
+#  guest.x11 = true;
+#};
 
 
   programs = {
     tmux.enable = true;
-    # seahorse.enable = true;
+    seahorse.enable = true;
 
-    # firefox = {
-    #   enable = true;
-    #   # Preferences to set from about:config
-    #   preferences = { };
-    # };
+    firefox = {
+      enable = true;
+      # Preferences to set from about:config
+      preferences = { };
+    };
 
     java = {
       enable = true;
@@ -269,19 +270,17 @@
 
   };
 
-  users.users.demo = {
+  users.users.fabian = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" ];
     initialPassword = "password";
     shell = pkgs.zsh;
   };
 
-  users.extraGroups.vboxusers.members = [ "demo" ];
-
   nixpkgs.overlays = [
     (final: prev: {
-      dwm = prev.dwm.overrideAttrs (old: { src = /home/demo/.dotfiles/config/suckless/dwm; });
-      dmenu = prev.dmenu.overrideAttrs (old: { src = /home/demo/.dotfiles/config/suckless/dmenu; });
+      dwm = prev.dwm.overrideAttrs (old: { src = /home/fabian/.dotfiles/config/suckless/dwm; });
+      dmenu = prev.dmenu.overrideAttrs (old: { src = /home/fabian/.dotfiles/config/suckless/dmenu; });
     })
   ];
 

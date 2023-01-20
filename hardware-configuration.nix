@@ -4,41 +4,58 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ ];
+  imports =
+    [ (modulesPath + "/installer/scan/not-detected.nix")
+    ];
 
-  boot.initrd.availableKernelModules = [ "ohci_pci" "ehci_pci" "ahci" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  boot.loader.grub.device = "/dev/sda";
+      boot ={
+    kernelPackages = pkgs.linuxPackages_latest;       # Get latest kernel
+    loader = {
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot/efi";
+      };
+      grub = {
+        enable = true;
+        devices = ["nodev"];
+        efiSupport = true;
+        useOSProber = true;
+        configurationLimit = 5;                       # Limit stored system configurations.
+      };                                              # Also exists for systemd-boot
+      timeout = 5;                                    # Work for grub and efi boot, time before auto-boot
+    };
+    };
+
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/749ba799-7346-4ff8-87bd-5155fbe2ecbd";
+    { device = "/dev/disk/by-uuid/3ae1d3f9-ad7a-4be9-8d8e-30884bf5ef66";
       fsType = "ext4";
     };
 
-  fileSystems."/media/sf_nixos-config" =
-    { device = "nixos-config";
-      fsType = "vboxsf";
+  fileSystems."/boot/efi" =
+    { device = "/dev/disk/by-uuid/1B2F-3D68";
+      fsType = "vfat";
     };
 
-  fileSystems."/media/sf_shared" =
-    { device = "shared";
-      fsType = "vboxsf";
-    };
-
-  swapDevices = [ ];
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/a1acda92-ed2e-4ca6-93fb-dbcc681cca68"; }
+    ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp0s3.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp0s13f0u3u1.useDHCP = lib.mkDefault true;
   # networking.interfaces.vboxnet0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
-  # nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  virtualisation.virtualbox.guest.enable = true;
 }

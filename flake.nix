@@ -11,8 +11,8 @@
 
   outputs = { self, nixpkgs, home-manager, ... }:
     let
-      username = "demo";
-      homeDirectory = "/home/demo";
+      username = "fabian";
+      homeDirectory = "/home/fabian";
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
@@ -23,7 +23,7 @@
     in
     {
       nixosConfigurations = {
-        demo = lib.nixosSystem {
+        fabian = lib.nixosSystem {
           inherit system;
           modules = [
             ./configuration.nix
@@ -32,7 +32,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.demo = {
+              home-manager.users.fabian = {
                 imports = [ ./home.nix ];
               };
             }
