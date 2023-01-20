@@ -184,7 +184,7 @@ in
     fzf
     stylua
     rbw
-    pinentry
+    pinentry-gtk2
     spotify
     spicetify-cli
     sqlite

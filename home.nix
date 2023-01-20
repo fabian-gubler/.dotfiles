@@ -44,9 +44,7 @@
       tv = "nvim -c 'sort' $HOME/nextcloud/todo/todo.txt";
       uv = "nvim -c 'sort' $HOME/nextcloud/todo/uni/uni.txt";
       sc = "cd ~/.dotfiles/scripts/utils/ && exa -a";
-
       ".." = "cd ..";
-      "..." = "cd ...";
 
     };
 
@@ -71,6 +69,7 @@
     initExtra = '' 
 		source ~/.dotfiles/config/zsh/pure_fix
 		source ${pkgs.pure-prompt}/share/zsh/site-functions/prompt_pure_setup
+		PURE_CMD_MAX_EXEC_TIME=99999999999999
 		autoload -U promptinit; promptinit
 		zstyle ':prompt:pure:prompt:*' color "#D8DEE9"
 
