@@ -52,6 +52,30 @@ in
     '';
   };
 
+  # Push nix configuration to Github on Boot / daily
+  systemd.timers."push-nix" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnBootSec = "5m";
+      OnUnitActiveSec = "1d";
+      Unit = "push-nix.service";
+    };
+  };
+
+  systemd.services."push-nix" = {
+    serviceConfig = {
+      Type = "oneshot";
+      User = "${user}";
+    };
+    path = with pkgs; [ git ];
+    script = ''
+      	cd ${homeDirectory}/nixos-config
+      	git add . 
+      	git commit -m 'automated update' --allow-empty
+      	(git push) || exit 0
+    '';
+  };
+
   # Push neovim configuration to Github on Boot / daily
   systemd.timers."push-neovim" = {
     wantedBy = [ "timers.target" ];
