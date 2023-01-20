@@ -12,9 +12,8 @@
   gtk = {
     enable = true;
     theme = {
-      # TODO: Change to Nord
-      name = "Materia-dark";
-      package = pkgs.materia-theme;
+      name = "SolArc-Dark";
+      package = pkgs.solarc-gtk-theme;
     };
   };
 
@@ -59,7 +58,7 @@
     # '';
 
     initExtra = '' 
-		source ~/.dotfiles/config/.archive/zsh/pure_fix
+		source ~/.dotfiles/config/zsh/pure_fix
 		source ${pkgs.pure-prompt}/share/zsh/site-functions/prompt_pure_setup
 		autoload -U promptinit; promptinit
 		zstyle ':prompt:pure:prompt:*' color "#D8DEE9"
@@ -80,35 +79,32 @@
     git = {
       enable = true;
       userEmail = "fabian.gubler@protonmail.com";
-        userName = "Fabian Gubler";
+      userName = "Fabian Gubler";
       extraConfig = {
-      core = {
-      editor = "nvim";
-    };
-    color = {
-      ui = true;
-    };
-    pull = {
-      ff = "only";
-    };
-    init = {
-      defaultBranch = "main";
+        core = {
+          editor = "nvim";
+        };
+        color = {
+          ui = true;
+        };
+        pull = {
+          ff = "only";
+        };
+        init = {
+          defaultBranch = "main";
+        };
+      };
     };
   };
-};
-};
 
-#  programs.mpv = {
-#    enable = true;
-#    scripts = [ pkgs.mpvScripts.mpris ];
-#    config = { };
-# bindings = { };
-#  };
+  #  programs.mpv = {
+  #    enable = true;
+  #    scripts = [ pkgs.mpvScripts.mpris ];
+  #    config = { };
+  # bindings = { };
+  #  };
 
-# GUIDE: Manage Dotfiles 
-# https://rgoulter.com/blog/posts/programming/2022-02-20-using-home-manager-to-manage-symlinks-to-dotfiles.html
+  # GUIDE: Manage Dotfiles 
+  # https://rgoulter.com/blog/posts/programming/2022-02-20-using-home-manager-to-manage-symlinks-to-dotfiles.html
 
-# xdg.configFile."alacritty/alacritty.yml" = {
-#   source = "/home/fabian/.dotfiles/config/alacritty/alacritty.yml";
-# };
 }

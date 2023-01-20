@@ -204,9 +204,7 @@
     pavucontrol
     rofi
     # TODO: setup protonvpn
-    openvpn
-    networkmanager-openvpn
-    gnome.networkmanager-openvpn
+	protonvpn-gui
     blanket
     lazygit
     # TODO: neomutt home-manager declaration
@@ -218,7 +216,7 @@
     spotify
     spicetify-cli
     khal
-    anki
+    anki-bin
     markdown-anki-decks
     khard
     vdirsyncer
