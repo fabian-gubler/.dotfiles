@@ -50,10 +50,12 @@ Builds (based on priority):
 - harsh
 - zsa-wally (depends on udev-rules)
 - fahrplan
-- mpvScripts.{ seek-to, uosc  }
 
-Difficult builds
-- pdf.js (where to put)
+Overlays:
+- spotify: share folder writeable
+
+Package debugging:
+- sioyek blur (hardware, dependency issue?)
 
 ### Personal Services
 service.handlr {

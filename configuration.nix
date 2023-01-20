@@ -1,16 +1,20 @@
 { config, pkgs, lib, ... }:
-
+let
+	user = "fabian";
+in
 {
   imports = [
     ./hardware-configuration.nix
     ./modules/timers.nix
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   nix = {
     package = pkgs.nixUnstable;
-    # settings = {
-    #   experimental-features = [ "nix-command" "flakes" ];
-    # };
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+    };
     gc = {
       automatic = true;
       dates = "weekly";
@@ -81,31 +85,35 @@
   location.latitude = 48.1;
   location.longitude = 9.1;
 
+  xdg.portal.enable = true;
+
   services = {
     touchegg.enable = true;
     gnome.gnome-keyring.enable = true;
     tlp.enable = true;
+    flatpak.enable = true;
 
     unclutter = {
       enable = true;
       timeout = 1;
     };
 
+
     jellyfin = {
       enable = true;
-      user = "fabian";
+      user = "${user}";
       openFirewall = false;
     };
 
 
     sonarr = {
       enable = true;
-      user = "fabian";
+      user = "${user}";
     };
 
     radarr = {
       enable = true;
-      user = "fabian";
+      user = "${user}";
     };
 
     prowlarr.enable = true;
@@ -119,13 +127,13 @@
       fade = true;
     };
 
-#    redshift = {
-#      enable = true;
-#      temperature.day = 6500;
-#      temperature.night = 3500;
-#      brightness.day = "1";
-#      brightness.night = "0.7";
-#    };
+    redshift = {
+      enable = true;
+      temperature.day = 6500;
+      temperature.night = 3500;
+      brightness.day = "1";
+      brightness.night = "0.7";
+    };
 
 
   };
@@ -142,6 +150,7 @@
     PAGER = "less";
     OPENER = "handlr open";
     ANKI_BASE = "\${HOME}/nextcloud/apps/anki-data";
+    QT_SCALE_FACTOR = "1.5";
 
     PATH = [
       "\${XDG_BIN_HOME}"
@@ -150,8 +159,6 @@
     ];
   };
 
-  # List packages installed in system profile. To search, run:
-  # \$ nix search wget
   environment.systemPackages = with pkgs; [
     wget
     neovim
@@ -162,7 +169,7 @@
     arandr
     python
     cargo
-	nodejs
+    nodejs
     lua
     gcc
     gnumake
@@ -170,8 +177,10 @@
     fzf
     stylua
     rbw
+    pinentry
+    spotify
+    spicetify-cli
     sqlite
-    # TODO: onboard configuration
     onboard
     exa
     ripgrep
@@ -203,18 +212,14 @@
     qbittorrent
     pavucontrol
     rofi
-    # TODO: setup protonvpn
-	protonvpn-gui
+    protonvpn-cli
     blanket
     lazygit
-    # TODO: neomutt home-manager declaration
     neomutt
     isync
     notmuch-mutt
     msmtp
     qutebrowser
-    spotify
-    spicetify-cli
     khal
     anki-bin
     markdown-anki-decks
@@ -230,17 +235,19 @@
     dmenu
     gotop
     protonmail-bridge
-    # TODO: Fix text rendering
     sioyek
+    zathura
     pandoc
   ];
 
-  nixpkgs.config.allowUnfree = true;
-#virtualisation.virtualbox = {
-#  host.enable = true;
-#  guest.enable = true;
-#  guest.x11 = true;
-#};
+
+  security.pam.services.startx.enableGnomeKeyring = true;
+
+  virtualisation.virtualbox = {
+    host.enable = true;
+    # guest.enable = true;
+    # guest.x11 = true;
+  };
 
 
   programs = {
@@ -259,7 +266,7 @@
 
   };
 
-  users.users.fabian = {
+  users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" ];
     initialPassword = "password";
@@ -268,8 +275,8 @@
 
   nixpkgs.overlays = [
     (final: prev: {
-      dwm = prev.dwm.overrideAttrs (old: { src = /home/fabian/.dotfiles/config/suckless/dwm; });
-      dmenu = prev.dmenu.overrideAttrs (old: { src = /home/fabian/.dotfiles/config/suckless/dmenu; });
+      dwm = prev.dwm.overrideAttrs (old: { src = /home/${user}/.dotfiles/config/suckless/dwm; });
+      dmenu = prev.dmenu.overrideAttrs (old: { src = /home/${user}/.dotfiles/config/suckless/dmenu; });
     })
   ];
 
@@ -281,7 +288,6 @@
   # https://nixos.wiki/wiki/FAQ#When_do_I_update_stateVersion
   system.stateVersion = "22.11"; # Did you read the comment?
 
-  security.pam.services.startx.enableGnomeKeyring = true;
 
 
 }

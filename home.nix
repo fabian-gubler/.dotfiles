@@ -5,16 +5,22 @@
   programs.home-manager.enable = true;
 
   # Packages that should be installed to the user profile.
-  home.packages = [
-    pkgs.htop
+  home.packages = with pkgs; [
+    nordic
   ];
 
   gtk = {
     enable = true;
     theme = {
-      name = "SolArc-Dark";
-      package = pkgs.solarc-gtk-theme;
+      name = "Nordic";
     };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme = "gnome";
+	style.name = "adwaita-dark";
+	style.package = pkgs.adwaita-qt;
   };
 
   programs.zsh = {
@@ -30,6 +36,7 @@
       top = "gotop -l minimal";
       mutt = "mbsync protonmail && neomutt";
       gpush = "git add . && git commit -m 'manual update' && git push";
+      lg = "lazygit";
 
       t = "todo.sh -d $HOME/nextcloud/todo/config";
       d = "todo.sh -d $HOME/nextcloud/todo/dev/config";
@@ -37,6 +44,10 @@
       tv = "nvim -c 'sort' $HOME/nextcloud/todo/todo.txt";
       uv = "nvim -c 'sort' $HOME/nextcloud/todo/uni/uni.txt";
       sc = "cd ~/.dotfiles/scripts/utils/ && exa -a";
+
+      ".." = "cd ..";
+      "..." = "cd ...";
+
     };
 
     history = {
