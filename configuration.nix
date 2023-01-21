@@ -63,7 +63,7 @@ in
   };
 
   # Use same layout for linux console
-  i18n.consoleUseXkbConfig = true;
+  console.useXkbConfig = true;
 
   # Pipewire
   services = {
@@ -181,7 +181,7 @@ in
     wget
     neovim
     hsetroot
-    xorg.xbacklight
+    brightnessctl
     handlr
     xclip
     arandr
@@ -251,7 +251,6 @@ in
     todo-txt-cli
     clipnotify
     clipmenu
-    volctl
     gotop
     protonmail-bridge
     sioyek

@@ -26,7 +26,6 @@
         devices = [ "nodev" ];
         efiSupport = true;
         useOSProber = true;
-        configurationLimit = 5; # Limit stored system configurations.
       }; 
       timeout = 5; # Work for grub and efi boot, time before auto-boot
     };
