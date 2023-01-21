@@ -86,14 +86,14 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", "-i", dmenumon, "-fn", dmen
 static const char *termcmd[] = { "kitty", NULL };
 
 #include "movestack.c"
+#include <X11/XF86keysym.h>
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("dmenu_run -i")},
 	{ MODKEY,						XK_w,      spawn,          SHCMD("qutebrowser")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
 	{ MODKEY,                       XK_g,      spawn,          SHCMD("sioyek")},
-	{ MODKEY,                       XK_z,      spawn,          SHCMD("blanket")},
-	{ MODKEY,                       XK_l,      spawn,          SHCMD("rofi-rbw")},
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("spotify --force-device-scale-factor=1.5")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},
