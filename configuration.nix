@@ -23,6 +23,17 @@ in
     };
   };
 
+  qt5 = {
+    enable = true;
+    platformTheme = "gnome";
+    style = "adwaita-dark";
+  };
+
+  sound.mediaKeys = {
+    enable = true;
+    volumeStep = 5;
+  };
+
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
@@ -173,6 +184,7 @@ in
     neovim
     hsetroot
     xorg.xbacklight
+    handlr
     xclip
     arandr
     python
@@ -181,7 +193,7 @@ in
     lua
     gcc
     gnumake
-    lf
+			lf
     fzf
     stylua
     rbw
@@ -211,6 +223,7 @@ in
     autorandr
     dunst
     newsboat
+dwm
     yt-dlp
     trash-cli
     mpv
@@ -288,7 +301,7 @@ in
 
   nixpkgs.overlays = [
     (final: prev: {
-      dwm = prev.dwm.overrideAttrs (old: { src = ./config/dmenu; });
+  dwm = prev.dwm.overrideAttrs (old: { src = /home/fabian/nixos-config/config/dwm; });
       dmenu = prev.dmenu.overrideAttrs (old: { src = ./config/dmenu; });
       # slock = prev.slock.overrideAttrs (old: { src = ./config/slock; });
     })

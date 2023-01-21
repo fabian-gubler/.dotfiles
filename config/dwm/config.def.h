@@ -52,7 +52,6 @@ static const Rule rules[] = {
 
 	/* class				instance    title       tags mask   isfloating   monitor    float x,y,w,h       floatborderpx*/
 	{ "Firefox",			NULL,       "Save As",  0,			0,           -1,        50,50,500,500,      0 },
-	{ "Florence",			NULL,		NULL,		0,			1,           -1,        50,50,1000,1000,    0 },
 	{ "Rofi",				NULL,	   	NULL,	  	0,			1,           -1,        50,50,1000,1000,    0 },
 	{ "Blueberry.py",		NULL,	   	NULL,	  	0,			1,           -1,        50,50,1000,1000,    0 },
 };

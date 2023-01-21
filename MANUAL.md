@@ -37,6 +37,7 @@ Nix: Getting Started
 [Nix Pills](https://nixos.org/guides/nix-pills/)
 [Nix Beginner Guide](https://tonyfinn.com/blog/nix-from-first-principles-flake-edition/)
 [Nix Opinionated Guide](https://nix.dev/)
+[Awesome Nix - Curated List](https://github.com/nix-community/awesome-nix)
 
 NixOS
 [NixOS Manual](https://nixos.org/manual/nixos/stable/)
@@ -45,7 +46,7 @@ NixOS
 ## Aside: Contributions
 ### Personal Packaging
 Builds (based on priority): 
-- typora
+- typora (legacy 0.9.98 exists in NUR sepo)
 - pdf-stapler,
 - harsh
 - zsa-wally (depends on udev-rules)
