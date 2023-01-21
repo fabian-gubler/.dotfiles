@@ -22,6 +22,7 @@
     style.name = "adwaita-dark";
     style.package = pkgs.adwaita-qt;
   };
+
   programs.kitty = {
     enable = true;
     theme = "Nord";

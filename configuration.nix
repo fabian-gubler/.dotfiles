@@ -29,6 +29,7 @@ in
     style = "adwaita-dark";
   };
 
+  # DEBUG
   sound.mediaKeys = {
     enable = true;
     volumeStep = 5;
@@ -49,23 +50,20 @@ in
   services.xserver = {
     enable = true;
     layout = "ch";
+
     libinput.enable = true;
     modules = [ pkgs.xf86_input_wacom ];
     wacom.enable = true;
     windowManager.dwm.enable = true;
     displayManager = {
       defaultSession = "none+dwm";
-      # lightdm = {
-      #   enable = true;
-      #   greeters.gtk = {
-      #     enable = true;
-      #     extraConfig = "keyboard=onboard";
-      #   };
-      # };
       gdm.enable = true;
     };
 
   };
+
+  # Use same layout for linux console
+  i18n.consoleUseXkbConfig = true;
 
   # Pipewire
   services = {
@@ -193,7 +191,7 @@ in
     lua
     gcc
     gnumake
-			lf
+    lf
     fzf
     stylua
     rbw
@@ -223,7 +221,7 @@ in
     autorandr
     dunst
     newsboat
-dwm
+    dwm
     yt-dlp
     trash-cli
     mpv
@@ -291,6 +289,14 @@ dwm
 
   };
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      dwm = prev.dwm.overrideAttrs (old: { src = /home/fabian/nixos-config/config/dwm; });
+      dmenu = prev.dmenu.overrideAttrs (old: { src = ./config/dmenu; });
+      # slock = prev.slock.overrideAttrs (old: { src = ./config/slock; });
+    })
+  ];
+
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" "docker" ];
@@ -299,13 +305,6 @@ dwm
   };
 
 
-  nixpkgs.overlays = [
-    (final: prev: {
-  dwm = prev.dwm.overrideAttrs (old: { src = /home/fabian/nixos-config/config/dwm; });
-      dmenu = prev.dmenu.overrideAttrs (old: { src = ./config/dmenu; });
-      # slock = prev.slock.overrideAttrs (old: { src = ./config/slock; });
-    })
-  ];
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
