@@ -23,6 +23,8 @@ in
     };
   };
 
+  # TODO: System-wide GTK Theme
+
   qt5 = {
     enable = true;
     platformTheme = "gnome";
@@ -221,7 +223,6 @@ in
     autorandr
     dunst
     newsboat
-    dwm
     yt-dlp
     trash-cli
     mpv
@@ -232,7 +233,6 @@ in
     pavucontrol
     rofi
     # FIX: protonvpn-cli (ncmli -> ipv6leakprotection)
-    blanket
     lazygit
     neomutt
     isync
@@ -290,9 +290,9 @@ in
 
   nixpkgs.overlays = [
     (final: prev: {
+      # TODO: fix absolute path (not pure)
       dwm = prev.dwm.overrideAttrs (old: { src = /home/fabian/nixos-config/config/dwm; });
       dmenu = prev.dmenu.overrideAttrs (old: { src = ./config/dmenu; });
-      # slock = prev.slock.overrideAttrs (old: { src = ./config/slock; });
     })
   ];
 
