@@ -33,6 +33,7 @@ in
     enable = true;
     layout = "ch";
     libinput.enable = true;
+    modules = [ pkgs.xf86_input_wacom ];
     wacom.enable = true;
     windowManager.dwm.enable = true;
     displayManager = {
@@ -228,30 +229,40 @@ in
     dunst
     newsboat
     trash-cli
-    mpv mpvScripts.mpris
+    mpv
+    mpvScripts.mpris
     playerctl
     # TODO: Declare keybindings in .nix format (e.g. services.actkbd)
     xbindkeys
     qbittorrent
     pavucontrol
     # TODO: Make fully bluetooth client touch compatible -> uninstall blueberry
-    rofi rofi-bluetooth
+    rofi
+    rofi-bluetooth
     # TODO: fix protonvpn-cli (ncmli -> ipv6leakprotection)
     lazygit
-	dmenu
-    neomutt notmuch-mutt isync msmtp
+    dmenu
+    neomutt
+    notmuch-mutt
+    isync
+    msmtp
     qutebrowser
-    khal khard
-    anki-bin markdown-anki-decks
-    vdirsyncer inotify-tools
+    khal
+    khard
+    anki-bin
+    markdown-anki-decks
+    vdirsyncer
+    inotify-tools
     signal-desktop
     sxiv
     xdragon
     todo-txt-cli
-    clipnotify clipmenu
+    clipnotify
+    clipmenu
     gotop
     protonmail-bridge
-    sioyek zathura
+    sioyek
+    zathura
     pandoc
   ];
 
