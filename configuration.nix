@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
+
 let
   user = "fabian";
-  PROJECT_ROOT = builtins.getEnv "PWD";
 in
 {
   imports = [
@@ -32,11 +32,6 @@ in
   };
 
   # DEBUG
-  sound.mediaKeys = {
-    enable = true;
-    volumeStep = 5;
-  };
-
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
@@ -78,6 +73,15 @@ in
       pulse.enable = true;
       jack.enable = true;
     };
+  };
+
+  services.actkbd = {
+    enable = true;
+    bindings = [
+      { keys = [ 113 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/runuser -l YOUR_USER -c 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'"; }
+      { keys = [ 114 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/runuser -l YOUR_USER -c 'wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-'"; }
+      { keys = [ 115 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/runuser -l YOUR_USER -c 'wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+'"; }
+    ];
   };
 
   # Service management
@@ -202,6 +206,7 @@ in
     spicetify-cli
     sqlite
     onboard
+    flameshot
     exa
     ripgrep
     unzip
@@ -212,8 +217,7 @@ in
     foliate
     xournalpp
     file
-    handlr
-    # TODO: handlr xdg-open replacement
+    # TODO: xdg-open declaration
     zsa-udev-rules
     texlive.combined.scheme-basic
     networkmanagerapplet
@@ -232,8 +236,9 @@ in
     qbittorrent
     pavucontrol
     rofi
-	rofi-bluetooth
-    # FIX: protonvpn-cli (ncmli -> ipv6leakprotection)
+    # TODO: Make fully touch compatible -> uninstall blueberry
+    rofi-bluetooth
+    # TODO: fix protonvpn-cli (ncmli -> ipv6leakprotection)
     lazygit
     neomutt
     isync
