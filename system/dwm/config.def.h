@@ -11,7 +11,7 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static int showsystray				= 1;     /* 0 means no systray */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
-static const char *fonts[]          = { "SFMono:size=18" };
+static const char *fonts[]          = { "SFMono:size=12" };
 static const char dmenufont[]       = "SFMono:size=12";
 static char normbgcolor[]           = "#252A34";
 static char normbordercolor[]       = "#444444";
