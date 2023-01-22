@@ -287,7 +287,6 @@ in
 
   nixpkgs.overlays = [
     (final: prev: {
-      # TODO: fix absolute path (not pure)
       dwm = prev.dwm.overrideAttrs (old: { src = ./dwm; });
       dmenu = prev.dmenu.overrideAttrs (old: { src = ./dmenu; });
     })
