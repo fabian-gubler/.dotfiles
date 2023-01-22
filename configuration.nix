@@ -24,7 +24,6 @@ in
   };
 
   # TODO: System-wide GTK Theme
-
   qt5 = {
     enable = true;
     platformTheme = "gnome";
