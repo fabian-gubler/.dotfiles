@@ -24,7 +24,7 @@
     in
     {
       nixosConfigurations = {
-        fabian = lib.nixosSystem {
+        nixos = lib.nixosSystem {
           inherit system;
           modules = [
             ./system
