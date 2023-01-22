@@ -14,7 +14,7 @@ let
     "autorandr" = "${dotDir}/autorandr";
     "touchegg" = "${dotDir}/touchegg";
     "mutt" = "${dotDir}/mutt";
-    "qutebrowser" = "${dotDir}/qutebrowser";
+    "qutebrowser" = ./qutebrowser;
     "mpv" = "${dotDir}/mpv";
     "lf" = "${dotDir}/lf";
     "dunst" = "${dotDir}/dunst";

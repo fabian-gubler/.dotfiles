@@ -299,8 +299,8 @@ in
     (final: prev: {
       # TODO: fix absolute path (not pure)
       dwm = prev.dwm.overrideAttrs (old: {
-        src = ./config/dwm;
-		 src = builtins.path { path = ./.; name = "dwm"; };
+        # src = builtins.path { path = ./.; name = "dwm"; };
+        src = ./dwm;
       });
     })
   ];

@@ -34,7 +34,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.fabian = {
-                imports = [ ./home.nix ];
+                imports = [ ./config/home.nix ];
               };
             }
             hosts.nixosModule
