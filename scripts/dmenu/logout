@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+#
+# Script name: dmlogout
+# Description: Logout, shutdown, reboot or lock screen.
+# Dependencies: dmenu, systemd, slock, notify-send
+# GitLab: https://www.gitlab.com/dwt1/dmscripts
+# License: https://www.gitlab.com/dwt1/dmscripts/LICENSE
+# Contributors: Derek Taylor, 
+#               Simon Ingelsson
+
+# use notify-send if run in dumb term
+OUTPUT="echo"
+if [[ ${TERM} == 'dumb' ]]; then
+    OUTPUT="notify-send"
+fi
+export OUTPUT
+
+# An array of options to choose.
+declare -a options=(
+"Lock"
+"Suspend"
+"Shutdown"
+"Reboot"
+"Monitor"
+)
+
+output(){
+    ${OUTPUT} "dmlogout" "$@"
+}
+
+# Piping the above array into dmenu.
+# We use "printf '%s\n'" to format the array one item to a line.
+choice=$(printf '%s\n' "${options[@]}" | dmenu -i -p 'Shutdown menu:' "${@}" )
+
+
+# What to do when/if we choose one of the options.
+case $choice in
+    'Lock')
+		xset dpms force off
+        slock
+        ;;
+    'Suspend')
+        systemctl suspend
+        ;;
+    'Shutdown')
+        systemctl poweroff
+        ;;
+    'Reboot')
+        systemctl reboot
+        ;;
+	'Monitor')
+		xset dpms force off
+		;;
+	# It is a common practice to use the wildcard asterisk symbol (*) as a final
+    # pattern to define the default case. This pattern will always match.
+    *)
+        exit 0
+    ;;
+esac

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Pull latest hosts file
+docker run --pull always --rm -it -v /etc/hosts:/etc/hosts \
+ghcr.io/stevenblack/hosts:latest updateHostsFile.py --auto \
+--replace --extensions gambling porn
+
+# Append Custom Domains
+# sudo cat /home/fabian/nextcloud/apps/shared/blacklist.txt >> /etc/hosts

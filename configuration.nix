@@ -94,6 +94,23 @@ in
     };
   };
 
+  fonts = {
+    enableDefaultFonts = true;
+    fontconfig = {
+      defaultFonts = {
+        serif = [ "poly" ];
+        sansSerif = [ "work-sans" ];
+        monospace = [ "roboto-mono" ];
+      };
+    };
+  };
+
+  fonts.fonts = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+	roboto-mono
+	work-sans
+	poly
+  ];
 
   services = {
     touchegg.enable = true;
@@ -282,7 +299,6 @@ in
     (final: prev: {
       # TODO: fix absolute path (not pure)
       dwm = prev.dwm.overrideAttrs (old: { src = /home/fabian/nixos-config/config/dwm; });
-      dmenu = prev.dmenu.overrideAttrs (old: { src = ./config/dmenu; });
     })
   ];
 

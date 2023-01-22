@@ -1,4 +1,56 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }:
+let
+  # Attribute set for dotfiles in this repo to link into ~/.config.
+  # The attribute name is for ~/.config/$attrSetName,
+  #  e.g. "alacritty/alacritty.yml" for ~/.config/alacritty/alacritty.yml
+  # The attribute value is the path to the dotfile in this repo.
+  dotdir = "${config.home.homeDirectory}/nixos-config/config";
+
+  configFilesToLink = {
+    "khal" = ./config/khal;
+    "khard" = ./config/khard;
+    "vdirsyncer" = ./config/vdirsyncer;
+    "autorandr" = ./config/autorandr;
+    "touchegg" = ./config/touchegg;
+    "mutt" = ./config/mutt;
+    "qutebrowser" = "${dotdir}/qutebrowser";
+    "mpv" = ./config/mpv;
+    "lf" = ./config/lf;
+    "dunst" = ./config/dunst;
+    "sioyek" = ./config/sioyek;
+    "rofi" = ./config/rofi;
+    # etc.
+  };
+
+  # Attribute set for dotfiles in this repo to link into home directory.
+  # The attribute name is for ~/$attrSetName,
+  #  e.g. ".hgrc" for ~/.hgrc.
+  # The attribute value is the path to the dotfile in this repo.
+  homeFilesToLink = {
+    ".xprofile" = ./config/.xprofile;
+    ".xbindkeysrc" = ./config/.xbindkeysrc;
+    ".mbsyncrc" = ./config/.mbsyncrc;
+    ".tmux.conf" = ./config/tmux.conf;
+    ".newsboat" = ./config/newsboat;
+    # TODO: Declare Apple fonts repos
+    ".local/share/fonts" = ./config/fonts;
+    # etc.
+  };
+
+  # Function to help map attrs for symlinking home.file, xdg.configFile
+  # e.g. from { ".hgrc" = ./hgrc; } to { ".hgrc".source = ./hgrc; }
+  # toSource = configDirName: dotfilesPath: { source = dotfilesPath; };
+  toSource = configDirName: dotfilesPath: { source = dotfilesPath; };
+
+in
+{
+
+  # Symlink files under ~, e.g. ~/.hgrc
+  home.file = pkgs.lib.attrsets.mapAttrs toSource homeFilesToLink;
+
+  # Symlink files under ~/.config, e.g. ~/.config/alacritty/alacritty.yml
+  xdg.configFile = pkgs.lib.attrsets.mapAttrs toSource configFilesToLink;
+
   home.stateVersion = "21.11";
 
   # Let Home Manager install and manage itself.
@@ -41,11 +93,11 @@
         "text/plain" = [ "neovim.desktop" ];
         "application/pdf" = [ "sioyek.desktop" ];
         "text/html" = [ "qutebrowser.desktop" ];
-		"image/jpeg" = [ "sxiv.desktop" ];
-		"image/png" = [ "sxiv.desktop" ];
-		"video/mp4" = [ "mpv.desktop" ];
-		"video/x-matroska" = [ "mpv.desktop" ];
-		"audo/mpeg" = [ "mpv.desktop" ];
+        "image/jpeg" = [ "sxiv.desktop" ];
+        "image/png" = [ "sxiv.desktop" ];
+        "video/mp4" = [ "mpv.desktop" ];
+        "video/x-matroska" = [ "mpv.desktop" ];
+        "audo/mpeg" = [ "mpv.desktop" ];
       };
     };
   };

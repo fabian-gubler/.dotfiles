@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+# Import shared content
+ROFI_DIR=$HOME/.dotfiles/config/rofi/menu/
+theme="$ROFI_DIR/styles/text.rasi"
+source $ROFI_DIR/shared/common.sh
+
+
+# Layout
+list_col='1'
+list_row='3'
+
+# Options
+option_1="	Back"
+option_2="	Chess"
+option_3="	Drunk Pirate"
+# option_4="	Terminal"
+# option_5="	Ebooks"
+# option_6="	Spotify"
+
+# Pass variables to rofi dmenu
+run_rofi() {
+	echo -e "$option_1\n$option_2\n$option_3" | rofi_cmd
+}
+
+# Collections
+# https://www.reddit.com/r/boardgames/comments/fzxaiu/a_working_list_of_free_webbased_standalone_games/
+
+# Actions
+chosen="$(run_rofi)"
+case ${chosen} in
+    $option_1)
+		sleep 0.2
+		$ROFI_DIR/launcher
+        ;;
+    $option_2)
+		qutebrowser https://www.chess.com/analysis &
+        ;;
+    $option_3)
+		qutebrowser https://drunkpirate.co.uk/ &
+        ;;
+  #   $option_4)
+		# kitty &
+  #       ;;
+  #   $option_5)
+		# koodo-reader &
+  #       ;;
+  #   $option_5)
+		# spotify --force-device-scale-factor=1.5 &
+  #       ;;
+esac
+

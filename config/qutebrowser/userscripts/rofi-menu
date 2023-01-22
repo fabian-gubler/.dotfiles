@@ -1,0 +1,106 @@
+#!/bin/sh
+
+# TODO: work with flags -m {mode} -c -l {launcher}
+# TODO: but prev search logic into rofi
+#	up arrow = previous search
+#	if possible -> prevent from selecting first entry
+
+# extension of: https://github.com/qutebrowser/qutebrowser/blob/master/misc/userscripts/qutedmenu
+# dependencies: rofi, sqlite3 
+# usage: spawn --userscript open|open-tab|marks|marks-tab 
+
+# launcher config (remove rofi_args if using dmenu)
+# launcher="rofi -dmenu"
+launcher="rofi -dmenu "
+args+=(-p qutebrowser)
+args+=(-i -l 8)
+args+=(-format s\|f) # only work with rofi
+
+QUTE_DATA_DIR=$HOME/.local/share/qutebrowser
+QUTE_BOOKMARKS_DIR=$HOME/nextcloud/apps/qutebrowser
+
+# save previous entry in clipboard
+if [ "$2" == "copy" ]; then
+	cat $QUTE_DATA_DIR/search-history | tail -1 | xclip -selection c
+	# xdotool type $(cat $QUTE_DATA_DIR/search-history | tail -1)
+fi
+
+# save previous entry in clipboard
+if [ "$2" == "touch" ]; then
+	args+=(-normal-window)
+fi
+
+create_menu() {
+	printf -- '%s\n' "$(
+		sqlite3 -separator ' ' "$QUTE_DATA_DIR/history.sqlite" \
+			'SELECT title, url from CompletionHistory ORDER BY last_atime DESC'
+	)"
+}
+
+create_menu_quickmarks() {
+	# Check quickmarks
+	while read -r mark; do
+		printf -- '%s\n' "$mark"
+	done <"$QUTE_BOOKMARKS_DIR"/bookmarks
+}
+
+# launcher config (remove rofi_args if using dmenu)
+# launcher="rofi -dmenu"
+launcher="rofi -dmenu "
+args+=(-p qutebrowser)
+args+=(-i -l 8)
+args+=(-format s\|f) # only work with rofi
+
+case $1 in
+open | tab)
+	get_history() {
+		create_menu | $launcher "${args[@]}"
+	}
+	;;
+alt_open | tab)
+	get_history() {
+		create_menu | $alt_launcher "${args[@]}"
+	}
+	;;
+marks | marks-tab)
+	get_history() {
+		create_menu_quickmarks | $launcher "${args[@]}"
+	}
+	;;
+esac
+
+# receive and sanitize rofi output
+query=$(get_history)
+query=${query/*http/http}
+
+# separate url and search term
+IFS="|" read -a myarray <<< $query
+url=${myarray[0]}
+term=${myarray[1]}
+
+# if no selection is made, exit (escape pressed, e.g.)
+# [[ -z $query ]] && exit 0
+
+# append search term to history
+if [ -z $term ]; then
+	# printf '%s' "open about:blank" >>"$QUTE_FIFO" || qutebrowser "$url" --target tab-bg
+	exit 0
+else
+	echo $term >> $QUTE_DATA_DIR/search-history
+fi
+
+
+case $1 in
+open)
+	printf '%s' "open $url" >>"$QUTE_FIFO" || qutebrowser "$url" --target tab-bg
+	;;
+tab)
+	printf '%s' "open -t $url" >>"$QUTE_FIFO" || qutebrowser "$url"
+	;;
+marks)
+	printf '%s' "open $url" >>"$QUTE_FIFO" || qutebrowser "$url"
+	;;
+marks-tab)
+	printf '%s' "open -t $url" >>"$QUTE_FIFO" || qutebrowser "$url"
+	;;
+esac

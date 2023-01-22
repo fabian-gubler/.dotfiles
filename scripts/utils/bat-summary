@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# List all battery levels (easily add devices)
+# - Headphones
+# - Trackpad
+# - Laptop
+
+# Features
+# - Sort by most charged
+# - Create watchers to log (show levels even if not connected)
+# - If longer than a day not connected (-> don't show)

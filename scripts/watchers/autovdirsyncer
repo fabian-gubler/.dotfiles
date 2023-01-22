@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# Watch vdirsyncer calendars.
+# Sync on changes and every 5 minutes.
+# Requires: inotify-tools
+
+sync() {
+	vdirsyncer sync --force-delete
+}
+
+if [[ -d ~/nextcloud/.calendars ]]; then
+	echo "Calendar directory exists!" 
+else
+	echo "Error: Calendar directory not found"
+	exit
+fi
+
+while true; do
+	sync
+	inotifywait \
+		--event modify \
+		--event create \
+		--event delete \
+		--timeout 300 \
+		--recursive "$HOME/nextcloud/.calendars/"
+done

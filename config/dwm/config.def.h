@@ -86,11 +86,10 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", "-i", dmenumon, "-fn", dmen
 static const char *termcmd[] = { "kitty", NULL };
 
 #include "movestack.c"
-#include <X11/XF86keysym.h>
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          SHCMD("dmenu_run -i")},
+	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd} },
 	{ MODKEY,						XK_w,      spawn,          SHCMD("qutebrowser")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
 	{ MODKEY,                       XK_g,      spawn,          SHCMD("sioyek")},

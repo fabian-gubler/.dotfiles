@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "set my_mail=$(rbw get bridge --full | tail -1)"
+echo "set my_pass=$(rbw get bridge)"

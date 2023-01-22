@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+## Author  : Aditya Shakya (adi1090x)
+## Github  : @adi1090x
+#
+## Applets : Quick Links
+
+# Import shared content
+ROFI_DIR=$HOME/.dotfiles/config/rofi/menu/
+theme="$ROFI_DIR/styles/text.rasi"
+source $ROFI_DIR/shared/common.sh
+
+# Theme Elements
+prompt='Quick Links'
+
+list_col='2'
+list_row='4'
+
+option_1="	Back"
+option_2="	SBB"
+option_3="	Kindle"
+option_4="	Youtube"
+option_5="	Maps"
+option_6="	Mail"
+option_7="	Teams"
+option_8="	Calendar"
+
+# Pass variables to rofi dmenu
+run_rofi() {
+	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6\n$option_7\n$option_8" | rofi_cmd
+}
+
+# Actions
+chosen="$(run_rofi)"
+case ${chosen} in
+    $option_1)
+		sleep 0.2
+		$ROFI_DIR/launcher
+        ;;
+    $option_2)
+		qutebrowser 'https://www.sbb.ch/' 
+        ;;
+    $option_3)
+		qutebrowser 'https://read.amazon.com/kindle-library' 
+        ;;
+    $option_4)
+		qutebrowser 'https://www.yewtu.be/' 
+        ;;
+    $option_5)
+		qutebrowser 'https://www.google.com/maps' 
+        ;;
+    $option_6)
+		qutebrowser 'https://mail.proton.me' 
+        ;;
+    $option_7)
+		qutebrowser 'https://teams.microsoft.com/' 
+        ;;
+    $option_8)
+		qutebrowser 'https://220624z6bmfrl5nztze.nextcloud.hosting.zone/apps/calendar/timeGridWeek/now' 
+        ;;
+	*)
+		exit
+		;;
+esac

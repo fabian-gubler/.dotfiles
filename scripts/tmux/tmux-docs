@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# create server if not already running
+if ! tmux has-session -t="docs" 2> /dev/null; then
+    tmux new-session -ds "docs"
+	tmux new-window -n mkdocs  -t docs
+	tmux send-keys -t docs:mkdocs "cd $HOME/nextcloud/mcs/ && mkdocs serve" ENTER
+fi
+
+tmux send-keys -t docs:zsh "cd ~/nextcloud/mcs/ && nvim docs/index.md" Enter
+
+tmux switch-client -t docs

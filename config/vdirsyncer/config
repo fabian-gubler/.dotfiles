@@ -1,0 +1,38 @@
+[general]
+# A folder where vdirsyncer can store some metadata about each pair.
+status_path = "~/.vdirsyncer/status/"
+
+# calendars (.ics)
+[pair calendars]
+a = "calendar_local"
+b = "calendar_remote"
+collections = ["from a", "from b"]
+metadata = ["displayname"]
+
+[storage calendar_local]
+type = "filesystem"
+path = "~/nextcloud/.calendars"
+fileext = ".ics"
+
+[storage calendar_remote]
+type = "caldav"
+url.fetch = ["command", "~/.config/vdirsyncer/get-url.sh"]
+username.fetch = ["command", "~/.config/vdirsyncer/get-username.sh"]
+password.fetch = ["command", "rbw", "get", "hosting"]
+
+# contacts (.vcf)
+[pair my_contacts]
+a = "contacts_local"
+b = "contacts_remote"
+collections = ["from a", "from b"]
+
+[storage contacts_local]
+type = "filesystem"
+path = "~/nextcloud/.contacts/"
+fileext = ".vcf"
+
+[storage contacts_remote]
+type = "carddav"
+url.fetch = ["command", "~/.config/vdirsyncer/get-url.sh"]
+username.fetch = ["command", "~/.config/vdirsyncer/get-username.sh"]
+password.fetch = ["command", "rbw", "get", "hosting"]

@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# options do be displayed
+option0="two %"
+option1="10 %"
+option2="twenty %"
+option4="forty %"
+option6="sixty %"
+option8="eighty %"
+option10="hundred %"
+
+# options passed to variable
+options="$option0\n$option1\n$option2\n$option3\n$option4\n$option5"
+
+selected="$(echo -e "$options" | rofi -normal-window -lines 5 -dmenu -p "brightness")"
+case $selected in
+    $option0)
+		bash -c "brightnessctl set 2%";;
+    $option1)
+		bash -c "brightnessctl set 10%";;
+    $option2)
+		bash -c "brightnessctl set 20%";;
+    $option3)
+		bash -c "brightnessctl set 40%";;
+	$option4)
+		bash -c "brightnessctl set 60%";;
+	$option5)
+		bash -c "brightnessctl set 80%";;
+	$option6)
+		bash -c "brightnessctl set 100%";;
+esac

@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+# Import shared content
+ROFI_DIR=$HOME/.dotfiles/config/rofi/menu/
+theme="$ROFI_DIR/styles/text.rasi"
+source $ROFI_DIR/shared/common.sh
+
+
+# Layout
+list_col='1'
+list_row='7'
+
+# Options
+option_1="	Back"
+option_2="	Files"
+option_3="	Browser"
+option_4="	Terminal"
+option_5="	Ebooks"
+option_6="	Spotify"
+option_7="	Games"
+
+# Pass variables to rofi dmenu
+run_rofi() {
+	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6\n$option_7" | rofi_cmd
+}
+
+# Actions
+chosen="$(run_rofi)"
+case ${chosen} in
+    $option_1)
+		sleep 0.2
+		$ROFI_DIR/launcher
+        ;;
+    $option_2)
+		thunar &
+        ;;
+    $option_3)
+		qutebrowser about:blank --target tab-bg &
+        ;;
+    $option_4)
+		kitty &
+        ;;
+    $option_5)
+		foliate &
+        ;;
+    $option_6)
+		spotify --force-device-scale-factor=1.5 &
+        ;;
+    $option_7)
+		sleep 0.2
+		$ROFI_DIR/games
+        ;;
+
+esac
+

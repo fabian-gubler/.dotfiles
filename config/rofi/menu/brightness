@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+
+## Author  : Aditya Shakya (adi1090x)
+## Github  : @adi1090x
+#
+## Applets : Power Menu
+
+# Import Current Theme
+ROFI_DIR=$HOME/.dotfiles/config/rofi/menu/
+theme="$ROFI_DIR/styles/text.rasi"
+
+# Layout
+list_col='4'
+list_row='2'
+
+# Options
+option_1=" Back"
+option_2="Exit"
+option_3="2%"
+option_4="100%"
+option_5="-10%"
+option_6="+10%"
+
+
+# Rofi CMD
+rofi_cmd() {
+	rofi -theme-str "listview {columns: $list_col; lines: $list_row;}" \
+		-theme-str 'window {border: 0px solid; border-color: #FFF; background-color: transparent; location: center; anchor: center; fullscreen: false; width: 600;}' \
+		-theme-str 'element {border: 2px solid; padding: 20px; border-color: #4C566A; margin: 0px;}' \
+		-theme-str 'mainbox {padding: 0px; background: transparent;}' \
+		-theme-str 'element selected.normal {background-color: @background; text-color: #FFFFFF;}' \
+		-theme-str 'textbox-prompt-colon {str: "";}' \
+		-dmenu \
+		-markup-rows \
+		-normal-window \
+		-theme ${theme}
+}
+
+# Pass variables to rofi dmenu
+run_rofi() {
+	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6" | rofi_cmd
+}
+
+# Actions
+chosen="$(run_rofi)"
+case ${chosen} in
+    $option_1)
+		sleep 0.2
+		$ROFI_DIR/settings
+        ;;
+    $option_2)
+		exit
+        ;;
+    $option_3)
+		brightnessctl set 2%
+		$ROFI_DIR/brightness
+        ;;
+    $option_4)
+		brightnessctl set 100%
+		$ROFI_DIR/brightness
+        ;;
+    $option_5)
+		brightnessctl set 10%-
+		$ROFI_DIR/brightness
+        ;;
+    $option_6)
+		brightnessctl set 10%+
+		$ROFI_DIR/brightness
+        ;;
+	*)
+		exit
+		;;
+esac

@@ -1,0 +1,41 @@
+[calendars]
+
+[[pers]]
+path = ~/nextcloud/.calendars/pers
+type = calendar
+color = dark blue
+
+[[uni]]
+path = ~/nextcloud/.calendars/uni
+type = calendar
+color = dark green
+
+[[task]]
+path = ~/nextcloud/.calendars/task
+type = calendar
+color = light red
+
+[[cakeday]]
+path = ~/nextcloud/.contacts/contacts/
+type = birthdays
+color = yellow
+
+[locale]
+timeformat = %H:%M
+dateformat = %d.%m.
+longdateformat = %d.%m.%Y	(%W)
+datetimeformat =  %d.%m. %H:%M
+longdatetimeformat = %d.%m.%Y %H:%M
+
+[default]
+default_calendar = pers
+show_all_days = False
+timedelta = 1d
+
+[view]
+blank_line_before_day = True
+event_view_always_visible = False
+agenda_event_format = {calendar-color}{start-end-time-style} {title}{repeat-symbol}
+
+[sqlite]
+path = ~/.local/share/khal/khal.db

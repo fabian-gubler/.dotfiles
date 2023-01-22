@@ -1,0 +1,50 @@
+### GENERAL
+#                   statement
+auto-reload         yes
+show-keymap-hint    no
+show-title-bar      no
+show-read-feeds     no
+show-read-articles  no
+
+#                   statement
+max-items           20
+keep-articles-days  30
+reload-time         2
+reload-threads      100
+
+#                   statement
+pager				internal
+browser				"qutebrowser"
+
+### UI
+#                   format
+datetime-format     "%d %B"
+feedlist-format     "  %t %?d?- %-65d&? %> %U Available"
+articlelist-format  "%?T?  %-30T ?%-70t %> %D "
+
+### COLORS
+#         region                fore    back      font
+color     listnormal            white   default   dim
+color     listnormal_unread     white   default 
+color     listfocus             white   color67 
+color     listfocus_unread      white   color67 
+color     info                  white   color236
+
+### MACROS
+#         key     action
+macro     f       set browser "firefox"; open-in-browser ; set browser piper
+macro     b       set browser "qutebrowser"; open-in-browser ; set browser pipe
+macro     m       set browser "nohup mpv"; open-in-browser ; set browser pipe
+
+### KEYBINDINGS
+unbind-key  RIGHT
+unbind-key  LEFT
+
+#         key     action
+# bind-key  ENTER   open-in-browser 
+# bind-key  SPACE   macro-prefix
+# bind-key  G       end
+# bind-key  g       home
+bind-key  a       toggle-article-read 
+bind-key  RIGHT   open
+bind-key  LEFT    quit

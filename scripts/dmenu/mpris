@@ -1,0 +1,81 @@
+#!/bin/sh -eu
+# vim:et:ts=4
+#
+# ──────────────────────────────────────────────────
+# Description:
+#     A dmenu script to interact with mpris.
+#
+#     👑 Long live the queen 👑
+#  
+# Dependencies:
+#     - gnu-core-utils
+#     - dmenu
+#     - xclip (optional)
+#     - feh (optional)
+#     - playerctl
+#     - (daemon) playerctld needs to be running to keep track of focus
+# ──────────────────────────────────────────────────
+#
+
+status=$(
+    playerctl metadata --format \
+"{{status}} ({{playerName}})
+    TITLE:     {{title}}
+   ARTIST:     {{artist}}
+    ALBUM:     {{album}}
+     YEAR:     {{xesam:contentCreated}}
+    TRACK:     {{xesam:trackNumber}}
+ POSITION:     {{duration(position)}}/{{duration(mpris:length)}}
+   VOLUME:     {{volume}}
+   ARTURL:     {{mpris:artUrl}}
+   LYRICS:     {{xesam:asText}}" \
+|| printf 'No players found')
+
+sel=$(printf \
+'; [ play-pause ]
+: [  pause all ]
+> [    next    ]
+< [    prev    ]
+\ [    stop    ]
+/ [   volume   ]
+* [  open uri  ]
+. [ focus next ]
+, [ focus prev ]
+————————————————
+%s' "$status" | dmenu -i -l -1 -p '👑 MPRIS menu 👑')
+
+install_dir=$HOME/.dotfiles/scripts/dmenu/
+
+case "$sel" in
+    ';'*) playerctl play-pause ;;
+    ':'*) playerctl -a pause ;;
+    '>'*) playerctl next ;;
+    '<'*) playerctl previous ;;
+    '\'*) playerctl stop ;;
+
+    # Volume
+    '/'*)
+        volume=$(printf '' | dmenu -i -l 0 -p '🔊 enter target volume (0.0 - 1.0) 🔊')
+        playerctl volume "$volume"
+        ;;
+
+    # Open uri
+    '*'*)
+        uri=$(printf '' | dmenu -i -l 0 -p '🔗 Enter URI to open 🔗')
+        playerctl open "$uri"
+        ;;
+
+    # Shift focus
+    '.'*) 
+        playerctld shift 
+        $install_dir/mpris
+        ;;
+    ','*) 
+        playerctld unshift 
+        $install_dir/mpris
+        ;;
+
+    # In case someone asks you the name of a song :D
+    *)
+        echo "$sel" | xclip -selection clipboard ;;
+esac

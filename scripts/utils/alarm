@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# flags
+while getopts ":t:m:" OPTION; do
+  case "$OPTION" in
+    t)
+	  time=${OPTARG}
+      ;;
+    m)
+	  message=${OPTARG}
+      ;;
+    ?)
+      echo "script usage: $(basename \$0) [-t] [-m]" >&2
+      exit 1
+      ;;
+  esac
+done
+shift $((OPTIND-1))
+
+
+# notification
+at $time << ENDMARKER
+	dunstify "Alarm: ${message}" 
+	dunstctl set-paused false
+ENDMARKER
+
+# do not disturb
+while true; do
+    read -p "Disable notifications? (y/n) " yn
+    case $yn in
+        [Yy]* ) dunstctl set-paused true; break;;
+        [Nn]* ) dunstctl set-paused false; break;;
+        * ) echo "Please answer yes or no. ";;
+    esac
+done

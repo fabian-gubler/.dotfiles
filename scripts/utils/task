@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# NOTE: Could think about rewriting it in python
+	# NOTE: Write software tests
+
+# TODO: Automatic Yaml Snippet Mode
+	#  Yaml Snippet (Name, ID, Priority etc.)
+	# 	- Title, Priority -> Shown in todo.txt
+	# 	- ID -> Used for filtering & title
+	# 	- Name -> Tmux Window (Could also be the title)
+
+# TODO: Better ID's like in khard
+# implementation: https://github.com/lucc/khard/blob/develop/khard/address_book.py#L85
+	# as short as possible
+	# no duplicates
+
+# TODO: Parse arguments
+	# error message when wrong argument
+	# task <new>
+	# task <open> (default action)
+	# task <delete> (optional: id)
+		# -> if no id is given, opens fzf menu with a list
+
+
+# Variables
+taskdir=$HOME/nextcloud/todo/tasks
+
+# generate id
+id=$(openssl rand -base64 2)
+file=$taskdir/$id
+
+boiler="---
+\nid:
+\n---"
+
+if [[ $1 == "new" ]]; then
+	touch $file
+	echo -e $boiler >> $file
+	$EDITOR -c "set filetype=markdown" $file
+	exit
+else
+	$EDITOR -c "set filetype=markdown" $taskdir/$1
+fi
+

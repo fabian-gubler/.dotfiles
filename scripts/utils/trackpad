@@ -1,0 +1,16 @@
+#!/bin/bash
+
+powerdir="/sys/class/power_supply/"
+bt_dev="hid-a8:91:3d:e6:a7:c4-battery"
+cable_dev="hid-CC2102302PKJ2Y1A5-battery"
+
+if [[ -d $powerdir/$bt_dev ]]; then
+	bat=$(cat $powerdir/$bt_dev/capacity)
+elif [[ -d $powerdir/$cable_dev ]]; then 
+	bat=$(cat $powerdir/$cable_dev/capacity)
+else
+	echo "Error: Trackpad not connected"
+	exit
+fi
+
+echo "$bat%"

@@ -1,0 +1,13 @@
+@import "../themes/onedarker.rasi"
+
+configuration {
+  /* single click */
+  hover-select: true;
+  me-select-entry: "";
+  me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ];
+    show-icons:                 false;
+}
+
+* {
+    font: "SF Mono 20";
+}

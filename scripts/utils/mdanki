@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# NOTES:
+# Changing Content	-> Overrides Cards
+# Changing Title	-> Creates new Card
+
+# TODO:
+# 1. Get Current Path
+# 2. Manipulate to know which subject
+# 3. Evoke command on edit in vim
+# 4. Fallback -> Select Menu
+
+subject=$1
+
+DIRS="lectures out --sync --delete"
+ARGS="--sync --delete --prefix"
+HOMEDIR=$HOME/nextcloud/mcs/
+DOCSDIR=$HOMEDIR/docs/$subject/
+
+
+sync() {
+	cd $DOCSDIR
+	mdankideck $DIRS $ARGS \"$subject::\"
+	# dunstify "Recompile successful"
+}
+
+
+# while true; do
+# 	sync
+# 	inotifywait \
+# 		--event modify \
+# 		--event create \
+# 		--event delete \
+# 		--timeout 300 \
+# 		--recursive "$DOCSDIR"
+# done
+
+sync

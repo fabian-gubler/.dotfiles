@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# retrieve id
+if [[ -z $1 ]]; then
+	echo "Please enter id:"
+	read id
+else
+	id=$1
+fi
+
+query="id: $id"
+filename=$(grep -R -l --include="*.md" "$query" \
+	~/nextcloud/todo) 
+
+if [[ $filename == "" ]]; then
+	tmux display "Error: ID not found"
+	exit 1
+fi
+
+session=$(tmux display-message -p '#S')
+tmux neww -dn $id # -dn -t $id
+tmux send-keys -t $session:$id \
+	"nvim $filename" Enter
+tmux switch-client -t $session:$id

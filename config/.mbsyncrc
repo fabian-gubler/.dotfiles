@@ -1,0 +1,25 @@
+IMAPAccount protonmail
+Host 127.0.0.1
+Port 1143
+UserCmd "rbw get bridge --full | tail -1"
+PassCmd "rbw get bridge"
+SSLType STARTTLS
+CertificateFile ~/.config/protonmail/bridge/cert.pem
+
+IMAPStore remote
+Account protonmail
+
+MaildirStore local
+Path ~/.mail/
+Inbox ~/.mail/INBOX/
+
+Channel inbox
+Far :remote:
+Near :local:
+Patterns * 
+Create Both
+Expunge Both
+SyncState *
+
+Group protonmail
+Channel inbox

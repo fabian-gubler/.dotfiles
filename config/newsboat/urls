@@ -1,0 +1,51 @@
+### Try to add
+# https://vitalik.ca/, sam altman
+
+### YOUTUBE
+"query:YouTube Subscriptions:tags # \"youtube\""
+
+# Interesting:
+# - Just Murphy
+# - The Defiant
+# - Coffeezilla
+
+# Linux / Vim
+https://www.youtube.com/feeds/videos.xml?channel_id=UC8ENHE5xdFSwx71u3fDH5Xw "!" "youtube"    # The Primeagen
+https://www.youtube.com/feeds/videos.xml?channel_id=UCd3dNckv1Za2coSaHGHl5aA "!" "youtube"    # TJ Devries
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsnGwSIHyoYN0kiINAGUKxg "!" "youtube"    # Wolfgangs Channel
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "!" "youtube"    # Luke Smith
+
+# Technology
+https://www.youtube.com/feeds/videos.xml?channel_id=UC4NNPgQ9sOkBjw6GlkgCylg "!" "youtube"    # Ben Vallack
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPoezykLs9EqgamOA "!" "youtube"    # Fireship
+
+# Science
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q "!" "youtube"    # Kurzgesagt
+https://www.youtube.com/feeds/videos.xml?channel_id=UC4QZ_LsYcvcq7qOsOhpAX4A "!" "youtube"    # Cold Fusion
+https://www.youtube.com/feeds/videos.xml?channel_id=UCRcgy6GzDeccI7dkbbBna3Q "!" "youtube"    # Lemmino
+
+# Entertainment 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCbphDfwSJmxk1Ny_3Oicrng "!" "youtube"    # Storytellers
+https://www.youtube.com/feeds/videos.xml?channel_id=UC7Ucs42FZy3uYzjrqzOIHsw "!" "youtube"    # EmpLemon
+https://www.youtube.com/feeds/videos.xml?channel_id=UCYGDiVemmhY_Q1M-hKp4fvw "!" "youtube"    # Big Boss
+https://www.youtube.com/feeds/videos.xml?channel_id=UCR1D15p_vdP3HkrH8wgjQRw "!" "youtube"    # Internet Historian
+https://www.youtube.com/feeds/videos.xml?channel_id=UC8Q7XEy86Q7T-3kNpNjYgwA "!" "youtube"    # Incognito Mode
+https://www.youtube.com/feeds/videos.xml?channel_id=UC-lHJZR3Gqxm24_Vd_AJ5Yw "!" "youtube"    # PewdiePie
+https://www.youtube.com/feeds/videos.xml?channel_id=UC-AQKm7HUNMmxjdS371MSwg "!" "youtube"    # Channel 5
+https://www.youtube.com/feeds/videos.xml?channel_id=UCGSGPehp0RWfca-kENgBJ9Q "!" "youtube"    # JrEg
+
+### ARCHIVED
+https://www.youtube.com/feeds/videos.xml?channel_id=UCmFeOdJI3IXgTBDzqBLD8qg "!" "archived"    # Moon
+https://www.youtube.com/feeds/videos.xml?channel_id=UCgNg3vwj3xt7QOrcIDaHdFg "!" "archived"    # Polymatter
+https://www.youtube.com/feeds/videos.xml?channel_id=UC-7nELDbJEPF3muAzSeT74g "!" "archived"    # Disrupt
+https://www.youtube.com/feeds/videos.xml?channel_id=UCYwVxWpjeKFWwu8TML-Te9A "!" "archived"    # Criminal Psychology
+https://www.youtube.com/feeds/videos.xml?channel_id=UC7yZ6keOGsvERMp2HaEbbXQ "!" "archived"    # Devas Life
+https://www.youtube.com/feeds/videos.xml?channel_id=UCS97tchJDq17Qms3cux8wcA "!" "archived"    # Chris at Machine
+
+### BLOGS
+https://lukesmith.xyz/rss.xml 
+http://karpathy.github.io/feed.xml
+https://drewdevault.com/blog/index.xml
+https://lexfridman.com/feed/podcast/
+https://feeds.megaphone.fm/darknetdiaries
+
