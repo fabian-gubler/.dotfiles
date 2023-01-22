@@ -97,7 +97,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("spotify --force-device-scale-factor=1.5")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},
-	{ MODKEY,                       XK_b,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/bluetooth")},
+	{ MODKEY,                       XK_b,      spawn,          SHCMD("rofi-bluetooth")},
 	{ MODKEY|ControlMask,           XK_y,      spawn,          SHCMD("autorandr --load lap")},
 	{ MODKEY|ShiftMask|ControlMask, XK_y,      spawn,          SHCMD("autorandr --load mon")},
 	{ ShiftMask,					XK_Return, spawn,          SHCMD("dunstctl close-all")},

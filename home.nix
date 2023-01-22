@@ -125,7 +125,7 @@
 
     history = {
       size = 10000;
-      path = "/home/fabian/zsh/history";
+      path = "/home/fabian/.config/zsh/history";
     };
 
     zplug = {

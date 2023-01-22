@@ -23,6 +23,25 @@ in
     };
   };
 
+  # Set your time zone and locals
+  time.timeZone = "Europe/Zurich";
+  location.latitude = 48.1;
+  location.longitude = 9.1;
+
+  # Display Server
+  services.xserver = {
+    enable = true;
+    layout = "ch";
+    libinput.enable = true;
+    wacom.enable = true;
+    windowManager.dwm.enable = true;
+    displayManager = {
+      defaultSession = "none+dwm";
+      gdm.enable = true;
+    };
+
+  };
+
   # TODO: System-wide GTK Theme
   qt5 = {
     enable = true;
@@ -30,7 +49,6 @@ in
     style = "adwaita-dark";
   };
 
-  # DEBUG
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
@@ -42,23 +60,7 @@ in
     };
   };
 
-  # Display Server
-  services.xserver = {
-    enable = true;
-    layout = "ch";
-
-    libinput.enable = true;
-    modules = [ pkgs.xf86_input_wacom ];
-    wacom.enable = true;
-    windowManager.dwm.enable = true;
-    displayManager = {
-      defaultSession = "none+dwm";
-      gdm.enable = true;
-    };
-
-  };
-
-  # Use same layout for linux console
+  # Use same keyboard layout for tty
   console.useXkbConfig = true;
 
   # Pipewire
@@ -92,19 +94,11 @@ in
     };
   };
 
-  # Set your time zone.
-  time.timeZone = "Europe/Zurich";
-
-  location.latitude = 48.1;
-  location.longitude = 9.1;
-
-  xdg.portal.enable = true;
 
   services = {
     touchegg.enable = true;
     gnome.gnome-keyring.enable = true;
     tlp.enable = true;
-    flatpak.enable = true;
 
     unclutter = {
       enable = true;
@@ -224,14 +218,14 @@ in
     xbindkeys
     qbittorrent
     pavucontrol
+    # TODO: Make fully bluetooth client touch compatible -> uninstall blueberry
     rofi
-    # TODO: Make fully touch compatible -> uninstall blueberry
     rofi-bluetooth
     # TODO: fix protonvpn-cli (ncmli -> ipv6leakprotection)
     lazygit
     neomutt
-    isync
     notmuch-mutt
+    isync
     msmtp
     qutebrowser
     khal
@@ -239,6 +233,7 @@ in
     markdown-anki-decks
     khard
     vdirsyncer
+    inotify-tools
     signal-desktop
     dmenu
     sxiv
@@ -270,16 +265,16 @@ in
     tmux.enable = true;
     slock.enable = true;
     seahorse.enable = true;
+    java.enable = true;
 
     firefox = {
       enable = true;
-      # Preferences to set from about:config
-      preferences = { };
+      # TODO: Debug 
+      preferences = {
+        "font.size.systemFontScale" = 130;
+      };
     };
 
-    java = {
-      enable = true;
-    };
 
   };
 
