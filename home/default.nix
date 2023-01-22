@@ -5,31 +5,30 @@ let
   # i believe only qutebrowser has an issue with read permissions
   # fint bookmarks fix
 
-  dotDir = "${config.home.homeDirectory}/.dotfiles/config";
+  dotDir = "${config.home.homeDirectory}/.dotfiles/home";
 
   configFilesToLink = {
-    "khal" = "${dotDir}/khal";
-    "khard" = "${dotDir}/khard";
-    "vdirsyncer" = "${dotDir}/vdirsyncer";
-    "autorandr" = "${dotDir}/autorandr";
-    "touchegg" = "${dotDir}/touchegg";
-    "mutt" = "${dotDir}/mutt";
+    "khal" = ./khal;
+    "khard" = ./khard;
+    "vdirsyncer" = ./vdirsyncer;
+    "autorandr" = ./autorandr;
+    "touchegg" = ./touchegg;
+    "mutt" = ./mutt;
     "qutebrowser" = ./qutebrowser;
-    "mpv" = "${dotDir}/mpv";
-    "lf" = "${dotDir}/lf";
-    "dunst" = "${dotDir}/dunst";
-    "sioyek" = "${dotDir}/sioyek";
-    "rofi" = "${dotDir}/rofi";
+    "mpv" = ./mpv;
+    "lf" = ./lf;
+    "dunst" = ./dunst;
+    "sioyek" = ./sioyek;
+    "rofi" = ./rofi;
   };
 
   homeFilesToLink = {
-    ".xprofile" = "${dotDir}/.xprofile";
-    ".xbindkeysrc" = "${dotDir}/.xbindkeysrc";
-    ".mbsyncrc" = "${dotDir}/.mbsyncrc";
-    ".tmux.conf" = "${dotDir}/tmux.conf";
-    ".newsboat" = "${dotDir}/newsboat";
-    # TODO: Declare Apple fonts repos
-    ".local/share/fonts" = "${dotDir}/fonts";
+    ".xprofile" = ./.xprofile;
+    ".xbindkeysrc" = ./.xbindkeysrc;
+    ".mbsyncrc" = ./.mbsyncrc;
+    ".tmux.conf" = ./tmux.conf;
+    ".newsboat" = ./newsboat;
+    ".local/share/fonts" = ./fonts;
   };
 
   # Function to help map attrs for symlinking home.file, xdg.configFile

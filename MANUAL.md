@@ -51,6 +51,7 @@ Builds (based on priority):
 - harsh
 - zsa-wally (depends on udev-rules)
 - fahrplan
+- san francisco font
 
 Overlays:
 - spotify: share folder writeable
