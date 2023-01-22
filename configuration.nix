@@ -107,9 +107,9 @@ in
 
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
-	roboto-mono
-	work-sans
-	poly
+    roboto-mono
+    work-sans
+    poly
   ];
 
   services = {
@@ -298,7 +298,10 @@ in
   nixpkgs.overlays = [
     (final: prev: {
       # TODO: fix absolute path (not pure)
-      dwm = prev.dwm.overrideAttrs (old: { src = /home/fabian/nixos-config/config/dwm; });
+      dwm = prev.dwm.overrideAttrs (old: {
+        src = ./config/dwm;
+		 src = builtins.path { path = ./.; name = "dwm"; };
+      });
     })
   ];
 

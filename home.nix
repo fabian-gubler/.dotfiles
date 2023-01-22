@@ -1,51 +1,44 @@
 { config, pkgs, ... }:
 let
-  # Attribute set for dotfiles in this repo to link into ~/.config.
-  # The attribute name is for ~/.config/$attrSetName,
-  #  e.g. "alacritty/alacritty.yml" for ~/.config/alacritty/alacritty.yml
-  # The attribute value is the path to the dotfile in this repo.
-  dotdir = "${config.home.homeDirectory}/nixos-config/config";
+  # TODO: Make pure (currently absolute path)
+  # fix: declarative qutebrowser through home-manager
+  # i believe only qutebrowser has an issue with read permissions
+  # fint bookmarks fix
+
+  dotDir = "${config.home.homeDirectory}/.dotfiles/config";
 
   configFilesToLink = {
-    "khal" = ./config/khal;
-    "khard" = ./config/khard;
-    "vdirsyncer" = ./config/vdirsyncer;
-    "autorandr" = ./config/autorandr;
-    "touchegg" = ./config/touchegg;
-    "mutt" = ./config/mutt;
-    "qutebrowser" = "${dotdir}/qutebrowser";
-    "mpv" = ./config/mpv;
-    "lf" = ./config/lf;
-    "dunst" = ./config/dunst;
-    "sioyek" = ./config/sioyek;
-    "rofi" = ./config/rofi;
-    # etc.
+    "khal" = "${dotDir}/khal";
+    "khard" = "${dotDir}/khard";
+    "vdirsyncer" = "${dotDir}/vdirsyncer";
+    "autorandr" = "${dotDir}/autorandr";
+    "touchegg" = "${dotDir}/touchegg";
+    "mutt" = "${dotDir}/mutt";
+    "qutebrowser" = "${dotDir}/qutebrowser";
+    "mpv" = "${dotDir}/mpv";
+    "lf" = "${dotDir}/lf";
+    "dunst" = "${dotDir}/dunst";
+    "sioyek" = "${dotDir}/sioyek";
+    "rofi" = "${dotDir}/rofi";
   };
 
-  # Attribute set for dotfiles in this repo to link into home directory.
-  # The attribute name is for ~/$attrSetName,
-  #  e.g. ".hgrc" for ~/.hgrc.
-  # The attribute value is the path to the dotfile in this repo.
   homeFilesToLink = {
-    ".xprofile" = ./config/.xprofile;
-    ".xbindkeysrc" = ./config/.xbindkeysrc;
-    ".mbsyncrc" = ./config/.mbsyncrc;
-    ".tmux.conf" = ./config/tmux.conf;
-    ".newsboat" = ./config/newsboat;
+    ".xprofile" = "${dotDir}/.xprofile";
+    ".xbindkeysrc" = "${dotDir}/.xbindkeysrc";
+    ".mbsyncrc" = "${dotDir}/.mbsyncrc";
+    ".tmux.conf" = "${dotDir}/tmux.conf";
+    ".newsboat" = "${dotDir}/newsboat";
     # TODO: Declare Apple fonts repos
-    ".local/share/fonts" = ./config/fonts;
-    # etc.
+    ".local/share/fonts" = "${dotDir}/fonts";
   };
 
   # Function to help map attrs for symlinking home.file, xdg.configFile
-  # e.g. from { ".hgrc" = ./hgrc; } to { ".hgrc".source = ./hgrc; }
-  # toSource = configDirName: dotfilesPath: { source = dotfilesPath; };
   toSource = configDirName: dotfilesPath: { source = dotfilesPath; };
 
 in
 {
 
-  # Symlink files under ~, e.g. ~/.hgrc
+  # Symlink files under ~, e.g. ~/.xprofile
   home.file = pkgs.lib.attrsets.mapAttrs toSource homeFilesToLink;
 
   # Symlink files under ~/.config, e.g. ~/.config/alacritty/alacritty.yml
@@ -189,9 +182,10 @@ in
       ];
     };
 
+# TODO: prompt_fix impure
     initExtra = '' 
 		source ${pkgs.pure-prompt}/share/zsh/site-functions/prompt_pure_setup
-		source ~/nixos-config/config/misc/prompt_fix
+		source ~/.dotfiles/config/misc/prompt_fix
 		PURE_CMD_MAX_EXEC_TIME=99999999999999
 		zstyle ':prompt:pure:prompt:*' color "#D8DEE9"
 

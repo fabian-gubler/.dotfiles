@@ -52,7 +52,6 @@ static const Rule rules[] = {
 
 	/* class				instance    title       tags mask   isfloating   monitor    float x,y,w,h       floatborderpx*/
 	{ "Firefox",			NULL,       "Save As",  0,			0,           -1,        50,50,500,500,      0 },
-	{ "Florence",			NULL,		NULL,		0,			1,           -1,        50,50,1000,1000,    0 },
 	{ "Rofi",				NULL,	   	NULL,	  	0,			1,           -1,        50,50,1000,1000,    0 },
 	{ "Blueberry.py",		NULL,	   	NULL,	  	0,			1,           -1,        50,50,1000,1000,    0 },
 };
@@ -87,18 +86,17 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", "-i", dmenumon, "-fn", dmen
 static const char *termcmd[] = { "kitty", NULL };
 
 #include "movestack.c"
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          SHCMD("dmenu_run -i")},
+	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd} },
 	{ MODKEY,						XK_w,      spawn,          SHCMD("qutebrowser")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
 	{ MODKEY,                       XK_g,      spawn,          SHCMD("sioyek")},
-	{ MODKEY,                       XK_z,      spawn,          SHCMD("blanket")},
-	{ MODKEY,                       XK_l,      spawn,          SHCMD("rofi-rbw")},
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("spotify --force-device-scale-factor=1.5")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},
-	{ MODKEY,                       XK_b,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/bluetooth")},
+	{ MODKEY,                       XK_b,      spawn,          SHCMD("rofi-bluetooth")},
 	{ MODKEY|ControlMask,           XK_y,      spawn,          SHCMD("autorandr --load lap")},
 	{ MODKEY|ShiftMask|ControlMask, XK_y,      spawn,          SHCMD("autorandr --load mon")},
 	{ ShiftMask,					XK_Return, spawn,          SHCMD("dunstctl close-all")},
