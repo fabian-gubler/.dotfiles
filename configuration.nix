@@ -232,6 +232,7 @@ in
     qbittorrent
     pavucontrol
     rofi
+	rofi-bluetooth
     # FIX: protonvpn-cli (ncmli -> ipv6leakprotection)
     lazygit
     neomutt
