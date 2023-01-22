@@ -27,14 +27,14 @@
         fabian = lib.nixosSystem {
           inherit system;
           modules = [
-            ./configuration.nix
+            ./system
 
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.fabian = {
-                imports = [ ./home ];
+                imports = [ ./config ];
               };
             }
             hosts.nixosModule

@@ -6,7 +6,7 @@ in
 {
   imports = [
     ./hardware-configuration.nix
-    ./modules/timers.nix
+    ./timers.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -252,7 +252,6 @@ in
     vdirsyncer
     inotify-tools
     signal-desktop
-    dmenu
     sxiv
     xdragon
     todo-txt-cli
@@ -298,10 +297,8 @@ in
   nixpkgs.overlays = [
     (final: prev: {
       # TODO: fix absolute path (not pure)
-      dwm = prev.dwm.overrideAttrs (old: {
-        # src = builtins.path { path = ./.; name = "dwm"; };
-        src = ./dwm;
-      });
+      dwm = prev.dwm.overrideAttrs (old: { src = ./dwm; });
+      dmenu = prev.dmenu.overrideAttrs (old: { src = ./dmenu; });
     })
   ];
 
