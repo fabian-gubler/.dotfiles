@@ -1,6 +1,75 @@
 { pkgs, ... }: {
 
   environment = {
+    systemPackages = with pkgs;
+      [ python cargo nodejs lua gcc gnumake ] ++
+      [ rbw pinentry-gtk2 ] ++
+      [ spotify spicetify-cli ] ++
+      [ zip unzip unrar ] ++
+      [ mpv mpvScripts.mpris ] ++
+      [ neomutt notmuch-mutt isync msmtp ] ++
+      [ khal khard vdirsyncer ] ++
+      [ rofi-bluetooth rofi ] ++
+      [ anki-bin markdown-anki-decks ] ++
+      [
+        wget
+        # TODO: try to replace pactl with wpctl
+        pulseaudio
+        pavucontrol
+        neovim
+        hsetroot
+        brightnessctl
+        handlr
+        xclip
+        xbindkeys
+        arandr
+        lf
+        fzf
+        stylua
+        touchegg
+        sqlite
+        onboard
+        flameshot
+        blanket
+        exa
+        ripgrep
+        gimp
+        chromium
+        xfce.thunar
+        foliate
+        xournalpp
+        file
+        # TODO: xdg-open declaration
+        zsa-udev-rules
+        texlive.combined.scheme-basic
+        networkmanagerapplet
+        blueberry
+        nextcloud-client
+        autorandr
+        dunst
+        newsboat
+        trash-cli
+        playerctl
+        # TODO: Declare keybindings in .nix format (e.g. services.actkbd)
+        qbittorrent
+        # TODO: fix protonvpn-cli (ncmli -> ipv6leakprotection)
+        lazygit
+        dmenu
+        qutebrowser
+        inotify-tools
+        signal-desktop
+        sxiv
+        xdragon
+        todo-txt-cli
+        clipnotify
+        clipmenu
+        gotop
+        protonmail-bridge
+        sioyek
+        zathura
+        pandoc
+      ];
+
     sessionVariables = rec {
       XDG_CACHE_HOME = "\${HOME}/.cache";
       XDG_CONFIG_HOME = "\${HOME}/.config";
@@ -22,91 +91,5 @@
       ];
     };
 
-    systemPackages = with pkgs; [
-      alacritty
-      wget
-      # TODO: try to replace pactl with wpctl
-      pulseaudio
-      neovim
-      hsetroot
-      brightnessctl
-      handlr
-      xclip
-      arandr
-      python
-      cargo
-      nodejs
-      lua
-      gcc
-      gnumake
-      lf
-      fzf
-      stylua
-      touchegg
-      rbw
-      pinentry-gtk2
-      spotify
-      spicetify-cli
-      sqlite
-      onboard
-      flameshot
-      blanket
-      exa
-      ripgrep
-      zip
-      unzip
-      unrar
-      gimp
-      chromium
-      xfce.thunar
-      foliate
-      xournalpp
-      file
-      # TODO: xdg-open declaration
-      zsa-udev-rules
-      texlive.combined.scheme-basic
-      networkmanagerapplet
-      blueberry
-      nextcloud-client
-      autorandr
-      dunst
-      newsboat
-      trash-cli
-      mpv
-      mpvScripts.mpris
-      playerctl
-      # TODO: Declare keybindings in .nix format (e.g. services.actkbd)
-      xbindkeys
-      qbittorrent
-      pavucontrol
-      # TODO: Make fully bluetooth client touch compatible -> uninstall blueberry
-      rofi
-      rofi-bluetooth
-      # TODO: fix protonvpn-cli (ncmli -> ipv6leakprotection)
-      lazygit
-      dmenu
-      neomutt
-      notmuch-mutt
-      isync
-      msmtp
-      qutebrowser
-      khal
-      khard
-      anki-bin
-      markdown-anki-decks
-      vdirsyncer
-      inotify-tools
-      signal-desktop
-      sxiv
-      xdragon
-      todo-txt-cli
-      clipnotify
-      clipmenu
-      gotop
-      protonmail-bridge
-      sioyek
-      zathura
-      pandoc
-    ];
   };
 }
