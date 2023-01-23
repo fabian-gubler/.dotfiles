@@ -195,8 +195,10 @@ in
     sqlite
     onboard
     flameshot
+	blanket
     exa
     ripgrep
+	zip
     unzip
     unrar
     gimp
