@@ -18,6 +18,7 @@ Forget about flakes, overlays, home-manager for now.
 # Learning Path (Next steps)
 ## Learn Language
 [Why Functional Programming Language](https://blog.stimsina.com/post/functional-programming-is-the-future)
+[Zero to Nix](https://zero-to-nix.com/)
 [Nix Tour](https://nixcloud.io/tour/?id=1) // until part 22 at most
 [Nix Language Manual](https://nixos.org/manual/nix/stable/language/index.html#nix-language) // Chapter 5
 [Nix Language Commentary Video](https://yewtu.be/watch?v=cyPdh6gu2sw)

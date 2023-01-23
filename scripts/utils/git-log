@@ -1,3 +1,3 @@
-#! /bin/bash
+#! /bin/sh
 
 git log -p $@ | nvim - -R -c 'set foldmethod=syntax' -c 'set foldenable'

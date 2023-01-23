@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 powerdir="/sys/class/power_supply/"
 bt_dev="hid-a8:91:3d:e6:a7:c4-battery"

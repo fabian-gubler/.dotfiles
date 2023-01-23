@@ -7,7 +7,7 @@
     [ python cargo nodejs lua gcc gnumake sqlite ] ++			# Programming Languages
     [ onboard zsa-udev-rules ] ++								# Keyboard
     [ newsboat todo-txt-cli ] ++								# Productivity
-    [ hsetroot handlr xbindkeys ] ++							# Xorg
+    [ hsetroot handlr xbindkeys xorg.xkill] ++					# Xorg
     [ chromium qbittorrent qutebrowser ] ++						# Internet
     [ signal-desktop protonmail-bridge nextcloud-client ] ++	# Privacy
     [ networkmanagerapplet blueberry ] ++						# Applet
@@ -16,7 +16,7 @@
     [ gimp xournalpp ] ++										# Graphics
     [ neovim lazygit ] ++										# Editor
     [ arandr autorandr flameshot touchegg ] ++					# Display, Gestures
-    [ lf exa fzf gotop trash-cli xdragon ] ++					# Navigation
+    [ lf exa fzf gotop htop trash-cli xdragon ] ++					# Navigation
     [ xclip clipnotify clipmenu ] ++							# Clipboard
     [ rbw pinentry-gtk2 ] ++									# Passwords
     [ spotify spicetify-cli mpv mpvScripts.mpris] ++			# Media

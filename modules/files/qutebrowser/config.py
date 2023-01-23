@@ -101,9 +101,6 @@ config.bind(',r', 'spawn --userscript readability')
 c.url.searchengines["y"] = \
 	"https://yewtu.be/search?q={}"
 
-c.url.searchengines["Y"] = \
-	"https://youtube.com/results?search_query={}"
-
 c.url.searchengines['g'] = \
    'https://www.google.com/search?q={}'
  

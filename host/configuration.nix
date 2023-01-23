@@ -66,6 +66,11 @@ in
 
   networking = {
     hostName = "nixos";
+    hosts = {
+      "https://www.youtube.com" = [ "https://www.yewtu.be" ];
+      "www.youtube.com" = [ "www.yewtu.be" ];
+      "youtube.com" = [ "yewtu.be" ];
+    };
     networkmanager.enable = true;
     stevenBlackHosts = {
       blockFakenews = true;
@@ -113,7 +118,7 @@ in
     touchegg.enable = true;
     gnome.gnome-keyring.enable = true;
     tlp.enable = true;
-	atd.enable = true;
+    atd.enable = true;
 
     unclutter = {
       enable = true;
