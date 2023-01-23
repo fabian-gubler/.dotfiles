@@ -67,9 +67,7 @@ in
   networking = {
     hostName = "nixos";
     hosts = {
-      "https://www.youtube.com" = [ "https://www.yewtu.be" ];
-      "www.youtube.com" = [ "www.yewtu.be" ];
-      "youtube.com" = [ "yewtu.be" ];
+      "0.0.0.0" = [ "youtube.com" "www.youtube.com" ];
     };
     networkmanager.enable = true;
     stevenBlackHosts = {
