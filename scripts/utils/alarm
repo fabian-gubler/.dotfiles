@@ -1,4 +1,8 @@
-#!/bin/bash
+#!/bin/sh
+
+# default params
+time="now + 90 minutes"
+message="Session Finished"
 
 # flags
 while getopts ":t:m:" OPTION; do

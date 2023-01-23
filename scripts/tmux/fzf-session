@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# save selection into variable
+CURRENT_SESSION=$(tmux display-message -p '#S')
+SELECTION=$(tmux list-sessions | sed -E 's/:.*$//' | grep -v $CURRENT_SESSION | fzf -m --reverse --prompt="$1 window > " --padding 5%)
+
+# exit if no selection
+if [[ -z $SELECTION ]]; then
+	exit
+fi
+
+# session actions based on argument
+case "$1" in
+  "switch")
+	  tmux switch-client -t $SELECTION
+    ;;
+  "kill")
+	  tmux kill-session -t $SELECTION
+    ;;
+  "move")
+	  tmux move-window -s $SELECTION
+	;;
+  *)
+    echo "You have failed to specify what to do"
+    exit 1
+    ;;
+esac
