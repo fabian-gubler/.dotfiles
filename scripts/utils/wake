@@ -9,6 +9,8 @@
 
 # Ways to enforce waking up:
 	# Current: Put keyboard in a different room
+	# Better: Avoid being able to turn off device
+	# - e.g. scheduled donation (need to turn off)
 	# Advanced: Implement QR Code / Geolocation unlocking
 
 
@@ -33,6 +35,12 @@ check_dependencies() {
 	if ! command -v tput &> /dev/null
 	then
 		echo "Error: ncurses is not installed. Please install ncurses before running this script."
+		exit 1
+	fi
+
+	if ! command -v at &> /dev/null
+	then
+		echo "Error: at is not installed. Please install at before running this script."
 		exit 1
 	fi
 }
@@ -86,18 +94,19 @@ check_files() {
 }
 
 schedule_alarm() {
+
 	# Schedule the volume and unmute commands to run at the given time
 	echo "wpctl set-mute @DEFAULT_AUDIO_SINK@ 0" | at $time > /dev/null 2>&1
 	echo "wpctl set-volume @DEFAULT_AUDIO_SINK@ 100%" | at $time > /dev/null 2>&1
 
 	# Schedule the first mp3 file to play at the given time with low volume
-	echo "mpv --audio-device=pulse/combined --volume=$soothing_volume --length=60 $soothing_file" | at $time > /dev/null 2>&1
+	echo "mpv --volume=$soothing_volume --length=60 $soothing_file" | at $time > /dev/null 2>&1
 
 	# Schedule the second mp3 file to play 10 minutes after the first alarm with normal volume
-	echo "mpv --audio-device=pulse/combined --volume=$normal_volume --length=60 $normal_file" | at $time + 10 minutes > /dev/null 2>&1
+	echo "mpv --volume=$normal_volume --length=60 $normal_file" | at $time + 10 minutes > /dev/null 2>&1
 
 	# Schedule the third mp3 file to play 20 minutes after the first alarm with high volume
-	echo "mpv --audio-device=pulse/combined--volume=$force_volume --loop=inf $force_file" | at $time + 20 minutes > /dev/null 2>&1
+	echo "mpv --volume=$force_volume --loop=inf $force_file" | at $time + 20 minutes > /dev/null 2>&1
 }
 
 confirm_schedule() {
@@ -112,7 +121,19 @@ confirm_schedule() {
 	printf "%b%bPlaying: %b %-20s %b %-20s %b with $soothing_volume volume%b\n" "${bold}" "${green}" "${blue}" "$(basename $soothing_file)" "${yellow}" "$time" "${green}" "${normal}"
 	printf "%b%bPlaying: %b %-20s %b %-20s %b with $normal_volume volume%b\n" "${bold}" "${green}" "${blue}" "$(basename $normal_file)" "${yellow}" "$time + 10 minutes" "${green}" "${normal}"
 	printf "%b%bPlaying: %b %-20s %b %-20s %b with $force_volume volume%b\n" "${bold}" "${green}" "${blue}" "$(basename $force_file)" "${yellow}" "$time + 20 minutes" "${green}" "${normal}"
+
 }
+
+test_sound() {
+    echo "Verify sound playback..."
+	echo ""
+
+	# Output sample to verify audio/dependencies are working
+	wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
+	wpctl set-volume @DEFAULT_AUDIO_SINK@ 100%
+	mpv --volume=$normal_volume --length=3 $normal_file
+}
+
 
 # Main Function
 main() {
@@ -122,11 +143,16 @@ main() {
 	check_files
 	schedule_alarm
 	confirm_schedule
+	test_sound
 }
+
+# Test sound
+if [ $1  = "-t" ]; then
+	test_sound
+	exit 0
+fi
 
 # Check if the Script is being run directly
 if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
     main
 fi
-
-
