@@ -87,17 +87,17 @@ check_files() {
 
 schedule_alarm() {
 	# Schedule the volume and unmute commands to run at the given time
-	echo "pactl set-sink-mute 0 0" | at $time > /dev/null 2>&1
-	echo "pactl set-sink-volume 0 100%" | at $time > /dev/null 2>&1
+	echo "wpctl set-mute @DEFAULT_AUDIO_SINK@ 0" | at $time > /dev/null 2>&1
+	echo "wpctl set-volume @DEFAULT_AUDIO_SINK@ 100%" | at $time > /dev/null 2>&1
 
 	# Schedule the first mp3 file to play at the given time with low volume
-	echo "mpv --volume=$soothing_volume --length=60 $soothing_file" | at $time > /dev/null 2>&1
+	echo "mpv --audio-device=pulse/combined --volume=$soothing_volume --length=60 $soothing_file" | at $time > /dev/null 2>&1
 
 	# Schedule the second mp3 file to play 10 minutes after the first alarm with normal volume
-	echo "mpv --volume=$normal_volume --length=60 $normal_file" | at $time + 10 minutes > /dev/null 2>&1
+	echo "mpv --audio-device=pulse/combined --volume=$normal_volume --length=60 $normal_file" | at $time + 10 minutes > /dev/null 2>&1
 
 	# Schedule the third mp3 file to play 20 minutes after the first alarm with high volume
-	echo "mpv --volume=$force_volume --loop=inf $force_file" | at $time + 20 minutes > /dev/null 2>&1
+	echo "mpv --audio-device=pulse/combined--volume=$force_volume --loop=inf $force_file" | at $time + 20 minutes > /dev/null 2>&1
 }
 
 confirm_schedule() {

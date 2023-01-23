@@ -27,7 +27,7 @@
         nixos = lib.nixosSystem {
           inherit system;
           modules = [
-            ./system
+            ./host
 
             home-manager.nixosModules.home-manager
             {
