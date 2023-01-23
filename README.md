@@ -6,8 +6,9 @@ sudo nixos-install --flake https://github.com/fabian-gubler/.dotfiles
 ```
 
 It is important to note that this installation command will not work on every system.
-This is due to the `hardware-configuration.nix`, which must be customized to the system's hardware. 
-As a consequence, the following commands can be used for the configuration files to work.
+This is due to the `hardware-configuration.nix` file, which must be customized to your system's hardware. 
+
+The following commands can be used for the configuration files to work.
 
 ```bash
 # Clone the repository
