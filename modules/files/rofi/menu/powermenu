@@ -6,9 +6,8 @@
 ## Applets : Power Menu
 
 # Import shared content
-ROFI_DIR=$HOME/.dotfiles/config/rofi/menu/
-theme="$ROFI_DIR/styles/text.rasi"
-source $ROFI_DIR/shared/common.sh
+theme="./styles/text.rasi"
+source "./shared/common.sh"
 
 # Layout
 list_col='1'
@@ -41,7 +40,7 @@ confirm_run () {
         ${1} && ${2} && ${3}
     else
 		sleep 0.2
-		$ROFI_DIR/powermenu
+		./powermenu
     fi	
 }
 
@@ -50,7 +49,7 @@ chosen="$(run_rofi)"
 case ${chosen} in
     $option_1)
 		sleep 0.2
-		$ROFI_DIR/launcher
+		./launcher
         ;;
     $option_2)
 		slock &

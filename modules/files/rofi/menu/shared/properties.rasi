@@ -9,5 +9,5 @@ configuration {
 }
 
 * {
-    font: "SF Mono 20";
+    font: "SFMono 20";
 }

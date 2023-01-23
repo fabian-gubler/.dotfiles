@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # Import shared content
-ROFI_DIR=$HOME/.dotfiles/config/rofi/menu/
 theme="./styles/icon.rasi"
 source "./shared/common.sh"
 
@@ -25,19 +24,19 @@ chosen="$(run_rofi)"
 sleep 0.2
 case ${chosen} in
     $option_1)
-		$ROFI_DIR/quicklinks
+		./quicklinks
         ;;
     $option_2)
-		$ROFI_DIR/powermenu
+		./powermenu
         ;;
     $option_3)
-		$ROFI_DIR/apps
+		./apps
         ;;
     $option_4)
 		blueberry &
         ;;
     $option_5)
-		$ROFI_DIR/settings
+		./settings
         ;;
     $option_6)
 		exit

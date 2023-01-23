@@ -6,8 +6,7 @@
 ## Applets : Power Menu
 
 # Import Current Theme
-ROFI_DIR=$HOME/.dotfiles/config/rofi/menu/
-theme="$ROFI_DIR/styles/text.rasi"
+theme="./styles/text.rasi"
 
 # Layout
 list_col='4'
@@ -46,26 +45,26 @@ chosen="$(run_rofi)"
 case ${chosen} in
     $option_1)
 		sleep 0.2
-		$ROFI_DIR/settings
+		./settings
         ;;
     $option_2)
 		exit
         ;;
     $option_3)
 		brightnessctl set 2%
-		$ROFI_DIR/brightness
+		./brightness
         ;;
     $option_4)
 		brightnessctl set 100%
-		$ROFI_DIR/brightness
+		./brightness
         ;;
     $option_5)
 		brightnessctl set 10%-
-		$ROFI_DIR/brightness
+		./brightness
         ;;
     $option_6)
 		brightnessctl set 10%+
-		$ROFI_DIR/brightness
+		./brightness
         ;;
 	*)
 		exit

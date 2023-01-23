@@ -1,74 +1,34 @@
 { pkgs, ... }: {
 
+  # TODO: fix protonvpn-cli (ncmli -> ipv6leakprotection)
   environment = {
-    systemPackages = with pkgs;
-      [ python cargo nodejs lua gcc gnumake ] ++
-      [ rbw pinentry-gtk2 ] ++
-      [ spotify spicetify-cli ] ++
-      [ zip unzip unrar ] ++
-      [ mpv mpvScripts.mpris ] ++
-      [ neomutt notmuch-mutt isync msmtp ] ++
-      [ khal khard vdirsyncer ] ++
-      [ rofi-bluetooth rofi ] ++
-      [ anki-bin markdown-anki-decks ] ++
-      [
-        wget
-        # TODO: try to replace pactl with wpctl
-        pulseaudio
-        pavucontrol
-        neovim
-        hsetroot
-        brightnessctl
-        handlr
-        xclip
-        xbindkeys
-        arandr
-        lf
-        fzf
-        stylua
-        touchegg
-        sqlite
-        onboard
-        flameshot
-        blanket
-        exa
-        ripgrep
-        gimp
-        chromium
-        xfce.thunar
-        foliate
-        xournalpp
-        file
-        # TODO: xdg-open declaration
-        zsa-udev-rules
-        texlive.combined.scheme-basic
-        networkmanagerapplet
-        blueberry
-        nextcloud-client
-        autorandr
-        dunst
-        newsboat
-        trash-cli
-        playerctl
-        # TODO: Declare keybindings in .nix format (e.g. services.actkbd)
-        qbittorrent
-        # TODO: fix protonvpn-cli (ncmli -> ipv6leakprotection)
-        lazygit
-        dmenu
-        qutebrowser
-        inotify-tools
-        signal-desktop
-        sxiv
-        xdragon
-        todo-txt-cli
-        clipnotify
-        clipmenu
-        gotop
-        protonmail-bridge
-        sioyek
-        zathura
-        pandoc
-      ];
+    systemPackages = with pkgs; 
+    [ texlive.combined.scheme-basic ] ++		# TODO: shell.nix latex projects instead of global 
+    [ python cargo nodejs lua gcc gnumake sqlite ] ++			# Programming Languages
+    [ onboard zsa-udev-rules ] ++								# Keyboard
+    [ newsboat todo-txt-cli ] ++								# Productivity
+    [ hsetroot handlr xbindkeys ] ++							# Xorg
+    [ chromium qbittorrent qutebrowser ] ++						# Internet
+    [ signal-desktop protonmail-bridge nextcloud-client ] ++	# Privacy
+    [ networkmanagerapplet blueberry ] ++						# Applet
+    [ dmenu sxiv dunst ] ++										# Suckless
+    [ sioyek zathura pandoc ] ++								# Documents
+    [ gimp xournalpp ] ++										# Graphics
+    [ neovim lazygit ] ++										# Editor
+    [ arandr autorandr flameshot touchegg ] ++					# Display, Gestures
+    [ lf exa fzf gotop trash-cli xdragon ] ++					# Navigation
+    [ xclip clipnotify clipmenu ] ++							# Clipboard
+    [ rbw pinentry-gtk2 ] ++									# Passwords
+    [ spotify spicetify-cli mpv mpvScripts.mpris] ++			# Media
+    [ wget file ripgrep ] ++									# File
+    [ zip unzip unrar ] ++										# Compression
+    [ neomutt notmuch-mutt isync msmtp ] ++						# Mail
+    [ khal khard vdirsyncer inotify-tools ] ++					# Calendar
+    [ rofi-bluetooth rofi ] ++									# Menu
+    [ anki-bin markdown-anki-decks ] ++							# Anki
+    [ xfce.thunar foliate blanket ] ++							# GTK
+    [ pulseaudio pavucontrol brightnessctl playerctl ] # TODO: pulseaudio replace with wpctl (combined-sink)
+    ;
 
     sessionVariables = rec {
       XDG_CACHE_HOME = "\${HOME}/.cache";
@@ -79,8 +39,6 @@
 
       EDITOR = "nvim";
       MANPAGER = "nvim +Man!";
-      PAGER = "less";
-      OPENER = "xdg-open";
       ANKI_BASE = "\${HOME}/nextcloud/apps/anki-data";
       QT_SCALE_FACTOR = "1.5";
 
