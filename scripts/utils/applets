@@ -1,5 +1,4 @@
 #!/bin/sh
-    xorg.xbacklight
 
 # starts applets in correct order
 
@@ -11,3 +10,5 @@ sleep 1
 
 nm-applet & # network control
 sleep 1
+
+onboard &

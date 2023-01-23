@@ -5,11 +5,10 @@ hsetroot -solid "#252A34" & # solid background
 nextcloud --background & # establish connection to cloud server
 xbindkeys & # playerctl with headphones ~/.xbindkeysrc
 protonmail-bridge --no-window --noninteractive & # mail backend, run in background
-touchegg & # touch gestures
 clipmenud & # clipboard manager daemon
 kitty -e "tmuxd" &
 
 # script
 $HOME/.dotfiles/scripts/utils/bat-indicator & # show battery level
-$HOME/.dotfiles/scripts/watchers/autovdirsyncer & # sync calendar/contacts on write
+# $HOME/.dotfiles/scripts/watchers/autovdirsyncer & # sync calendar/contacts on write
 $HOME/.dotfiles/scripts/utils/applets & # start applets in order

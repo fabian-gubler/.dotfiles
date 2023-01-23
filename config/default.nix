@@ -14,7 +14,7 @@ let
     "autorandr" = ./autorandr;
     "touchegg" = ./touchegg;
     "mutt" = ./mutt;
-    "qutebrowser" = ./qutebrowser;
+    "qutebrowser" = ./qutebrowser; # TODO: declare in home-manager
     "mpv" = ./mpv;
     "lf" = ./lf;
     "dunst" = ./dunst;
