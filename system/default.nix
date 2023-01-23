@@ -32,16 +32,19 @@ in
   services.xserver = {
     enable = true;
     layout = "ch";
-    libinput.enable = true;
     modules = [ pkgs.xf86_input_wacom ];
+    libinput.enable = true;
     wacom.enable = true;
     windowManager.dwm.enable = true;
     displayManager = {
       defaultSession = "none+dwm";
       gdm.enable = true;
     };
-
   };
+
+  # Flatpak
+  xdg.portal.enable = true;
+  services.flatpak.enable = true;
 
   # TODO: System-wide GTK Theme
   qt5 = {
@@ -184,7 +187,7 @@ in
     lf
     fzf
     stylua
-	touchegg
+    touchegg
     rbw
     pinentry-gtk2
     spotify
