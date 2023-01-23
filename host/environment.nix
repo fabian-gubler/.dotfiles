@@ -29,7 +29,6 @@
       pulseaudio
       neovim
       hsetroot
-	  at
       brightnessctl
       handlr
       xclip

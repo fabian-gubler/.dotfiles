@@ -113,6 +113,7 @@ in
     touchegg.enable = true;
     gnome.gnome-keyring.enable = true;
     tlp.enable = true;
+	atd.enable = true;
 
     unclutter = {
       enable = true;

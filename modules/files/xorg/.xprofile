@@ -6,6 +6,8 @@ nextcloud --background & # establish connection to cloud server
 xbindkeys & # playerctl with headphones ~/.xbindkeysrc
 protonmail-bridge --no-window --noninteractive & # mail backend, run in background
 clipmenud & # clipboard manager daemon
+
+# declare -> configure, even better if without pulseaudio backend
 pactl load-module module-combine-sink & # enabled combined output
 
 kitty -e "tmuxd" &

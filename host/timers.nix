@@ -6,7 +6,6 @@ let
   homeDirectory = "/home/${user}";
 in
 {
-
   # Trash Downloads on boot / daily
   systemd.timers."trash-downloads" = {
     wantedBy = [ "timers.target" ];
