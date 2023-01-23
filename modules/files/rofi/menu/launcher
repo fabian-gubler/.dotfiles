@@ -2,8 +2,8 @@
 
 # Import shared content
 ROFI_DIR=$HOME/.dotfiles/config/rofi/menu/
-theme="$ROFI_DIR/styles/icon.rasi"
-source $ROFI_DIR/shared/common.sh
+theme="./styles/icon.rasi"
+source "./shared/common.sh"
 
 list_col='7'
 list_row='1'
