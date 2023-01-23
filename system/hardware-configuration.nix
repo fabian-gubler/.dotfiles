@@ -31,7 +31,6 @@
     };
   };
 
-
   fileSystems."/" =
     {
       device = "/dev/disk/by-uuid/3ae1d3f9-ad7a-4be9-8d8e-30884bf5ef66";
