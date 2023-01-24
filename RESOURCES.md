@@ -7,9 +7,11 @@
 Forget about flakes, overlays, home-manager for now. 
 	Just set up a normal configuration.nix, and you're good to go. 
 	You will eventually want overlays and stuff later on, so you learn about them afterwards. 
-	My recommendation for now is to learn a bit of the nix language using the tour of nix 
-	(get it by installing nix-tour or access https://nixcloud.io/tour), 
-	until part 22 at most. Also chapter 5 of the nix manual https://nixos.org/manual/nix/stable/expressions/writing-nix-expressions.html
+
+
+My recommendation for now is to learn a bit of the nix language using the tour of nix 
+(get it by installing nix-tour or access https://nixcloud.io/tour), 
+until part 22 at most. Also chapter 5 of the nix manual https://nixos.org/manual/nix/stable/expressions/writing-nix-expressions.html
 
 # Learning Path (Next steps)
 ## Learn Language
