@@ -3,8 +3,8 @@
 # requirments
 # - download trayer from nixpkgs
 
-# ideas
-# - no border -> picom
+# todo
+# - no border, not count as window -> picom?
 # - bat indicator -> standard input (config?)
 
 # toggle behavior
@@ -22,5 +22,6 @@ trayer \
 --height 20 \
 --monitor primary
 
-# download stalonetray
+# -------
+# alternative tray: download stalonetray
 # -> man stalonetray / github readme

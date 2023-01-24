@@ -1,12 +1,5 @@
 /* See LICENSE file for copyright and license details. */
 
-/* TODO: Decouple from systray patch 
- * HOW? -> Put systray application on tag n.9 trayer or stalonetray
- *     { "trayer",         NULL,       NULL,       1 << 8,         False },
- * Then -> Toggle / right click tag 9
- * */
-
-
 /* appearance */
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int gappx     = 10;        /* gaps between windows */
