@@ -25,6 +25,14 @@ sudo nixos-install --flake .#<host>
 
 ```
 
+## Scripts directory
+`scripts` contains many personally created / modified scripts
+
+- **dmenu**: menus created with dmenu (e.g. connect to bluetooth)
+- **tmux**: helper scripts for my personal tmux configuration
+- **utils**: a lot of useful scripts (used constantly)
+- **watchers**: execute commands on certain action (e.g. synchronization)
+
 ## Philosophy: Non Functional Properties
 The following are some personal non-functional benefits of using a nix-based system.
 
