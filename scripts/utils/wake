@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Author: Fabian Gubler, Github: https://github.com/fabian-gubler 
 

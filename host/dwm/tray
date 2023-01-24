@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# download trayer from nixpkgs
+
+# ideas
+# - put into "invisible tag"
+# - no border (picom)
+# - ability to toggle tag with mod + a
+# - send bat indicator as standard input
+
+trayer \
+--expand true \
+--widthtype request \
+--transparent true \
+--alpha 255 \
+--edge top \
+--align right \
+--height 20 \
+--monitor primary

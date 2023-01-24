@@ -1,5 +1,12 @@
 /* See LICENSE file for copyright and license details. */
 
+/* TODO: Decouple from systray patch 
+ * HOW? -> Put systray application on tag n.9 trayer or stalonetray
+ *     { "trayer",         NULL,       NULL,       1 << 8,         False },
+ * Then -> Toggle / right click tag 9
+ * */
+
+
 /* appearance */
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int gappx     = 10;        /* gaps between windows */
@@ -41,6 +48,7 @@ static const Rule rules[] = {
 	 */
 	/* class				instance    title       tags mask   isfloating   monitor    float x,y,w,h       floatborderpx*/
 	{ "sioyek",				NULL,       NULL,       1 << 5,		0,           -1,        50,50,500,500,      0 },
+	{ "trayer",				NULL,       NULL,       1 << 8,     0,			 -1,		50,50,500,500,      0 },
 	{ "Chromium-browser",	NULL,       NULL,       1 << 4,		0,           -1,        50,50,500,500,      0 },
 	{ "firefox",			NULL,       NULL,       1 << 3,		0,           -1,        50,50,500,500,      0 },
 	{ "Com.github.johnfactotum.Foliate",NULL, NULL, 1 << 2,		0,           -1,        50,50,500,500,      0 },
@@ -95,8 +103,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},
 	{ MODKEY,                       XK_b,      spawn,          SHCMD("rofi-bluetooth")},
-	{ MODKEY|ControlMask,           XK_y,      spawn,          SHCMD("autorandr --load lap")},
-	{ MODKEY|ShiftMask|ControlMask, XK_y,      spawn,          SHCMD("autorandr --load mon")},
+	{ MODKEY|ControlMask,           XK_y,      spawn,          SHCMD("autorandr --load laptop")},
+	{ MODKEY|ShiftMask|ControlMask, XK_y,      spawn,          SHCMD("autorandr --load monitor")},
 	{ ShiftMask,					XK_Return, spawn,          SHCMD("dunstctl close-all")},
 
 	/* modifier                     key        function        argument */

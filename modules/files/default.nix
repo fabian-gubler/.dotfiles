@@ -4,13 +4,15 @@ let
   configFilesToLink = {
     "khal" = ./khal;
     "khard" = ./khard;
-    "vdirsyncer" = ./vdirsyncer;
-    "autorandr" = ./autorandr;
     "mutt" = ./mutt;
-    "qutebrowser" = ./qutebrowser; # TODO: declare in home-manager
-    "mpv" = ./mpv; # TODO: Check if watch-later works
-    "dunst" = ./dunst;
-    "sioyek" = ./sioyek;
+    # TODO: declare in home-manager
+    "qutebrowser/greasemonkey" = ./qutebrowser/greasemonkey; 
+    "qutebrowser/stylesheets" = ./qutebrowser/stylesheets; 
+    "qutebrowser/userscripts" = ./qutebrowser/userscripts; # TODO: put menu to rofi dir
+    "qutebrowser/config.py" = ./qutebrowser/config.py;
+    "mpv" = ./mpv; # TODO: Check if watch-later works, auto download fonts & scripts
+    "dunst" = ./dunst; # TODO: create nix service
+    "sioyek" = ./sioyek; # TODO: overlay, replace config files
     "rofi" = ./rofi;
     "touchegg/touchegg.conf" = ./touchegg/touchegg.conf;
   };
@@ -18,11 +20,11 @@ let
   homeFilesToLink = {
     ".xprofile" = ./xorg/.xprofile; # TODO: autostart declare in home-manager (find a way)
     ".xbindkeysrc" = ./xorg/.xbindkeysrc; # TODO: declare in home-manager (find alternative)
-    ".mbsyncrc" = ./mutt/.mbsyncrc;
-    ".tmux.conf" = ./tmux/tmux.conf;
-    ".newsboat/config" = ./newsboat/config; # TODO: declare in home-manager
-    ".newsboat/urls" = ./newsboat/urls; # TODO: declare in home-manager
+    ".newsboat/config" = ./newsboat/config; # TODO: declarable in home-manager
+    ".newsboat/urls" = ./newsboat/urls; # TODO: declarable in home-manager
     ".local/share/fonts" = ./fonts; # TODO: write nix package for sf font
+    ".mbsyncrc" = ./mutt/.mbsyncrc;
+    ".tmux.conf" = ./tmux/tmux.conf; 
   };
 
   # Function to help map attrs for symlinking home.file, xdg.configFile

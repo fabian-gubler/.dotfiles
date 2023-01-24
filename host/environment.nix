@@ -1,33 +1,30 @@
 { pkgs, ... }: {
 
-  # TODO: fix protonvpn-cli (ncmli -> ipv6leakprotection)
+  # TODO: fix protonvpn-cli (ncmli -> ipv6leakprotection or openvpn configuration file)
   environment = {
-    systemPackages = with pkgs; 
-    [ texlive.combined.scheme-basic ] ++		# TODO: shell.nix latex projects instead of global 
-    [ python cargo nodejs lua gcc gnumake sqlite ] ++			# Programming Languages
-    [ onboard zsa-udev-rules ] ++								# Keyboard
-    [ newsboat todo-txt-cli ] ++								# Productivity
-    [ hsetroot handlr xbindkeys xorg.xkill] ++					# Xorg
-    [ chromium qbittorrent qutebrowser ] ++						# Internet
-    [ signal-desktop protonmail-bridge nextcloud-client ] ++	# Privacy
-    [ networkmanagerapplet blueberry ] ++						# Applet
-    [ dmenu sxiv dunst ] ++										# Suckless
-    [ sioyek zathura pandoc ] ++								# Documents
-    [ gimp xournalpp ] ++										# Graphics
-    [ neovim lazygit ] ++										# Editor
-    [ arandr autorandr flameshot touchegg ] ++					# Display, Gestures
-    [ lf exa fzf gotop htop trash-cli xdragon ] ++					# Navigation
-    [ xclip clipnotify clipmenu ] ++							# Clipboard
-    [ rbw pinentry-gtk2 ] ++									# Passwords
-    [ spotify spicetify-cli mpv mpvScripts.mpris] ++			# Media
-    [ wget file ripgrep ] ++									# File
-    [ zip unzip unrar ] ++										# Compression
-    [ neomutt notmuch-mutt isync msmtp ] ++						# Mail
-    [ khal khard vdirsyncer inotify-tools ] ++					# Calendar
-    [ rofi-bluetooth rofi ] ++									# Menu
-    [ anki-bin markdown-anki-decks ] ++							# Anki
-    [ xfce.thunar foliate blanket ] ++							# GTK
-    [ pulseaudio pavucontrol brightnessctl playerctl ] # TODO: pulseaudio replace with wpctl (combined-sink)
+    systemPackages = with pkgs;
+      [ texlive.combined.scheme-basic ] ++ # TODO: could use shell.nix environment for latex projects
+      [ python cargo nodejs gcc gnumake ] ++
+      [ onboard wally-cli ] ++
+      [ todo-txt-cli ] ++
+      [ hsetroot xbindkeys xorg.xkill ] ++
+      [ chromium qbittorrent ] ++
+      [ signal-desktop protonmail-bridge nextcloud-client ] ++
+      [ networkmanagerapplet ] ++
+      [ dmenu sxiv ] ++
+      [ zathura pandoc ] ++
+      [ gimp xournalpp ] ++
+      [ neovim lazygit ] ++
+      [ arandr flameshot ] ++
+      [ lf exa fzf gotop htop trash-cli xdragon ] ++
+      [ xclip clipnotify clipmenu ] ++
+      [ rbw pinentry-gtk2 ] ++
+      [ spotify mpv mpvScripts.mpris ] ++
+      [ wget file ripgrep ] ++
+      [ zip unzip unrar ] ++
+      [ anki-bin markdown-anki-decks ] ++
+      [ xfce.thunar foliate blanket ] ++
+      [ pulseaudio pavucontrol brightnessctl playerctl ] # TODO: pulseaudio replace with wpctl (combined-sink)
     ;
 
     sessionVariables = rec {

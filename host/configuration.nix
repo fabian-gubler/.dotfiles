@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 let
   # TODO: should be imported from initial flake
@@ -102,6 +102,7 @@ in
 
   # Bluetooth
   hardware = {
+    keyboard.zsa.enable = true;
     bluetooth = {
       enable = true;
       settings = {
@@ -117,12 +118,10 @@ in
     gnome.gnome-keyring.enable = true;
     tlp.enable = true;
     atd.enable = true;
-
     unclutter = {
       enable = true;
       timeout = 1;
     };
-
 
     jellyfin = {
       enable = true;

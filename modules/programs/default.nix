@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+	./autorandr
     ./autojump
     ./git
     ./kitty
@@ -7,5 +8,7 @@
     ./xdg
     ./yt-dlp
     ./zsh
+    ./calendar
   ];
+
 }

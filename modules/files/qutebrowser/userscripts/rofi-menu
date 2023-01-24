@@ -14,7 +14,7 @@
 launcher="rofi -dmenu "
 args+=(-p qutebrowser)
 args+=(-i -l 8)
-args+=(-format s\|f) # only work with rofi
+args+=(-normal-window -format s\|f) # only work with rofi
 
 QUTE_DATA_DIR=$HOME/.local/share/qutebrowser
 QUTE_BOOKMARKS_DIR=$HOME/nextcloud/apps/qutebrowser
@@ -23,11 +23,6 @@ QUTE_BOOKMARKS_DIR=$HOME/nextcloud/apps/qutebrowser
 if [ "$2" == "copy" ]; then
 	cat $QUTE_DATA_DIR/search-history | tail -1 | xclip -selection c
 	# xdotool type $(cat $QUTE_DATA_DIR/search-history | tail -1)
-fi
-
-# save previous entry in clipboard
-if [ "$2" == "touch" ]; then
-	args+=(-normal-window)
 fi
 
 create_menu() {
