@@ -1,19 +1,26 @@
 #!/usr/bin/env bash
 
-# download trayer from nixpkgs
+# requirments
+# - download trayer from nixpkgs
 
 # ideas
+# - no border -> picom
+# - bat indicator -> standard input (config?)
+
+# toggle behavior
 # - put into "invisible tag"
-# - no border (picom)
 # - ability to toggle tag with mod + a
-# - send bat indicator as standard input
 
 trayer \
+--transparent true \
 --expand true \
 --widthtype request \
---transparent true \
 --alpha 255 \
 --edge top \
 --align right \
+--width 50 \
 --height 20 \
 --monitor primary
+
+# download stalonetray
+# -> man stalonetray / github readme
