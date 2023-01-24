@@ -11,7 +11,7 @@ sudo nixos-install --flake https://github.com/fabian-gubler/.dotfiles
 ### Customized Build
 **Important Note:** `hardware-configuration.nix` file must be customized to your system's hardware. 
 
-The following commands for a fresh system install:
+The following commands for a fresh system build:
 
 ```bash
 # Clone the repository
@@ -36,7 +36,7 @@ sudo nixos-install --flake .#<host>
 ## Philosophy: Non Functional Properties
 The following are some personal non-functional benefits of using a nix-based system.
 
-### NixOS:
+### (1) NixOS:
 #### Declared Configuration 
 - Declared configuration for the entire system. 
 - Has to be written once, easily bootstrap anytime
@@ -45,7 +45,7 @@ The following are some personal non-functional benefits of using a nix-based sys
 - Reproducible Builds using Lock files
 - Easily go back to previous states of entire systems (like timeshift) 
 
-### Nixpkgs & Home-Manager:
+### (2) Nixpkgs & Home-Manager:
 #### Vast amount 
 - Biggest Offering of Packages (bigger than AUR)
 - Fairly good maintained (otherwise overlay to fix)
@@ -54,7 +54,7 @@ The following are some personal non-functional benefits of using a nix-based sys
 - Reuse on all platforms: Linux, WSL, Darwin based systems
 - Create alternative versions of configuration (e.g. server, desktop, laptop)
 
-### Nix Language:
+### (3) Nix Language:
 #### Package Management
 - Distro-agnostic 
 - Nix is great for building & maintaining personal packages
