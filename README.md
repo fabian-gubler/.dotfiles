@@ -26,7 +26,7 @@ sudo nixos-install --flake .#<host>
 ```
 
 ## Philosophy: Non Functional Properties
-The following are a list of some of the benefits of this system:
+The following are some personal non-functional benefits of using a nix-based system.
 
 ### NixOS
 #### Declared Configuration 
