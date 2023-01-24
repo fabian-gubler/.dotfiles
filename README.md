@@ -24,3 +24,16 @@ cp -f host/hardware-configuration /etc/nixos/hardware-configuration.nix
 sudo nixos-install --flake .#<host>
 
 ```
+
+## Non Functional Properties
+### NixOS
+- Declared Configuration (Write once)
+- Reproducible Builds (Reliability & Stability)
+
+### Nixpkgs & Home-Manager
+- Biggest Offering of Packages
+- Access on Multiple Hosts (works on Linux, WSL, Darwin based systems)
+
+### Nix Language
+- Great for building & maintaining personal, distro-agnostic packages
+- Useful for reproducible development environments (shell.nix) & declarative docker images
