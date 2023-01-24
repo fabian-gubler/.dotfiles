@@ -1,5 +1,7 @@
 # Dotfiles for my Linux installation
 
+If you want to learn more about Nix and NixOS check out [RESSOURCES.md](RESSOURCES.md)
+
 ## Installation
 ### Bootstrapping
 ```bash
