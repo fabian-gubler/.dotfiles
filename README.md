@@ -27,16 +27,9 @@ sudo nixos-install --flake .#<host>
 ```
 
 ## Structure
-`host` everything that is system based (e.g. hardware, system packages, window manager)
-
-`modules` home-manager and .dotfiles for my favorite programs
-
-`scripts` collection of personal or modified scripts
-
-- **dmenu**: menus created with dmenu (e.g. connect to bluetooth)
-- **tmux**: helper scripts for my personal tmux configuration
-- **utils**: a lot of useful scripts (used constantly)
-- **watchers**: execute commands on certain action (e.g. synchronization)
+- `host` everything that is system based (e.g. hardware, system packages, window manager)
+- `modules` home-manager and .dotfiles for my favorite programs
+- `scripts` collection of personal or modified scripts
 
 ## Philosophy: Non Functional Properties
 The following are some personal non-functional benefits of using a nix-based system.
