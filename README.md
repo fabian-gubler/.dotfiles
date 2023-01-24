@@ -26,6 +26,8 @@ sudo nixos-install --flake .#<host>
 ```
 
 ## Non Functional Properties
+The following are a list of some of the benefits of this system:
+
 ### NixOS
 - Declared Configuration (Write once)
 - Reproducible Builds (Reliability & Stability)
