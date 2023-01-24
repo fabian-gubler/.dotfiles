@@ -2,29 +2,36 @@
 
 let
   configFilesToLink = {
-    "khal" = ./khal;
-    "khard" = ./khard;
-    "mutt" = ./mutt;
-    # TODO: declare in home-manager
-    "qutebrowser/greasemonkey" = ./qutebrowser/greasemonkey; 
-    "qutebrowser/stylesheets" = ./qutebrowser/stylesheets; 
+    # TODO: custom
+    "khal" = ./khal; # TODO: create custom service
+    "dunst" = ./dunst; # TODO: create custom service
+    "khard" = ./khard; # TODO: create custom service
+    "touchegg/touchegg.conf" = ./touchegg/touchegg.conf; # create custom service
+
+    # TODO: declaration
+    "mutt" = ./mutt; # TODO: declarable in home-manager
+    "rofi" = ./rofi; # TODO: declarable in home-manager
+    "sioyek" = ./sioyek; # TODO: declarable in home-manager
+    "mpv" = ./mpv; # TODO: declarable in home-manager
+
+    # TODO: declaration
+    "qutebrowser/greasemonkey" = ./qutebrowser/greasemonkey;
+    "qutebrowser/stylesheets" = ./qutebrowser/stylesheets;
     "qutebrowser/userscripts" = ./qutebrowser/userscripts; # TODO: put menu to rofi dir
     "qutebrowser/config.py" = ./qutebrowser/config.py;
-    "mpv" = ./mpv; # TODO: Check if watch-later works, auto download fonts & scripts
-    "dunst" = ./dunst; # TODO: create nix service
-    "sioyek" = ./sioyek; # TODO: overlay, replace config files
-    "rofi" = ./rofi;
-    "touchegg/touchegg.conf" = ./touchegg/touchegg.conf;
   };
 
   homeFilesToLink = {
+    # TODO: custom
+    ".local/share/fonts" = ./fonts; # TODO: write nix package for sf font
     ".xprofile" = ./xorg/.xprofile; # TODO: autostart declare in home-manager (find a way)
     ".xbindkeysrc" = ./xorg/.xbindkeysrc; # TODO: declare in home-manager (find alternative)
+
+    # TODO: declaration
     ".newsboat/config" = ./newsboat/config; # TODO: declarable in home-manager
     ".newsboat/urls" = ./newsboat/urls; # TODO: declarable in home-manager
-    ".local/share/fonts" = ./fonts; # TODO: write nix package for sf font
-    ".mbsyncrc" = ./mutt/.mbsyncrc;
-    ".tmux.conf" = ./tmux/tmux.conf; 
+    ".mbsyncrc" = ./mutt/.mbsyncrc; # TODO: declarable in home-manager
+    ".tmux.conf" = ./tmux/tmux.conf; # TODO: declarable in home-manager
   };
 
   # Function to help map attrs for symlinking home.file, xdg.configFile
