@@ -28,7 +28,7 @@ sudo nixos-install --flake .#<host>
 ## Philosophy: Non Functional Properties
 The following are some personal non-functional benefits of using a nix-based system.
 
-### NixOS
+### NixOS:
 #### Declared Configuration 
 - Declared configuration for the entire system. 
 - Has to be written once, easily bootstrap anytime
@@ -37,7 +37,7 @@ The following are some personal non-functional benefits of using a nix-based sys
 - Reproducible Builds using Lock files
 - Easily go back to previous states of entire systems (like timeshift) 
 
-### Nixpkgs & Home-Manager
+### Nixpkgs & Home-Manager:
 #### Vast amount 
 - Biggest Offering of Packages (bigger than AUR)
 - Fairly good maintained (otherwise overlay to fix)
@@ -46,7 +46,7 @@ The following are some personal non-functional benefits of using a nix-based sys
 - Reuse on all platforms: Linux, WSL, Darwin based systems
 - Create alternative versions of configuration (e.g. server, desktop, laptop)
 
-### Nix Language
+### Nix Language:
 #### Package Management
 - Distro-agnostic 
 - Nix is great for building & maintaining personal packages
