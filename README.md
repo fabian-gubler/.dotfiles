@@ -1,6 +1,6 @@
 # Dotfiles for my Linux installation
 
-For more information about Nix and NixOS check out [RESOURCES.md](RESOURCES.md)
+For more information about Nix and NixOS check out my list of [RESOURCES.md](RESOURCES.md)
 
 ## Installation
 ### Bootstrapping
