@@ -24,7 +24,10 @@
       [ zip unzip unrar ] ++
       [ anki-bin markdown-anki-decks ] ++
       [ xfce.thunar foliate blanket ] ++
-      [ pulseaudio pavucontrol brightnessctl playerctl ] # TODO: pulseaudio replace with wpctl (combined-sink)
+      [ pulseaudio pavucontrol brightnessctl playerctl ] ++ # TODO: pulseaudio replace with wpctl (combined-sink)
+      [
+        # ...
+      ]
     ;
 
     sessionVariables = rec {

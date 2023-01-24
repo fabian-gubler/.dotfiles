@@ -54,8 +54,9 @@ Builds (based on priority):
 - fahrplan
 - san francisco font
 
-Overlays:
+Overlays / Nix Files:
 - spotify: share folder writeable
+- rbw: configure email & lock_timeout configuration options
 
 Package debugging:
 - sioyek blur (hardware, dependency issue?)
