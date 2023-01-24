@@ -29,7 +29,7 @@ sudo nixos-install --flake .#<host>
 The following are a list of some of the benefits of this system:
 
 ### NixOS
-- Declared Configuration (Write once)
+- Declared Configuration for the entire system (Write once, bootstrap anytime)
 - Reproducible Builds (Reliability & Stability)
 
 ### Nixpkgs & Home-Manager
