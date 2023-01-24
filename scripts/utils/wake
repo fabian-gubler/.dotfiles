@@ -147,7 +147,7 @@ main() {
 }
 
 # Test sound
-if [ $1  = "-t" ]; then
+if [[ $1  == "-t" ]]; then
 	test_sound
 	exit 0
 fi
