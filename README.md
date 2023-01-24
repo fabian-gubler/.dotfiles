@@ -25,7 +25,11 @@ sudo nixos-install --flake .#<host>
 
 ```
 
-## Scripts directory
+## Structure
+`host` everything that is system based (e.g. hardware, system packages, window manager)
+
+`modules` home-manager and .dotfiles
+
 `scripts` contains many personally created / modified scripts
 
 - **dmenu**: menus created with dmenu (e.g. connect to bluetooth)
