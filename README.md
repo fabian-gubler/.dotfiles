@@ -29,13 +29,28 @@ sudo nixos-install --flake .#<host>
 The following are a list of some of the benefits of this system:
 
 ### NixOS
-- Declared Configuration for the entire system (Write once, bootstrap anytime)
-- Reproducible Builds (Reliability & Stability)
+#### Declared Configuration 
+- Declared configuration for the entire system. 
+- Has to be written once, easily bootstrap anytime
+
+#### Reproducibility
+- Reproducible Builds using Lock files
+- Easily go back to previous states of entire systems (like timeshift) 
 
 ### Nixpkgs & Home-Manager
-- Biggest Offering of Packages
-- Access on Multiple Hosts (works on Linux, WSL, Darwin based systems)
+#### Vast amount 
+- Biggest Offering of Packages (bigger than AUR)
+- Fairly good maintained (otherwise overlay to fix)
+
+#### Access on Multiple Hosts 
+- Reuse on all platforms: Linux, WSL, Darwin based systems
+- Create alternative versions of configuration (e.g. server, desktop, laptop)
 
 ### Nix Language
-- Great for building & maintaining personal, distro-agnostic packages
-- Useful for reproducible development environments (shell.nix) & declarative docker images
+#### Package Management
+- Distro-agnostic 
+- Nix is great for building & maintaining personal packages
+
+#### Dev Environments
+- Useful for reproducible development environments (shell.nix) 
+- Declarative docker images
