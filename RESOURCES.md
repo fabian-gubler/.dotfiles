@@ -1,8 +1,8 @@
 # How to start
 ## Consolidated advice from multiple reddit posts:
-(1) NixOS in a VM. (2) Make your custom config, 
-	but don't use flakes since you're a beginner. 
-	For learning the nix language, (3) use the tour of nix to learn the language.
+1. Try out NixOS in a VM. 
+2. Make your custom config, but don't use flakes since you're a beginner. 
+3. For learning the nix language,  use the tour of nix to learn the language.
 
 Forget about flakes, overlays, home-manager for now. 
 	Just set up a normal configuration.nix, and you're good to go. 
