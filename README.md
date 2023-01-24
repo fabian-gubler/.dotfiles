@@ -48,7 +48,8 @@ The following are some personal non-functional benefits of using a nix-based sys
 ### (2) Nixpkgs & Home-Manager:
 #### Vast amount 
 - Biggest Offering of Packages (bigger than AUR)
-- Fairly good maintained (otherwise overlay to fix)
+- Fairly well maintained and up to date (otherwise create overlay to make changes)
+- Quickly enable / try out packages in an isolated environment
 
 #### Access on Multiple Hosts 
 - Reuse on all platforms: Linux, WSL, Darwin based systems
@@ -57,8 +58,9 @@ The following are some personal non-functional benefits of using a nix-based sys
 ### (3) Nix Language:
 #### Package Management
 - Distro-agnostic 
-- Nix is great for building & maintaining personal packages
+- Nix is straight-forward for building & maintaining personal packages
 
 #### Dev Environments
-- Useful for reproducible development environments (shell.nix) 
-- Declarative docker images
+- Useful for reproducible development environments (with shell.nix)
+- Replaces and extends virtual environments (e.g. conda)
+- Use for Declarative containers (e.g. docker images)
