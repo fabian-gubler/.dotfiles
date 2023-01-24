@@ -29,9 +29,9 @@ sudo nixos-install --flake .#<host>
 ## Structure
 `host` everything that is system based (e.g. hardware, system packages, window manager)
 
-`modules` home-manager and .dotfiles
+`modules` home-manager and .dotfiles for my favorite programs
 
-`scripts` contains many personally created / modified scripts
+`scripts` collection of personal or modified scripts
 
 - **dmenu**: menus created with dmenu (e.g. connect to bluetooth)
 - **tmux**: helper scripts for my personal tmux configuration
