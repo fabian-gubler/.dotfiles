@@ -1,13 +1,15 @@
 # Dotfiles for my Linux installation
 
 ## Installation
+### Bootstrapping
 ```bash
 sudo nixos-install --flake https://github.com/fabian-gubler/.dotfiles
 ```
 
+### Customized Build
 **Important Note:** `hardware-configuration.nix` file must be customized to your system's hardware. 
 
-Use the following commands for a fresh system install:
+The following commands for a fresh system install:
 
 ```bash
 # Clone the repository
