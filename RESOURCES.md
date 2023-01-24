@@ -1,4 +1,5 @@
 # How to start
+## Consolidated advice from multiple reddit posts:
 NixOS in a VM. Make your custom config, 
 	but don't use flakes since you're a beginner. 
 	For learning the nix language, use the tour of nix.
@@ -78,10 +79,11 @@ Philosophy
 - [NixOS Sales Pitch](https://yewtu.be/watch?v=2L2qHfNnXB4)
 - [The Curse of NixOS](https://blog.wesleyac.com/posts/the-curse-of-nixos)
 
-Nix Foundation Youtube Channel [Channel](https://yewtu.be/channel/UC3vIimi9q4AT8EgxYp_dWIw)
-
 Data Science
 - [Workgroup](https://nixos.wiki/wiki/Workgroup:DataScience)
+
+Misc
+- Nix Foundation Youtube Channel [Channel](https://yewtu.be/channel/UC3vIimi9q4AT8EgxYp_dWIw)
 
 # Community Links
 - [Discourse](http://discourse.nixos.org/)
