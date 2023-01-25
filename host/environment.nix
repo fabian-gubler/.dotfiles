@@ -4,7 +4,7 @@
   environment = {
     systemPackages = with pkgs;
       [ texlive.combined.scheme-basic ] ++ # TODO: could use shell.nix environment for latex projects
-      [ python cargo nodejs gcc gnumake ] ++
+      [ python3 cargo nodejs gcc gnumake ] ++
       [ onboard wally-cli ] ++
       [ todo-txt-cli ] ++
       [ hsetroot xbindkeys xorg.xkill ] ++
