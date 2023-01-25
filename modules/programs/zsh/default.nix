@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   programs.zsh = {
     enable = true;
-	autocd = true;
     enableAutosuggestions = true;
     enableCompletion = true;
     enableSyntaxHighlighting = true;
@@ -34,7 +33,7 @@
       enable = true;
       plugins = [
         { name = "Aloxaf/fzf-tab"; }
-        { name = "hlissner/zsh-autopair"; tags = [ defer:2 ]; }
+        { name = "hlissner/zsh-autopair"; tags = [ "defer:2" ]; }
         { name = "mafredri/zsh-async"; }
       ];
     };
