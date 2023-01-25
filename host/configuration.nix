@@ -66,9 +66,9 @@ in
 
   networking = {
     hostName = "nixos";
-    hosts = {
-      "0.0.0.0" = [ "youtube.com" "www.youtube.com" ];
-    };
+    # hosts = {
+    #   "0.0.0.0" = [ "youtube.com" "www.youtube.com" ];
+    # };
     networkmanager.enable = true;
     stevenBlackHosts = {
       blockFakenews = true;
