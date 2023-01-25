@@ -1,12 +1,5 @@
 /* See LICENSE file for copyright and license details. */
 
-/* TODO: Decouple from systray patch 
- * HOW? -> Put systray application on tag n.9 trayer or stalonetray
- *     { "trayer",         NULL,       NULL,       1 << 8,         False },
- * Then -> Toggle / right click tag 9
- * */
-
-
 /* appearance */
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int gappx     = 10;        /* gaps between windows */
@@ -46,15 +39,15 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class				instance    title       tags mask   isfloating   monitor    float x,y,w,h       floatborderpx*/
-	{ "sioyek",				NULL,       NULL,       1 << 5,		0,           -1,        50,50,500,500,      0 },
-	{ "trayer",				NULL,       NULL,       ~0,			0,			 -1,		50,50,500,500,      0 },
-	{ "Chromium-browser",	NULL,       NULL,       1 << 4,		0,           -1,        50,50,500,500,      0 },
-	{ "firefox",			NULL,       NULL,       1 << 3,		0,           -1,        50,50,500,500,      0 },
-	{ "Com.github.johnfactotum.Foliate",NULL, NULL, 1 << 2,		0,           -1,        50,50,500,500,      0 },
-	{ "mpv",				NULL,       NULL,       1 << 2,		0,           -1,        50,50,500,500,      0 },
-	{ "qutebrowser",		NULL,       NULL,       1 << 1,		0,           -1,        50,50,500,500,      0 },
-	{ "kitty",				NULL,       NULL,       0,			0,           -1,        50,50,500,500,      0 },
+	/* class				instance    title       tags mask   isfloating   monitor    floatborderpx*/
+	{ "sioyek",				NULL,       NULL,       1 << 5,		0,           -1,        0 },
+	{ "trayer",				NULL,       NULL,       ~0,			0,			 -1,		0 },
+	{ "Chromium-browser",	NULL,       NULL,       1 << 4,		0,           -1,        0 },
+	{ "firefox",			NULL,       NULL,       1 << 3,		0,           -1,        0 },
+	{ "Com.github.johnfactotum.Foliate",NULL, NULL, 1 << 2,		0,           -1,        0 },
+	{ "mpv",				NULL,       NULL,       1 << 2,		0,           -1,        0 },
+	{ "qutebrowser",		NULL,       NULL,       1 << 1,		0,           -1,        0 },
+	{ "kitty",				NULL,       NULL,       0,			0,           -1,        0 },
 
 	/* class				instance    title       tags mask   isfloating   monitor    float x,y,w,h       floatborderpx*/
 	{ "Firefox",			NULL,       "Save As",  0,			0,           -1,        50,50,500,500,      0 },
