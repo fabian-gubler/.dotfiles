@@ -1,10 +1,26 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+  pythonPackages = p: with p; [
+    toolz
+    selenium
+    coloredlogs
+    verboselogs
+    pynvim
+    psutil
+    # persist-queue
+    packaging
+    setuptools
+    # gitpython
+  ];
+
+in
+{
 
   # TODO: fix protonvpn-cli (ncmli -> ipv6leakprotection or openvpn configuration file)
   environment = {
     systemPackages = with pkgs;
       [ texlive.combined.scheme-basic ] ++ # TODO: could use shell.nix environment for latex projects
-      [ python3 cargo nodejs gcc gnumake ] ++
+      [ python3 stylua cargo nodejs gcc gnumake ] ++
       [ onboard wally-cli ] ++
       [ todo-txt-cli ] ++
       [ hsetroot xbindkeys xorg.xkill ] ++
@@ -26,7 +42,8 @@
       [ xfce.thunar foliate blanket ] ++
       [ pulseaudio pavucontrol brightnessctl playerctl ] ++ # TODO: pulseaudio replace with wpctl (combined-sink)
       [
-        # ...
+        # Python Packages
+        (python3.withPackages pythonPackages)
       ]
     ;
 

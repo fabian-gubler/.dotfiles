@@ -12,6 +12,7 @@
       top = "gotop -l minimal";
       mutt = "mbsync protonmail && neomutt";
       gpush = "git add . && git commit -m 'manual update' && git push";
+	  conda-shell = "nix-shell ~/.dotfiles/shells/conda/shell.nix";
       lg = "lazygit";
 
       t = "todo.sh -d $HOME/nextcloud/todo/config";
@@ -35,6 +36,8 @@
         { name = "Aloxaf/fzf-tab"; }
         { name = "hlissner/zsh-autopair"; tags = [ "defer:2" ]; }
         { name = "mafredri/zsh-async"; }
+		{ name = "spwhitt/nix-zsh-completions"; }
+		{ name = "chisui/zsh-nix-shell"; }
       ];
     };
 
