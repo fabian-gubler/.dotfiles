@@ -1,0 +1,3 @@
+[console_scripts]
+ipynb2jupy = jupynium.cmds.ipynb2jupy:main
+jupynium = jupynium.cmds.jupynium:main

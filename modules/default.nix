@@ -40,6 +40,14 @@
     style.package = pkgs.adwaita-qt;
   };
 
-
+  # programs.neovim = {
+  #   enable = true;
+  #   # extraConfig = ''
+  #   #   set number relativenumber
+  #   # '';
+  # };
+  # programs.neovim.plugins = [
+  #   pkgs.vimPlugins.markdown-preview-nvim
+  # ];
 
 }

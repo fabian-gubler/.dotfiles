@@ -12,7 +12,7 @@
       top = "gotop -l minimal";
       mutt = "mbsync protonmail && neomutt";
       gpush = "git add . && git commit -m 'manual update' && git push";
-	  conda-shell = "nix-shell ~/.dotfiles/shells/conda/shell.nix";
+	  conda-shell = "nix-shell ~/.dotfiles/shells/python/conda/shell.nix";
       lg = "lazygit";
 
       t = "todo.sh -d $HOME/nextcloud/todo/config";

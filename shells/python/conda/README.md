@@ -5,14 +5,21 @@ This builds a very minimal FHS (Filesystem Hiearchy Standard) system for python 
 ## Build Conda
 ```
 # Run Environment
-nix-shell .conda-shell.nix
+nix-shell 
 
-# Create environment with deps
+# Install packages
+conda install <pkg>
+```
+
+## Create Environments
+```bash
+# Create virtualenv with deps
 conda create -n venv ipython numpy
 
 # Activate environment
 source activate venv
 ```
+
 
 ## TODO
 - List python packages (requirements.txt with conda command?)
