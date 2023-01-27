@@ -1,20 +1,5 @@
 { config, pkgs, ... }:
-let
-  unstableTarball =
-    fetchTarball
-      https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
-
-
-in
 {
-
-  nixpkgs.config = {
-    packageOverrides = pkgs: {
-      unstable = import unstableTarball {
-        config = config.nixpkgs.config;
-      };
-    };
-  };
 
   # Settings
   nixpkgs.config.allowUnfree = true;
@@ -24,45 +9,15 @@ in
   # TODO: fix protonvpn-cli (ncmli -> ipv6leakprotection or openvpn configuration file)
   environment.systemPackages =
     let
-      my-python-packages = p: with p; [
-
-        pandas
-        selenium
-
-        # (
-        #   buildPythonPackage rec {
-        #     pname = "jupynium";
-        #     version = "0.1.0";
-        #     format = "pyproject";
-        #     src = /home/fabian/demo/jupynium;
-        #     # src = fetchPypi {
-        #     #   inherit pname version;
-        #     #   sha256 = "18701f247b96a3b4daccd710834cbf1c6d8218c136df114a0965aea888c02198";
-        #     # };
-        #     # Specify runtime dependencies for the package
-        #     propagatedBuildInputs = [
-        #       setuptools
-        #       versioneer
-        #       pynvim
-        #       coloredlogs
-        #       verboselogs
-        #       selenium
-        #       packaging
-        #       sysv_ipc
-        #       psutil
-        #     ];
-        #     doCheck = true;
-        #   }
-        # )
-
+      pythonPackages = p: with p; [
+        # ...
       ];
     in
     with pkgs; [
-      (python3.withPackages my-python-packages)
+      (python3.withPackages pythonPackages)
     ] ++
-    [ python3 ] ++
     [ texlive.combined.scheme-basic ] ++ # TODO: could use shell.nix environment for latex projects
-    [ stylua cargo nodejs gcc gnumake ] ++
+    [ python3 stylua cargo nodejs gcc gnumake ] ++
     [ onboard wally-cli ] ++
     [ todo-txt-cli ] ++
     [ hsetroot xbindkeys xorg.xkill ] ++
