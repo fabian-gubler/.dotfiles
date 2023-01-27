@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,7 +15,7 @@
     spicetify-nix.url = github:the-argus/spicetify-nix; # spotify ricing & configuration
   };
 
-  outputs = { self, nixpkgs, home-manager, hosts, spicetify-nix, ... }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, hosts, spicetify-nix, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {

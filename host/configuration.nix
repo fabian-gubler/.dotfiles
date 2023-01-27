@@ -6,11 +6,8 @@ let
 
 in
 {
-  nixpkgs.config.allowUnfree = true;
-  system.stateVersion = "22.11";
 
   nix = {
-    package = pkgs.nixUnstable;
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
     };
