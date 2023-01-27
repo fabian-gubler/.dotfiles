@@ -16,6 +16,11 @@ in
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
+    # protects nix shell against garbage collection
+    extraOptions = ''
+        keep-outputs = true
+          keep-derivations = true
+      	  '';
   };
 
   users.users.${user} = {

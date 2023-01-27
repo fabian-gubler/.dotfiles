@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ $# -lt 1 ]; then
+    echo "Error: No argument provided."
+    exit 1
+fi
+
+
+nix flake init -t github:fabian-gubler/templates#$1
+echo "use flake" >> .envrc && direnv allow
