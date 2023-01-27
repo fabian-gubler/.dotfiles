@@ -15,7 +15,7 @@
     spicetify-nix.url = github:the-argus/spicetify-nix; # spotify ricing & configuration
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, hosts, spicetify-nix, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, hosts, spicetify-nix, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {

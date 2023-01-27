@@ -2,10 +2,12 @@ with import <nixpkgs> { };
 
 let
   pythonPackages = python3Packages;
-  unstableTarball =
-    fetchTarball
-      https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
-  unstable = import unstableTarball { };
+  # unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+
+  # unstableTarball =
+  #   fetchTarball
+  #     https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
+  # unstable = import unstableTarball { };
 
   my-python-packages = p: with p; [
     # ...
@@ -13,6 +15,8 @@ let
       buildPythonPackage rec {
         pname = "jupynium";
         version = "0.1.0";
+        format = "wheel";
+
         src = fetchPypi {
           inherit pname version;
           sha256 = "18701f247b96a3b4daccd710834cbf1c6d8218c136df114a0965aea888c02198";
@@ -21,7 +25,7 @@ let
         doCheck = false;
       }
     )
-	];
+  ];
 
 in
 pkgs.mkShell rec {
@@ -43,8 +47,8 @@ pkgs.mkShell rec {
     # pythonPackages.requests
     # pythonPackages.torch
     # pythonPackages.torchvision
-    # pythonPackages.selenium
-    unstable.python3Packages.selenium
+    # unstable.python3Packages.selenium
+    python3Packages.greenlet
     python3Packages.versioneer
 
 
@@ -59,6 +63,8 @@ pkgs.mkShell rec {
     libxslt
     libzip
     zlib
+    # custom
+    geckodriver
   ];
 
   # Run this command, only after creating the virtual environment
