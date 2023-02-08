@@ -17,7 +17,8 @@
       (python3.withPackages pythonPackages)
     ] ++
     [ texlive.combined.scheme-basic ] ++ # TODO: could use shell.nix environment for latex projects
-    [ python3 stylua cargo nodejs gcc gnumake ] ++
+    [ python3 cargo nodejs gcc gnumake ] ++
+	[ stylua sumneko-lua-language-server ] ++ # TODO: decouple to neovim configuration
     [ onboard wally-cli ] ++
     [ todo-txt-cli ] ++
     [ hsetroot xbindkeys xorg.xkill ] ++
@@ -59,6 +60,7 @@
     MANPAGER = "nvim +Man!";
     ANKI_BASE = "\${HOME}/nextcloud/apps/anki-data";
     QT_SCALE_FACTOR = "1.5";
+
 
     PATH = [
       "\${XDG_BIN_HOME}"

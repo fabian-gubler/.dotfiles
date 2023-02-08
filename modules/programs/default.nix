@@ -9,6 +9,7 @@
     ./yt-dlp
     ./zsh
     ./calendar
+	./qutebrowser
   ];
 
 }

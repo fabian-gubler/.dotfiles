@@ -1,11 +1,6 @@
 { pkgs, ... }: {
   xdg = {
     desktopEntries = {
-      qutebrowser = {
-        name = "qutebrowser";
-        exec = "qutebrowser";
-        mimeType = [ "text/html" "x-scheme-handler/http" "x-scheme-handler/https" ];
-      };
       sioyek = {
         name = "sioyek";
         exec = "sioyek";

@@ -13,12 +13,6 @@ let
     "rofi" = ./rofi; # TODO: declarable in home-manager
     "sioyek" = ./sioyek; # TODO: declarable in home-manager
     "mpv" = ./mpv; # TODO: declarable in home-manager
-
-    # TODO: declaration
-    "qutebrowser/greasemonkey" = ./qutebrowser/greasemonkey;
-    "qutebrowser/stylesheets" = ./qutebrowser/stylesheets;
-    "qutebrowser/userscripts" = ./qutebrowser/userscripts; # TODO: put menu to rofi dir
-    "qutebrowser/config.py" = ./qutebrowser/config.py;
   };
 
   homeFilesToLink = {
@@ -26,7 +20,7 @@ let
     ".local/share/fonts" = ./fonts; # TODO: write nix package for sf font
     ".xprofile" = ./xorg/.xprofile; # TODO: autostart declare in home-manager (find a way)
     ".xbindkeysrc" = ./xorg/.xbindkeysrc; # TODO: declare in home-manager (find alternative)
-	".jupyter/jupyter_notebook_config.py" = ./jupyter/jupyter_notebook_config.py; # TODO: Better nix way? services.jupyter.notebookConfig
+    ".jupyter/jupyter_notebook_config.py" = ./jupyter/jupyter_notebook_config.py; # TODO: Better nix way? services.jupyter.notebookConfig
 
     # TODO: declaration
     ".newsboat/config" = ./newsboat/config; # TODO: declarable in home-manager

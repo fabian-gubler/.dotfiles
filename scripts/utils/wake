@@ -26,23 +26,14 @@ force_volume=100
 
 check_dependencies() {
 	# Check if mpv is installed
-	if ! command -v mpv &> /dev/null
-	then
-		echo "Error: mpv is not installed. Please install mpv before running this script."
-		exit 1
-	fi
-
-	if ! command -v tput &> /dev/null
-	then
-		echo "Error: ncurses is not installed. Please install ncurses before running this script."
-		exit 1
-	fi
-
-	if ! command -v at &> /dev/null
-	then
-		echo "Error: at is not installed. Please install at before running this script."
-		exit 1
-	fi
+	for dependency in mpv tput at
+	do
+		if ! command -v "$dependency" &> /dev/null
+		then
+			echo "Error: $dependency is not installed. Please install $dependency before running this script."
+			exit 1
+		fi
+	done
 }
 
 # Provide brief description on usage

@@ -21,8 +21,8 @@
       touchegg
       spicetify-cli
       sioyek
-      qutebrowser
       newsboat
+	  # qt6.full
     ];
 
   programs.direnv = {
@@ -45,14 +45,14 @@
     style.package = pkgs.adwaita-qt;
   };
 
-  # programs.neovim = {
-  #   enable = true;
-  #   # extraConfig = ''
-  #   #   set number relativenumber
-  #   # '';
-  # };
-  # programs.neovim.plugins = [
-  #   pkgs.vimPlugins.markdown-preview-nvim
-  # ];
+# programs.neovim = {
+#   enable = true;
+#   # extraConfig = ''
+#   #   set number relativenumber
+#   # '';
+# };
+# programs.neovim.plugins = [
+#   pkgs.vimPlugins.markdown-preview-nvim
+# ];
 
 }

@@ -7,7 +7,7 @@
     shellAliases = {
       build = "sudo nixos-rebuild switch";
       ll = "exa -a";
-      v = "nvim";
+	  v = "nvim";
       sv = "sudoedit";
       top = "gotop -l minimal";
       mutt = "mbsync protonmail && neomutt";
