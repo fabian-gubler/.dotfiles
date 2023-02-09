@@ -36,6 +36,9 @@ bind browser G bottom-page
 bind pager gg top
 bind pager G bottom
 bind editor <Tab> complete-query
+set editor = "nvim -c 'silent! export OPENAI_API_KEY=$(rbw get OPENAI_API_KEY)'"
+
+
 
 # advanced
 macro index o "<shell-escape>mbsync protonmail<enter>" "run mbsync to sync mail"

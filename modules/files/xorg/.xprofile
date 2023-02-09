@@ -16,4 +16,4 @@ $HOME/.dotfiles/scripts/utils/applets & # start applets in order
 
 # integrate into neovim config
 # command should only be invoked after loading openai plugin (managed by lazy)
-export OPENAI_API_KEY=$(rbw get OPENAI_API_KEY)
+# export OPENAI_API_KEY=$(rbw get OPENAI_API_KEY)
