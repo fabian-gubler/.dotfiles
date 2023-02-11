@@ -1,0 +1,22 @@
+#!/bin/sh
+
+NOTIFIER=dunstify
+
+battery_status (){
+
+	STATUS=$(cat /sys/class/power_supply/BAT0/status)
+
+	if [[ $STATUS = "Discharging" ]]; then
+		CHARGE=$(cat /sys/class/power_supply/BAT0/capacity)
+
+		if [ $CHARGE -le 25 ]; then
+			$NOTIFIER --urgency=CRITICAL "Battery Low" "Level: ${CHARGE}%"
+		fi
+	fi
+}
+
+while true
+do
+	battery_status
+	sleep 180
+done

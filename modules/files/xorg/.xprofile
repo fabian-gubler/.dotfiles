@@ -11,9 +11,6 @@ kitty -e "tmuxd" &
 
 # script
 $HOME/.dotfiles/scripts/utils/bat-indicator & # show battery level
+$HOME/.dotfiles/scripts/utils/low_battery & # notifcation on low battery
 # $HOME/.dotfiles/scripts/watchers/autovdirsyncer & # sync calendar/contacts on write
 $HOME/.dotfiles/scripts/utils/applets & # start applets in order
-
-# integrate into neovim config
-# command should only be invoked after loading openai plugin (managed by lazy)
-# export OPENAI_API_KEY=$(rbw get OPENAI_API_KEY)

@@ -7,7 +7,6 @@
     shellAliases = {
       build = "sudo nixos-rebuild switch";
       ll = "exa -a";
-	  v = "nvim";
       sv = "sudoedit";
       top = "gotop -l minimal";
       mutt = "mbsync protonmail && neomutt";
@@ -54,6 +53,11 @@
 	source ~/.dotfiles/modules/programs/zsh/lfcd.sh
 	bindkey -e 
 	bindkey -s '^f' 'lfcd\n'
+
+	v() {
+	source ~/.dotfiles/scripts/utils/getenv; 
+    \nvim "$@"
+	}
 	'';
   };
 }
