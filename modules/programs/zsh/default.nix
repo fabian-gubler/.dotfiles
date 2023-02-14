@@ -35,8 +35,8 @@
     zplug = {
       enable = true;
       plugins = [
+        # { name = "hlissner/zsh-autopair"; }
         { name = "Aloxaf/fzf-tab"; }
-        { name = "hlissner/zsh-autopair"; tags = [ "defer:2" ]; }
         { name = "mafredri/zsh-async"; }
         { name = "spwhitt/nix-zsh-completions"; }
         { name = "chisui/zsh-nix-shell"; }

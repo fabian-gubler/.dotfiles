@@ -27,6 +27,11 @@ cp -f host/hardware-configuration /etc/nixos/hardware-configuration.nix
 sudo nixos-install --flake .#<host>
 
 ```
+## Helpful tips
+### Running Non-Nix binaries
+`nix-shell -p steam-run --run "steam-run ./the-binary"`
+
+Check out many possible methods: [Link](https://unix.stackexchange.com/questions/522822/different-methods-to-run-a-non-nixos-executable-on-nixos)
 
 ## Structure
 - `host` everything that is system based (e.g. hardware, system packages, window manager)

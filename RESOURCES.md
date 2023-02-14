@@ -1,3 +1,7 @@
+# Todo: Music Production
+## Ressources
+- [musnix](https://github.com/musnix/musnix)
+- [conference - nixos for musicians](http://lac.linuxaudio.org/2015/video.php?id=12)
 # How to start
 ## Consolidated advice from multiple reddit posts:
 1. Try out NixOS in a VM. 

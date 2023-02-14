@@ -12,7 +12,7 @@
 
 subject=$1
 
-DIRS="lectures out --sync --delete"
+DIRS="lectures apkg --sync --delete"
 ARGS="--sync --delete --prefix"
 HOMEDIR=$HOME/nextcloud/mcs/
 DOCSDIR=$HOMEDIR/docs/$subject/
@@ -21,7 +21,6 @@ DOCSDIR=$HOMEDIR/docs/$subject/
 sync() {
 	cd $DOCSDIR
 	mdankideck $DIRS $ARGS \"$subject::\"
-	# dunstify "Recompile successful"
 }
 
 

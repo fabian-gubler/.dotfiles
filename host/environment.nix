@@ -18,12 +18,11 @@
     ] ++
     [ texlive.combined.scheme-basic ] ++ # TODO: could use shell.nix environment for latex projects
     [ python3 cargo nodejs gcc gnumake ] ++
-	[ stylua sumneko-lua-language-server ] ++ # TODO: decouple to neovim configuration
     [ onboard wally-cli ] ++
     [ todo-txt-cli ] ++
     [ hsetroot xbindkeys xorg.xkill ] ++
     [ chromium qbittorrent ] ++
-    [ signal-desktop protonmail-bridge nextcloud-client ] ++
+    [ authy signal-desktop protonmail-bridge nextcloud-client ] ++
     [ networkmanagerapplet ] ++
     [ dmenu sxiv ] ++
     [ zathura pandoc ] ++
@@ -35,15 +34,28 @@
     [ rbw pinentry-gtk2 ] ++
     [ spotify mpv mpvScripts.mpris ] ++
     [ wget file ripgrep ] ++
-    [ zip unzip unrar ] ++
-    [ anki-bin markdown-anki-decks ] ++
+    [ zip unzip unrar steam-run ] ++
+    [ anki-bin markdown-anki-decks mkdocs ] ++
     [ xfce.thunar foliate blanket ] ++
     [ pulseaudio pavucontrol brightnessctl playerctl ] ++ # TODO: pulseaudio replace with wpctl (combined-sink)
+
+    # TODO: decouple to neovim
     [
-      # python3Packages.selenium
-      # python3Packages.versioneer
-      # python3Packages.pandas
-      # (python3.withPackages my-python-packages)
+      rnix-lsp
+      nodePackages.bash-language-server
+    ] ++
+
+    # TODO: decouple to templates
+    [
+      texlab # Latex 
+      stylua # Lua template (init neovim)
+      sumneko-lua-language-server # Lua
+      rust-analyzer
+      google-java-format # Java 
+      nodePackages.prettier # Javascript
+    ] ++
+
+    [
       # hello
     ]
   ;
