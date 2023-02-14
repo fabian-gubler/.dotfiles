@@ -22,7 +22,7 @@
       spicetify-cli
       sioyek
       newsboat
-	  # qt6.full
+	  okular
     ];
 
   programs.direnv = {

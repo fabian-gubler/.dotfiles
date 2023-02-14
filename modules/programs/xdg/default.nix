@@ -16,7 +16,7 @@
       enable = true;
       defaultApplications = {
         "text/plain" = [ "neovim.desktop" ];
-        "application/pdf" = [ "sioyek.desktop" ];
+        "application/pdf" = [ "okular.desktop" ];
         "text/html" = [ "qutebrowser.desktop" ];
         "image/jpeg" = [ "sxiv.desktop" ];
         "image/png" = [ "sxiv.desktop" ];

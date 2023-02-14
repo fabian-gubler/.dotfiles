@@ -27,9 +27,8 @@
     [ dmenu sxiv ] ++
     [ zathura pandoc ] ++
     [ gimp xournalpp ] ++
-    [ neovim lazygit ] ++
     [ arandr flameshot ] ++
-    [ lf exa fzf gotop htop trash-cli xdragon ] ++
+    [ lazygit lf exa fzf gotop htop trash-cli xdragon ] ++
     [ xclip clipnotify clipmenu ] ++
     [ rbw pinentry-gtk2 ] ++
     [ spotify mpv mpvScripts.mpris ] ++
@@ -41,6 +40,7 @@
 
     # TODO: decouple to neovim
     [
+	  neovim
       rnix-lsp
       nodePackages.bash-language-server
     ] ++
@@ -48,15 +48,15 @@
     # TODO: decouple to templates
     [
       texlab # Latex 
-      stylua # Lua template (init neovim)
-      sumneko-lua-language-server # Lua
-      rust-analyzer
-      google-java-format # Java 
+      stylua
+      sumneko-lua-language-server # Lua template (init neovim)
+      rust-analyzer # Rust
       nodePackages.prettier # Javascript
     ] ++
 
     [
-      # hello
+      # extra packages:
+      # ...
     ]
   ;
 
