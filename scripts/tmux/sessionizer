@@ -23,11 +23,12 @@ if ! tmux has-session -t=$selected_name 2> /dev/null; then
 fi
 
 # open notes (if exists)
-docs_dir=$HOME/nextcloud/mcs/docs/
+semester_dir=$HOME/nextcloud/mcs/23SP
+docs_dir=$semester_dir/docs/
 
 if [[ -d $docs_dir/$selected_name ]]; then
 	tmux neww -dn notes -t $selected_name
-	tmux send-keys -t $selected_name:notes "cd $docs_dir/$selected_name && nvim ." Enter
+	tmux send-keys -t $selected_name:notes "cd $docs_dir/$selected_name && v ." Enter
 fi
 
 # switch to session
