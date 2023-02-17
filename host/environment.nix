@@ -16,7 +16,7 @@
     with pkgs; [
       (python3.withPackages pythonPackages)
     ] ++
-    [ texlive.combined.scheme-basic ] ++ # TODO: could use shell.nix environment for latex projects
+    [ texlive.combined.scheme-basic libreoffice ] ++ # TODO: could use shell.nix environment for latex projects
     [ python3 cargo nodejs gcc gnumake ] ++
     [ onboard wally-cli ] ++
     [ todo-txt-cli ] ++
@@ -37,6 +37,7 @@
     [ anki-bin markdown-anki-decks mkdocs ] ++
     [ xfce.thunar foliate blanket ] ++
     [ pulseaudio pavucontrol brightnessctl playerctl ] ++ # TODO: pulseaudio replace with wpctl (combined-sink)
+	[ bitwig-studio ] ++
 
     # TODO: decouple to neovim
     [
