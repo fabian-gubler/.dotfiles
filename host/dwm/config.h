@@ -91,7 +91,7 @@ static Key keys[] = {
 	{ MODKEY,						XK_p,      spawn,          SHCMD("dmenu_run -i")},
 	{ MODKEY,						XK_w,      spawn,          SHCMD("qutebrowser")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
-	{ MODKEY,                       XK_g,      spawn,          SHCMD("sioyek")},
+	{ MODKEY,                       XK_g,      spawn,          SHCMD("nix-shell ~/.dotfiles/modules/programs/bitwig/default.nix")},
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("spotify --force-device-scale-factor=1.5")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},
