@@ -96,6 +96,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},
 	{ MODKEY,                       XK_b,      spawn,          SHCMD("rofi-bluetooth")},
+	{ MODKEY,                       XK_o,      spawn,          SHCMD("~/.dotfiles/scripts/dmenu/rbw")},
 	{ MODKEY|ControlMask,           XK_y,      spawn,          SHCMD("autorandr --load laptop")},
 	{ MODKEY|ShiftMask|ControlMask, XK_y,      spawn,          SHCMD("autorandr --load monitor")},
 	{ ShiftMask,					XK_Return, spawn,          SHCMD("dunstctl close-all")},

@@ -7,16 +7,16 @@
     shellAliases = {
       build = "sudo nixos-rebuild switch";
       ll = "exa -a";
+      lg = "lazygit";
       v = "nvim";
       sv = "sudoedit";
       top = "gotop -l minimal";
       mutt = "mbsync protonmail && neomutt";
       gpush = "git add . && git commit -m 'manual update' && git push";
-      conda-shell = "nix-shell ~/.dotfiles/shells/python/conda/shell.nix";
-      lg = "lazygit";
 
       t = "todo.sh -d $HOME/nextcloud/todo/config";
       d = "todo.sh -d $HOME/nextcloud/todo/dev/config";
+      u = "todo.sh -d $HOME/nextcloud/todo/uni/config";
       dv = "nvim -c 'sort' $HOME/nextcloud/todo/dev/dev.txt";
       tv = "nvim -c 'sort' $HOME/nextcloud/todo/todo.txt";
       uv = "nvim -c 'sort' $HOME/nextcloud/todo/uni/uni.txt";
@@ -25,8 +25,8 @@
     };
 
     envExtra = ''
-	  export DIRENV_LOG_FORMAT=
-      export OPENAI_API_KEY=$(rbw get OPENAI_API_KEY)
+      	  export DIRENV_LOG_FORMAT=
+            export OPENAI_API_KEY=$(rbw get OPENAI_API_KEY)
     '';
 
     history = {
@@ -37,7 +37,7 @@
     zplug = {
       enable = true;
       plugins = [
-        # { name = "hlissner/zsh-autopair"; }
+        { name = "hlissner/zsh-autopair"; tags = [ defer:2 ]; } # fix: not working
         { name = "Aloxaf/fzf-tab"; }
         { name = "mafredri/zsh-async"; }
         { name = "spwhitt/nix-zsh-completions"; }

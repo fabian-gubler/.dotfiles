@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+if command -v clipctl >/dev/null; then
+    _clipctl=true
+else
+    _clipctl=false
+fi
+
+# open dmenu with the list of accounts
+entry="$(rbw ls | dmenu -i -fn 'Monospace 10')"
+if [ -z "$entry" ]; then
+    exit 1
+fi
+
+#
+# stop clipmenu
+if $_clipctl; then clipctl disable; fi
+
+# copy password to the clipboard
+printf "%s" "$(rbw get "$entry")" | xclip -sel c &
+
+# type in username
+username="$(rbw get "$entry" --full | tail -1)"
+setxkbmap ch; xdotool type "$username"
+
+# restart clipmenu
+if $_clipctl; then clipctl enable; fi
+	
+# kill xclip after 30 seconds
+sleep 30
+pkill xclip
