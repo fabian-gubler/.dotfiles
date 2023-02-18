@@ -37,7 +37,8 @@
     [ anki-bin markdown-anki-decks mkdocs ] ++
     [ xfce.thunar foliate blanket ] ++
     [ pulseaudio pavucontrol brightnessctl playerctl ] ++ # TODO: pulseaudio replace with wpctl (combined-sink)
-	[ bitwig-studio ] ++
+	[ bitwig-studio yabridge yabridgectl] ++
+
 
     # TODO: decouple to neovim
     [

@@ -10,7 +10,7 @@ show-read-articles  no
 max-items           20
 keep-articles-days  30
 reload-time         2
-reload-threads      100
+reload-threads      3
 
 #                   statement
 pager				internal

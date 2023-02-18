@@ -7,6 +7,7 @@
     shellAliases = {
       build = "sudo nixos-rebuild switch";
       ll = "exa -a";
+      v = "nvim";
       sv = "sudoedit";
       top = "gotop -l minimal";
       mutt = "mbsync protonmail && neomutt";
@@ -24,7 +25,8 @@
     };
 
     envExtra = ''
-    export DIRENV_LOG_FORMAT=
+	  export DIRENV_LOG_FORMAT=
+      export OPENAI_API_KEY=$(rbw get OPENAI_API_KEY)
     '';
 
     history = {
@@ -53,11 +55,6 @@
 	source ~/.dotfiles/modules/programs/zsh/lfcd.sh
 	bindkey -e 
 	bindkey -s '^f' 'lfcd\n'
-
-	v() {
-	source ~/.dotfiles/scripts/utils/getenv; 
-    \nvim "$@"
-	}
 	'';
   };
 }

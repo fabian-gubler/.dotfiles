@@ -25,7 +25,6 @@
   # system architecture
   targetPkgs = pkgs: with pkgs; [
 
-
 	# bitwig dependencies
 	yabridge
 	yabridgectl
@@ -39,11 +38,9 @@
     # todo : check if they are needed
     coreutils
     curl
-    vim
     tig
     ack
     which
-    bitwig-studio
     liblo
     zlib
     fftw
