@@ -20,7 +20,7 @@ if $_clipctl; then clipctl disable; fi
 printf "%s" "$(rbw get "$entry")" | xclip -sel c &
 
 # type in username
-username="$(rbw get "$entry" --full | tail -1)"
+username="$(rbw get "$entry" --full | sed -n '2p' | awk '{print $NF}')"
 setxkbmap ch; xdotool type "$username"
 
 # restart clipmenu
