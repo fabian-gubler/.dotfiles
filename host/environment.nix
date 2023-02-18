@@ -50,8 +50,6 @@
     # TODO: decouple to templates
     [
       texlab # Latex 
-      stylua
-      sumneko-lua-language-server # Lua template (init neovim)
       rust-analyzer # Rust
       nodePackages.prettier # Javascript
     ] ++
