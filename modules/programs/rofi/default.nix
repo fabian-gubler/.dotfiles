@@ -1,10 +1,7 @@
-{ pkgs, config, lib, ... }: {
-
+{
   programs.rofi = {
     enable = true;
-    font = "SFMono 20";
     theme = ./files/spotlight-dark.rasi;
-    configPath = "$XDG_CONFIG_HOME/rofi/config.rasi";
     extraConfig = {
       kb-row-up = "Up,Shift+Tab";
       kb-row-down = "Down";
@@ -17,4 +14,3 @@
     };
   };
 }
-
