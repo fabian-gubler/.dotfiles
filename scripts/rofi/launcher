@@ -8,7 +8,7 @@ list_col='7'
 list_row='1'
 
 option_1="爵"
-option_2=""
+option_2=" "
 option_3=""
 option_4=""
 option_5=""
@@ -33,7 +33,7 @@ case ${chosen} in
 		./apps
         ;;
     $option_4)
-		blueberry &
+		rofi-bluetooth -i &
         ;;
     $option_5)
 		./settings

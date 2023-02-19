@@ -42,10 +42,10 @@
 
     };
 
-    extraConfig = ''
-      config.set('input.mode_override', 'passthrough', 'localhost:8888')
-      config.set('input.mode_override', 'passthrough', 'https://www.overleaf.com')
-    '';
+    # extraConfig = ''
+    #   config.set('input.mode_override', 'passthrough', 'localhost:8888')
+    #   config.set('input.mode_override', 'passthrough', 'https://www.overleaf.com')
+    # '';
 
     settings = {
       hints.chars = "arstdhneio";

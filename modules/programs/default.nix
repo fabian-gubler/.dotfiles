@@ -2,6 +2,7 @@
   imports = [
 	./autorandr
     ./autojump
+	./rofi
     ./git
     ./kitty
     ./lf

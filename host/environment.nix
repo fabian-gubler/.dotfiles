@@ -16,8 +16,9 @@
     with pkgs; [
       (python3.withPackages pythonPackages)
     ] ++
-    [ texlive.combined.scheme-basic libreoffice ] ++ # TODO: could use shell.nix environment for latex projects
-    [ python3 cargo nodejs gcc gnumake ] ++
+
+    [ python3 neovim cargo nodejs gcc gnumake ] ++
+    [ rnix-lsp nodePackages.bash-language-server ] ++
     [ onboard wally-cli ] ++
     [ todo-txt-cli ] ++
     [ hsetroot xbindkeys xorg.xkill ] ++
@@ -26,7 +27,7 @@
     [ networkmanagerapplet ] ++
     [ dmenu sxiv ] ++
     [ zathura pandoc ] ++
-    [ gimp xournalpp ] ++
+    [ gimp xournalpp libreoffice ] ++
     [ arandr flameshot ] ++
     [ lazygit lf exa fzf gotop htop trash-cli xdragon ] ++
     [ xclip clipnotify clipmenu ] ++
@@ -37,19 +38,12 @@
     [ anki-bin markdown-anki-decks mkdocs ] ++
     [ xfce.thunar foliate blanket ] ++
     [ pulseaudio pavucontrol brightnessctl playerctl ] ++ # TODO: pulseaudio replace with wpctl (combined-sink)
-	[ bitwig-studio yabridge yabridgectl] ++
+    [ bitwig-studio yabridge yabridgectl ] ++
 
 
-    # TODO: decouple to neovim
-    [
-	  neovim
-      rnix-lsp
-      nodePackages.bash-language-server
-    ] ++
 
     # TODO: decouple to templates
     [
-      texlab # Latex 
       rust-analyzer # Rust
       nodePackages.prettier # Javascript
     ] ++

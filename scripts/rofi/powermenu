@@ -15,10 +15,10 @@ list_row='5'
 
 # Options
 option_1="	Back"
-option_2="	Lock"
-option_3="	Suspend"
-option_4="	Reboot"
-option_5="	Shutdown"
+option_2="Lock"
+option_3="Suspend"
+option_4="Reboot"
+option_5="Shutdown"
 yes=' Yes'
 no=' No'
 

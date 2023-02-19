@@ -14,7 +14,6 @@
     [ neomutt notmuch-mutt msmtp lynx ] ++
     [ khal khard vdirsyncer inotify-tools ] ++
     [
-      rofi
       dunst
       autorandr
       isync
