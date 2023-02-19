@@ -21,7 +21,7 @@
       spicetify-cli
       sioyek
       newsboat
-	  okular
+      okular
     ];
 
   programs.direnv = {
@@ -44,14 +44,11 @@
     style.package = pkgs.adwaita-qt;
   };
 
-# programs.neovim = {
-#   enable = true;
-#   # extraConfig = ''
-#   #   set number relativenumber
-#   # '';
-# };
-# programs.neovim.plugins = [
-#   pkgs.vimPlugins.markdown-preview-nvim
-# ];
+
+  nixpkgs.overlays = [
+    (self: super: {
+      # [...]
+    })
+  ];
 
 }

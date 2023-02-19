@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # NOTE: Could think about rewriting it in python
 	# NOTE: Write software tests

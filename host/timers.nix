@@ -6,6 +6,27 @@ let
   homeDirectory = "/home/${user}";
 in
 {
+  # Refresh newsboat in background
+  systemd.timers."newsboat" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnStartupSec = "1m";
+      OnUnitActiveSec = "30m";
+      Unit = "newsboat.service";
+    };
+  };
+
+  systemd.services."newsboat" = {
+    serviceConfig = {
+      Type = "oneshot";
+      User = "${user}";
+    };
+    path = with pkgs; [ newsboat ];
+    script = ''
+      		newsboat -x reload
+    '';
+  };
+
   # Trash Downloads on boot / daily
   systemd.timers."trash-downloads" = {
     wantedBy = [ "timers.target" ];

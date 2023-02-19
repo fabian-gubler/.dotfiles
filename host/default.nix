@@ -5,6 +5,7 @@
 	./configuration.nix
 	./environment.nix
     ./timers.nix
+	./overlays.nix
   ];
 
 }

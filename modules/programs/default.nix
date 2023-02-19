@@ -1,8 +1,8 @@
-{ pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   imports = [
-	./autorandr
+    ./autorandr
     ./autojump
-	./rofi
+    ./rofi
     ./git
     ./kitty
     ./lf
@@ -10,8 +10,7 @@
     ./yt-dlp
     ./zsh
     ./calendar
-	./qutebrowser
+    ./qutebrowser
   ];
-
 
 }
