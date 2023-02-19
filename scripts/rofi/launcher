@@ -24,19 +24,19 @@ chosen="$(run_rofi)"
 sleep 0.2
 case ${chosen} in
     $option_1)
-		./quicklinks
+		./menus/quicklinks
         ;;
     $option_2)
-		./powermenu
+		./menus/powermenu
         ;;
     $option_3)
-		./apps
+		./menus/apps
         ;;
     $option_4)
 		rofi-bluetooth -i &
         ;;
     $option_5)
-		./settings
+		./menus/settings
         ;;
     $option_6)
 		exit

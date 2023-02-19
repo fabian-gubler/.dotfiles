@@ -6,8 +6,8 @@ else
     _clipctl=false
 fi
 
-# open dmenu with the list of accounts
-entry="$(rbw ls | dmenu -i -fn 'Monospace 10')"
+# open rofi with the list of accounts
+entry="$(rbw ls | rofi -dmenu -normal-window -i -fn 'Monospace 10')"
 if [ -z "$entry" ]; then
     exit 1
 fi

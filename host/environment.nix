@@ -31,7 +31,7 @@
     [ arandr flameshot ] ++
     [ lazygit lf exa fzf gotop htop trash-cli xdragon ] ++
     [ xclip clipnotify clipmenu ] ++
-    [ rbw pinentry-gtk2 ] ++
+    [ rbw xdotool pinentry-gtk2 ] ++
     [ spotify mpv mpvScripts.mpris ] ++
     [ wget file ripgrep ] ++
     [ zip unzip unrar steam-run ] ++
