@@ -8,7 +8,7 @@ show-read-articles  no
 
 #                   statement
 max-items           1000
-keep-articles-days  90
+keep-articles-days  180
 reload-time         2
 reload-threads      8
 

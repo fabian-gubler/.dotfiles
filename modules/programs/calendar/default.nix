@@ -17,12 +17,8 @@ in
     enable = true;
     settings = {
       general."status_path" = "${config.home.homeDirectory}/.config/vdirsyncer";
-      "pair calendars" = {
-        a = "calendar_local";
-        b = "calendar_remote";
-        collections = [ "from a" "from b" ];
-        metadata = [ "color" "displayname" ];
-      };
+
+      # Description of Calendars
       "storage calendar_local" = {
         type = "filesystem";
         path = "/home/fabian/nextcloud/.calendars";
@@ -34,11 +30,8 @@ in
         "username.fetch" = [ "command" "${usernameStore}" ];
         "password.fetch" = [ "command" "${passStore}" ];
       };
-      "pair my_contacts" = {
-        a = "contacts_local";
-        b = "contacts_remote";
-        collections = [ "from a" "from b" ];
-      };
+
+      # Description of Contacts
       "storage contacts_local" = {
         type = "filesystem";
         path = "${config.home.homeDirectory}/nextcloud/.contacts/";
@@ -50,6 +43,20 @@ in
         "username.fetch" = [ "command" "${usernameStore}" ];
         "password.fetch" = [ "command" "${passStore}" ];
       };
+
+      # Pair Events and Contacts
+      "pair calendars" = {
+        a = "calendar_local";
+        b = "calendar_remote";
+        collections = [ "from a" "from b" ];
+        metadata = [ "color" "displayname" ];
+      };
+      "pair my_contacts" = {
+        a = "contacts_local";
+        b = "contacts_remote";
+        collections = [ "from a" "from b" ];
+      };
+
     };
   };
 }

@@ -52,8 +52,6 @@ Builds (based on priority):
 - typora (legacy 0.9.98 exists in NUR sepo)
 - pdf-stapler,
 - harsh
-- zsa-wally (depends on udev-rules)
-- fahrplan
 - san francisco font
 
 Overlays / Nix Files:
