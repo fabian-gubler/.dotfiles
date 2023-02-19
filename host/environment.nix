@@ -9,6 +9,7 @@
   # TODO: fix protonvpn-cli (ncmli -> ipv6leakprotection or openvpn configuration file)
   environment.systemPackages =
     let
+
       pythonPackages = p: with p; [
         # ...
         (
@@ -57,7 +58,6 @@
     [ bitwig-studio yabridge yabridgectl ] ++
 
 
-
     # TODO: decouple to templates
     [
       rust-analyzer # Rust
@@ -83,7 +83,6 @@
     ANKI_BASE = "\${HOME}/nextcloud/apps/anki-data";
     QT_SCALE_FACTOR = "1.5";
 
-
     PATH = [
       "\${XDG_BIN_HOME}"
       "\${HOME}/.dotfiles/scripts/utils"
@@ -92,3 +91,4 @@
   };
 
 }
+

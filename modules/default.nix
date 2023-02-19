@@ -19,7 +19,6 @@
       isync
       touchegg
       spicetify-cli
-      sioyek
       newsboat
       okular
     ];
@@ -39,16 +38,13 @@
 
   qt = {
     enable = true;
-    platformTheme = "gnome";
-    style.name = "adwaita-dark";
-    style.package = pkgs.adwaita-qt;
+    platformTheme = "gtk";
+    style.name = "gtk2";
   };
 
 
   nixpkgs.overlays = [
-    (self: super: {
-      # [...]
-    })
+    (self: super: { })
   ];
 
 }

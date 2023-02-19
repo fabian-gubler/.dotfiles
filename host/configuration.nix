@@ -62,8 +62,8 @@ in
   # TODO: System-wide GTK Theme
   qt5 = {
     enable = true;
-    platformTheme = "gnome";
-    style = "adwaita-dark";
+    platformTheme = "gtk2";
+    style = "gtk2";
   };
 
   networking = {

@@ -10,7 +10,7 @@ let
 
     # TODO: declaration
     "mutt" = ./mutt; # TODO: declarable in home-manager
-    "sioyek" = ./sioyek; # TODO: declarable in home-manager
+    # "sioyek" = ./sioyek; # TODO: declarable in home-manager
     "mpv" = ./mpv; # TODO: declarable in home-manager
   };
 

@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -26,10 +26,36 @@
       spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
     in
     {
+      overlays = {
+        # Inject 'unstable' and 'trunk' into the overridden package set, so that
+        # the following overlays may access them (along with any system configs
+        # that wish to do so).
+        pkg-sets = (
+          final: prev: {
+            unstable = import inputs.unstable { system = final.system; };
+            trunk = import inputs.trunk { system = final.system; };
+          }
+        );
+        # Remaining attributes elided.
+      };
       nixosConfigurations = {
         nixos = lib.nixosSystem {
           inherit system;
           modules = [
+            ({ config, pkgs, ... }:
+              let
+                overlay-unstable = final: prev: {
+                  unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
+                };
+              in
+              {
+                nixpkgs.overlays = [ overlay-unstable ];
+                environment.systemPackages = with pkgs; [
+                  # unstable.sioyek
+                ];
+              }
+            )
+
             ./host
 
             home-manager.nixosModules.home-manager
