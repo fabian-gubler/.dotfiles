@@ -7,8 +7,8 @@ show-read-feeds     no
 show-read-articles  no
 
 #                   statement
-max-items           20
-keep-articles-days  30
+max-items           1000
+keep-articles-days  90
 reload-time         2
 reload-threads      8
 
