@@ -3,6 +3,9 @@
     ./autorandr
     ./autojump
 	./sioyek
+	./tmux
+	./mail
+	./newsboat
     ./rofi
     ./git
     ./kitty

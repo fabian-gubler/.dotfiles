@@ -10,21 +10,15 @@ let
 
     # TODO: declaration
     "mutt" = ./mutt; # TODO: declarable in home-manager
-    # "sioyek" = ./sioyek; # TODO: declarable in home-manager
     "mpv" = ./mpv; # TODO: declarable in home-manager
   };
 
   homeFilesToLink = {
     # TODO: custom
-    ".local/share/fonts" = ./fonts; # TODO: write nix package for sf font
+    ".local/share/fonts" = ./fonts; # TODO: write nix package for sf font or find alternative font
     ".xprofile" = ./xorg/.xprofile; # TODO: autostart declare in home-manager (find a way)
     ".xbindkeysrc" = ./xorg/.xbindkeysrc; # TODO: declare in home-manager (find alternative)
 
-    # TODO: declaration
-    ".newsboat/config" = ./newsboat/config; # TODO: declarable in home-manager
-    ".newsboat/urls" = ./newsboat/urls; # TODO: declarable in home-manager
-    ".mbsyncrc" = ./mutt/.mbsyncrc; # TODO: declarable in home-manager
-    ".tmux.conf" = ./tmux/tmux.conf; # TODO: declarable in home-manager
   };
 
   # Function to help map attrs for symlinking home.file, xdg.configFile

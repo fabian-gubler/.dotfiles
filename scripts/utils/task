@@ -1,44 +1,33 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-# NOTE: Could think about rewriting it in python
-	# NOTE: Write software tests
+# Read the first argument
+ARG=$1
+BASEDIR=$HOME/nextcloud/todo
 
-# TODO: Automatic Yaml Snippet Mode
-	#  Yaml Snippet (Name, ID, Priority etc.)
-	# 	- Title, Priority -> Shown in todo.txt
-	# 	- ID -> Used for filtering & title
-	# 	- Name -> Tmux Window (Could also be the title)
+CATEGORY=$(basename $(pwd))
+DIR="$BASEDIR/$CATEGORY"
 
-# TODO: Better ID's like in khard
-# implementation: https://github.com/lucc/khard/blob/develop/khard/address_book.py#L85
-	# as short as possible
-	# no duplicates
+create_file() {
+	# generate id and file
+	UUID=$(uuidgen)
+	ID=$(echo "_$UUID" | cut -c1-6)
+	FILE="$DIR/$ID.md"
 
-# TODO: Parse arguments
-	# error message when wrong argument
-	# task <new>
-	# task <open> (default action)
-	# task <delete> (optional: id)
-		# -> if no id is given, opens fzf menu with a list
+	# select to clipboard
+	echo -n "$ID.md" | xclip -sel clipboard
 
+	# create file only if it does not exist
+	if [ -f "$FILE" ]; then
+	  echo "Error: File already exists"
+	  exit 1
+	else
+	  touch "$FILE"
+	fi
+}
 
-# Variables
-taskdir=$HOME/nextcloud/todo/tasks
-
-# generate id
-id=$(openssl rand -base64 2)
-file=$taskdir/$id
-
-boiler="---
-\nid:
-\n---"
-
-if [[ $1 == "new" ]]; then
-	touch $file
-	echo -e $boiler >> $file
-	$EDITOR -c "set filetype=markdown" $file
-	exit
-else
-	$EDITOR -c "set filetype=markdown" $taskdir/$1
+if [ "$CATEGORY" != "dev" ] && [ "$CATEGORY" != "pers" ] && [ "$DIR" != "uni" ]; then
+  echo "Error: Variable must be either dev, pers, or uni"
+  exit 1
 fi
 
+create_file

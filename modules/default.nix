@@ -11,16 +11,15 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs;
-    [ neomutt notmuch-mutt msmtp lynx ] ++
+    [ neomutt notmuch-mutt lynx ] ++
     [ khal khard vdirsyncer inotify-tools ] ++
     [
       dunst
       autorandr
-      isync
+      # isync
       touchegg
       spicetify-cli
       newsboat
-      okular
     ];
 
   programs.direnv = {
@@ -39,12 +38,7 @@
   qt = {
     enable = true;
     platformTheme = "gtk";
-    style.name = "gtk2";
+    style.name = "gtk";
   };
-
-
-  nixpkgs.overlays = [
-    (self: super: { })
-  ];
 
 }

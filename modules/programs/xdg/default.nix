@@ -1,11 +1,11 @@
 { pkgs, ... }: {
   xdg = {
     desktopEntries = {
-      # sioyek = {
-      #   name = "sioyek";
-      #   exec = "sioyek";
-      #   mimeType = [ "application/pdf" ];
-      # };
+      okular = {
+        name = "okular";
+        exec = "okular";
+        mimeType = [ "application/pdf" ];
+      };
 
       foliate = {
         name = "foliate";

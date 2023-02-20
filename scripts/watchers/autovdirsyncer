@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 
 # Watch vdirsyncer calendars.
 # Sync on changes and every 5 minutes.

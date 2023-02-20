@@ -36,6 +36,7 @@
 
     [ python3 neovim cargo nodejs gcc gnumake ] ++
     [ rnix-lsp nodePackages.bash-language-server ] ++
+    [ texlive.combined.scheme-small ] ++
     [ onboard wally-cli ] ++
     [ todo-txt-cli ] ++
     [ hsetroot xbindkeys xorg.xkill ] ++
@@ -43,7 +44,7 @@
     [ authy signal-desktop protonmail-bridge nextcloud-client ] ++
     [ networkmanagerapplet ] ++
     [ dmenu sxiv ] ++
-    [ zathura pandoc ] ++
+    [ zathura okular pandoc poppler_utils ] ++
     [ gimp xournalpp libreoffice ] ++
     [ arandr flameshot ] ++
     [ lazygit lf exa fzf gotop htop trash-cli xdragon ] ++
@@ -67,6 +68,7 @@
     [
       # extra packages:
       # ...
+      # jdt-language-server # Java
     ]
   ;
 

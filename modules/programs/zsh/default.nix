@@ -14,12 +14,12 @@
       mutt = "mbsync protonmail && neomutt";
       gpush = "git add . && git commit -m 'manual update' && git push";
 
-      t = "todo.sh -d $HOME/nextcloud/todo/config";
+      t = "todo.sh -d $HOME/nextcloud/todo/pers/config";
       d = "todo.sh -d $HOME/nextcloud/todo/dev/config";
       u = "todo.sh -d $HOME/nextcloud/todo/uni/config";
-      dv = "nvim -c 'sort' $HOME/nextcloud/todo/dev/dev.txt";
-      tv = "nvim -c 'sort' $HOME/nextcloud/todo/todo.txt";
-      uv = "nvim -c 'sort' $HOME/nextcloud/todo/uni/uni.txt";
+      dv = "cd $HOME/nextcloud/todo/dev; nvim -c 'sort' dev.txt";
+      tv = "cd $HOME/nextcloud/todo/pers; nvim -c 'sort' todo.txt";
+      uv = "cd $HOME/nextcloud/todo/uni; nvim -c 'sort' uni.txt";
       sc = "cd ~/.dotfiles/scripts/utils/ && exa -a";
       ".." = "cd ..";
     };

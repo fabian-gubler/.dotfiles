@@ -1,10 +1,19 @@
 #!/usr/bin/env bash
 
+TEMPLATE_DIR=$HOME/templates
+
+# Check if argument is provided
 if [ $# -lt 1 ]; then
     echo "Error: No argument provided."
     exit 1
 fi
 
+# Create Development Environment
+if [ -d "~/templates/$1" ]; then
+	nix flake init -t $TEMPLATE_DIR/$1
+else
+	nix flake init -t github:fabian-gubler/templates#$1
+fi
 
-nix flake init -t github:fabian-gubler/templates#$1
+# Initialize Environment
 echo "use flake" >> .envrc && direnv allow
