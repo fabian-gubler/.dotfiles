@@ -24,6 +24,19 @@ soothing_volume=30
 normal_volume=70
 force_volume=100
 
+# Determine Wake up time
+if [ -n "$1" ]; then
+	time=$1
+else
+	# Ask the user to enter time if no input is given
+	read -p "Do you want to schedule the alarm in 8 hours? [y/n]: " answer
+	if [ "$answer" == "y" ]; then
+		time=$(date --date='8 hours' +%H:%M)
+	else
+		read -p "Enter the time for the alarm in 24h format (HH:MM): " time
+	fi
+fi
+
 check_dependencies() {
 	# Check if mpv is installed
 	for dependency in mpv tput at
@@ -36,23 +49,7 @@ check_dependencies() {
 	done
 }
 
-# Provide brief description on usage
-parse_args() {
 
-	# Check if time is given as input
-	if [ $# -eq 0 ]
-	then
-		# Ask the user to enter time if no input is given
-		read -p "Do you want to schedule the alarm in 8 hours? [y/n]: " answer
-		if [ "$answer" == "y" ]; then
-			time=$(date --date='8 hours' +%H:%M)
-		else
-			read -p "Enter the time for the alarm in 24h format (HH:MM): " time
-		fi
-	else
-		time=$1
-		fi
-}
 
 validate_time() {
     # Regular expression to match the time format (HH:MM)
@@ -129,7 +126,7 @@ test_sound() {
 # Main Function
 main() {
 	check_dependencies
-	parse_args
+	# parse_args
 	validate_time
 	check_files
 	schedule_alarm

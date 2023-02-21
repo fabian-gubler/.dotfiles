@@ -8,7 +8,7 @@ let
     "khard" = ./khard; # TODO: create custom service
     "touchegg/touchegg.conf" = ./touchegg/touchegg.conf; # create custom service
 
-    # TODO: declaration
+    # Leave it
     "mutt" = ./mutt; # TODO: declarable in home-manager
     "mpv" = ./mpv; # TODO: declarable in home-manager
   };

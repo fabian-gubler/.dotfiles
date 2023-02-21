@@ -1,3 +1,10 @@
+{ pkgs, config, ... }:
+# TODO: Mail directory creation
+let
+  # TODO: Make pure (remove hardcoding)
+  bridgePass = "${config.home.homeDirectory}/.dotfiles/modules/programs/mail/files/get-pass.sh";
+in
+
 {
   programs = {
     msmtp.enable = true;
@@ -6,6 +13,23 @@
 
   accounts.email.accounts = {
     protonmail = {
+      # address = "fabian.gubler@protonmail.com";
+      # maildir = { path = "~/Mail/"; };
+      # folders = {
+      #   inbox = "INBOX";
+      #   drafts = "Drafts";
+      #   sent = "Sent";
+      #   trash = "Trash";
+
+      # };
+      # neomutt = {
+      #   enable = true;
+      #   mailboxName = "INBOX";
+      # };
+      # smtp = {
+      #   host = "smtp://fabian.gubler@protonmail.com:${bridgePass}";
+      #   port = 1025;
+      # };
       imap = {
         host = "127.0.0.1";
         port = 1143;
@@ -15,7 +39,7 @@
       passwordCommand = "rbw get bridge";
       mbsync = {
         enable = true;
-        create = "imap";
+        # create = "imap";
         expunge = "both";
         extraConfig.account = {
           Host = "127.0.0.1";
@@ -25,8 +49,8 @@
           CertificateFile = "~/.config/protonmail/bridge/cert.pem";
         };
         extraConfig.local = {
-          Path = "~/.mail/";
-          Inbox = "~/.mail/INBOX/";
+          Path = "~/Mail/";
+          Inbox = "~/Mail/INBOX/";
         };
         extraConfig.remote = {
           Account = "protonmail";

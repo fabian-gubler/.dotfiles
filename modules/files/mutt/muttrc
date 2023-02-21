@@ -5,7 +5,7 @@ source ~/.config/mutt/variables| # pipe indicates executable
 set query_command = "khard email --parsable --search-in-source-files '%s'"
 set from = "$my_mail"
 set sendmail = "msmtp -a $my_mail"
-set folder = "~/.mail"
+set folder = "~/Mail"
 set spoolfile = +INBOX
 set postponed = +Drafts
 set trash = +Trash
