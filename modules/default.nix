@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
 
   # Let Home Manager install and manage itself.
-  home.stateVersion = "21.11";
+  home.stateVersion = "22.11";
   programs.home-manager.enable = true;
 
   imports = [
@@ -16,7 +16,6 @@
     [
       dunst
       autorandr
-      # isync
       touchegg
       spicetify-cli
       newsboat

@@ -29,6 +29,9 @@
       en = "https://www.deepl.com/translator#de/en/{}";
       p = "https://www.powerthesaurus.org/{}/synonyms";
       k = "https://www.merriam-webster.com/dictionary/{}";
+	  n = "https://search.nixos.org/packages?sort=relevance&type=packages&query={}";
+	  no = "https://search.nixos.org/options?sort=relevance&type=options&query={}";
+	  nh = "https://mynixos.com/search?q={}";
     };
 
     keyBindings = {

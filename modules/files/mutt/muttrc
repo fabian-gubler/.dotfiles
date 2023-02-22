@@ -6,10 +6,12 @@ set query_command = "khard email --parsable --search-in-source-files '%s'"
 set from = "$my_mail"
 set sendmail = "msmtp -a $my_mail"
 set folder = "~/Mail"
+set edit_headers = yes
 set spoolfile = +INBOX
 set postponed = +Drafts
 set trash = +Trash
 set record = +Sent
+set confirmappend = no
 set sidebar_visible = yes
 set forward_format = "Fwd: %s"	# format of subject when forwarding
 set forward_decode              # decode when forwarding

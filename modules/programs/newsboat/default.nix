@@ -47,10 +47,26 @@
       { url = "https://lukesmith.xyz/rss.xml"; }
       { url = "https://lexfridman.com/feed/podcast/"; }
       { url = "https://feeds.megaphone.fm/darknetdiaries"; }
+      {
+        title = "Alexandru Burlacu ";
+        url = "https://alexandruburlacu.github.io/feed.xml";
+      }
+
+      # Integrate Twitter or Reddit?
+      # ML Accounts to follow: https://www.reddit.com/r/MachineLearning/comments/9kkoyb/d_some_of_the_best_ml_accounts_to_follow_on/
+
+      # Potential:
+      # https://jeremykun.com/feed/ # Math, ML, Programming
+      # http://www.offconvex.org/feed.xml
+
+      # Also check out: https://neptune.ai/blog/the-best-regularly-updated-machine-learning-blogs-or-resources
 
       ###################
       # YOUTUBE CHANNELS
       ###################
+
+      # Ways to channel_id:
+      # - Google Channel (see link)
 
       {
         # The Primeagen

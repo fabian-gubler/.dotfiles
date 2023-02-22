@@ -13,20 +13,21 @@
       pythonPackages = p: with p; [
         # ...
         (
-          buildPythonPackage rec {
-            pname = "fahrplan";
-            version = "1.1.2";
-            src = fetchPypi {
-              inherit pname version;
-              sha256 = "sha256-2gg1rm7hrv5k+SuC+KnffzE+QexeQpmFlhp6kpTiS2w=";
-            };
-            doCheck = false;
-            propagatedBuildInputs = [
-              texttable
-              requests
-              python-dateutil
-            ];
-          }
+          buildPythonPackage
+            rec {
+              pname = "fahrplan";
+              version = "1.1.2";
+              src = fetchPypi {
+                inherit pname version;
+                sha256 = "sha256-2gg1rm7hrv5k+SuC+KnffzE+QexeQpmFlhp6kpTiS2w=";
+              };
+              doCheck = false;
+              propagatedBuildInputs = [
+                texttable
+                requests
+                python-dateutil
+              ];
+            }
         )
       ];
     in
@@ -68,7 +69,7 @@
     [
       # extra packages:
       # ...
-      # jdt-language-server # Java
+      jdt-language-server # Java
     ]
   ;
 
@@ -93,4 +94,5 @@
   };
 
 }
+
 

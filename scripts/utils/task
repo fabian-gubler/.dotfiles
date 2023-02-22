@@ -25,7 +25,7 @@ create_file() {
 	fi
 }
 
-if [ "$CATEGORY" != "dev" ] && [ "$CATEGORY" != "pers" ] && [ "$DIR" != "uni" ]; then
+if [ "$CATEGORY" != "dev" ] && [ "$CATEGORY" != "pers" ] && [ "$CATEGORY" != "uni" ]; then
   echo "Error: Variable must be either dev, pers, or uni"
   exit 1
 fi
