@@ -43,13 +43,37 @@
       # BLOGS
       ###################
 
-      { url = "https://drewdevault.com/blog/index.xml"; }
-      { url = "https://lukesmith.xyz/rss.xml"; }
-      { url = "https://lexfridman.com/feed/podcast/"; }
-      { url = "https://feeds.megaphone.fm/darknetdiaries"; }
       {
-        title = "Alexandru Burlacu ";
+        title = "Blog: Drew DeVault";
+        url = "https://drewdevault.com/blog/index.xml";
+      }
+      {
+        title = "Blog: Luke Smith";
+        url = "https://lukesmith.xyz/rss.xml";
+      }
+      {
+        title = "Blog: Alexandru Burlacu";
         url = "https://alexandruburlacu.github.io/feed.xml";
+      }
+
+      ###################
+      # PODCASTS
+      ###################
+      {
+        title = "Podcast: Darknet Diaries";
+        url = "https://feeds.megaphone.fm/darknetdiaries";
+      }
+      {
+        title = "Podcast: Lex Fridman";
+        url = "https://lexfridman.com/feed/podcast/";
+      }
+      {
+        title = "Podcast: Andrew Huberman";
+        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC2D2CMWXMOVWx7giW1n3LIg";
+      }
+      {
+        title = "Podcast: Naval Ravikant";
+        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCh_dVD10YuSghle8g6yjePg";
       }
 
       # Integrate Twitter or Reddit?
@@ -66,12 +90,18 @@
       ###################
 
       # Ways to channel_id:
+      # - Search Channel on Insidious 
       # - Google Channel (see link)
 
       {
         # The Primeagen
         tags = [ "!" "youtube" ];
         url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC8ENHE5xdFSwx71u3fDH5Xw";
+      }
+      {
+        # Aleksa Gordic
+        tags = [ "!" "youtube" ];
+        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCj8shE7aIn4Yawwbo2FceCQ";
       }
       {
         # TJ Devries
