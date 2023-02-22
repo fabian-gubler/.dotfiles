@@ -28,7 +28,7 @@ docs_dir=$semester_dir/docs/
 
 if [[ -d $docs_dir/$selected_name ]]; then
 	tmux neww -dn notes -t $selected_name
-	tmux send-keys -t $selected_name:notes "cd $docs_dir/$selected_name && v ." Enter
+	tmux send-keys -t $selected_name:notes "cd $docs_dir/$selected_name && v index.md" Enter
 fi
 
 # switch to session

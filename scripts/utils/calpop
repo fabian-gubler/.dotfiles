@@ -103,7 +103,7 @@ echo $(khal list $time | grep 06:53)
 create_block "08:30 10:00 Study -a uni"
 create_block "10:15 12:00 Study -a uni"
 # create_block "12:15 14:00 Fitness -a pers"
-create_block "14:15 16:00 Study -a uni"
+create_block "13:15 15:00 Study -a uni"
 
 # List Entries
 echo ""

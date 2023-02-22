@@ -39,42 +39,8 @@
     };
 
     urls = [
-      ###################
-      # BLOGS
-      ###################
 
-      {
-        title = "Blog: Drew DeVault";
-        url = "https://drewdevault.com/blog/index.xml";
-      }
-      {
-        title = "Blog: Luke Smith";
-        url = "https://lukesmith.xyz/rss.xml";
-      }
-      {
-        title = "Blog: Alexandru Burlacu";
-        url = "https://alexandruburlacu.github.io/feed.xml";
-      }
-
-      ###################
-      # PODCASTS
-      ###################
-      {
-        title = "Podcast: Darknet Diaries";
-        url = "https://feeds.megaphone.fm/darknetdiaries";
-      }
-      {
-        title = "Podcast: Lex Fridman";
-        url = "https://lexfridman.com/feed/podcast/";
-      }
-      {
-        title = "Podcast: Andrew Huberman";
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC2D2CMWXMOVWx7giW1n3LIg";
-      }
-      {
-        title = "Podcast: Naval Ravikant";
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCh_dVD10YuSghle8g6yjePg";
-      }
+      # Note: Feeds are fetched in order
 
       # Integrate Twitter or Reddit?
       # ML Accounts to follow: https://www.reddit.com/r/MachineLearning/comments/9kkoyb/d_some_of_the_best_ml_accounts_to_follow_on/
@@ -161,7 +127,7 @@
       {
         # Internet Historian
         tags = [ "!" "youtube" ];
-        url = "https";
+        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCR1D15p_vdP3HkrH8wgjQRw";
       }
       {
         # Incognito Mode
@@ -183,6 +149,44 @@
         tags = [ "!" "youtube" ];
         url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCYwVxWpjeKFWwu8TML-Te9A";
       }
+
+      ###################
+      # PODCASTS
+      ###################
+      {
+        title = "Podcast: Darknet Diaries";
+        url = "https://feeds.megaphone.fm/darknetdiaries";
+      }
+      {
+        title = "Podcast: Lex Fridman";
+        url = "https://lexfridman.com/feed/podcast/";
+      }
+      {
+        title = "Podcast: Andrew Huberman";
+        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC2D2CMWXMOVWx7giW1n3LIg";
+      }
+      {
+        title = "Podcast: Naval Ravikant";
+        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCh_dVD10YuSghle8g6yjePg";
+      }
+
+      ###################
+      # BLOGS
+      ###################
+
+      {
+        title = "Blog: Drew DeVault";
+        url = "https://drewdevault.com/blog/index.xml";
+      }
+      {
+        title = "Blog: Luke Smith";
+        url = "https://lukesmith.xyz/rss.xml";
+      }
+      {
+        title = "Blog: Alexandru Burlacu";
+        url = "https://alexandruburlacu.github.io/feed.xml";
+      }
+
     ];
   };
 }
