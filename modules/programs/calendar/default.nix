@@ -11,7 +11,7 @@ in
     ./modules/vdirsyncer.nix
   ];
 
-  # programs.zsh.shellAliases."vdirsyncer" = "vdirsyncer -c ${config.services.vdirsyncer.configFile}";
+  programs.zsh.shellAliases."vdirsyncer" = "vdirsyncer -c ${config.services.vdirsyncer.configFile}";
 
   services.vdirsyncer = {
     enable = true;
