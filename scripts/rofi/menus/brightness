@@ -52,19 +52,19 @@ case ${chosen} in
         ;;
     $option_3)
 		brightnessctl set 2%
-		./brightness
+		./menus/brightness
         ;;
     $option_4)
 		brightnessctl set 100%
-		./brightness
+		./menus/brightness
         ;;
     $option_5)
 		brightnessctl set 10%-
-		./brightness
+		./menus/brightness
         ;;
     $option_6)
 		brightnessctl set 10%+
-		./brightness
+		./menus/brightness
         ;;
 	*)
 		exit

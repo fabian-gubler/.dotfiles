@@ -69,7 +69,9 @@
     [
       # extra packages:
       # ...
-      jdt-language-server # Java
+      # jdt-language-server # Java
+      dpkg
+	  patchelf binutils
     ]
   ;
 

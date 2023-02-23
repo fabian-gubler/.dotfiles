@@ -20,7 +20,7 @@ normal_file="$HOME/nextcloud/media/music/regular/resonance.opus"
 force_file="$HOME/nextcloud/media/music/force/wake-up.mp3"
 
 # Declare the volumes of the mp3 files as variables
-soothing_volume=30
+soothing_volume=50
 normal_volume=70
 force_volume=100
 

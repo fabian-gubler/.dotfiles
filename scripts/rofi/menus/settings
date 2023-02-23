@@ -31,7 +31,7 @@ case ${chosen} in
 		./launcher
         ;;
     $option_2)
-		./brightness
+		./menus/brightness
         ;;
     $option_3)
 		pavucontrol &
