@@ -6,7 +6,6 @@
   nix.package = pkgs.nixStable;
   system.stateVersion = "22.11";
 
-  # TODO: fix protonvpn-cli (ncmli -> ipv6leakprotection or openvpn configuration file)
   environment.systemPackages =
     let
 
@@ -42,6 +41,7 @@
     [ todo-txt-cli ] ++
     [ hsetroot xbindkeys xorg.xkill ] ++
     [ chromium qbittorrent ] ++
+    # IPV6 Bug: `nmcli connection delete pvpn-ipv6leak-protection` or `protonvpn-cli d`
     [ authy signal-desktop protonmail-bridge nextcloud-client ] ++
     [ networkmanagerapplet ] ++
     [ openvpn networkmanager-openvpn protonvpn-cli ] ++

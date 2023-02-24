@@ -12,4 +12,5 @@ sleep 2
 nm-applet & # network control
 sleep 1
 
-# protonvpn-cli c -r
+# prevent ipv6 leak protection before connecting to wifi
+protonvpn-cli d
