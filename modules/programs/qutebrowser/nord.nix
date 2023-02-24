@@ -64,11 +64,11 @@
       passthrough.fg = "#e5e9f0";
       passthrough.bg = "#5e81ac";
       private.fg = "#e5e9f0";
-      private.bg = "#4c566a";
+      private.bg = "#576649";
       command.fg = "#e5e9f0";
       command.bg = "#434c5e";
       command.private.fg = "#e5e9f0";
-      command.private.bg = "#434c5e";
+      command.private.bg = "#576649";
       caret.fg = "#e5e9f0";
       caret.bg = "#b48ead";
       caret.selection.fg = "#e5e9f0";

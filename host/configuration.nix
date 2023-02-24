@@ -55,6 +55,24 @@ in
     '';
   };
 
+  # services.openvpn.servers = {
+  #   homeVPN = { config = '' config /home/fabian/nextcloud/apps/openvpn/homeVPN.conf ''; };
+  #   client = {
+  #     config = ''
+  #       client
+  #       remote vpn.example.org
+  #       dev tun
+  #       proto tcp-client
+  #       port 8080
+  #       ca /root/.vpn/ca.crt
+  #       cert /root/.vpn/alice.crt
+  #       key /root/.vpn/alice.key
+  #     '';
+  #     up = "echo nameserver $nameserver | ${pkgs.openresolv}/sbin/resolvconf -m 0 -a $dev";
+  #     down = "${pkgs.openresolv}/sbin/resolvconf -d $dev";
+  #   };
+  # };
+
   # Flatpak
   xdg.portal.enable = true;
   services.flatpak.enable = true;

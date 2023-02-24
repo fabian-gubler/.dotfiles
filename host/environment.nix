@@ -44,6 +44,7 @@
     [ chromium qbittorrent ] ++
     [ authy signal-desktop protonmail-bridge nextcloud-client ] ++
     [ networkmanagerapplet ] ++
+    [ openvpn networkmanager-openvpn protonvpn-cli ] ++
     [ dmenu sxiv ] ++
     [ zathura okular pandoc poppler_utils ] ++
     [ gimp xournalpp libreoffice ] ++
@@ -58,6 +59,7 @@
     [ xfce.thunar foliate blanket ] ++
     [ pulseaudio pavucontrol brightnessctl playerctl ] ++ # TODO: pulseaudio replace with wpctl (combined-sink)
     [ bitwig-studio yabridge yabridgectl ] ++
+    [ portfolio ] ++
 
 
     # TODO: decouple to templates
@@ -71,7 +73,8 @@
       # ...
       # jdt-language-server # Java
       dpkg
-	  patchelf binutils
+      patchelf
+      binutils
     ]
   ;
 
@@ -91,6 +94,7 @@
     PATH = [
       "\${XDG_BIN_HOME}"
       "\${HOME}/.dotfiles/scripts/utils"
+      "\${HOME}/.dotfiles/scripts/dmenu"
       "\${HOME}/.dotfiles/scripts/tmux"
     ];
   };

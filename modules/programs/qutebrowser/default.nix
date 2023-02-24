@@ -41,6 +41,7 @@
         "xx" = "config-cycle tabs.show always never;; config-cycle statusbar.show always never";
         "b" = "spawn --userscript ~/.dotfiles/modules/programs/qutebrowser/files/rofi-menu marks";
         "B" = "spawn --userscript ~/.dotfiles/modules/programs/qutebrowser/files/rofi-menu marks-tab";
+		";m" = "hint links spawn --detach mpv {hint-url}";
       };
 
     };

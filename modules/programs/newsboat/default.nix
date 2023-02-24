@@ -186,6 +186,10 @@
         title = "Blog: Alexandru Burlacu";
         url = "https://alexandruburlacu.github.io/feed.xml";
       }
+      {
+        title = "Blog: Blub's Blog";
+        url = "https://blubsblog.bearblog.dev/feed";
+      }
 
     ];
   };

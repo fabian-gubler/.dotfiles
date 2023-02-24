@@ -2,11 +2,14 @@
 
 # starts applets in correct order
 
-signal-desktop --start-in-tray --no-sandbox & # secure messenger
-sleep 2
 
 nextcloud --background & # establish connection to cloud server
 sleep 1
 
+signal-desktop --start-in-tray --no-sandbox & # secure messenger
+sleep 2
+
 nm-applet & # network control
 sleep 1
+
+# protonvpn-cli c -r

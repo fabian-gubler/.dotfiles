@@ -5,7 +5,6 @@
     enableCompletion = true;
     enableSyntaxHighlighting = true;
     shellAliases = {
-      build = "sudo nixos-rebuild switch";
       ll = "exa -a";
       lg = "lazygit";
       v = "nvim";

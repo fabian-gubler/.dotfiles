@@ -32,7 +32,6 @@ in
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnBootSec = "5m";
-      OnUnitActiveSec = "1d";
       Unit = "trash-downloads.service";
     };
   };
