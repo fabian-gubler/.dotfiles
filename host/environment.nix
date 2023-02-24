@@ -42,6 +42,7 @@
     [ hsetroot xbindkeys xorg.xkill ] ++
     [ chromium qbittorrent ] ++
     # IPV6 Bug: `nmcli connection delete pvpn-ipv6leak-protection` or `protonvpn-cli d`
+# sudo ip link delete ipv6leakintrf0
     [ authy signal-desktop protonmail-bridge nextcloud-client ] ++
     [ networkmanagerapplet ] ++
     [ openvpn networkmanager-openvpn protonvpn-cli ] ++
