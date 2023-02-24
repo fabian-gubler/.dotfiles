@@ -43,9 +43,10 @@
     [ chromium qbittorrent ] ++
     # IPV6 Bug: `nmcli connection delete pvpn-ipv6leak-protection` or `protonvpn-cli d`
 # sudo ip link delete ipv6leakintrf0
+	[ protonvpn-cli ] ++
     [ authy signal-desktop protonmail-bridge nextcloud-client ] ++
     [ networkmanagerapplet ] ++
-    [ openvpn networkmanager-openvpn protonvpn-cli ] ++
+    [ openvpn networkmanager-openvpn ] ++
     [ dmenu sxiv ] ++
     [ zathura okular pandoc poppler_utils ] ++
     [ gimp xournalpp libreoffice ] ++
