@@ -8,9 +8,9 @@ sleep 1
 signal-desktop --start-in-tray --no-sandbox & # secure messenger
 sleep 2
 
-# nm-applet & # network control
-# sleep 1
+nm-applet & # network control
+sleep 1
 
 # prevent ipv6 leak protection before connecting to wifi
-sudo ip link delete ipv6leakintrf0
-protonvpn-cli d
+# sudo ip link delete ipv6leakintrf0
+# protonvpn-cli d
