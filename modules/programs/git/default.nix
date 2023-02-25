@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   programs.git = {
     enable = true;
-    userEmail = "fabian.gubler@protonmail.com";
+    userEmail = "fabian.gubler@hotmail.com";
     userName = "Fabian Gubler";
     extraConfig = {
       core = {

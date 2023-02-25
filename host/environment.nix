@@ -11,6 +11,10 @@
 
       pythonPackages = p: with p; [
         # ...
+
+        browser-cookie3
+
+        # Custome Packages
         (
           buildPythonPackage
             rec {
@@ -42,8 +46,8 @@
     [ hsetroot xbindkeys xorg.xkill ] ++
     [ chromium qbittorrent ] ++
     # IPV6 Bug: `nmcli connection delete pvpn-ipv6leak-protection` or `protonvpn-cli d`
-# sudo ip link delete ipv6leakintrf0
-	[ protonvpn-cli ] ++
+    # sudo ip link delete ipv6leakintrf0
+    [ protonvpn-cli ] ++
     [ authy signal-desktop protonmail-bridge nextcloud-client ] ++
     [ networkmanagerapplet ] ++
     [ openvpn networkmanager-openvpn ] ++
@@ -62,6 +66,7 @@
     [ pulseaudio pavucontrol brightnessctl playerctl ] ++ # TODO: pulseaudio replace with wpctl (combined-sink)
     [ bitwig-studio yabridge yabridgectl ] ++
     [ portfolio ] ++
+    [ leetcode-cli ] ++
 
 
     # TODO: decouple to templates
