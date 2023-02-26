@@ -1,51 +1,10 @@
-{ config, pkgs, lib, ... }:
-
-# TODO: Remove dependency on user <name>
+{ config, pkgs, ... }: 
+# TODO: Inherit these from default.nix
 let
   user = "fabian";
   homeDirectory = "/home/${user}";
 in
 {
-  # Refresh newsboat in background
-  systemd.timers."newsboat" = {
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnStartupSec = "1m";
-      OnUnitActiveSec = "30m";
-      Unit = "newsboat.service";
-    };
-  };
-
-  systemd.services."newsboat" = {
-    serviceConfig = {
-      Type = "oneshot";
-      User = "${user}";
-    };
-    path = with pkgs; [ newsboat ];
-    script = ''
-      		newsboat -x reload
-    '';
-  };
-
-  # Trash Downloads on boot / daily
-  systemd.timers."trash-downloads" = {
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnBootSec = "5m";
-      Unit = "trash-downloads.service";
-    };
-  };
-
-  systemd.services."trash-downloads" = {
-    serviceConfig = {
-      Type = "oneshot";
-      User = "${user}";
-    };
-    path = with pkgs; [ trash-cli ];
-    script = ''
-      		trash ${homeDirectory}/Downloads/*
-    '';
-  };
 
   # Push dotfiles to Github on Boot / daily
   systemd.timers."push-dotfiles" = {
@@ -71,24 +30,24 @@ in
     '';
   };
 
-  # Push nix configuration to Github on Boot / daily
-  systemd.timers."push-nix" = {
+  # Push templates to Github on Boot / daily
+  systemd.timers."push-templates" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnBootSec = "5m";
       OnUnitActiveSec = "1d";
-      Unit = "push-nix.service";
+      Unit = "push-templates.service";
     };
   };
 
-  systemd.services."push-nix" = {
+  systemd.services."push-templates" = {
     serviceConfig = {
       Type = "oneshot";
       User = "${user}";
     };
     path = with pkgs; [ git ];
     script = ''
-      	cd ${homeDirectory}/nixos-config
+      	cd ${homeDirectory}/templates
       	git add . 
       	git commit -m 'automated update' --allow-empty
       	(git push) || exit 0
@@ -116,26 +75,6 @@ in
       		git add . 
       		git commit -m 'automated update' --allow-empty
       		(git push) || exit 0
-    '';
-  };
-
-  # Empty trash more than 30 days old every week
-  systemd.timers."empty-trash" = {
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnCalendar = "weekly";
-      Unit = "empty-trash.service";
-    };
-  };
-
-  systemd.services."empty-trash" = {
-    serviceConfig = {
-      Type = "oneshot";
-      User = "${user}";
-    };
-    path = with pkgs; [ trash-cli ];
-    script = ''
-      trash-empty 30 -f
     '';
   };
 
