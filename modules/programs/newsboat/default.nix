@@ -191,6 +191,16 @@
         url = "https://blubsblog.bearblog.dev/feed";
       }
 
+      # Naval recommendations
+      {
+        title = "Blog: Melting Asphal";
+        url = "https://meltingasphalt.com/feed";
+      }
+      {
+        title = "Blog: Elad";
+        url = "https://blog.eladgil.com/feed";
+      }
+
     ];
   };
 }
