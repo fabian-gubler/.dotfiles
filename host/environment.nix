@@ -66,7 +66,7 @@
     [ pulseaudio pavucontrol brightnessctl playerctl ] ++ # TODO: pulseaudio replace with wpctl (combined-sink)
     [ bitwig-studio yabridge yabridgectl ] ++
     [ portfolio ] ++
-    [ leetcode-cli ] ++
+    [ leetcode-cli exercism ] ++
 
 
     # TODO: decouple to templates

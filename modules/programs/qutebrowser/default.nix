@@ -22,7 +22,7 @@
 
     searchEngines = {
       w = "https://en.wikipedia.org/wiki/Special:Search?search={}&amp;go=Go&amp;ns0=1";
-      g = "https://www.google.com/search?hl=en&amp;q={}";
+      g = "https://www.google.com/searchq={}";
       y = "https://yewtu.be/search?q={}";
       x = "https://1337x.unblockit.pet/search/{}/1/";
       de = "https://www.deepl.com/translator#en/de/{}";

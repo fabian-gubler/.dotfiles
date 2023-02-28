@@ -11,7 +11,7 @@ in
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnBootSec = "5m";
-      OnUnitActiveSec = "1d";
+      OnUnitActiveSec = "12h";
       Unit = "push-dotfiles.service";
     };
   };
