@@ -1,13 +1,16 @@
 # Todo: Music Production
 
-## Ressources for music
-
-- [musnix](https://github.com/musnix/musnix)
-- [conference - nixos for musicians](http://lac.linuxaudio.org/2015/video.php?id=12)
-
 # Getting Started
 
 ## Consolidated advice from multiple reddit posts:
+
+Start with Package Manager
+
+1. Download the Nix Package manager
+2. Use it to download packages
+3. [Getting Started in 15-30 Minutes](https://zero-to-nix.com/)
+
+Using NixOS
 
 1. Try out NixOS in a VM.
 2. Make your custom config, but don't use flakes since you're a beginner.
@@ -15,7 +18,7 @@
 
 Forget about flakes, overlays, home-manager for now.
 Just set up a normal configuration.nix, and you're good to go.
-You will eventually want overlays and stuff later on, so you learn about them afterwards.
+You will eventually want flakes, overlays and stuff later on, so you learn about them afterwards.
 
 My recommendation for now is to learn a bit of the nix language using the tour of nix
 (get it by installing nix-tour or access https://nixcloud.io/tour),
@@ -115,3 +118,8 @@ Misc
 
 - [Discourse](http://discourse.nixos.org/)
 - Check out NixOS Subreddit
+
+## Ressources for music
+
+- [musnix](https://github.com/musnix/musnix)
+- [conference - nixos for musicians](http://lac.linuxaudio.org/2015/video.php?id=12)
