@@ -1,5 +1,7 @@
 { pkgs, config, lib, ... }: {
 
+  # TODO: 
+
   imports = [
     ./nord.nix
   ];
@@ -29,9 +31,9 @@
       en = "https://www.deepl.com/translator#de/en/{}";
       p = "https://www.powerthesaurus.org/{}/synonyms";
       k = "https://www.merriam-webster.com/dictionary/{}";
-	  n = "https://search.nixos.org/packages?sort=relevance&type=packages&query={}";
-	  no = "https://search.nixos.org/options?sort=relevance&type=options&query={}";
-	  nh = "https://mynixos.com/search?q={}";
+      n = "https://search.nixos.org/packages?sort=relevance&type=packages&query={}";
+      no = "https://search.nixos.org/options?sort=relevance&type=options&query={}";
+      nh = "https://mynixos.com/search?q={}";
     };
 
     keyBindings = {
@@ -41,20 +43,22 @@
         "xx" = "config-cycle tabs.show always never;; config-cycle statusbar.show always never";
         "b" = "spawn --userscript ~/.dotfiles/modules/programs/qutebrowser/files/rofi-menu marks";
         "B" = "spawn --userscript ~/.dotfiles/modules/programs/qutebrowser/files/rofi-menu marks-tab";
-		";m" = "hint links spawn --detach mpv {hint-url}";
+        ";m" = "hint links spawn --detach mpv {hint-url}";
       };
 
     };
 
-    # extraConfig = ''
-    #   config.set('input.mode_override', 'passthrough', 'localhost:8888')
-    #   config.set('input.mode_override', 'passthrough', 'https://www.overleaf.com')
-    # '';
+    extraConfig = ''
+	  #   config.set('input.mode_override', 'passthrough', 'localhost:8888')
+	  #   config.set('input.mode_override', 'passthrough', 'https://www.overleaf.com')
+      config.set('content.notifications', True, '*://messages.google.com')
+      config.set('content.notifications', False, '*://mail.proton.me')
+    '';
 
     settings = {
       hints.chars = "arstdhneio";
       content.autoplay = false;
-	  content.headers.user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:110.0) Gecko/20100101 Firefox/110.0";
+      content.headers.user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:110.0) Gecko/20100101 Firefox/110.0";
       tabs.show = "always";
       statusbar.show = "always";
       auto_save.session = true;

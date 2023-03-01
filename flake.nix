@@ -56,7 +56,7 @@
               }
             )
 
-            ./host
+            ./system
 
             home-manager.nixosModules.home-manager
             {

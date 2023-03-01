@@ -82,6 +82,7 @@
       dpkg
       patchelf
       binutils
+	  colorpicker
     ]
   ;
 
