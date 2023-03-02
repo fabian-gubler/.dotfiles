@@ -82,7 +82,8 @@
       dpkg
       patchelf
       binutils
-	  colorpicker
+      colorpicker
+      (mpv.override { scripts = [ mpvScripts.mpris ]; })
     ]
   ;
 
