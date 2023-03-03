@@ -48,11 +48,12 @@
 
     };
 
+    # config.set('input.mode_override', 'passthrough', 'localhost:8888')
+    # config.set('input.mode_override', 'passthrough', 'https://www.overleaf.com')
+
     extraConfig = ''
-	  #   config.set('input.mode_override', 'passthrough', 'localhost:8888')
-	  #   config.set('input.mode_override', 'passthrough', 'https://www.overleaf.com')
-      config.set('content.notifications', True, '*://messages.google.com')
-      config.set('content.notifications', False, '*://mail.proton.me')
+      config.set('content.notifications.enabled', True, '*://messages.google.com')
+      config.set('content.notifications.enabled', False, '*://mail.proton.me')
     '';
 
     settings = {

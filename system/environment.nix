@@ -58,7 +58,7 @@
     [ lazygit lf exa fzf gotop htop trash-cli xdragon ] ++
     [ xclip clipnotify clipmenu ] ++
     [ rbw xdotool pinentry-gtk2 ] ++
-    [ spotify mpv mpvScripts.mpris ] ++
+    [ spotify ] ++
     [ wget file ripgrep ] ++
     [ zip unzip unrar steam-run ] ++
     [ anki-bin markdown-anki-decks mkdocs ] ++
