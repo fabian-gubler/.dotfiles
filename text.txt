@@ -1,0 +1,15 @@
+Hi,
+
+I'm an avid Emacs fanboy, but I've hit a wall that Emacs can't solve but I believe Neovim can. However, I would like some input from the community about Neovim before making a commitment to switchover.
+
+I essentially have four workflows that require a PDE, and Emacs is perfect for 3 out of 4 of them. I want to know how would I handle these in Neovim.
+
+Reading and taking notes. In Emacs this usually involves me having a split screen with a PDF or webpage on oneside and a file to take notes in on the other.
+
+Discussing reading. This involves me often having three Emacs windows or buffer open. A file to take some notes during the discussion, my file on my reading notes, and the reading itself.
+
+Working on personal coding projects, which involves quickly jumpping between open buffers and different files.
+
+My day job, which essentially requires me to use VSCode and as a result makes my Emacs config pointless for 8 hours a day. I know Neovim has a VSCode plugin, which would resolve that problem.
+
+My question is essentially, how would you integrate Neovim into a workflow around reading and note taking? I've tended to not love the GUIs for Neovim (though the last time I tried one was maybe 4 years ago) but tmux is also a lot to configure alongside Neovim just to get the functionality I've had with Emacs almost since day 1

@@ -1,3 +1,7 @@
-text/html; qutebrowser %s; needsterminal; nametemplate=%s.html
+# Handlers
+text/html; qutebrowser --target window %s; nametemplate=%s.html
+application/pdf; qutebrowser --target window %s;
+text/plain; qutebrowser --target window %s;
+
+# Terminal
 text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump -width=1024 %s; nametemplate=%s.html; copiousoutput;
-application/pdf; okular %s;

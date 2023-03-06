@@ -8,6 +8,7 @@ color signature	  color8 default          # Signatures are Surface 2
 color search		  color4 default          # Highlighted results are Blue
 
 color indicator		default color8          # currently highlighted message Surface 2=Background Text=Foreground
+color message cyan default
 color error		    color1 default          # error messages are Red
 color status		  color15 default         # status line "Subtext 0"
 color tree        color15 default         # thread tree arrows Subtext 0

@@ -51,7 +51,7 @@
               {
                 nixpkgs.overlays = [ overlay-unstable ];
                 environment.systemPackages = with pkgs; [
-                  # unstable.sioyek
+                  # unstable.litemdview # not in stable yet
                 ];
               }
             )
