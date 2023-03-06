@@ -11,9 +11,10 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs;
-    [ neomutt notmuch-mutt lynx ] ++
+    [ notmuch-mutt lynx ] ++
     [ khal khard vdirsyncer inotify-tools ] ++
     [
+      neomutt
       dunst
       autorandr
       touchegg

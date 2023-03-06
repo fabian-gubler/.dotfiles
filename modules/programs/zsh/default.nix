@@ -10,7 +10,7 @@
       v = "nvim";
       sv = "sudoedit";
       top = "gotop -l minimal";
-      mutt = "mbsync protonmail && neomutt";
+      mutt = "neomutt";
       gpush = "git add . && git commit -m 'manual update' && git push";
 
       p = "todo.sh -d $HOME/nextcloud/todo/pers/config";
