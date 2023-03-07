@@ -2,7 +2,7 @@
 # TODO: Mail directory creation
 let
   # TODO: Make pure (remove hardcoding)
-  # bridgePass = "${config.home.homeDirectory}/.dotfiles/modules/programs/mail/files/get-pass.sh";
+  bridgePass = "${config.home.homeDirectory}/.dotfiles/modules/programs/mail/files/get-pass.sh";
 in
 
 {
@@ -14,8 +14,7 @@ in
   accounts.email.accounts = {
     protonmail = {
       address = "fabian.gubler@protonmail.com";
-      maildir = { path = "/home/fabian/Mail"; };
-	  realName = "Fabian Gubler";
+      maildir = { path = "~/Mail/"; };
       folders = {
         inbox = "INBOX";
         drafts = "Drafts";
@@ -23,17 +22,14 @@ in
         trash = "Trash";
 
       };
-      neomutt = {
-        enable = true;
-        mailboxName = "INBOX";
-		extraConfig = ''
-# test comment
-		'';
-      };
-      smtp = {
-        host = "smtp://fabian.gubler@protonmail.com:passwd";
-        port = 1025;
-      };
+      # neomutt = {
+      #   enable = true;
+      #   mailboxName = "INBOX";
+      # };
+      # smtp = {
+      #   host = "smtp://fabian.gubler@protonmail.com:${bridgePass}";
+      #   port = 1025;
+      # };
       imap = {
         host = "127.0.0.1";
         port = 1143;
@@ -43,7 +39,7 @@ in
       passwordCommand = "rbw get bridge";
       mbsync = {
         enable = true;
-        # create = "imap";
+        create = "imap";
         expunge = "both";
         extraConfig.account = {
           Host = "127.0.0.1";

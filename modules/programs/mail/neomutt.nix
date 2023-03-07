@@ -1,6 +1,4 @@
 {
-
-
   programs.neomutt = {
     enable = true;
     sort = "reverse-date";

@@ -1,4 +1,7 @@
 { config, pkgs, lib, ... }:
+let
+  baseURI = "https://yewtu.be/feed/channel";
+in
 {
 
   programs.newsboat = {
@@ -58,96 +61,95 @@
       # Ways to channel_id:
       # - Search Channel on Insidious 
       # - Google Channel (see link)
-
       {
         # The Primeagen
         tags = [ "!" "youtube" ];
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC8ENHE5xdFSwx71u3fDH5Xw";
+        url = "${baseURI}/UC8ENHE5xdFSwx71u3fDH5Xw";
       }
       {
         # Aleksa Gordic
         tags = [ "!" "youtube" ];
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCj8shE7aIn4Yawwbo2FceCQ";
+        url = "${baseURI}/UCj8shE7aIn4Yawwbo2FceCQ";
       }
       {
         # TJ Devries
         tags = [ "!" "youtube" ];
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCd3dNckv1Za2coSaHGHl5aA";
+        url = "${baseURI}/UCd3dNckv1Za2coSaHGHl5aA";
       }
       {
         # Wolfgangs Channel
         tags = [ "!" "youtube" ];
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCsnGwSIHyoYN0kiINAGUKxg";
+        url = "${baseURI}/UCsnGwSIHyoYN0kiINAGUKxg";
       }
       {
         # Luke Smith
         tags = [ "youtube" "!" ];
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA";
+        url = "${baseURI}/UC2eYFnH61tmytImy1mTYvhA";
       }
       {
         # Ben Vallack
         tags = [ "!" "youtube" ];
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC4NNPgQ9sOkBjw6GlkgCylg";
+        url = "${baseURI}/UC4NNPgQ9sOkBjw6GlkgCylg";
       }
       {
         # Fireship
         tags = [ "!" "youtube" ];
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPoezykLs9EqgamOA";
+        url = "${baseURI}/UCsBjURrPoezykLs9EqgamOA";
       }
       {
         # Kurzgesagt
         tags = [ "!" "youtube" ];
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q";
+        url = "${baseURI}/UCsXVk37bltHxD1rDPwtNM8Q";
       }
       {
         # Cold Fusion
         tags = [ "!" "youtube" ];
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC4QZ_LsYcvcq7qOsOhpAX4A";
+        url = "${baseURI}/UC4QZ_LsYcvcq7qOsOhpAX4A";
       }
       {
         # Lemmino
         tags = [ "!" "youtube" ];
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCRcgy6GzDeccI7dkbbBna3Q";
+        url = "${baseURI}/UCRcgy6GzDeccI7dkbbBna3Q";
       }
       {
         # Storytellers
         tags = [ "!" "youtube" ];
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCbphDfwSJmxk1Ny_3Oicrng";
+        url = "${baseURI}/UCbphDfwSJmxk1Ny_3Oicrng";
       }
       {
         # EmpLemon
         tags = [ "!" "youtube" ];
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC7Ucs42FZy3uYzjrqzOIHsw";
+        url = "${baseURI}/UC7Ucs42FZy3uYzjrqzOIHsw";
       }
       {
         # Big Boss
         tags = [ "!" "youtube" ];
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCYGDiVemmhY_Q1M-hKp4fvw";
+        url = "${baseURI}/UCYGDiVemmhY_Q1M-hKp4fvw";
       }
       {
         # Internet Historian
         tags = [ "!" "youtube" ];
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCR1D15p_vdP3HkrH8wgjQRw";
+        url = "${baseURI}/UCR1D15p_vdP3HkrH8wgjQRw";
       }
       {
         # Incognito Mode
         tags = [ "!" "youtube" ];
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC8Q7XEy86Q7T-3kNpNjYgwA";
+        url = "${baseURI}/UC8Q7XEy86Q7T-3kNpNjYgwA";
       }
       {
         # PewDiePie
         tags = [ "!" "youtube" ];
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC-lHJZR3Gqxm24_Vd_AJ5Yw";
+        url = "${baseURI}/UC-lHJZR3Gqxm24_Vd_AJ5Yw";
       }
       {
         # Channel 5
         tags = [ "!" "youtube" ];
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC-AQKm7HUNMmxjdS371MSwg";
+        url = "${baseURI}/UC-AQKm7HUNMmxjdS371MSwg";
       }
       {
         # Chriminal Psychology
         tags = [ "!" "youtube" ];
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCYwVxWpjeKFWwu8TML-Te9A";
+        url = "${baseURI}/UCYwVxWpjeKFWwu8TML-Te9A";
       }
 
       ###################
@@ -163,11 +165,11 @@
       }
       {
         title = "Podcast: Andrew Huberman";
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC2D2CMWXMOVWx7giW1n3LIg";
+        url = "${baseURI}/UC2D2CMWXMOVWx7giW1n3LIg";
       }
       {
         title = "Podcast: Naval Ravikant";
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCh_dVD10YuSghle8g6yjePg";
+        url = "${baseURI}/UCh_dVD10YuSghle8g6yjePg";
       }
 
       ###################
