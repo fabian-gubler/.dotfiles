@@ -83,6 +83,7 @@
       patchelf
       binutils
       colorpicker
+	  openssl
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
     ]
   ;
