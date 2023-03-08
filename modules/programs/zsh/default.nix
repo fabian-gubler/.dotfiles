@@ -39,7 +39,6 @@
         { name = "hlissner/zsh-autopair"; tags = [ defer:2 ]; } # fix: not working
         { name = "Aloxaf/fzf-tab"; }
         { name = "mafredri/zsh-async"; }
-        { name = "spwhitt/nix-zsh-completions"; }
         { name = "chisui/zsh-nix-shell"; }
       ];
     };

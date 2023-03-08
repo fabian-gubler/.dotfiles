@@ -84,6 +84,7 @@
       binutils
       colorpicker
 	  openssl
+	  notmuch
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
     ]
   ;

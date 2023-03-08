@@ -1,4 +1,5 @@
-source ~/.config/mutt/colors
+source ~/.dotfiles/modules/files/mutt/colors
+source ~/.dotfiles/modules/files/mutt/notmuch
 source ~/.config/mutt/variables| # pipe indicates executable
 
 # options
