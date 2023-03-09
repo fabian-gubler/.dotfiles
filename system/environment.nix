@@ -85,6 +85,7 @@
       colorpicker
 	  openssl
 	  notmuch
+	  watson
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
     ]
   ;

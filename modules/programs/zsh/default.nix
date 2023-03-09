@@ -5,6 +5,8 @@
     enableCompletion = true;
     enableSyntaxHighlighting = true;
     shellAliases = {
+
+      # Shorthands
       ll = "exa -a";
       lg = "lazygit";
       v = "nvim";
@@ -12,7 +14,9 @@
       top = "gotop -l minimal";
       mutt = "neomutt";
       gpush = "git add . && git commit -m 'manual update' && git push";
+      ".." = "cd ..";
 
+      # Tasks
       p = "todo.sh -d $HOME/nextcloud/todo/pers/config";
       pv = "cd $HOME/nextcloud/todo/pers; nvim -c 'sort' todo.txt";
       d = "todo.sh -d $HOME/nextcloud/todo/dev/config";
@@ -20,7 +24,6 @@
       u = "todo.sh -d $HOME/nextcloud/todo/uni/config";
       uv = "cd $HOME/nextcloud/todo/uni; nvim -c 'sort' uni.txt";
       sc = "cd ~/.dotfiles/scripts/utils/ && exa -a";
-      ".." = "cd ..";
     };
 
     envExtra = ''

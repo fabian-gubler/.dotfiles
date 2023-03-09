@@ -64,9 +64,9 @@ in
 
       Service = {
         ExecStart = "${pkgs.vdirsyncer}/bin/vdirsyncer -c ${cfgFile} sync";
-        Restart = "on-failure";
-        Type = "oneshot";
-        RestartSec = 30;
+        Restart = "always";
+        Type = "simple";
+        RestartSec = 60;
       };
     };
   };
