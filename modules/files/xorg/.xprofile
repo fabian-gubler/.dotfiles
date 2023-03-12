@@ -7,10 +7,9 @@ xbindkeys & # playerctl with headphones ~/.xbindkeysrc
 protonmail-bridge --no-window --noninteractive & # mail backend, run in background
 clipmenud & # clipboard manager daemon
 touchegg & # touch gestures
-# kitty -e "tmuxd" &
 
 # script
 $HOME/.dotfiles/scripts/utils/bat-indicator & # show battery level
 $HOME/.dotfiles/scripts/utils/low_battery & # notifcation on low battery
-# $HOME/.dotfiles/scripts/watchers/autovdirsyncer & # sync calendar/contacts on write
+$HOME/.dotfiles/scripts/watchers/autovdirsyncer & # sync calendar/contacts on write
 $HOME/.dotfiles/scripts/utils/applets & # start applets in order

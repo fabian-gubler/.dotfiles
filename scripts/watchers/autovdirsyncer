@@ -5,8 +5,7 @@
 # Requires: inotify-tools
 
 sync() {
-	# vdirsyncer sync --force-delete
-	# zsh -i -c vdirsyncer sync --force-delete
+	vdirsyncer sync --force-delete
 }
 
 if [[ -d ~/nextcloud/.calendars ]]; then
