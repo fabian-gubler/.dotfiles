@@ -6,18 +6,22 @@ let
     let
       quoteStr = s: ''"${s}"'';
       mkKeyValue = name: value:
-      "${name} = ${mkValue value}";
-      mkValue = value: 
-      if builtins.isList value then "[${concatStringsSep ", " (map mkValue value)}]"
-      else if builtins.isString value then quoteStr value
-      else (toString value);
+        "${name} = ${mkValue value}";
+      mkValue = value:
+        if builtins.isList value then "[${concatStringsSep ", " (map mkValue value)}]"
+        else if builtins.isString value then quoteStr value
+        else (toString value);
       mkSection = title: val: ''
-      [${title}]
-      ${concatStringsSep "\n" (mapAttrsToList mkKeyValue val)}
+        [${title}]
+        ${concatStringsSep "\n" (mapAttrsToList mkKeyValue val)}
       '';
     in
     concatStringsSep "\n" (mapAttrsToList mkSection settings);
+
+  # Remove this once we can use the new config format
   cfgFile = pkgs.writeText "vdirsyncer.conf" (formatToUnknownFormat cfg.settings);
+
+  configFileContents = formatToUnknownFormat cfg.settings;
 in
 {
   options.services.vdirsyncer = {
@@ -25,6 +29,7 @@ in
     settings = mkOption {
       type = types.attrs;
     };
+    # Modify this once we can use the new config format
     configFile = mkOption {
       type = types.path;
       default = cfgFile;
@@ -39,7 +44,13 @@ in
     };
   };
 
+
   config = mkIf cfg.enable {
+
+    xdg.configFile = mkIf (versionAtLeast config.home.stateVersion "21.05") {
+      "vdirsyncer/config".text = configFileContents;
+    };
+
     systemd.user.timers.vdirsyncer = {
       Unit = {
         Description = "Timer to synchronize calendars";
@@ -63,7 +74,7 @@ in
       Install.WantedBy = [ "default.target" ];
 
       Service = {
-        ExecStart = "${pkgs.vdirsyncer}/bin/vdirsyncer -c ${cfgFile} sync";
+        ExecStart = "${pkgs.vdirsyncer}/bin/vdirsyncer sync";
         Restart = "always";
         Type = "simple";
         RestartSec = 60;
