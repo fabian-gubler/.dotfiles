@@ -86,6 +86,9 @@
 	  openssl
 	  notmuch
 	  watson
+	  sqlite
+	  cmake
+	  ccls
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
     ]
   ;
