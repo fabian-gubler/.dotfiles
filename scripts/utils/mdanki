@@ -14,7 +14,8 @@ subject=$1
 
 DIRS="lectures apkg --sync --delete"
 ARGS="--sync --delete --prefix"
-HOMEDIR=$HOME/nextcloud/mcs/
+SEMESTER="23SP"
+HOMEDIR=$HOME/nextcloud/mcs/$SEMESTER
 DOCSDIR=$HOMEDIR/docs/$subject/
 
 
