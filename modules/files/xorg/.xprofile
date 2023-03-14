@@ -8,8 +8,14 @@ protonmail-bridge --no-window --noninteractive & # mail backend, run in backgrou
 clipmenud & # clipboard manager daemon
 touchegg & # touch gestures
 
+
 # script
 $HOME/.dotfiles/scripts/utils/bat-indicator & # show battery level
 $HOME/.dotfiles/scripts/utils/low_battery & # notifcation on low battery
 $HOME/.dotfiles/scripts/watchers/autovdirsyncer & # sync calendar/contacts on write
 $HOME/.dotfiles/scripts/utils/applets & # start applets in order
+
+# applications
+# kitty -e tmux & # terminal
+# qutebrowser & # browser
+# firefox & # browser
