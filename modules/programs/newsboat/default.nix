@@ -67,6 +67,11 @@ in
         url = "${baseURI}/UC8ENHE5xdFSwx71u3fDH5Xw";
       }
       {
+        # Coffeezilla
+        tags = [ "!" "youtube" ];
+        url = "${baseURI}/UCFQMnBA3CS502aghlcr0_aw";
+      }
+      {
         # Aleksa Gordic
         tags = [ "!" "youtube" ];
         url = "${baseURI}/UCj8shE7aIn4Yawwbo2FceCQ";
