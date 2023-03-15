@@ -191,6 +191,10 @@ in
     };
   };
 
+  fonts.fonts = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+  ];
+
 
   programs = {
     tmux.enable = true;

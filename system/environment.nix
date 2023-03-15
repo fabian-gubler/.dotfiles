@@ -89,6 +89,7 @@
 	  sqlite
 	  cmake
 	  ccls
+	  texlive.combined.scheme-full
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
     ]
   ;
