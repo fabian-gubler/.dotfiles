@@ -90,7 +90,6 @@
 	  cmake
 	  ccls
 	  texlive.combined.scheme-full
-	  vscode
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
     ]
   ;
