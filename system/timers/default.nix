@@ -12,7 +12,7 @@ in
   ];
 
   # Refresh newsboat in background
-  systemd.timers."newsboat" = {
+  systemd.user.timers."newsboat" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnStartupSec = "1m";
@@ -33,7 +33,7 @@ in
   };
 
   # Empty trash more than 30 days old every week
-  systemd.timers."empty-trash" = {
+  systemd.user.timers."empty-trash" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnCalendar = "weekly";
@@ -53,7 +53,7 @@ in
   };
 
   # Trash Downloads on boot
-  systemd.timers."trash-downloads" = {
+  systemd.user.timers."trash-downloads" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnBootSec = "5m";

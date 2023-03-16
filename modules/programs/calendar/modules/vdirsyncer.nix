@@ -57,8 +57,8 @@ in
       };
 
       Timer = {
-        OnBootSec = cfg.onBootSec;
-        OnUnitActiveSec = cfg.onUnitActiveSec;
+        OnStartupSec = "1m";
+        OnUnitActiveSec = "15m";
       };
 
       Install.WantedBy = [ "timers.target" ];
@@ -75,9 +75,7 @@ in
 
       Service = {
         ExecStart = "${pkgs.vdirsyncer}/bin/vdirsyncer sync";
-        Restart = "always";
-        Type = "simple";
-        RestartSec = 60;
+        Type = "oneshot";
       };
     };
   };
