@@ -83,14 +83,16 @@
       patchelf
       binutils
       colorpicker
-	  openssl
-	  notmuch
-	  watson
-	  sqlite
-	  cmake
-	  ccls
-	  texlive.combined.scheme-full
-	  vscode
+      openssl
+      notmuch
+      watson
+      sqlite
+      cmake
+      ccls
+      texlive.combined.scheme-full
+      vscode
+      azure-cli
+      sshfs
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
     ]
   ;
