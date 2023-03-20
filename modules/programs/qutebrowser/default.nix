@@ -44,6 +44,10 @@
         "b" = "spawn --userscript ~/.dotfiles/modules/programs/qutebrowser/files/rofi-menu marks";
         "B" = "spawn --userscript ~/.dotfiles/modules/programs/qutebrowser/files/rofi-menu marks-tab";
         ";m" = "hint links spawn --detach mpv {hint-url}";
+		"<ctrl-r>" = "reload";
+		"d" = "nop";
+		"u" = "nop";
+		"r" = "nop";
       };
 
     };
