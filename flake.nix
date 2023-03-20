@@ -4,7 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
-    # nixvim.url = github:pta2002/nixvim;
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -23,7 +22,6 @@
     , home-manager
     , hosts
     , spicetify-nix
-    # , nixvim
     , ...
     }:
     let

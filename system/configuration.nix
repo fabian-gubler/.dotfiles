@@ -190,30 +190,30 @@ in
     virtualbox = {
       host.enable = true;
     };
-    # use virt-manager to manage virtual machines
-    # https://nixos.wiki/wiki/Virt-manager
+  };
+  # use virt-manager to manage virtual machines
+  # https://nixos.wiki/wiki/Virt-manager
 
-    fonts.fonts = with pkgs; [
-      (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
-    ];
+  fonts.fonts = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+  ];
 
 
-    programs = {
-      tmux.enable = true;
-      slock.enable = true;
-      seahorse.enable = true;
-      java.enable = true;
+  programs = {
+    tmux.enable = true;
+    slock.enable = true;
+    seahorse.enable = true;
+    java.enable = true;
 
-      firefox = {
-        enable = true;
-        # TODO: Debug 
-        preferences = {
-          "font.size.systemFontScale" = 130;
-        };
+    firefox = {
+      enable = true;
+      # TODO: Debug 
+      preferences = {
+        "font.size.systemFontScale" = 130;
       };
-
-
     };
 
 
-  }
+  };
+
+}
