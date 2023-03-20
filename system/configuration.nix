@@ -186,7 +186,6 @@ in
 
   virtualisation = {
     docker.enable = true;
-    lxd.enable = true;
     virtualbox = {
       host.enable = true;
     };
