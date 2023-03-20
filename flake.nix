@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    # nixvim.url = github:pta2002/nixvim;
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -15,7 +16,16 @@
     spicetify-nix.url = github:the-argus/spicetify-nix; # spotify ricing & configuration
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, hosts, spicetify-nix, ... }:
+  outputs =
+    inputs@{ self
+    , nixpkgs
+    , nixpkgs-unstable
+    , home-manager
+    , hosts
+    , spicetify-nix
+    # , nixvim
+    , ...
+    }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {

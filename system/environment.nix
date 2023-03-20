@@ -1,9 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
 
   # Settings
   nixpkgs.config.allowUnfree = true;
   nix.package = pkgs.nixStable;
+
   system.stateVersion = "22.11";
 
   environment.systemPackages =

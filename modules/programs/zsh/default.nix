@@ -10,6 +10,7 @@
       ll = "exa -a";
       lg = "lazygit";
       v = "nvim";
+	  nv = "nix run ~/neovim-nix";
       sv = "sudoedit";
       top = "gotop -l minimal";
       mutt = "neomutt";
