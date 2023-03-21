@@ -18,6 +18,7 @@ let
     ".local/share/fonts" = ./fonts; # TODO: write nix package for sf font or find alternative font
     ".xprofile" = ./xorg/.xprofile; # TODO: autostart declare in home-manager (find a way)
     ".xbindkeysrc" = ./xorg/.xbindkeysrc; # TODO: declare in home-manager (find alternative)
+    ".xinitrc" = ./xorg/.xinitrc; # TODO: is there a nix way?
 
   };
 

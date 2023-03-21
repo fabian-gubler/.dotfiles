@@ -41,7 +41,7 @@ static const Rule rules[] = {
 	 */
 	/* class				instance    title       tags mask   isfloating   monitor    floatborderpx*/
 	{ "trayer",				NULL,       NULL,       ~0,			0,			 -1,		0 },
-	{ "Chromium-browser",	NULL,       NULL,       1 << 4,		0,           -1,        0 },
+	// { "Chromium-browser",	NULL,       NULL,       1 << 4,		0,           -1,        0 },
 	{ "firefox",			NULL,       NULL,       1 << 3,		0,           -1,        0 },
 	{ "Com.github.johnfactotum.Foliate",NULL, NULL, 1 << 2,		0,           -1,        0 },
 	{ "okular",				NULL,       NULL,       1 << 2,		0,           -1,        0 },

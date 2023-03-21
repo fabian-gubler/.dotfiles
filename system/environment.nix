@@ -44,7 +44,7 @@
     [ texlive.combined.scheme-small ] ++
     [ onboard wally-cli ] ++
     [ todo-txt-cli ] ++
-    [ hsetroot xbindkeys xorg.xkill ] ++
+    [ hsetroot xbindkeys xorg.xkill xorg.xinit ] ++
     [ chromium qbittorrent ] ++
     # IPV6 Bug: `nmcli connection delete pvpn-ipv6leak-protection` or `protonvpn-cli d`
     # sudo ip link delete ipv6leakintrf0
@@ -58,7 +58,7 @@
     [ arandr flameshot ] ++
     [ lazygit lf exa fzf gotop htop trash-cli xdragon ] ++
     [ xclip clipnotify clipmenu ] ++
-    [ /* rbw */ xdotool pinentry-gtk2 ] ++
+    [ rbw xdotool pinentry ] ++
     [ spotify ] ++
     [ wget file ripgrep ] ++
     [ zip unzip unrar steam-run ] ++
