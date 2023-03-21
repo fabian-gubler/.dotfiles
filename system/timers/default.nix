@@ -26,9 +26,9 @@ in
       Type = "oneshot";
       User = "${user}";
     };
-    path = with pkgs; [ isync ];
+    path = with pkgs; [ isync ]; # necessary?
     script = ''
-      		mbsync -a
+		${pkgs.isync} -a
     '';
   };
 
@@ -47,9 +47,9 @@ in
       Type = "oneshot";
       User = "${user}";
     };
-    path = with pkgs; [ newsboat ];
+    path = with pkgs; [ newsboat ]; # necessary?
     script = ''
-      		newsboat -x reload
+      		 ${pkgs.newsboat} -x reload
     '';
   };
 

@@ -182,6 +182,7 @@ in
 
   };
 
+  # unlock gnome keyring automatically
   security.pam.services.startx.enableGnomeKeyring = true;
 
   virtualisation = {
