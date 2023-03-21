@@ -1,6 +1,18 @@
+# NOTES:
+
+# Create your own custom feed: 
+# - Feedity (https://feedity.com/)
+# - FetchRSS (https://fetchrss.com/)
+# - FiveFilters' Feed Creator (https://createfeed.fivefilters.org/)
+
+# Use a change detection service:
+# - Visualping (https://visualping.io/)
+# - Distill.io (https://distill.io/)
+# - ChangeTower (https://changetower.com/)
+
 { config, pkgs, lib, ... }:
 let
-  baseURI = "https://yewtu.be/feed/channel";
+  ytUrl = "https://yewtu.be/feed/channel";
 in
 {
 
@@ -64,97 +76,97 @@ in
       {
         # The Primeagen
         tags = [ "!" "youtube" ];
-        url = "${baseURI}/UC8ENHE5xdFSwx71u3fDH5Xw";
+        url = "${ytUrl}/UC8ENHE5xdFSwx71u3fDH5Xw";
       }
       {
         # Coffeezilla
         tags = [ "!" "youtube" ];
-        url = "${baseURI}/UCFQMnBA3CS502aghlcr0_aw";
+        url = "${ytUrl}/UCFQMnBA3CS502aghlcr0_aw";
       }
       {
         # Aleksa Gordic
         tags = [ "!" "youtube" ];
-        url = "${baseURI}/UCj8shE7aIn4Yawwbo2FceCQ";
+        url = "${ytUrl}/UCj8shE7aIn4Yawwbo2FceCQ";
       }
       {
         # TJ Devries
         tags = [ "!" "youtube" ];
-        url = "${baseURI}/UCd3dNckv1Za2coSaHGHl5aA";
+        url = "${ytUrl}/UCd3dNckv1Za2coSaHGHl5aA";
       }
       {
         # Wolfgangs Channel
         tags = [ "!" "youtube" ];
-        url = "${baseURI}/UCsnGwSIHyoYN0kiINAGUKxg";
+        url = "${ytUrl}/UCsnGwSIHyoYN0kiINAGUKxg";
       }
       {
         # Luke Smith
         tags = [ "youtube" "!" ];
-        url = "${baseURI}/UC2eYFnH61tmytImy1mTYvhA";
+        url = "${ytUrl}/UC2eYFnH61tmytImy1mTYvhA";
       }
       {
         # Ben Vallack
         tags = [ "!" "youtube" ];
-        url = "${baseURI}/UC4NNPgQ9sOkBjw6GlkgCylg";
+        url = "${ytUrl}/UC4NNPgQ9sOkBjw6GlkgCylg";
       }
       {
         # Fireship
         tags = [ "!" "youtube" ];
-        url = "${baseURI}/UCsBjURrPoezykLs9EqgamOA";
+        url = "${ytUrl}/UCsBjURrPoezykLs9EqgamOA";
       }
       {
         # Kurzgesagt
         tags = [ "!" "youtube" ];
-        url = "${baseURI}/UCsXVk37bltHxD1rDPwtNM8Q";
+        url = "${ytUrl}/UCsXVk37bltHxD1rDPwtNM8Q";
       }
       {
         # Cold Fusion
         tags = [ "!" "youtube" ];
-        url = "${baseURI}/UC4QZ_LsYcvcq7qOsOhpAX4A";
+        url = "${ytUrl}/UC4QZ_LsYcvcq7qOsOhpAX4A";
       }
       {
         # Lemmino
         tags = [ "!" "youtube" ];
-        url = "${baseURI}/UCRcgy6GzDeccI7dkbbBna3Q";
+        url = "${ytUrl}/UCRcgy6GzDeccI7dkbbBna3Q";
       }
       {
         # Storytellers
         tags = [ "!" "youtube" ];
-        url = "${baseURI}/UCbphDfwSJmxk1Ny_3Oicrng";
+        url = "${ytUrl}/UCbphDfwSJmxk1Ny_3Oicrng";
       }
       {
         # EmpLemon
         tags = [ "!" "youtube" ];
-        url = "${baseURI}/UC7Ucs42FZy3uYzjrqzOIHsw";
+        url = "${ytUrl}/UC7Ucs42FZy3uYzjrqzOIHsw";
       }
       {
         # Big Boss
         tags = [ "!" "youtube" ];
-        url = "${baseURI}/UCYGDiVemmhY_Q1M-hKp4fvw";
+        url = "${ytUrl}/UCYGDiVemmhY_Q1M-hKp4fvw";
       }
       {
         # Internet Historian
         tags = [ "!" "youtube" ];
-        url = "${baseURI}/UCR1D15p_vdP3HkrH8wgjQRw";
+        url = "${ytUrl}/UCR1D15p_vdP3HkrH8wgjQRw";
       }
       {
         # Incognito Mode
         tags = [ "!" "youtube" ];
-        url = "${baseURI}/UC8Q7XEy86Q7T-3kNpNjYgwA";
+        url = "${ytUrl}/UC8Q7XEy86Q7T-3kNpNjYgwA";
       }
       {
         # PewDiePie
         tags = [ "!" "youtube" ];
-        url = "${baseURI}/UC-lHJZR3Gqxm24_Vd_AJ5Yw";
+        url = "${ytUrl}/UC-lHJZR3Gqxm24_Vd_AJ5Yw";
       }
       {
         # Channel 5
         tags = [ "!" "youtube" ];
-        url = "${baseURI}/UC-AQKm7HUNMmxjdS371MSwg";
+        url = "${ytUrl}/UC-AQKm7HUNMmxjdS371MSwg";
       }
       {
         # Chriminal Psychology
         tags = [ "!" "youtube" ];
-        url = "${baseURI}/UCYwVxWpjeKFWwu8TML-Te9A";
+        url = "${ytUrl}/UCYwVxWpjeKFWwu8TML-Te9A";
       }
 
       ###################
@@ -170,11 +182,11 @@ in
       }
       {
         title = "Podcast: Andrew Huberman";
-        url = "${baseURI}/UC2D2CMWXMOVWx7giW1n3LIg";
+        url = "${ytUrl}/UC2D2CMWXMOVWx7giW1n3LIg";
       }
       {
         title = "Podcast: Naval Ravikant";
-        url = "${baseURI}/UCh_dVD10YuSghle8g6yjePg";
+        url = "${ytUrl}/UCh_dVD10YuSghle8g6yjePg";
       }
 
       ###################
