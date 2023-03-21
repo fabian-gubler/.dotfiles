@@ -1,4 +1,13 @@
-text/html; chromium --start-fullscreen --force-device-scale-factor=2 %s; nametemplate=%s.html
-text/*; chromium --start-fullscreen --force-device-scale-factor=2 %s;
-application/pdf; chromium --start-fullscreen %s;
-image/*; sxiv %s;
+# PDF Files
+application/pdf; chromium --start-fullscreen %s >/dev/null 2>&1 &;
+
+# HTML files
+text/html; chromium --start-fullscreen --force-device-scale-factor=2 %s >/dev/null 2>&1 &; nametemplate=%s.html; 
+#
+# Plain text files
+text/plain; chromium --start-fullscreen --force-device-scale-factor=2 %s >/dev/null 2>&1 &;
+
+# Multimedia
+image/*; xdg-open %s >/dev/null 2>&1 &;
+video/*; xdg-open %s >/dev/null 2>&1 &;
+audio/*; xdg-open %s >/dev/null 2>&1 &;
