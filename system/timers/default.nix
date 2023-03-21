@@ -11,6 +11,27 @@ in
     ./github.nix # push repos daily
   ];
 
+  # Refresh isync in background
+  systemd.user.timers."isync" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnStartupSec = "1m";
+      OnUnitActiveSec = "5m";
+      Unit = "isync.service";
+    };
+  };
+
+  systemd.services."isync" = {
+    serviceConfig = {
+      Type = "oneshot";
+      User = "${user}";
+    };
+    path = with pkgs; [ isync ];
+    script = ''
+      		mbsync -a
+    '';
+  };
+
   # Refresh newsboat in background
   systemd.user.timers."newsboat" = {
     wantedBy = [ "timers.target" ];
