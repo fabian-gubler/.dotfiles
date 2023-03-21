@@ -1,12 +1,4 @@
-# Handlers
-# text/html; qutebrowser --target window -s tabs.show never %s; nametemplate=%s.html
-# application/pdf; qutebrowser --target window -s tabs.show never %s;
-# text/plain; qutebrowser --target window -s tabs.show never %s;
-text/html; chromium --start-fullscreen %s; nametemplate=%s.html
+text/html; chromium --start-fullscreen --force-device-scale-factor=2 %s; nametemplate=%s.html
+text/*; chromium --start-fullscreen --force-device-scale-factor=2 %s;
 application/pdf; chromium --start-fullscreen %s;
-text/plain; chromium --start-fullscreen %s;
-image/jpeg; sxiv %s;
-
-
-# Terminal
-text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump -width=1024 %s; nametemplate=%s.html; copiousoutput;
+image/*; sxiv %s;
