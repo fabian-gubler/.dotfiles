@@ -70,6 +70,17 @@ macro index,pager gp "<change-folder>=Spam<enter>" "go to spam"
 macro index,pager Mp ";<save-message>=Spam<enter>" "move mail to spam"
 macro index,pager Cp ";<copy-message>=Spam<enter>" "copy mail to spam"
 
+# mail
+macro compose m \
+"<enter-command>set pipe_decode<enter>\
+<pipe-message>docker run -i -v /tmp:/tmp --rm pandoc/core -f gfm -t plain -o /tmp/msg.txt<enter>\
+<pipe-message>docker run -i -v /tmp:/tmp -v ~/.config/mutt/templates/email.html:/mutt/templates/email.html --rm pandoc/core -s -f gfm --self-contained -o /tmp/msg.html --resource-path /mutt/templates/ --template email<enter>\
+<enter-command>unset pipe_decode<enter>\
+<attach-file>/tmp/msg.txt<enter>\
+<attach-file>/tmp/msg.html<enter>\
+<tag-entry><previous-entry><tag-entry><group-alternatives>" \
+"Convert markdown to HTML5 and plaintext alternative content types"
+
 # arrow keys
 bind attach <Right> view-mailcap
 bind attach <Right> view-mailcap
