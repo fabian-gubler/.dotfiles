@@ -93,8 +93,8 @@
       texlive.combined.scheme-full
       vscode
       azure-cli
-      sshfs
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
+	  hasmail
     ]
   ;
 
