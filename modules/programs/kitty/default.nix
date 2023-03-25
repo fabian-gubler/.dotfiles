@@ -1,7 +1,12 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }:
+let
+  kittyColors = import ./kitty-colors.nix { inherit (pkgs) lib config; };
+in
+{
   programs.kitty = {
     enable = true;
-    theme = "Nord";
+    extraConfig = kittyColors;
+    # theme = "Nord";
     font = {
       size = 14.0;
       name = "SF Mono";

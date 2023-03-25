@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    unstable.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -17,9 +17,13 @@
 
   outputs =
     inputs@{ self
+
+      # Standard Modules
     , nixpkgs
-    , nixpkgs-unstable
+    , unstable
     , home-manager
+
+      # Additional modules
     , hosts
     , spicetify-nix
     , ...
@@ -53,13 +57,15 @@
             ({ config, pkgs, ... }:
               let
                 overlay-unstable = final: prev: {
-                  unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
+                  unstable = unstable.legacyPackages.x86_64-linux;
                 };
               in
               {
+                # unstable packages
+                # Note, `${pkgs.system}` is the "architecture" of the machine evaluating and building
                 nixpkgs.overlays = [ overlay-unstable ];
-                environment.systemPackages = with pkgs; [
-                  # unstable.litemdview # not in stable yet
+                environment.systemPackages = with inputs.unstable.legacyPackages.${pkgs.system}; [
+                  # kitty
                 ];
               }
             )
