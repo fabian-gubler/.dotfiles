@@ -95,6 +95,7 @@
       azure-cli
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
 	  hasmail
+	  azuredatastudio
     ]
   ;
 
