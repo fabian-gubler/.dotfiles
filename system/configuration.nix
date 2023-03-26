@@ -185,12 +185,23 @@ in
   # unlock gnome keyring automatically
   security.pam.services.startx.enableGnomeKeyring = true;
 
+  # virtualisation
+  users.extraGroups.vboxusers.members = [ "${user}" ];
+  boot.kernelModules = [ "kvm-intel" ];
   virtualisation = {
     docker.enable = true;
     virtualbox = {
-      host.enable = true;
+      guest = {
+        # enable = true;
+        x11 = true;
+      };
+      host = {
+        enable = true;
+        # enableExtensionPack = true;
+      };
     };
   };
+
   # use virt-manager to manage virtual machines
   # https://nixos.wiki/wiki/Virt-manager
 

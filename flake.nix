@@ -65,7 +65,7 @@
                 # Note, `${pkgs.system}` is the "architecture" of the machine evaluating and building
                 nixpkgs.overlays = [ overlay-unstable ];
                 environment.systemPackages = with inputs.unstable.legacyPackages.${pkgs.system}; [
-                  # kitty
+                  # virtualbox
                 ];
               }
             )
