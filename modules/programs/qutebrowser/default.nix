@@ -44,10 +44,10 @@
         "b" = "spawn --userscript ~/.dotfiles/modules/programs/qutebrowser/files/rofi-menu marks";
         "B" = "spawn --userscript ~/.dotfiles/modules/programs/qutebrowser/files/rofi-menu marks-tab";
         ",m" = "hint links spawn --detach mpv {hint-url}";
-		"<ctrl-r>" = "reload";
-		"d" = "nop";
-		"u" = "nop";
-		"r" = "nop";
+        "<ctrl-r>" = "reload";
+        "d" = "nop";
+        "u" = "nop";
+        "r" = "nop";
       };
 
     };
@@ -78,6 +78,8 @@
         default_size = "10pt";
       };
 
+
+
       content = {
         blocking.method = "hosts";
         blocking.adblock.lists = [
@@ -85,20 +87,22 @@
           "https://easylist.to/easylist/easyprivacy.txt"
           "https://secure.fanboy.co.nz/fanboy-cookiemonster.txt"
         ];
+        user_stylesheets = "~/.dotfiles/modules/programs/qutebrowser/files/userstyles.css";
       };
 
-      colors = {
-        webpage = {
-          bg = "#2E3440";
-          preferred_color_scheme = "dark";
-          darkmode = {
-            enabled = true;
-            algorithm = "lightness-cielab";
-            threshold.text = 150;
-            threshold.background = 100;
-            policy.images = "always";
-            grayscale.images = 0.35;
-          };
+    };
+
+    colors = {
+      webpage = {
+        bg = "#2E3440";
+        preferred_color_scheme = "dark";
+        darkmode = {
+          enabled = true;
+          algorithm = "lightness-cielab";
+          threshold.text = 150;
+          threshold.background = 100;
+          policy.images = "always";
+          grayscale.images = 0.35;
         };
       };
     };
