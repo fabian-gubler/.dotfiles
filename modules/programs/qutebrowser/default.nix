@@ -90,19 +90,18 @@
         user_stylesheets = "~/.dotfiles/modules/programs/qutebrowser/files/userstyles.css";
       };
 
-    };
-
-    colors = {
-      webpage = {
-        bg = "#2E3440";
-        preferred_color_scheme = "dark";
-        darkmode = {
-          enabled = true;
-          algorithm = "lightness-cielab";
-          threshold.text = 150;
-          threshold.background = 100;
-          policy.images = "always";
-          grayscale.images = 0.35;
+      colors = {
+        webpage = {
+          bg = "#2E3440";
+          preferred_color_scheme = "dark";
+          darkmode = {
+            enabled = true;
+            algorithm = "lightness-cielab";
+            threshold.text = 150;
+            threshold.background = 100;
+            policy.images = "always";
+            grayscale.images = 0.35;
+          };
         };
       };
     };
