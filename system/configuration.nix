@@ -25,7 +25,7 @@ in
 
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" "docker" ];
+    extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" "docker" "libvirtd" ];
     initialPassword = "password";
     shell = pkgs.zsh;
   };
@@ -187,20 +187,21 @@ in
 
   # virtualisation
   users.extraGroups.vboxusers.members = [ "${user}" ];
+
   boot.kernelModules = [ "kvm-intel" ];
-  virtualisation = {
-    docker.enable = true;
-    virtualbox = {
-      guest = {
-        # enable = true;
-        x11 = true;
-      };
-      host = {
-        enable = true;
-        # enableExtensionPack = true;
-      };
+  # tutorial: https://www.youtube.com/watch?v=rCVW8BGnYIc
+  # tutorial: https://adamsimpson.net/writing/windows-11-as-kvm-guest
+  virtualisation.docker.enable = true;
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu = {
+      swtpm.enable = true;
+      ovmf.enable = true;
+      ovmf.packages = [ pkgs.OVMFFull.fd ];
     };
   };
+  virtualisation.spiceUSBRedirection.enable = true;
+  services.spice-vdagentd.enable = true;
 
   # use virt-manager to manage virtual machines
   # https://nixos.wiki/wiki/Virt-manager
@@ -215,6 +216,7 @@ in
     slock.enable = true;
     seahorse.enable = true;
     java.enable = true;
+    dconf.enable = true;
 
     firefox = {
       enable = true;
@@ -227,4 +229,24 @@ in
 
   };
 
+  services.mysql = {
+	package = pkgs.mariadb;
+    enable = true;
+  };
+
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_13;
+    enableTCPIP = true;
+    authentication = pkgs.lib.mkOverride 10 ''
+      local all all trust
+      host all all 127.0.0.1/32 trust
+      host all all ::1/128 trust
+    '';
+    initialScript = pkgs.writeText "backend-initScript" ''
+	  CREATE ROLE fabian WITH LOGIN CREATEDB PASSWORD 'your_password';
+    CREATE DATABASE your_database WITH OWNER fabian;
+      GRANT ALL PRIVILEGES ON DATABASE nixcloud TO nixcloud;
+    '';
+  };
 }

@@ -39,7 +39,7 @@
       (python3.withPackages pythonPackages)
     ] ++
 
-    [ python3 neovim cargo nodejs gcc gnumake ] ++
+    [ python3 neovim cargo nodejs gcc gnumake cmake ccls ] ++
     [ rnix-lsp nodePackages.bash-language-server ] ++
     [ texlive.combined.scheme-small ] ++
     [ onboard wally-cli ] ++
@@ -54,7 +54,7 @@
     [ openvpn networkmanager-openvpn ] ++
     [ dmenu sxiv ] ++
     [ zathura okular pandoc poppler_utils ] ++
-    [ gimp xournalpp libreoffice ] ++
+    [ gimp xournalpp colorpicker libreoffice ] ++
     [ arandr flameshot ] ++
     [ lazygit lf exa fzf gotop htop trash-cli xdragon ] ++
     [ xclip clipnotify clipmenu ] ++
@@ -68,6 +68,15 @@
     [ bitwig-studio yabridge yabridgectl ] ++
     [ portfolio ] ++
     [ leetcode-cli exercism ] ++
+    [
+      virt-manager
+      virt-viewer
+      spice
+      spice-gtk
+      spice-protocol
+      win-spice
+      gnome.adwaita-icon-theme
+    ] ++
 
 
     # TODO: decouple to templates
@@ -75,27 +84,13 @@
       rust-analyzer # Rust
       nodePackages.prettier # Javascript
     ] ++
-
     [
       # extra packages:
-      # ...
-      # jdt-language-server # Java
-      dpkg
-      patchelf
-      binutils
-      colorpicker
-      openssl
-      notmuch
-      watson
-      sqlite
-      cmake
-      ccls
       texlive.combined.scheme-full
       vscode
-      azure-cli
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
-	  hasmail
-	  azuredatastudio
+	  tree-sitter
+	  go
     ]
   ;
 
