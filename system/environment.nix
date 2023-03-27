@@ -87,7 +87,6 @@
     [
       # extra packages:
       texlive.combined.scheme-full
-      vscode
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
 	  tree-sitter
 	  go
