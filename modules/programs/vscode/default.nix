@@ -10,11 +10,7 @@ let
       "asvetliakov.vscode-neovim" = 1;
     };
 
-    "vim" = {
-      "enableNeovim" = true;
-      "neovimPath" = "${pkgs.neovim}/bin/nvim";
-      "disableAnnoyingNeovimMessage" = true;
-    };
+	"vscode-neovim.neovimPath" = "${pkgs.neovim}/bin/nvim";
 
   };
 in
