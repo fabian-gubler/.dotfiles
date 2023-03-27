@@ -12,6 +12,7 @@
 
       pythonPackages = p: with p; [
         # ...
+		pip
 
         browser-cookie3
 
@@ -39,15 +40,13 @@
       (python3.withPackages pythonPackages)
     ] ++
 
-    [ python3 neovim cargo nodejs gcc gnumake cmake ccls ] ++
+    [ python3 neovim cargo nodejs gcc gnumake cmake ccls go ] ++
     [ rnix-lsp nodePackages.bash-language-server ] ++
     [ texlive.combined.scheme-small ] ++
     [ onboard wally-cli ] ++
     [ todo-txt-cli ] ++
     [ hsetroot xbindkeys xorg.xkill xorg.xinit ] ++
     [ chromium qbittorrent ] ++
-    # IPV6 Bug: `nmcli connection delete pvpn-ipv6leak-protection` or `protonvpn-cli d`
-    # sudo ip link delete ipv6leakintrf0
     [ protonvpn-cli ] ++
     [ authy signal-desktop protonmail-bridge nextcloud-client ] ++
     [ networkmanagerapplet ] ++
@@ -56,7 +55,7 @@
     [ zathura okular pandoc poppler_utils ] ++
     [ gimp xournalpp colorpicker libreoffice ] ++
     [ arandr flameshot ] ++
-    [ lazygit lf exa fzf gotop htop trash-cli xdragon ] ++
+    [ lazygit lf exa fzf gotop trash-cli xdragon ] ++
     [ xclip clipnotify clipmenu ] ++
     [ rbw xdotool pinentry ] ++
     [ spotify ] ++
@@ -79,17 +78,11 @@
     ] ++
 
 
-    # TODO: decouple to templates
-    [
-      rust-analyzer # Rust
-      nodePackages.prettier # Javascript
-    ] ++
     [
       # extra packages:
       texlive.combined.scheme-full
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
 	  tree-sitter
-	  go
 	  jq
     ]
   ;
