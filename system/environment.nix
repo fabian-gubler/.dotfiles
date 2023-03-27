@@ -90,6 +90,7 @@
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
 	  tree-sitter
 	  go
+	  jq
     ]
   ;
 
