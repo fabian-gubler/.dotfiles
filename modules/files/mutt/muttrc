@@ -73,9 +73,7 @@ macro index,pager Cp ";<copy-message>=Spam<enter>" "copy mail to spam"
 
 # Run pandoc to convert markdown into html
 # TODO: add a way to add a custom template
-unbind compose y
-
-macro compose y \
+macro compose Y \
 "<enter-command>set pipe_decode<enter>\
 <first-entry>\
 <pipe-entry>pandoc -s -f markdown+hard_line_breaks+autolink_bare_uris-blank_before_blockquote --self-contained --variable=pagetitle:'message' -o ~/msg.html --resource-path ~/.dotfiles/modules/files/mutt/templates/ --template email <enter>\
@@ -83,6 +81,16 @@ macro compose y \
 <attach-file>~/msg.html<enter>\
 <toggle-disposition><toggle-unlink>\
 <tag-entry><first-entry><tag-entry><group-alternatives><send-message>" \
+"Convert markdown to HTML5 and plaintext alternative content types and send message"
+
+macro compose m \
+"<enter-command>set pipe_decode<enter>\
+<first-entry>\
+<pipe-entry>pandoc -s -f markdown+hard_line_breaks+autolink_bare_uris-blank_before_blockquote --self-contained --variable=pagetitle:'message' -o ~/msg.html --resource-path ~/.dotfiles/modules/files/mutt/templates/ --template email <enter>\
+<enter-command>unset pipe_decode<enter>\
+<attach-file>~/msg.html<enter>\
+<toggle-disposition><toggle-unlink>\
+<tag-entry><first-entry><tag-entry><group-alternatives>" \
 "Convert markdown to HTML5 and plaintext alternative content types and send message"
 
 # arrow keys

@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   programs.vscode = {
     enable = true;
-	enableExtensions = false;
+	enableExtensionUpdateCheck = false;
 	enableUpdateCheck = false;
     extensions = with pkgs.vscode-extensions; [
       vscodevim.vim
