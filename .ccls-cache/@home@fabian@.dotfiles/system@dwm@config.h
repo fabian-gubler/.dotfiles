@@ -8,7 +8,7 @@ static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows sel
 static const unsigned int systrayonleft = 0;   	/* 0: systray in the right corner, >0: systray on left of status text */
 static const unsigned int systrayspacing = 10;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
-static int showsystray				= 1;     /* 0 means no systray */
+static int showsystray				= 0;     /* 0 means no systray */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
 static const char *fonts[]          = { "SFMono:size=12" };
@@ -44,12 +44,10 @@ static const Rule rules[] = {
 	{ "Com.github.johnfactotum.Foliate",NULL, NULL, 1 << 2,		0,           -1,        0 },
 	{ "okular",				NULL,       NULL,       1 << 2,		0,           -1,        0 },
 	{ "mpv",				NULL,       NULL,       1 << 2,		0,           -1,        0 },
-	{ "kitty",				NULL,       NULL,       0,			0,           -1,        0 },
 
 	/* class				instance    title       tags mask   isfloating   monitor    float x,y,w,h       floatborderpx*/
 	{ "Firefox",			NULL,       "Save As",  0,			0,           -1,        50,50,500,500,      0 },
 	{ "Rofi",				NULL,	   	NULL,	  	0,			1,           -1,        50,50,1000,1000,    0 },
-	{ "Blueberry.py",		NULL,	   	NULL,	  	0,			1,           -1,        50,50,1000,1000,    0 },
 };
 
 /* layout(s) */
@@ -88,8 +86,6 @@ static Key keys[] = {
 	{ MODKEY,						XK_p,      spawn,          SHCMD("dmenu_run -i")},
 	{ MODKEY,						XK_w,      spawn,          SHCMD("qutebrowser")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
-	// { MODKEY,                       XK_g,      spawn,          SHCMD("nix-shell ~/.dotfiles/modules/programs/bitwig/default.nix")},
-	// { MODKEY,                       XK_g,      spawn,          SHCMD("nix-shell ~/.dotfiles/modules/programs/bitwig/default.nix")},
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("spotify --force-device-scale-factor=1.5")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},

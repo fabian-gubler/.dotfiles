@@ -84,11 +84,9 @@
 
                   theme = spicePkgs.themes.catppuccin-mocha;
                   colorScheme = "Default";
-                  # colorScheme = "flamingo";
 
                   enabledExtensions = with spicePkgs.extensions; [
                     keyboardShortcut # vim-like navigation
-                    shuffle # shuffle+ (special characters are sanitized out of ext names)
                   ];
                 };
               };

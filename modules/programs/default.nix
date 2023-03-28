@@ -1,11 +1,12 @@
 { config, pkgs, lib, ... }: {
+
   imports = [
     ./autorandr
     ./autojump
-	./sioyek
-	./tmux
-	./mail
-	./newsboat
+    ./sioyek
+    ./tmux
+    ./mail
+    ./newsboat
     ./rofi
     ./git
     ./kitty
@@ -15,7 +16,7 @@
     ./zsh
     ./calendar
     ./qutebrowser
-	./vscode
+    ./vscode
   ];
 
 }
