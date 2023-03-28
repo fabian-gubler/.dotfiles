@@ -26,8 +26,9 @@ fi
 
 while true; do
     if rbw unlocked; then
-        notify_on_failure sync
-        notify_on_failure inotifywait \
+        # notify_on_failure sync
+        sync
+        inotifywait \
             --event modify \
             --event create \
             --event delete \
