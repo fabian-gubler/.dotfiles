@@ -11,29 +11,8 @@ in
     ./github.nix # push repos daily
   ];
 
-  # Refresh isync in background
-  systemd.user.timers."isync" = {
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnStartupSec = "1m";
-      OnUnitActiveSec = "5m";
-      Unit = "isync.service";
-    };
-  };
-
-  systemd.services."isync" = {
-    serviceConfig = {
-      Type = "oneshot";
-      User = "${user}";
-    };
-    path = with pkgs; [ isync ]; # necessary?
-    script = ''
-		${pkgs.isync} -a
-    '';
-  };
-
   # Refresh newsboat in background
-  systemd.user.timers."newsboat" = {
+  systemd.timers."newsboat" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnStartupSec = "1m";
@@ -49,12 +28,12 @@ in
     };
     path = with pkgs; [ newsboat ]; # necessary?
     script = ''
-      		 ${pkgs.newsboat} -x reload
+      		 ${pkgs.newsboat}/bin/newsboat -x reload
     '';
   };
 
   # Empty trash more than 30 days old every week
-  systemd.user.timers."empty-trash" = {
+  systemd.timers."empty-trash" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnCalendar = "weekly";
@@ -74,7 +53,7 @@ in
   };
 
   # Trash Downloads on boot
-  systemd.user.timers."trash-downloads" = {
+  systemd.timers."trash-downloads" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnBootSec = "5m";
@@ -92,6 +71,5 @@ in
       		trash ${homeDirectory}/Downloads/*
     '';
   };
-
 
 }

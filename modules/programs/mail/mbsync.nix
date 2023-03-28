@@ -36,7 +36,7 @@ in
       };
       primary = true;
       userName = "fabian.gubler@protonmail.com";
-      passwordCommand = "rbw get bridge";
+      passwordCommand = "${pkgs.rbw}/bin/rbw get bridge";
       mbsync = {
         enable = true;
         create = "imap";
@@ -44,7 +44,7 @@ in
         extraConfig.account = {
           Host = "127.0.0.1";
           Port = "1143";
-          PassCmd = "rbw get bridge";
+          PassCmd = "${pkgs.rbw}/bin/rbw get bridge";
           SSLType = "STARTTLS";
           CertificateFile = "~/.config/protonmail/bridge/cert.pem";
         };

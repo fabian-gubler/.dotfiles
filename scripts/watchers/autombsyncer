@@ -5,13 +5,13 @@
 # Requires: inotify-tools
 
 sync() {
-	vdirsyncer sync --force-delete
+	mbsync -a
 }
 
-if [[ -d ~/nextcloud/.calendars ]]; then
-	echo "Calendar directory exists!" 
+if [[ -d ~/Mail/ ]]; then
+	echo "Mail directory exists!" 
 else
-	echo "Error: Calendar directory not found"
+	echo "Error: Mail directory not found"
 	exit
 fi
 
@@ -21,7 +21,7 @@ while true; do
 		--event modify \
 		--event create \
 		--event delete \
-		--timeout 300 \
-		--recursive "$HOME/nextcloud/.calendars/"
+		--timeout 60 \
+		--recursive "$HOME/Mail/INBOX/"
 done
 
