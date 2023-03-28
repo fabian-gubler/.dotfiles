@@ -3,7 +3,7 @@ application/pdf; chromium --start-fullscreen %s >/dev/null 2>&1 &;
 
 # HTML files
 text/html; chromium --start-fullscreen --force-device-scale-factor=1.5 %s >/dev/null 2>&1 &; nametemplate=%s.html; 
-text/html; lynx -dump --display_charset=utf-8 %s; nametemplate=%s.html; copiousoutput
+text/html; lynx -dump -assume_charset=utf-8 -display_charset=utf-8 %s; nametemplate=%s.html; copiousoutput
 
 # Plain text files
 text/plain; chromium --start-fullscreen --force-device-scale-factor=1.5 %s >/dev/null 2>&1 &;
