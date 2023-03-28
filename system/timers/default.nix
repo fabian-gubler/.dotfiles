@@ -48,11 +48,12 @@ in
     };
     path = with pkgs; [ trash-cli ];
     script = ''
-      trash-empty 30 -f
+      ${pkgs.trash-cli}/bin/trash-empty 30 -f
     '';
   };
 
   # Trash Downloads on boot
+  # TODO: exit 1 status when Downloads directory is empty
   systemd.timers."trash-downloads" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
@@ -68,7 +69,7 @@ in
     };
     path = with pkgs; [ trash-cli ];
     script = ''
-      		trash ${homeDirectory}/Downloads/*
+      		${pkgs.trash-cli}/bin/trash ${homeDirectory}/Downloads/*
     '';
   };
 

@@ -4,6 +4,15 @@
 # Sync on changes and every minute
 # Requires: inotify-tools
 
+# Define the notify_on_failure function
+function notify_on_failure() {
+    "$@"
+    exit_status=$?
+    if [ $exit_status -ne 0 ]; then
+        dunstify -u critical "Mail Command failed" "Exit status: $exit_status"
+    fi
+}
+
 sync() {
     mbsync -a
 }
@@ -17,8 +26,8 @@ fi
 
 while true; do
     if rbw unlocked; then
-        sync
-        inotifywait \
+        notify_on_failure sync
+        notify_on_failure inotifywait \
             --event modify \
             --event create \
             --event delete \
