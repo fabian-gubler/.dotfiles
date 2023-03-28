@@ -1,27 +1,31 @@
 #!/usr/bin/env bash
 
-# Watch vdirsyncer calendars.
-# Sync on changes and every 5 minutes.
+# Watch and sync Mail 
+# Sync on changes and every minute
 # Requires: inotify-tools
 
 sync() {
-	mbsync -a
+    mbsync -a
 }
 
 if [[ -d ~/Mail/ ]]; then
-	echo "Mail directory exists!" 
+    echo "Mail directory exists!" 
 else
-	echo "Error: Mail directory not found"
-	exit
+    echo "Error: Mail directory not found"
+    exit
 fi
 
 while true; do
-	sync
-	inotifywait \
-		--event modify \
-		--event create \
-		--event delete \
-		--timeout 60 \
-		--recursive "$HOME/Mail/INBOX/"
+    if rbw unlocked; then
+        sync
+        inotifywait \
+            --event modify \
+            --event create \
+            --event delete \
+            --timeout 60 \
+            --recursive "$HOME/Mail/INBOX/"
+    else
+        echo "Vault is locked. Waiting for 60 seconds before checking again."
+        sleep 60
+    fi
 done
-

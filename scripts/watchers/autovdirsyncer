@@ -16,12 +16,17 @@ else
 fi
 
 while true; do
-	sync
-	inotifywait \
-		--event modify \
-		--event create \
-		--event delete \
-		--timeout 300 \
-		--recursive "$HOME/nextcloud/.calendars/"
+    if rbw unlocked; then
+        sync
+        inotifywait \
+            --event modify \
+            --event create \
+            --event delete \
+            --timeout 300 \
+            --recursive "$HOME/nextcloud/.calendars/"
+    else
+        echo "Vault is locked. Waiting for 60 seconds before checking again."
+        sleep 60
+    fi
 done
 
