@@ -96,11 +96,11 @@ macro compose m \
 "Convert markdown to HTML5 and plaintext alternative content types and send message"
 
 # arrow keys
-bind attach <Right> view-mailcap
-bind attach <Right> view-mailcap
-bind pager <Right> view-attachments
-bind index <Right> display-message
-bind browser <Right> select-entry
-bind pager,attach <Left> exit
-bind index <Left> noop
-macro browser <Left> '<change-dir><kill-line>..<enter>' "Go to parent folder"
+# bind attach <Right> view-mailcap
+# bind attach <Right> view-mailcap
+# bind pager <Right> view-attachments
+# bind index <Right> display-message
+# bind browser <Right> select-entry
+# bind pager,attach <Left> exit
+# bind index <Left> noop
+# macro browser <Left> '<change-dir><kill-line>..<enter>' "Go to parent folder"

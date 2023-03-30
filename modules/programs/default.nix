@@ -16,7 +16,7 @@
     ./zsh
     ./calendar
     ./qutebrowser
-    ./vscode
+    ./code
   ];
 
 }
