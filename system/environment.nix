@@ -12,7 +12,7 @@
 
       pythonPackages = p: with p; [
         # ...
-		pip
+        pip
 
         browser-cookie3
 
@@ -82,9 +82,10 @@
       # extra packages:
       texlive.combined.scheme-full
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
-	  tree-sitter
-	  jq
-	  obsidian
+      tree-sitter
+      jq
+      obsidian
+      eclipses.eclipse-java
     ]
   ;
 

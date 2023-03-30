@@ -186,7 +186,6 @@ in
   security.pam.services.startx.enableGnomeKeyring = true;
 
   # virtualisation
-  users.extraGroups.vboxusers.members = [ "${user}" ];
 
   boot.kernelModules = [ "kvm-intel" ];
   # tutorial: https://www.youtube.com/watch?v=rCVW8BGnYIc
@@ -203,8 +202,11 @@ in
   virtualisation.spiceUSBRedirection.enable = true;
   services.spice-vdagentd.enable = true;
 
-  # use virt-manager to manage virtual machines
-  # https://nixos.wiki/wiki/Virt-manager
+  # virtualbox
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "${user}" ];
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+
 
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
@@ -229,11 +231,6 @@ in
 
   };
 
- #  services.mysql = {
-	# package = pkgs.mariadb;
- #    enable = true;
- #  };
-
   # services.postgresql = {
   #   enable = true;
   #   package = pkgs.postgresql_13;
@@ -244,7 +241,7 @@ in
   #     host all all ::1/128 trust
   #   '';
   #   initialScript = pkgs.writeText "backend-initScript" ''
-	 #  CREATE ROLE fabian WITH LOGIN CREATEDB PASSWORD 'your_password';
+  #  CREATE ROLE fabian WITH LOGIN CREATEDB PASSWORD 'your_password';
   #   CREATE DATABASE your_database WITH OWNER fabian;
   #     GRANT ALL PRIVILEGES ON DATABASE nixcloud TO nixcloud;
   #   '';
