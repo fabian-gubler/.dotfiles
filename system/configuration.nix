@@ -208,7 +208,7 @@ in
   virtualisation.virtualbox.host = {
 	  enable = true;
 	  enableExtensionPack = true;
-	  # package = unstable.virtualbox;
+	  package = pkgs.virtualbox;
   };
 
 
