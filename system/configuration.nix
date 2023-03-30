@@ -188,6 +188,7 @@ in
   # virtualisation
 
   boot.kernelModules = [ "kvm-intel" ];
+
   # tutorial: https://www.youtube.com/watch?v=rCVW8BGnYIc
   # tutorial: https://adamsimpson.net/writing/windows-11-as-kvm-guest
   virtualisation.docker.enable = true;

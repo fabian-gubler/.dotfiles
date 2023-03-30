@@ -16,6 +16,7 @@
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
+
     loader = {
       efi = {
         canTouchEfiVariables = true;
@@ -26,7 +27,7 @@
         devices = [ "nodev" ];
         efiSupport = true;
         useOSProber = true;
-      }; 
+      };
       timeout = 5; # Work for grub and efi boot, time before auto-boot
     };
   };
