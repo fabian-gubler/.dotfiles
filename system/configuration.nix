@@ -203,9 +203,13 @@ in
   services.spice-vdagentd.enable = true;
 
   # virtualbox
-  virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "${user}" ];
-  virtualisation.virtualbox.host.enableExtensionPack = true;
+  virtualisation.virtualbox.host = {
+	  enable = true;
+	  enableExtensionPack = true;
+	  # package = unstable.virtualbox;
+  };
+
 
 
   fonts.fonts = with pkgs; [

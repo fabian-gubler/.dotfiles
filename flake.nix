@@ -34,6 +34,7 @@
         inherit system;
         config.allowUnfree = true;
       };
+	  unstable = import inputs.unstable { system = pkgs.system; };
       lib = nixpkgs.lib;
       spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
     in
@@ -54,7 +55,7 @@
         nixos = lib.nixosSystem {
           inherit system;
           modules = [
-            ({ config, pkgs, ... }:
+            ({ config, pkgs, unstable, ... }:
               let
                 overlay-unstable = final: prev: {
                   unstable = unstable.legacyPackages.x86_64-linux;
@@ -66,6 +67,7 @@
                 nixpkgs.overlays = [ overlay-unstable ];
                 environment.systemPackages = with inputs.unstable.legacyPackages.${pkgs.system}; [
                   # protonmail-bridge
+				  virtualbox
                 ];
               }
             )
