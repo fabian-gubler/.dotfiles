@@ -207,7 +207,7 @@ in
   users.extraGroups.vboxusers.members = [ "${user}" ];
   virtualisation.virtualbox.host = {
 	  enable = true;
-	  enableExtensionPack = true;
+	  # enableExtensionPack = true;
 	  package = pkgs.virtualbox;
   };
 
