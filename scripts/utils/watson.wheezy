@@ -1,0 +1,55 @@
+@(
+
+# SOURCE: https://gist.github.com/satirebird/3fb55b86899e03ea5afe35aafa9a6d7b
+# $ JR=$(watson report --json) && wheezy.template report_en.adoc.wheezy "$JR" | asciidoctor-pdf -o report.pdf -
+# Timetable script: https://github.com/raphaelfournier/watson-weekly-timetable
+#
+
+import re
+import datetime
+
+# seconds to hh:mm:ss filter
+def sp(input):
+    s_int = round(input)
+    a = s_int // 3600
+    b = (s_int % 3600) // 60
+    c = (s_int % 3600) % 60
+    return "{:02d}h {:02d}m {:02d}s".format(a, b, c)
+
+# time stamp filter
+def ts(input):
+    # example "2020-09-28T00:00:00+02:00"
+    # example "2020-10-05T23:59:59.999999+02:00"
+    dt = re.split('T', input) # Split date and time 
+    tm = re.split('\\+|-|\\.', dt[1]) # Split time and timezone
+    date_time_obj = datetime.datetime.strptime(dt[0] + ' ' + tm[0], '%Y-%m-%d %H:%M:%S')
+    return date_time_obj.strftime('%d %b %Y')
+
+)
+= Working time
+
+@require(timespan, time, projects)
+
+== Overview
+
+[horizontal]
+From:: @{timespan['from']!!ts}
+Till:: @{timespan['to']!!ts}
+Total:: @{time!!sp}
+
+'''
+
+@for i in projects:
+=== Project: @{i['name']}
+
+Total: @{i['time']!!sp}
+
+[cols=2*,options="header"]
+|===
+|Description|Working time
+@for j in i['tags']:
+|@{j['name']}|@{j['time']!!sp}
+@end
+|===
+
+@end
