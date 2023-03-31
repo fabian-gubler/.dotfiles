@@ -88,6 +88,7 @@
       jq
       obsidian
       eclipses.eclipse-java
+	  qtemu
     ]
   ;
 
