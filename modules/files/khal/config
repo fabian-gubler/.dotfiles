@@ -40,7 +40,7 @@ timedelta = 1d
 [view]
 blank_line_before_day = True
 event_view_always_visible = False
-agenda_event_format = {calendar-color}{start-end-time-style} {title}{repeat-symbol}{reset} {location}{reset}{description}
+agenda_event_format = {calendar-color}{start-end-time-style} {title}{repeat-symbol}{reset} {location}{reset}
 
 [sqlite]
 path = ~/.local/share/khal/khal.db
