@@ -209,6 +209,10 @@ in
         title = "Blog: Blub's Blog";
         url = "https://blubsblog.bearblog.dev/feed";
       }
+      {
+        title = "Blog: Simon Späti";
+        url = "https://sspaeti.com/index.xml";
+      }
 
       # Naval recommendations
       {
