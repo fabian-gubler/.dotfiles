@@ -67,6 +67,7 @@
                 nixpkgs.overlays = [ overlay-unstable ];
                 environment.systemPackages = with inputs.unstable.legacyPackages.${pkgs.system}; [
                   # protonmail-bridge
+				  # virtualbox
                 ];
               }
             )
