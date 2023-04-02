@@ -195,8 +195,9 @@ in
   virtualisation.libvirtd = {
     enable = true;
     qemu = {
-      # swtpm.enable = true;
+      swtpm.enable = true;
       ovmf.enable = true;
+	  runAsRoot = true;
       ovmf.packages = [ pkgs.OVMFFull.fd ];
     };
   };
@@ -204,12 +205,12 @@ in
   services.spice-vdagentd.enable = true;
 
   # virtualbox
-  users.extraGroups.vboxusers.members = [ "${user}" ];
-  virtualisation.virtualbox.host = {
-	  enable = true;
-	  # enableExtensionPack = true;
-	  package = pkgs.virtualbox;
-  };
+  # users.extraGroups.vboxusers.members = [ "${user}" ];
+  # virtualisation.virtualbox.host = {
+	 #  enable = true;
+	 #  # enableExtensionPack = true;
+	 #  package = pkgs.virtualbox;
+  # };
 
 
 

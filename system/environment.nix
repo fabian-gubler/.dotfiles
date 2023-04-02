@@ -90,6 +90,9 @@
       eclipses.eclipse-java
 	  qtemu
 	  ncdu
+	  # etcher
+	  gparted
+	  looking-glass-client
     ]
   ;
 
