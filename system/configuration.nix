@@ -187,7 +187,9 @@ in
 
   # virtualisation
 
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = [ "kvm-intel" "kvmfr" ];
+  boot.kernelParams = [ "amd_iommu=on" "pcie_aspm=off" ];
+
 
   # tutorial: https://www.youtube.com/watch?v=rCVW8BGnYIc
   # tutorial: https://adamsimpson.net/writing/windows-11-as-kvm-guest
