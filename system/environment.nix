@@ -89,6 +89,7 @@
       obsidian
       eclipses.eclipse-java
 	  qtemu
+	  ncdu
     ]
   ;
 
