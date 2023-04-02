@@ -4,6 +4,7 @@
   # Settings
   nixpkgs.config = {
 	  allowUnfree = true;
+	  permittedInsecurePackages = [ "electron-12.2.3" ];
   };
   nix.package = pkgs.nixStable;
 
@@ -90,9 +91,11 @@
       eclipses.eclipse-java
 	  qtemu
 	  ncdu
-	  # etcher
+	  etcher
 	  gparted
 	  looking-glass-client
+	  woeusb-ng
+	  ventoy-bin-full
     ]
   ;
 
