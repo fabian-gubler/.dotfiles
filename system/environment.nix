@@ -94,8 +94,7 @@
 	  etcher
 	  gparted
 	  looking-glass-client
-	  woeusb-ng
-	  ventoy-bin-full
+	  ventoy-bin
     ]
   ;
 
