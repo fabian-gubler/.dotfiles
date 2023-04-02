@@ -197,19 +197,22 @@ in
     qemu = {
       swtpm.enable = true;
       ovmf.enable = true;
-	  runAsRoot = true;
+      runAsRoot = true;
       ovmf.packages = [ pkgs.OVMFFull.fd ];
     };
   };
   virtualisation.spiceUSBRedirection.enable = true;
   services.spice-vdagentd.enable = true;
+  systemd.tmpfiles.rules = [
+    "f /dev/shm/looking-glass 0660 fabian qemu-libvirtd -"
+  ];
 
   # virtualbox
   # users.extraGroups.vboxusers.members = [ "${user}" ];
   # virtualisation.virtualbox.host = {
-	 #  enable = true;
-	 #  # enableExtensionPack = true;
-	 #  package = pkgs.virtualbox;
+  #  enable = true;
+  #  # enableExtensionPack = true;
+  #  package = pkgs.virtualbox;
   # };
 
 
