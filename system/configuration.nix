@@ -14,6 +14,8 @@ efiSupport = true;
 useOSProber = true;
 };
 
+  virtualisation.vmware.guest.enable = true;
+
   nix = {
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
