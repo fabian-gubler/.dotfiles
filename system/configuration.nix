@@ -7,6 +7,13 @@ let
 in
 {
 
+grub = {
+enable = true;
+devices = [ "nodev" ];
+efiSupport = true;
+useOSProber = true;
+};
+
   nix = {
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
