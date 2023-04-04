@@ -7,10 +7,10 @@ let
 in
 {
 
-  # boot.loader.grub.enable = true;
-  # boot.loader.grub.version = 2;
-  # boot.loader.grub.device = "/dev/vda";
-  boot.loader.sysemd-boot.enable = true;
+  boot.loader.grub.enable = true;
+  boot.loader.grub.version = 2;
+  boot.loader.grub.device = "/dev/vda";
+
   boot.loader.efi.canTouchEfiVariables = true;
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;
@@ -49,9 +49,9 @@ in
   services.xserver = {
     enable = true;
     layout = "ch";
-    modules = [ pkgs.xf86_input_wacom ];
-    libinput.enable = true;
-    wacom.enable = true;
+    # modules = [ pkgs.xf86_input_wacom ];
+    # libinput.enable = true;
+    # wacom.enable = true;
     windowManager.dwm.enable = true;
     displayManager = {
       defaultSession = "none+dwm";
@@ -65,27 +65,9 @@ in
     '';
   };
 
-  # services.openvpn.servers = {
-  #   homeVPN = { config = '' config /home/fabian/nextcloud/apps/openvpn/homeVPN.conf ''; };
-  #   client = {
-  #     config = ''
-  #       client
-  #       remote vpn.example.org
-  #       dev tun
-  #       proto tcp-client
-  #       port 8080
-  #       ca /root/.vpn/ca.crt
-  #       cert /root/.vpn/alice.crt
-  #       key /root/.vpn/alice.key
-  #     '';
-  #     up = "echo nameserver $nameserver | ${pkgs.openresolv}/sbin/resolvconf -m 0 -a $dev";
-  #     down = "${pkgs.openresolv}/sbin/resolvconf -d $dev";
-  #   };
-  # };
-
   # Flatpak
-  xdg.portal.enable = true;
-  services.flatpak.enable = true;
+  # xdg.portal.enable = true;
+  # services.flatpak.enable = true;
 
   # TODO: System-wide GTK Theme
   qt5 = {
@@ -125,10 +107,10 @@ in
   };
 
   # Service management
-  services.logind.extraConfig = ''
-    # don’t shutdown when power button is short-pressed
-    HandlePowerKey=ignore
-  '';
+  # services.logind.extraConfig = ''
+  #   # don’t shutdown when power button is short-pressed
+  #   HandlePowerKey=ignore
+  # '';
 
   # Bluetooth
   # hardware = {
@@ -145,7 +127,7 @@ in
 
   services = {
     # touchegg.enable = true;
-    gnome.gnome-keyring.enable = true;
+    # gnome.gnome-keyring.enable = true;
     # tlp.enable = true;
     atd.enable = true;
     # unclutter = {
@@ -166,12 +148,12 @@ in
   };
 
   # unlock gnome keyring automatically
-  security.pam.services.startx.enableGnomeKeyring = true;
+  # security.pam.services.startx.enableGnomeKeyring = true;
 
   # virtualisation
 
-  boot.kernelModules = [ "kvm-intel" "kvmfr" ];
-  boot.kernelParams = [ "amd_iommu=on" "pcie_aspm=off" ];
+  # boot.kernelModules = [ "kvm-intel" "kvmfr" ];
+  # boot.kernelParams = [ "amd_iommu=on" "pcie_aspm=off" ];
 
 
   fonts.fonts = with pkgs; [
@@ -181,7 +163,7 @@ in
 
   programs = {
     tmux.enable = true;
-    slock.enable = true;
+    # slock.enable = true;
     seahorse.enable = true;
     java.enable = true;
     dconf.enable = true;
@@ -196,20 +178,4 @@ in
 
 
   };
-
-  # services.postgresql = {
-  #   enable = true;
-  #   package = pkgs.postgresql_13;
-  #   enableTCPIP = true;
-  #   authentication = pkgs.lib.mkOverride 10 ''
-  #     local all all trust
-  #     host all all 127.0.0.1/32 trust
-  #     host all all ::1/128 trust
-  #   '';
-  #   initialScript = pkgs.writeText "backend-initScript" ''
-  #  CREATE ROLE fabian WITH LOGIN CREATEDB PASSWORD 'your_password';
-  #   CREATE DATABASE your_database WITH OWNER fabian;
-  #     GRANT ALL PRIVILEGES ON DATABASE nixcloud TO nixcloud;
-  #   '';
-  # };
 }
