@@ -7,12 +7,8 @@ let
 in
 {
 
-grub = {
-enable = true;
-devices = [ "nodev" ];
-efiSupport = true;
-useOSProber = true;
-};
+boot.loader.grub.enable = true;
+boot.loader.grub.version = 2;
 
   virtualisation.vmware.guest.enable = true;
 
