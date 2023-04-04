@@ -15,9 +15,8 @@ in
 
   boot.loader.efi.canTouchEfiVariables = true;
 
-  services.qemuGuest.enable = true;
+  # services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;
-  # services.xserver.videoDrivers = [ "qxl" ];
 
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.startx.enableGnomeKeyring = true;
@@ -58,10 +57,11 @@ in
     # modules = [ pkgs.xf86_input_wacom ];
     # libinput.enable = true;
     # wacom.enable = true;
-    windowManager.dwm.enable = true;
+    # windowManager.dwm.enable = true;
+    desktopManager.gnome.enable = true;
     displayManager = {
-      defaultSession = "none+dwm";
-      gdm.enable = false;
+      # defaultSession = "none+dwm";
+      gdm.enable = true;
     };
     serverFlagsSection = ''
       Option "BlankTime" "0"
@@ -100,17 +100,17 @@ in
   console.useXkbConfig = true;
 
   # Pipewire
-  services = {
-    pipewire = {
-      enable = true;
-      alsa = {
-        enable = true;
-        support32Bit = true;
-      };
-      pulse.enable = true;
-      jack.enable = true;
-    };
-  };
+  # services = {
+  #   pipewire = {
+  #     enable = true;
+  #     alsa = {
+  #       enable = true;
+  #       support32Bit = true;
+  #     };
+  #     pulse.enable = true;
+  #     jack.enable = true;
+  #   };
+  # };
 
   # Service management
   # services.logind.extraConfig = ''
