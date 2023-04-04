@@ -7,11 +7,11 @@ let
 in
 {
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
-  boot.loader.grub.device = "/dev/vda";
-  # virtualisation.qemu.guestAgent.enable = true;
-  # virtualisation.qemu.guestAgent.enable = true;
+  # boot.loader.grub.enable = true;
+  # boot.loader.grub.version = 2;
+  # boot.loader.grub.device = "/dev/vda";
+  boot.loader.sysemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;
   # services.xserver.videoDrivers = [ "qxl" ];
@@ -36,8 +36,7 @@ in
 
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" "docker" "libvirtd" ];
-    initialPassword = "password";
+    extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
   };
 
