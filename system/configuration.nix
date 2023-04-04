@@ -49,15 +49,14 @@ in
   services.xserver = {
     enable = true;
     layout = "ch";
-    # modules = [ pkgs.xf86_input_wacom ];
-    # libinput.enable = true;
-    # wacom.enable = true;
-    # windowManager.dwm.enable = true;
+    modules = [ pkgs.xf86_input_wacom ];
+    libinput.enable = true;
+    wacom.enable = true;
+    windowManager.dwm.enable = true;
     # desktopManager.gnome.enable = true;
-    # displayManager = {
-    #   # defaultSession = "none+dwm";
-    #   # gdm.enable = true;
-    # };
+    displayManager = {
+      defaultSession = "none+dwm";
+    };
     serverFlagsSection = ''
       Option "BlankTime" "0"
       Option "StandbyTime" "0"
@@ -68,124 +67,117 @@ in
 
 
   virtualisation.virtualbox.guest.enable = true;
-  services.xserver =
-    {
-      desktopManager.default = "none";
-      windowManager.default = "i3";
-      windowManager.i3.enable = true;
-      displayManager.lightdm.enable = true;
+  # Flatpak
+  # xdg.portal.enable = true;
+  # services.flatpak.enable = true;
+
+  # TODO: System-wide GTK Theme
+  qt5 = {
+    enable = true;
+    platformTheme = "gtk2";
+    style = "gtk2";
+  };
+
+  networking = {
+    hostName = "nixos";
+    # hosts = {
+    #   "0.0.0.0" = [ "youtube.com" "www.youtube.com" ];
+    # };
+    networkmanager.enable = true;
+    stevenBlackHosts = {
+      blockFakenews = true;
+      blockGambling = true;
+      blockPorn = true;
+      blockSocial = false;
     };
-      # Flatpak
-      # xdg.portal.enable = true;
-      # services.flatpak.enable = true;
+  };
 
-      # TODO: System-wide GTK Theme
-      qt5 = {
-  enable = true;
-  platformTheme = "gtk2";
-  style = "gtk2";
-};
+  # Use same keyboard layout for tty
+  console.useXkbConfig = true;
 
-networking = {
-hostName = "nixos";
-# hosts = {
-#   "0.0.0.0" = [ "youtube.com" "www.youtube.com" ];
-# };
-networkmanager.enable = true;
-stevenBlackHosts = {
-blockFakenews = true;
-blockGambling = true;
-blockPorn = true;
-blockSocial = false;
-};
-};
+  # Pipewire
+  # services = {
+  #   pipewire = {
+  #     enable = true;
+  #     alsa = {
+  #       enable = true;
+  #       support32Bit = true;
+  #     };
+  #     pulse.enable = true;
+  #     jack.enable = true;
+  #   };
+  # };
 
-# Use same keyboard layout for tty
-console.useXkbConfig = true;
+  # Service management
+  # services.logind.extraConfig = ''
+  #   # don’t shutdown when power button is short-pressed
+  #   HandlePowerKey=ignore
+  # '';
 
-# Pipewire
-# services = {
-#   pipewire = {
-#     enable = true;
-#     alsa = {
-#       enable = true;
-#       support32Bit = true;
-#     };
-#     pulse.enable = true;
-#     jack.enable = true;
-#   };
-# };
+  # Bluetooth
+  # hardware = {
+  #   keyboard.zsa.enable = true;
+  #   bluetooth = {
+  #     enable = true;
+  #     settings = {
+  #       General = {
+  #         Enable = "Source,Sink,Media,Socket";
+  #       };
+  #     };
+  #   };
+  # };
 
-# Service management
-# services.logind.extraConfig = ''
-#   # don’t shutdown when power button is short-pressed
-#   HandlePowerKey=ignore
-# '';
-
-# Bluetooth
-# hardware = {
-#   keyboard.zsa.enable = true;
-#   bluetooth = {
-#     enable = true;
-#     settings = {
-#       General = {
-#         Enable = "Source,Sink,Media,Socket";
-#       };
-#     };
-#   };
-# };
-
-services = {
-# touchegg.enable = true;
-# gnome.gnome-keyring.enable = true;
-# tlp.enable = true;
-atd.enable = true;
-# unclutter = {
-#   enable = true;
-#   timeout = 1;
-# };
+  services = {
+    # touchegg.enable = true;
+    # gnome.gnome-keyring.enable = true;
+    # tlp.enable = true;
+    atd.enable = true;
+    # unclutter = {
+    #   enable = true;
+    #   timeout = 1;
+    # };
 
 
-# redshift = {
-#   enable = true;
-#   temperature.day = 6500;
-#   temperature.night = 3500;
-#   brightness.day = "1";
-#   brightness.night = "0.7";
-# };
+    # redshift = {
+    #   enable = true;
+    #   temperature.day = 6500;
+    #   temperature.night = 3500;
+    #   brightness.day = "1";
+    #   brightness.night = "0.7";
+    # };
 
 
-};
+  };
 
-# unlock gnome keyring automatically
-# security.pam.services.startx.enableGnomeKeyring = true;
+  # unlock gnome keyring automatically
+  # security.pam.services.startx.enableGnomeKeyring = true;
 
-# virtualisation
+  # virtualisation
 
-# boot.kernelModules = [ "kvm-intel" "kvmfr" ];
-# boot.kernelParams = [ "amd_iommu=on" "pcie_aspm=off" ];
-
-
-fonts.fonts = with pkgs; [
-(nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
-];
+  # boot.kernelModules = [ "kvm-intel" "kvmfr" ];
+  # boot.kernelParams = [ "amd_iommu=on" "pcie_aspm=off" ];
 
 
-programs = {
-tmux.enable = true;
-# slock.enable = true;
-seahorse.enable = true;
-java.enable = true;
-dconf.enable = true;
-
-firefox = {
-enable = true;
-# TODO: Debug 
-preferences = {
-"font.size.systemFontScale" = 130;
-};
-};
+  fonts.fonts = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+  ];
 
 
-};
+  programs = {
+    tmux.enable = true;
+    # slock.enable = true;
+    seahorse.enable = true;
+    java.enable = true;
+    dconf.enable = true;
+
+    firefox = {
+      enable = true;
+      # TODO: Debug 
+      preferences = {
+        "font.size.systemFontScale" = 130;
+      };
+    };
+
+
+  };
 }
