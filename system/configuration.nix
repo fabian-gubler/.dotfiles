@@ -15,12 +15,10 @@ in
 
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;
 
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.startx.enableGnomeKeyring = true;
-
 
 
   nix = {
@@ -47,16 +45,11 @@ in
 
   # Set your time zone and locals
   time.timeZone = "Europe/Zurich";
-  location.latitude = 48.1;
-  location.longitude = 9.1;
 
   # Display Server
   services.xserver = {
     enable = true;
     layout = "ch";
-    # modules = [ pkgs.xf86_input_wacom ];
-    # libinput.enable = true;
-    # wacom.enable = true;
     # windowManager.dwm.enable = true;
     desktopManager.gnome.enable = true;
     displayManager = {

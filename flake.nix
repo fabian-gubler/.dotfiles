@@ -9,6 +9,8 @@
       url = github:nix-community/home-manager;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland.url = "github:hyprwm/Hyprland";
+
 
     # Additional Modules
     hosts.url = github:StevenBlack/hosts; # blocks inappropriate websites
@@ -26,6 +28,7 @@
       # Additional modules
     , hosts
     , spicetify-nix
+	, hyprland
     , ...
     }:
     let
@@ -34,7 +37,7 @@
         inherit system;
         config.allowUnfree = true;
       };
-	  unstable = import inputs.unstable { system = pkgs.system; };
+      unstable = import inputs.unstable { system = pkgs.system; };
       lib = nixpkgs.lib;
       spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
     in
@@ -67,7 +70,7 @@
                 nixpkgs.overlays = [ overlay-unstable ];
                 environment.systemPackages = with inputs.unstable.legacyPackages.${pkgs.system}; [
                   # protonmail-bridge
-				  # virtualbox
+                  # virtualbox
                 ];
               }
             )
@@ -91,6 +94,15 @@
                     keyboardShortcut # vim-like navigation
                   ];
                 };
+              };
+              homeConfigurations."user@fabian" = home-manager.lib.homeManagerConfiguration {
+                pkgs = nixpkgs.legacyPackages.x86_64-linux;
+
+                modules = [
+                  hyprland.homeManagerModules.default
+                  { wayland.windowManager.hyprland.enable = true; }
+                  # ...
+                ];
               };
             }
 
