@@ -51,7 +51,7 @@
     [ hsetroot xbindkeys xorg.xkill xorg.xinit ] ++
     [ chromium qbittorrent ] ++
     [ protonvpn-cli ] ++
-    [ authy signal-desktop protonmail-bridge nextcloud-client ] ++
+    [ rbw authy signal-desktop protonmail-bridge nextcloud-client ] ++
     [ networkmanagerapplet ] ++
     [ openvpn networkmanager-openvpn ] ++
     [ dmenu sxiv ] ++
