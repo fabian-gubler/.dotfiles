@@ -7,9 +7,13 @@ let
 in
 {
 
-boot.loader.grub.enable = true;
-boot.loader.grub.version = 2;
-boot.loader.grub.device = "/dev/vda";
+  boot.loader.grub.enable = true;
+  boot.loader.grub.version = 2;
+  boot.loader.grub.device = "/dev/vda";
+  # virtualisation.qemu.guestAgent.enable = true;
+  # virtualisation.qemu.guestAgent.enable = true;
+  services.qemuGuest.enable = true;
+  services.spice-vdagentd.enable = true;
 
 
 
@@ -127,63 +131,36 @@ boot.loader.grub.device = "/dev/vda";
   '';
 
   # Bluetooth
-  hardware = {
-    keyboard.zsa.enable = true;
-    bluetooth = {
-      enable = true;
-      settings = {
-        General = {
-          Enable = "Source,Sink,Media,Socket";
-        };
-      };
-    };
-  };
+  # hardware = {
+  #   keyboard.zsa.enable = true;
+  #   bluetooth = {
+  #     enable = true;
+  #     settings = {
+  #       General = {
+  #         Enable = "Source,Sink,Media,Socket";
+  #       };
+  #     };
+  #   };
+  # };
 
   services = {
-    touchegg.enable = true;
+    # touchegg.enable = true;
     gnome.gnome-keyring.enable = true;
-    tlp.enable = true;
+    # tlp.enable = true;
     atd.enable = true;
-    unclutter = {
-      enable = true;
-      timeout = 1;
-    };
-
-    jellyfin = {
-      enable = true;
-      user = "${user}";
-      openFirewall = false;
-    };
+    # unclutter = {
+    #   enable = true;
+    #   timeout = 1;
+    # };
 
 
-    sonarr = {
-      enable = true;
-      user = "${user}";
-    };
-
-    radarr = {
-      enable = true;
-      user = "${user}";
-    };
-
-    prowlarr.enable = true;
-
-    picom = {
-      enable = true;
-      fadeSteps = [
-        0.06
-        0.06
-      ];
-      fade = true;
-    };
-
-    redshift = {
-      enable = true;
-      temperature.day = 6500;
-      temperature.night = 3500;
-      brightness.day = "1";
-      brightness.night = "0.7";
-    };
+    # redshift = {
+    #   enable = true;
+    #   temperature.day = 6500;
+    #   temperature.night = 3500;
+    #   brightness.day = "1";
+    #   brightness.night = "0.7";
+    # };
 
 
   };
@@ -195,34 +172,6 @@ boot.loader.grub.device = "/dev/vda";
 
   boot.kernelModules = [ "kvm-intel" "kvmfr" ];
   boot.kernelParams = [ "amd_iommu=on" "pcie_aspm=off" ];
-
-
-  # tutorial: https://www.youtube.com/watch?v=rCVW8BGnYIc
-  # tutorial: https://adamsimpson.net/writing/windows-11-as-kvm-guest
-  virtualisation.docker.enable = true;
-  virtualisation.libvirtd = {
-    enable = true;
-    qemu = {
-      swtpm.enable = true;
-      ovmf.enable = true;
-      runAsRoot = true;
-      ovmf.packages = [ pkgs.OVMFFull.fd ];
-    };
-  };
-  virtualisation.spiceUSBRedirection.enable = true;
-  services.spice-vdagentd.enable = true;
-  systemd.tmpfiles.rules = [
-    "f /dev/shm/looking-glass 0660 fabian qemu-libvirtd -"
-  ];
-
-  # virtualbox
-  # users.extraGroups.vboxusers.members = [ "${user}" ];
-  # virtualisation.virtualbox.host = {
-  #  enable = true;
-  #  # enableExtensionPack = true;
-  #  package = pkgs.virtualbox;
-  # };
-
 
 
   fonts.fonts = with pkgs; [
