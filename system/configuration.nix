@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
+
+
 let
   # TODO: should be imported from initial flake
   user = "fabian";
@@ -11,11 +13,14 @@ in
   boot.loader.grub.version = 2;
   boot.loader.grub.device = "/dev/vda";
 
-  # boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;
   # services.xserver.videoDrivers = [ "qxl" ];
+
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.startx.enableGnomeKeyring = true;
 
 
 
