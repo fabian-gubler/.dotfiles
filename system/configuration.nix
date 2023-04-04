@@ -11,7 +11,8 @@ in
   boot.loader.grub.version = 2;
   boot.loader.grub.device = "/dev/vda";
 
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
+
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;
   # services.xserver.videoDrivers = [ "qxl" ];
@@ -55,7 +56,7 @@ in
     windowManager.dwm.enable = true;
     displayManager = {
       defaultSession = "none+dwm";
-      gdm.enable = true;
+      gdm.enable = false;
     };
     serverFlagsSection = ''
       Option "BlankTime" "0"
