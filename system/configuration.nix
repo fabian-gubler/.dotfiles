@@ -9,6 +9,7 @@ let
 in
 {
 
+
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
   boot.loader.grub.device = "/dev/vda";
@@ -16,6 +17,8 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
 
   services.spice-vdagentd.enable = true;
+  services.qemuGuest.enable = true;
+  services.xserver.videoDrivers = [ "qxl" ];
 
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.startx.enableGnomeKeyring = true;
@@ -53,7 +56,7 @@ in
     libinput.enable = true;
     wacom.enable = true;
     windowManager.dwm.enable = true;
-    # desktopManager.gnome.enable = true;
+    desktopManager.gnome.enable = true;
     displayManager = {
       defaultSession = "none+dwm";
     };
