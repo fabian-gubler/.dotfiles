@@ -60,7 +60,7 @@
     [ arandr flameshot ] ++
     [ lazygit lf exa fzf gotop trash-cli xdragon ] ++
     [ xclip clipnotify clipmenu ] ++
-    [ rbw xdotool pinentry ] ++
+    [ xdotool pinentry ] ++
     [ spotify ] ++
     [ wget file ripgrep ] ++
     [ zip unzip unrar steam-run ] ++

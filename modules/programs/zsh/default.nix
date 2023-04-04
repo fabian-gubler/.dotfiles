@@ -29,7 +29,7 @@
 
     envExtra = ''
       	  export DIRENV_LOG_FORMAT=
-            export OPENAI_API_KEY=$(rbw get OPENAI_API_KEY)
+            # export OPENAI_API_KEY=$(rbw get OPENAI_API_KEY)
     '';
 
     history = {
