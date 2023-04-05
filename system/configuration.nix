@@ -23,6 +23,11 @@ in
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.startx.enableGnomeKeyring = true;
 
+  fileSystems."/home/${user}/data" = {
+    device = "/dev/sdXn"; # Replace this with the correct device path
+    fsType = "ext4"; # Replace this with the correct filesystem type
+  };
+
 
   nix = {
     settings = {
