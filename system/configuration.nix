@@ -19,10 +19,6 @@ in
   services.spice-vdagentd.enable = true;
   services.qemuGuest.enable = true;
 
-  # remove after nextcloud setup on host
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services.startx.enableGnomeKeyring = true;
-
   fileSystems."/home/${user}/data" = {
     device = "data"; # Replace this with the correct device path
     fsType = "virtiofs"; # Replace this with the correct filesystem type

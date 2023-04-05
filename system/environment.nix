@@ -51,7 +51,7 @@
     [ hsetroot xbindkeys xorg.xkill xorg.xinit ] ++
     [ chromium qbittorrent ] ++
     [ protonvpn-cli ] ++
-    [ rbw authy protonmail-bridge nextcloud-client ] ++
+    [ rbw authy protonmail-bridge ] ++
     [ dmenu sxiv ] ++
     [ zathura okular pandoc poppler_utils ] ++
     [ gimp xournalpp colorpicker libreoffice ] ++

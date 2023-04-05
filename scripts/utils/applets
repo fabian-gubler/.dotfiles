@@ -2,8 +2,6 @@
 
 # starts applets in correct order
 
-nextcloud --background & # establish connection to cloud server
-sleep 1
 
 # signal-desktop --start-in-tray --no-sandbox & # secure messenger
 # sleep 2
