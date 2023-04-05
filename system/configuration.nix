@@ -18,8 +18,8 @@ in
 
   services.spice-vdagentd.enable = true;
   services.qemuGuest.enable = true;
-  # services.xserver.videoDrivers = [ "qxl" ];
 
+  # remove after nextcloud setup on host
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.startx.enableGnomeKeyring = true;
 
@@ -47,8 +47,6 @@ in
   };
 
 
-  # Set your time zone and locals
-  time.timeZone = "Europe/Zurich";
   # Display Server
   services.xserver = {
     enable = true;
@@ -71,14 +69,11 @@ in
     '';
   };
 
-  
 
-
+  # Set your time zone and locals
+  time.timeZone = "Europe/Zurich";
 
   virtualisation.virtualbox.guest.enable = true;
-  # Flatpak
-  # xdg.portal.enable = true;
-  # services.flatpak.enable = true;
 
   # TODO: System-wide GTK Theme
   qt5 = {
@@ -87,65 +82,12 @@ in
     style = "gtk2";
   };
 
-  networking = {
-    hostName = "nixos";
-    # hosts = {
-    #   "0.0.0.0" = [ "youtube.com" "www.youtube.com" ];
-    # };
-    networkmanager.enable = true;
-    stevenBlackHosts = {
-      blockFakenews = true;
-      blockGambling = true;
-      blockPorn = true;
-      blockSocial = false;
-    };
-  };
-
   # Use same keyboard layout for tty
   console.useXkbConfig = true;
 
-  # Pipewire
-  # services = {
-  #   pipewire = {
-  #     enable = true;
-  #     alsa = {
-  #       enable = true;
-  #       support32Bit = true;
-  #     };
-  #     pulse.enable = true;
-  #     jack.enable = true;
-  #   };
-  # };
-
-  # Service management
-  # services.logind.extraConfig = ''
-  #   # don’t shutdown when power button is short-pressed
-  #   HandlePowerKey=ignore
-  # '';
-
-  # Bluetooth
-  # hardware = {
-  #   keyboard.zsa.enable = true;
-  #   bluetooth = {
-  #     enable = true;
-  #     settings = {
-  #       General = {
-  #         Enable = "Source,Sink,Media,Socket";
-  #       };
-  #     };
-  #   };
-  # };
 
   services = {
-    # touchegg.enable = true;
-    # gnome.gnome-keyring.enable = true;
-    # tlp.enable = true;
     atd.enable = true;
-    # unclutter = {
-    #   enable = true;
-    #   timeout = 1;
-    # };
-
 
     # redshift = {
     #   enable = true;
@@ -158,35 +100,9 @@ in
 
   };
 
-  # unlock gnome keyring automatically
-  # security.pam.services.startx.enableGnomeKeyring = true;
-
-  # virtualisation
-
-  # boot.kernelModules = [ "kvm-intel" "kvmfr" ];
-  # boot.kernelParams = [ "amd_iommu=on" "pcie_aspm=off" ];
-
-
-  fonts.fonts = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
-  ];
-
-
   programs = {
     tmux.enable = true;
-    # slock.enable = true;
     seahorse.enable = true;
-    java.enable = true;
     dconf.enable = true;
-
-    firefox = {
-      enable = true;
-      # TODO: Debug 
-      preferences = {
-        "font.size.systemFontScale" = 130;
-      };
-    };
-
-
   };
 }
