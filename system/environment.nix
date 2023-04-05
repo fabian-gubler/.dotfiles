@@ -46,16 +46,14 @@
     [ python3 neovim cargo nodejs gcc gnumake cmake ccls go ] ++
     [ rnix-lsp nodePackages.bash-language-server ] ++
     [ texlive.combined.scheme-small ] ++
-    [ onboard wally-cli ] ++
+    # [ onboard wally-cli ] ++
     [ todo-txt-cli ] ++
-    [ hsetroot xbindkeys xorg.xkill xorg.xinit ] ++
-    [ chromium qbittorrent ] ++
-    [ protonvpn-cli ] ++
+    [ hsetroot xorg.xkill xorg.xinit ] ++
     [ rbw authy protonmail-bridge ] ++
     [ dmenu sxiv ] ++
     [ zathura okular pandoc poppler_utils ] ++
     [ gimp xournalpp colorpicker libreoffice ] ++
-    [ arandr flameshot ] ++
+    [ arandr ] ++
     [ lazygit lf exa fzf gotop trash-cli xdragon ] ++
     [ xclip clipnotify clipmenu ] ++
     [ xdotool pinentry ] ++
@@ -63,20 +61,16 @@
     [ wget file ripgrep ] ++
     [ zip unzip unrar steam-run ] ++
     [ anki-bin markdown-anki-decks mkdocs ] ++
-    [ xfce.thunar foliate blanket ] ++
-    [ pulseaudio pavucontrol brightnessctl playerctl ] ++ # TODO: pulseaudio replace with wpctl (combined-sink)
-    [ bitwig-studio yabridge yabridgectl ] ++
-    [ portfolio ] ++
-    [ leetcode-cli exercism ] ++
-    [
-      virt-manager
-      virt-viewer
-      spice
-      spice-gtk
-      spice-protocol
-      win-spice
-      gnome.adwaita-icon-theme
-    ] ++
+    # [ bitwig-studio yabridge yabridgectl ] ++
+    # [
+    #   virt-manager
+    #   virt-viewer
+    #   spice
+    #   spice-gtk
+    #   spice-protocol
+    #   win-spice
+    #   gnome.adwaita-icon-theme
+    # ] ++
 
 
     [
@@ -85,14 +79,8 @@
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
       tree-sitter
       jq
-      obsidian
-      eclipses.eclipse-java
 	  qtemu
 	  ncdu
-	  etcher
-	  gparted
-	  looking-glass-client
-	  ventoy-bin
     ]
   ;
 

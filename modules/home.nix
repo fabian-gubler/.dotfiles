@@ -17,8 +17,7 @@
       neomutt
       dunst
       autorandr
-      touchegg
-      spicetify-cli
+      # spicetify-cli
       newsboat
     ];
 

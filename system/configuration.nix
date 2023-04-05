@@ -22,7 +22,7 @@ in
   fileSystems."/home/${user}/data" = {
     device = "data"; # Replace this with the correct device path
     fsType = "virtiofs"; # Replace this with the correct filesystem type
-	options = [ "defaults" ];
+    options = [ "defaults" ];
   };
 
 
@@ -48,6 +48,10 @@ in
     shell = pkgs.zsh;
   };
 
+  services.logind.extraConfig = ''
+    # don’t shutdown when power button is short-pressed
+    HandlePowerKey=ignore
+  '';
 
   # Display Server
   services.xserver = {
