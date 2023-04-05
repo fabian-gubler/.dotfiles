@@ -9,12 +9,11 @@
       url = github:nix-community/home-manager;
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
 
 
     # Additional Modules
-    # hosts.url = github:StevenBlack/hosts; # blocks inappropriate websites
-    # spicetify-nix.url = github:the-argus/spicetify-nix; # spotify ricing & configuration
+    hosts.url = github:StevenBlack/hosts; # blocks inappropriate websites
+    spicetify-nix.url = github:the-argus/spicetify-nix; # spotify ricing & configuration
   };
 
   outputs =
@@ -26,9 +25,8 @@
     , home-manager
 
       # Additional modules
-    # , hosts
-    # , spicetify-nix
-	, hyprland
+    , hosts
+    , spicetify-nix
     , ...
     }:
     let
@@ -39,7 +37,7 @@
       };
       unstable = import inputs.unstable { system = pkgs.system; };
       lib = nixpkgs.lib;
-      # spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
+      spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
     in
     {
       overlays = {
@@ -81,27 +79,26 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              # home-manager.users.fabian = {
-                # imports = [ ./modules spicetify-nix.homeManagerModules.default ];
+              home-manager.users.fabian = {
+                imports = [ ./modules spicetify-nix.homeManagerModules.default ];
 
-                # programs.spicetify = {
-                #   enable = true;
-                #
-                #   theme = spicePkgs.themes.catppuccin-mocha;
-                #   colorScheme = "Default";
-                #
-                #   enabledExtensions = with spicePkgs.extensions; [
-                #     keyboardShortcut # vim-like navigation
-                #   ];
-                # };
-              # };
+                programs.spicetify = {
+                  enable = true;
 
+                  theme = spicePkgs.themes.catppuccin-mocha;
+                  colorScheme = "Default";
+
+                  enabledExtensions = with spicePkgs.extensions; [
+                    keyboardShortcut # vim-like navigation
+                  ];
+                };
+              };
             }
 
-            # hosts.nixosModule
-            # {
-            #   networking.stevenBlackHosts.enable = true;
-            # }
+            hosts.nixosModule
+            {
+              networking.stevenBlackHosts.enable = true;
+            }
 
           ];
         };
