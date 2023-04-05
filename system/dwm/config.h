@@ -86,13 +86,9 @@ static Key keys[] = {
 	{ MODKEY,						XK_p,      spawn,          SHCMD("dmenu_run -i")},
 	{ MODKEY,						XK_w,      spawn,          SHCMD("qutebrowser")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
-	{ MODKEY,                       XK_v,      spawn,          SHCMD("spotify --force-device-scale-factor=1.5")},
+	{ MODKEY,                       XK_m,      spawn,          SHCMD("xrandr --output Virtual-1  --auto")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
-	{ MODKEY|ShiftMask,             XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/layout")},
-	{ MODKEY,                       XK_b,      spawn,          SHCMD("rofi-bluetooth -i")},
 	{ MODKEY,                       XK_o,      spawn,          SHCMD("~/.dotfiles/scripts/rofi/rbw")},
-	{ MODKEY|ControlMask,           XK_y,      spawn,          SHCMD("autorandr --load laptop")},
-	{ MODKEY|ShiftMask|ControlMask, XK_y,      spawn,          SHCMD("autorandr --load monitor")},
 	{ ShiftMask,					XK_Return, spawn,          SHCMD("dunstctl close-all")},
 
 	/* modifier                     key        function        argument */

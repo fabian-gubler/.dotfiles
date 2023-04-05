@@ -18,7 +18,7 @@ in
 
   services.spice-vdagentd.enable = true;
   services.qemuGuest.enable = true;
-  services.xserver.videoDrivers = [ "qxl" ];
+  # services.xserver.videoDrivers = [ "qxl" ];
 
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.startx.enableGnomeKeyring = true;
