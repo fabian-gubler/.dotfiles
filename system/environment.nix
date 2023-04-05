@@ -51,9 +51,7 @@
     [ hsetroot xbindkeys xorg.xkill xorg.xinit ] ++
     [ chromium qbittorrent ] ++
     [ protonvpn-cli ] ++
-    [ rbw authy signal-desktop protonmail-bridge nextcloud-client ] ++
-    [ networkmanagerapplet ] ++
-    [ openvpn networkmanager-openvpn ] ++
+    [ rbw authy protonmail-bridge nextcloud-client ] ++
     [ dmenu sxiv ] ++
     [ zathura okular pandoc poppler_utils ] ++
     [ gimp xournalpp colorpicker libreoffice ] ++
@@ -61,7 +59,7 @@
     [ lazygit lf exa fzf gotop trash-cli xdragon ] ++
     [ xclip clipnotify clipmenu ] ++
     [ xdotool pinentry ] ++
-    [ spotify ] ++
+    [ ] ++
     [ wget file ripgrep ] ++
     [ zip unzip unrar steam-run ] ++
     [ anki-bin markdown-anki-decks mkdocs ] ++
