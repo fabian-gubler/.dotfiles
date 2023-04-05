@@ -59,8 +59,8 @@ in
     windowManager.dwm.enable = true;
     desktopManager.gnome.enable = true;
     displayManager = {
-      autologin.user = "fabian";
-      autologin.enable = true;
+      autoLogin.user = "fabian";
+      autoLogin.enable = true;
       defaultSession = "none+dwm";
     };
     serverFlagsSection = ''
@@ -72,8 +72,6 @@ in
   };
 
   
-#  warning: The option `services.xserver.displayManager.lightdm.autoLogin.user' defined in `/nix/store/wq4v0dqylvbsp3vpdrab4i6hswiynvri-source/system/configuration.nix' has been renamed to `services.xserver.displayManager.autoLogin.user'.
-# trace: warning: The option `services.xserver.displayManager.lightdm.autoLogin.enable' defined in `/nix/store/wq4v0dqylvbsp3vpdrab4i6hswiynvri-source/system/configuration.nix' has been renamed to `services.xserver.displayManager.autoLogin.enable'.
 
 
 
