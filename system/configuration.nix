@@ -24,8 +24,9 @@ in
   security.pam.services.startx.enableGnomeKeyring = true;
 
   fileSystems."/home/${user}/data" = {
-    device = "/dev/sdXn"; # Replace this with the correct device path
-    fsType = "ext4"; # Replace this with the correct filesystem type
+    device = "data"; # Replace this with the correct device path
+    fsType = "virtiofs"; # Replace this with the correct filesystem type
+	options = [ "defaults" ];
   };
 
 
