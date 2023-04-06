@@ -81,6 +81,8 @@
       jq
 	  ncdu
 	  obsidian
+	  qbittorrent
+	  pavucontrol
     ]
   ;
 

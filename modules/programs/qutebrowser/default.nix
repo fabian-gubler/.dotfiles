@@ -66,7 +66,7 @@
       content.headers.user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:110.0) Gecko/20100101 Firefox/110.0";
       tabs.show = "always";
       statusbar.show = "always";
-      auto_save.session = true;
+      auto_save.session = false;
 
       url = {
         default_page = "about:blank";
