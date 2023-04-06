@@ -83,7 +83,7 @@ static const char *termcmd[] = { "kitty", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,						XK_p,      spawn,          SHCMD("dmenu_run -i")},
+	{ MODKEY,						XK_a,      spawn,          SHCMD("dmenu_run -i")},
 	{ MODKEY,						XK_w,      spawn,          SHCMD("qutebrowser")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("xrandr --output Virtual-1  --auto")},
