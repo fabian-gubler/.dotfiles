@@ -18,12 +18,12 @@
       ".." = "cd ..";
 
       # Tasks
-      p = "todo.sh -d $HOME/nextcloud/todo/pers/config";
-      pv = "cd $HOME/nextcloud/todo/pers; nvim -c 'sort' todo.txt";
-      d = "todo.sh -d $HOME/nextcloud/todo/dev/config";
-      dv = "cd $HOME/nextcloud/todo/dev; nvim -c 'sort' dev.txt";
-      u = "todo.sh -d $HOME/nextcloud/todo/uni/config";
-      uv = "cd $HOME/nextcloud/todo/uni; nvim -c 'sort' uni.txt";
+      p = "todo.sh -d $HOME/data/nextcloud/todo/pers/config";
+      pv = "cd $HOME/data/nextcloud/todo/pers; nvim -c 'sort' todo.txt";
+      d = "todo.sh -d $HOME/data/nextcloud/todo/dev/config";
+      dv = "cd $HOME/data/nextcloud/todo/dev; nvim -c 'sort' dev.txt";
+      u = "todo.sh -d $HOME/data/nextcloud/todo/uni/config";
+      uv = "cd $HOME/data/nextcloud/todo/uni; nvim -c 'sort' uni.txt";
       sc = "cd ~/.dotfiles/scripts/utils/ && exa -a";
     };
 
@@ -70,7 +70,7 @@
 	}
 
 	ut (){
-		todo.sh -d $HOME/nextcloud/todo/uni/config 
+		todo.sh -d $HOME/data/nextcloud/todo/uni/config 
 		if [ -z "$1" ]; then
 			:
 		else
