@@ -3,7 +3,7 @@
 # startup
 hsetroot -solid "#252A34" & # solid background
 xbindkeys & # playerctl with headphones ~/.xbindkeysrc
-protonmail-bridge --no-window --noninteractive & # mail backend, run in background
+# protonmail-bridge --no-window --noninteractive & # mail backend, run in background
 clipmenud & # clipboard manager daemon
 
 # script
