@@ -83,6 +83,7 @@
 	  obsidian
 	  qbittorrent
 	  pavucontrol
+	  watson
     ]
   ;
 
