@@ -10,7 +10,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-	user = "fabian";
 
 
     # Additional Modules
@@ -29,6 +28,7 @@
     }:
     let
       system = "x86_64-linux";
+      user = "fabian";
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
