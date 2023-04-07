@@ -113,7 +113,7 @@
             };
           };
           system = "x86_64-linux";
-          homeManagerPath = inputs.home-manager;
+          # homeManagerPath = inputs.home-manager;
         };
       };
     };
