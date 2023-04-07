@@ -98,7 +98,7 @@
         };
       };
       homeConfigurations = {
-        fabian = inputs.home-manager.lib.homeManagerConfiguration {
+        generic = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
             {
