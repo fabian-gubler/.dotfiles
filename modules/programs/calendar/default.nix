@@ -21,7 +21,7 @@ in
       # Description of Calendars
       "storage calendar_local" = {
         type = "filesystem";
-        path = "/home/fabian/nextcloud/.calendars";
+        path = "/data/nextcloud/.calendars";
         fileext = ".ics";
       };
       "storage calendar_remote" = {
@@ -34,7 +34,7 @@ in
       # Description of Contacts
       "storage contacts_local" = {
         type = "filesystem";
-        path = "${config.home.homeDirectory}/nextcloud/.contacts/";
+        path = "/data/nextcloud/.contacts/";
         fileext = ".vcf";
       };
       "storage contacts_remote" = {

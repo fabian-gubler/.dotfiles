@@ -18,18 +18,18 @@
       ".." = "cd ..";
 
       # Tasks
-      p = "todo.sh -d $HOME/data/nextcloud/todo/pers/config";
-      pv = "cd $HOME/data/nextcloud/todo/pers; nvim -c 'sort' todo.txt";
-      d = "todo.sh -d $HOME/data/nextcloud/todo/dev/config";
-      dv = "cd $HOME/data/nextcloud/todo/dev; nvim -c 'sort' dev.txt";
-      u = "todo.sh -d $HOME/data/nextcloud/todo/uni/config";
-      uv = "cd $HOME/data/nextcloud/todo/uni; nvim -c 'sort' uni.txt";
+      p = "todo.sh -d /data/nextcloud/todo/pers/config";
+      pv = "cd /data/nextcloud/todo/pers; nvim -c 'sort' todo.txt";
+      d = "todo.sh -d /data/nextcloud/todo/dev/config";
+      dv = "cd /data/nextcloud/todo/dev; nvim -c 'sort' dev.txt";
+      u = "todo.sh -d /data/nextcloud/todo/uni/config";
+      uv = "cd /data/nextcloud/todo/uni; nvim -c 'sort' uni.txt";
       sc = "cd ~/.dotfiles/scripts/utils/ && exa -a";
     };
 
     envExtra = ''
       export DIRENV_LOG_FORMAT=
-      export WATSON_DIR=$HOME/data/nextcloud/todo/watson
+      export WATSON_DIR=/data/nextcloud/todo/watson
       # export OPENAI_API_KEY=$(rbw get OPENAI_API_KEY)
     '';
 
@@ -71,7 +71,7 @@
 	}
 
 	ut (){
-		todo.sh -d $HOME/data/nextcloud/todo/uni/config 
+		todo.sh -d /data/nextcloud/todo/uni/config 
 		if [ -z "$1" ]; then
 			:
 		else

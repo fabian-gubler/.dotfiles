@@ -17,7 +17,7 @@ args+=(-i -l 8)
 args+=(-normal-window -format s\|f) # only work with rofi
 
 QUTE_DATA_DIR=$HOME/.local/share/qutebrowser
-QUTE_BOOKMARKS_DIR=$HOME/nextcloud/apps/qutebrowser
+QUTE_BOOKMARKS_DIR=$HOME/data/nextcloud/apps/qutebrowser
 
 # save previous entry in clipboard
 if [ "$2" == "copy" ]; then

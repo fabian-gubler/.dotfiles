@@ -19,7 +19,7 @@ in
   services.spice-vdagentd.enable = true;
   services.qemuGuest.enable = true;
 
-  fileSystems."/home/${user}/data" = {
+  fileSystems."/data" = {
     device = "data"; # Replace this with the correct device path
     fsType = "virtiofs"; # Replace this with the correct filesystem type
     options = [ "defaults" ];
