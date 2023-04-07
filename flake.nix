@@ -96,8 +96,8 @@
         };
       };
       homeConfigurations = {
-        fabian = inputs.home-manager.lib.mkHomeConfiguration {
-          pkgs = nixpkgs.legacyPackages.${system};
+        fabian = inputs.home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
           modules = [
             {
               imports = [ ./modules spicetify-nix.homeManagerModules.default ];
