@@ -20,7 +20,7 @@
       spicetify-cli
       newsboat
       signal-desktop
-      teams
+      # teams
       spotify
       firefox
     ] ++
