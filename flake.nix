@@ -94,15 +94,9 @@
 
           ];
         };
-        multi = lib.nixosSystem {
-          inherit system;
-          modules = [
-            # ... (omitted for brevity)
-          ];
-        };
       };
       homeConfigurations = {
-        fabian = lib.homeManagerConfiguration {
+        fabian = inputs.home-manager.lib.homeManagerConfiguration {
           configuration = { pkgs, ... }: {
             imports = [ ./modules spicetify-nix.homeManagerModules.default ];
 
