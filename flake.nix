@@ -109,6 +109,7 @@
                 homeDirectory = "/home/${user}";
                 # packages = [ pkgs.home-manager ];
                 # stateVersion = "22.05";
+                targets.genericLinux.enable = true;
               };
 
               programs.spicetify = {

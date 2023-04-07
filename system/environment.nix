@@ -43,24 +43,11 @@
       (python3.withPackages pythonPackages)
     ] ++
 
-    [ python3 neovim cargo nodejs gcc gnumake cmake ccls go ] ++
-    [ rnix-lsp nodePackages.bash-language-server ] ++
-    [ texlive.combined.scheme-small ] ++
-    # [ onboard wally-cli ] ++
-    [ todo-txt-cli ] ++
     [ hsetroot xorg.xkill xorg.xinit ] ++
-    [ rbw authy protonmail-bridge ] ++
     [ dmenu sxiv ] ++
-    [ zathura okular pandoc poppler_utils ] ++
-    [ gimp xournalpp colorpicker libreoffice ] ++
     [ arandr ] ++
-    [ lazygit lf exa fzf gotop trash-cli xdragon ] ++
     [ xclip clipnotify clipmenu ] ++
-    [ xdotool pinentry ] ++
-    [ ] ++
-    [ wget file ripgrep ] ++
-    [ zip unzip unrar steam-run ] ++
-    [ anki-bin markdown-anki-decks mkdocs ] ++
+
     # [ bitwig-studio yabridge yabridgectl ] ++
     # [
     #   virt-manager
