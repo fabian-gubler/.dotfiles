@@ -102,6 +102,13 @@
             {
               imports = [ ./modules spicetify-nix.homeManagerModules.default ];
 
+              home = {
+                username = "${user}";
+                homeDirectory = "/home/${user}";
+                # packages = [ pkgs.home-manager ];
+                # stateVersion = "22.05";
+              };
+
               programs.spicetify = {
                 enable = true;
 
