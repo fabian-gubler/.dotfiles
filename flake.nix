@@ -10,6 +10,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+	user = "fabian";
+
 
     # Additional Modules
     hosts.url = github:StevenBlack/hosts; # blocks inappropriate websites
