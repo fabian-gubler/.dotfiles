@@ -21,7 +21,7 @@
       newsboat
       signal-desktop
       # teams
-      spotify
+      # spotify
       firefox
     ] ++
     [ python3 neovim cargo nodejs gcc gnumake cmake ccls go ] ++
