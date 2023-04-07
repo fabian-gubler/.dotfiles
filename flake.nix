@@ -96,23 +96,24 @@
         };
       };
       homeConfigurations = {
-        fabian = inputs.home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          configuration = { pkgs, ... }: {
-            imports = [ ./modules spicetify-nix.homeManagerModules.default ];
+        fabian = inputs.home-manager.lib.mkHomeConfiguration {
+          pkgs = nixpkgs.legacyPackages.${system};
+          modules = [
+            {
+              imports = [ ./modules spicetify-nix.homeManagerModules.default ];
 
-            # programs.spicetify = {
-            #   enable = true;
-            #
-            #   theme = spicePkgs.themes.catppuccin-mocha;
-            #   colorScheme = "Default";
-            #
-            #   enabledExtensions = with spicePkgs.extensions; [
-            #     keyboardShortcut # vim-like navigation
-            #   ];
-            # };
-          };
-          # homeManagerPath = inputs.home-manager;
+              programs.spicetify = {
+                enable = true;
+
+                theme = spicePkgs.themes.catppuccin-mocha;
+                colorScheme = "Default";
+
+                enabledExtensions = with spicePkgs.extensions; [
+                  keyboardShortcut # vim-like navigation
+                ];
+              };
+            }
+          ];
         };
       };
     };
