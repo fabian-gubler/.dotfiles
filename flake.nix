@@ -101,18 +101,17 @@
           configuration = { pkgs, ... }: {
             imports = [ ./modules spicetify-nix.homeManagerModules.default ];
 
-            programs.spicetify = {
-              enable = true;
-
-              theme = spicePkgs.themes.catppuccin-mocha;
-              colorScheme = "Default";
-
-              enabledExtensions = with spicePkgs.extensions; [
-                keyboardShortcut # vim-like navigation
-              ];
-            };
+            # programs.spicetify = {
+            #   enable = true;
+            #
+            #   theme = spicePkgs.themes.catppuccin-mocha;
+            #   colorScheme = "Default";
+            #
+            #   enabledExtensions = with spicePkgs.extensions; [
+            #     keyboardShortcut # vim-like navigation
+            #   ];
+            # };
           };
-          system = "x86_64-linux";
           # homeManagerPath = inputs.home-manager;
         };
       };
