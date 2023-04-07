@@ -4,7 +4,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/nextcloud/mcs/23SP  \
+    selected=$(find ~/data/nextcloud/mcs/23SP  \
 		-mindepth 1 -maxdepth 1 -type d \
 		| fzf --prompt="select workspace > ")
 fi

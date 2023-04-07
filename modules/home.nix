@@ -40,4 +40,9 @@
     style.name = "gtk";
   };
 
+  programs.watson = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
 }

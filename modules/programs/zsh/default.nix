@@ -10,7 +10,7 @@
       ll = "exa -a";
       lg = "lazygit";
       v = "nvim";
-	  nv = "nix run ~/neovim-nix";
+      nv = "nix run ~/neovim-nix";
       sv = "sudoedit";
       top = "gotop -l minimal";
       mutt = "neomutt";
@@ -28,8 +28,9 @@
     };
 
     envExtra = ''
-      	  export DIRENV_LOG_FORMAT=
-            # export OPENAI_API_KEY=$(rbw get OPENAI_API_KEY)
+      export DIRENV_LOG_FORMAT=
+      export WATSON_DIR=$HOME/data/nextcloud/todo/watson
+      # export OPENAI_API_KEY=$(rbw get OPENAI_API_KEY)
     '';
 
     history = {
