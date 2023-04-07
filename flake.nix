@@ -107,8 +107,13 @@
               home = {
                 username = "${user}";
                 homeDirectory = "/home/${user}";
-                # packages = [ pkgs.home-manager ];
-                # stateVersion = "22.05";
+                sessionVariables = {
+                  EDITOR = "nvim";
+                };
+              };
+
+              systemd.user.sessionVariables = {
+                EDITOR = "nvim";
               };
 
               targets.genericLinux.enable = true;
