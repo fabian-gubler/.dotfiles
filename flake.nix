@@ -97,6 +97,7 @@
       };
       homeConfigurations = {
         fabian = inputs.home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
           configuration = { pkgs, ... }: {
             imports = [ ./modules spicetify-nix.homeManagerModules.default ];
 
