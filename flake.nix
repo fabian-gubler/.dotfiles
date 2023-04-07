@@ -53,6 +53,7 @@
         # Remaining attributes elided.
       };
       nixosConfigurations = {
+
         nixos = lib.nixosSystem {
           inherit system;
           modules = [
@@ -98,6 +99,49 @@
             hosts.nixosModule
             {
               networking.stevenBlackHosts.enable = true;
+            }
+
+          ];
+        };
+
+        multi = lib.nixosSystem {
+          inherit system;
+          modules = [
+            ({ config, pkgs, unstable, ... }:
+              let
+                overlay-unstable = final: prev: {
+                  unstable = unstable.legacyPackages.x86_64-linux;
+                };
+              in
+              {
+                # unstable packages
+                # Note, `${pkgs.system}` is the "architecture" of the machine evaluating and building
+                nixpkgs.overlays = [ overlay-unstable ];
+                environment.systemPackages = with inputs.unstable.legacyPackages.${pkgs.system}; [
+                  # protonmail-bridge
+                  # virtualbox
+                ];
+              }
+            )
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.fabian = {
+                imports = [ ./modules spicetify-nix.homeManagerModules.default ];
+
+                programs.spicetify = {
+                  enable = true;
+
+                  theme = spicePkgs.themes.catppuccin-mocha;
+                  colorScheme = "Default";
+
+                  enabledExtensions = with spicePkgs.extensions; [
+                    keyboardShortcut # vim-like navigation
+                  ];
+                };
+              };
             }
 
           ];
