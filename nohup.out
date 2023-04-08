@@ -1,0 +1,4 @@
+spotify: /nix/store/ya5bagryz9xmqyw0i5w3cx4s9n290bx0-curl-7.86.0/lib/libcurl-gnutls.so.4: no version information available (required by spotify)
+/nix/store/f4ljvwm1jhga0aj5i2ww3wwx73715v7l-spotify-1.1.84.716.gc5f8b819/share/spotify/.spotify-wrapped: /nix/store/ya5bagryz9xmqyw0i5w3cx4s9n290bx0-curl-7.86.0/lib/libcurl-gnutls.so.4: no version information available (required by /nix/store/f4ljvwm1jhga0aj5i2ww3wwx73715v7l-spotify-1.1.84.716.gc5f8b819/share/spotify/.spotify-wrapped)
+/nix/store/f4ljvwm1jhga0aj5i2ww3wwx73715v7l-spotify-1.1.84.716.gc5f8b819/share/spotify/.spotify-wrapped: /nix/store/ya5bagryz9xmqyw0i5w3cx4s9n290bx0-curl-7.86.0/lib/libcurl-gnutls.so.4: no version information available (required by /nix/store/f4ljvwm1jhga0aj5i2ww3wwx73715v7l-spotify-1.1.84.716.gc5f8b819/share/spotify/.spotify-wrapped)
+/proc/self/exe: /nix/store/ya5bagryz9xmqyw0i5w3cx4s9n290bx0-curl-7.86.0/lib/libcurl-gnutls.so.4: no version information available (required by /proc/self/exe)

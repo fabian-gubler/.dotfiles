@@ -16,7 +16,7 @@
       mutt = "neomutt";
       gpush = "git add . && git commit -m 'manual update' && git push";
       ".." = "cd ..";
-	  gl = "nix run --override-input nixpkgs nixpkgs/nixos-22.11 --impure github:guibou/nixGL -- ";
+	  gl = "nix run --override-input nixpkgs nixpkgs/nixos-21.11 --impure github:guibou/nixGL -- ";
 
       # Tasks
       p = "todo.sh -d /data/nextcloud/todo/pers/config";
