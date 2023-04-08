@@ -14,7 +14,7 @@ in
     settings = {
       enable_audio_bell = false;
       open_url_modifiers = "ctrl";
-      window_margin_width = 5;
+      window_margin_width = 10;
       cursor_shape = "block";
       cursor_blink_interval = 0;
       confirm_os_window_close = 0;
