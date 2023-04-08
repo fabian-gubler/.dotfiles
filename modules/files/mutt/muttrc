@@ -29,7 +29,7 @@ set mailcap_path = ~/.dotfiles/modules/files/mutt/mailcap
 set sidebar_width = 20
 mailboxes "=INBOX" "=Sent" "=Trash" "=Spam" "=Archive" "=Drafts" 
 
-set smtp_url = smtps://gubler@fastmail@mail.messagingengine.com:465/
+set smtp_url = smtps://gubler@fastmail.com@mail.messagingengine.com:465/
 set ssl_starttls = yes
 
 set smtp_pass = "$my_pass"
