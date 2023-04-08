@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
   programs.sioyek = {
-    enable = false;
-    package = pkgs.unstable.sioyek;
+    enable = true;
+    package = pkgs.sioyek;
 
     bindings = {
       screen_down = "<C-d>";

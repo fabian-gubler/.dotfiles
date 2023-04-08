@@ -45,6 +45,7 @@
     [ anki-bin markdown-anki-decks mkdocs ]
   ;
 
+
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
