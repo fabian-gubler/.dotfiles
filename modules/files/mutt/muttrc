@@ -33,8 +33,8 @@ set smtp_url = smtps://gubler@fastmail@mail.messagingengine.com:465/
 set ssl_starttls = yes
 
 set smtp_pass = "$my_pass"
+set imap_pass = "$my_pass"
 # set imap_user = "gubler@fastmail.com"
-# set imap_pass = "$my_pass"
 # set sendmail = "msmtp -a gubler@fastmail.com"
 
 
