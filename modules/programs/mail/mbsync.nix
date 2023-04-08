@@ -28,6 +28,7 @@ in
         host = "imap.fastmail.com";
         port = 993;
       };
+      thunderbird.enable = true;
       mbsync = {
         enable = true;
         create = "imap";
