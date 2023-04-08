@@ -29,10 +29,8 @@
       signal-desktop
 	  playerctl
 	  blanket
-      # teams
-      # spotify
+      teams
       firefox
-	  thunderbird
     ] ++
     [ python3 neovim cargo nodejs gcc gnumake cmake ccls go ] ++
     [ rnix-lsp nodePackages.bash-language-server ] ++
