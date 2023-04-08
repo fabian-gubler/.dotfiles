@@ -8,14 +8,20 @@ let
 
 in
 {
+  # Boot loader
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
   boot.loader.grub.device = "/dev/vda";
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Guest Agent
   services.spice-vdagentd.enable = true;
   services.qemuGuest.enable = true;
 
+  # Enable OpenGL
+  hardware.opengl.enable = true;
+
+  # Shared Filesystem
   fileSystems."/data" = {
     device = "data"; # Replace this with the correct device path
     fsType = "virtiofs"; # Replace this with the correct filesystem type
@@ -23,6 +29,7 @@ in
   };
 
 
+  # Nix Settings
   nix = {
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
@@ -30,7 +37,7 @@ in
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 7d";
+      options = "--delete-older-than 14d";
     };
 
     # protects nix shell against garbage collection
@@ -40,6 +47,7 @@ in
       	  '';
   };
 
+  # User Settings
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
