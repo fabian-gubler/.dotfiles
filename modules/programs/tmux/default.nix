@@ -8,7 +8,8 @@
       escapeTime = 0;
       sensibleOnTop = false;
       keyMode = "vi";
-      terminal = "screen-256color";
+      terminal = "xterm-256color";
+	  shell = "${pkgs.zsh}/bin/zsh";
       mouse = true;
       plugins = with pkgs; [
         {
@@ -41,6 +42,8 @@
 		set-option -g status-right ""
 		set-option -g status-justify centre
 		set-option -g message-style fg=#EBCB8B
+
+		set-option -ga terminal-overrides ",xterm-256color:Tc"
 					'';
     };
 }
