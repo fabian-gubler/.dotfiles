@@ -27,8 +27,9 @@
       spicetify-cli
       newsboat
       signal-desktop
+	  playerctl
       # teams
-      # spotify
+      spotify
       firefox
     ] ++
     [ python3 neovim cargo nodejs gcc gnumake cmake ccls go ] ++
