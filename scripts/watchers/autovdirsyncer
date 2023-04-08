@@ -8,7 +8,7 @@ sync() {
 	vdirsyncer sync --force-delete
 }
 
-if [[ -d ~/nextcloud/.calendars ]]; then
+if [[ -d /data/nextcloud/.calendars ]]; then
 	echo "Calendar directory exists!" 
 else
 	echo "Error: Calendar directory not found"
