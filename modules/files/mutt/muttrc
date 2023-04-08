@@ -5,8 +5,8 @@ source ~/.dotfiles/modules/files/mutt/variables| # pipe indicates executable
 
 # options
 set query_command = "khard email --parsable --search-in-source-files '%s'"
-set from = "$my_mail"
-set sendmail = "msmtp -a $my_mail"
+# set from = "$my_mail"
+# set sendmail = "msmtp -a $my_mail"
 set folder = "~/Mail"
 set edit_headers = yes
 set charset = "utf-8"
@@ -28,8 +28,8 @@ set editor = 'nvim'
 set sort = 'reverse-date'
 set mailcap_path = ~/.dotfiles/modules/files/mutt/mailcap
 set sidebar_width = 20
-set smtp_url = "smtp://$my_mail:$my_pass@localhost:1025"
-set smtp_authenticators = "gssapi:login"
+# set smtp_url = "smtp://$my_mail:$my_pass@localhost:1025"
+# set smtp_authenticators = "gssapi:login"
 mailboxes "=INBOX" "=Sent" "=Trash" "=Spam" "=Archive" "=Drafts" 
 
 # bindings
