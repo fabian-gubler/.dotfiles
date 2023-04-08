@@ -28,6 +28,7 @@
       newsboat
       signal-desktop
 	  playerctl
+	  blanket
       # teams
       spotify
       firefox
