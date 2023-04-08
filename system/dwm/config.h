@@ -39,12 +39,6 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class				instance    title       tags mask   isfloating   monitor    floatborderpx*/
-	{ "firefox",			NULL,       NULL,       1 << 3,		0,           -1,        0 },
-	{ "Com.github.johnfactotum.Foliate",NULL, NULL, 1 << 2,		0,           -1,        0 },
-	{ "okular",				NULL,       NULL,       1 << 2,		0,           -1,        0 },
-	{ "mpv",				NULL,       NULL,       1 << 2,		0,           -1,        0 },
-
 	/* class				instance    title       tags mask   isfloating   monitor    float x,y,w,h       floatborderpx*/
 	{ "Firefox",			NULL,       "Save As",  0,			0,           -1,        50,50,500,500,      0 },
 	{ "Rofi",				NULL,	   	NULL,	  	0,			1,           -1,        50,50,1000,1000,    0 },
@@ -84,7 +78,7 @@ static const char *termcmd[] = { "kitty", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,						XK_a,      spawn,          SHCMD("dmenu_run -i")},
-	{ MODKEY,						XK_w,      spawn,          SHCMD("qutebrowser")},
+	{ MODKEY,						XK_w,      spawn,          SHCMD("firefox")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("xrandr --output Virtual-1  --auto")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
