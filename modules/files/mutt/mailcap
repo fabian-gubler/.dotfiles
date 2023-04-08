@@ -1,14 +1,13 @@
 # PDF Files
-# application/pdf; chromium --start-fullscreen %s >/dev/null 2>&1 &;
-application/pdf; okular %s >/dev/null 2>&1 &;
+application/pdf; xdg-open %s >/dev/null 2>&1 &;
 
 # HTML files
-text/html; qutebrowser --target window %s >/dev/null 2>&1 &; nametemplate=%s.html;
+text/html; xdg-open --target window %s >/dev/null 2>&1 &; nametemplate=%s.html;
 text/html; lynx -dump %s; nametemplate=%s.html; copiousoutput
 
 # Plain text files
 # text/plain; chromium --start-fullscreen --force-device-scale-factor=1.5 %s >/dev/null 2>&1 &;
-text/html; qutebrowser --target window %s >/dev/null 2>&1 &; 
+text/html; xdg-open --target window %s >/dev/null 2>&1 &; 
 
 # Calendar
 text/calendar; khal import %s; 
