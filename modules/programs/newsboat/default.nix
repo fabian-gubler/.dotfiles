@@ -79,6 +79,11 @@ in
         url = "${ytUrl}/UC8ENHE5xdFSwx71u3fDH5Xw";
       }
       {
+        # Good Work
+        tags = [ "!" "youtube" ];
+        url = "${ytUrl}/UC_-hYjoNe4PJNFa9iZ4lraA";
+      }
+      {
         # Coffeezilla
         tags = [ "!" "youtube" ];
         url = "${ytUrl}/UCFQMnBA3CS502aghlcr0_aw";
