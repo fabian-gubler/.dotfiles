@@ -107,7 +107,6 @@
               home = {
                 username = "${user}";
                 homeDirectory = "/home/${user}";
-				packages = [pkgs.home-manager];
                 sessionVariables = {
                   EDITOR = "nvim";
                 };
