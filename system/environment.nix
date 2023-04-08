@@ -80,18 +80,7 @@
     XDG_BIN_HOME = "\${HOME}/.local/bin";
     XDG_DATA_HOME = "\${HOME}/.local/share";
     XDG_DOWNLOAD_DIR = "\${HOME}/Downloads";
-
-    EDITOR = "nvim";
-    MANPAGER = "nvim +Man!";
-    ANKI_BASE = "\${HOME}/nextcloud/apps/anki-data";
     QT_SCALE_FACTOR = "1.5";
-
-    PATH = [
-      "\${XDG_BIN_HOME}"
-      "\${HOME}/.dotfiles/scripts/utils"
-      "\${HOME}/.dotfiles/scripts/dmenu"
-      "\${HOME}/.dotfiles/scripts/tmux"
-    ];
   };
 
 }

@@ -107,13 +107,6 @@
               home = {
                 username = "${user}";
                 homeDirectory = "/home/${user}";
-                sessionVariables = {
-                  EDITOR = "nvim";
-                };
-              };
-
-              systemd.user.sessionVariables = {
-                EDITOR = "nvim";
               };
 
               targets.genericLinux.enable = true;
