@@ -94,7 +94,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,						XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_s,      togglebar,      {0} },
-    { MODKEY,						XK_a,      togglesystray,  {0} },
+    // { MODKEY,						XK_a,      togglesystray,  {0} },
 	{ MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_e,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_m,      setmfact,       {.f = -0.05} },
