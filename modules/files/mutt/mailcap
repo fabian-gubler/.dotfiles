@@ -6,7 +6,8 @@ text/html; xdg-open --target window %s >/dev/null 2>&1 &; nametemplate=%s.html;
 text/html; lynx -dump %s; nametemplate=%s.html; copiousoutput
 
 # Plain text files
-text/plain; xdg-open %s >/dev/null 2>&1 &; 
+# text/plain; xdg-open "file://%s" >/dev/null 2>&1 &; 
+text/plain; $PAGER %s >/dev/null 2>&1 &; 
 text/html; xdg-open %s >/dev/null 2>&1 &; 
 
 # Calendar
