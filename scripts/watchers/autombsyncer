@@ -14,7 +14,8 @@ function notify_on_failure() {
 }
 
 sync() {
-    mbsync -a
+    mbsync -a # sync mail
+	notmuch new # index mail
 }
 
 if [[ -d ~/Mail/ ]]; then

@@ -1,3 +1,5 @@
+# vi: ft=muttrc
+
 source ~/.dotfiles/modules/files/mutt/colors
 source ~/.dotfiles/modules/files/mutt/macros
 source ~/.dotfiles/modules/files/mutt/notmuch
@@ -6,7 +8,7 @@ source ~/.dotfiles/modules/files/mutt/variables| # pipe indicates executable
 # options
 set query_command = "khard email --parsable --search-in-source-files '%s'"
 set from = "gubler@fastmail.com"
-set folder = "~/mail"
+set folder = "~/Mail"
 set edit_headers = yes
 set charset = "utf-8"
 set send_charset = "us-ascii:utf-8"
