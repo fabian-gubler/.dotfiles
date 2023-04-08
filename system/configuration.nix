@@ -67,6 +67,7 @@ in
   };
 
   services.atd.enable = true;
+  programs.dconf.enable = true;
 
   time.timeZone = "Europe/Zurich";
 
