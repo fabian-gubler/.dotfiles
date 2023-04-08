@@ -42,8 +42,10 @@
 		set-option -g status-right ""
 		set-option -g status-justify centre
 		set-option -g message-style fg=#EBCB8B
-
 		set-option -ga terminal-overrides ",xterm-256color:Tc"
+
+		set-option -s set-clipboard off
+		bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -selection clipboard -i"
 					'';
     };
 }

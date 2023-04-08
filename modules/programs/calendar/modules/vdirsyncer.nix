@@ -51,32 +51,32 @@ in
       "vdirsyncer/config".text = configFileContents;
     };
 
-    systemd.user.timers.vdirsyncer = {
-      Unit = {
-        Description = "Timer to synchronize calendars";
-      };
-
-      Timer = {
-        OnStartupSec = "1m";
-        OnUnitActiveSec = "15m";
-      };
-
-      Install.WantedBy = [ "timers.target" ];
-    };
-
-    systemd.user.services.vdirsyncer = {
-      Unit = {
-        Description = "Synchronize your calendars";
-        After = [ "network-online.target" ];
-        Wants = [ "network-online.target" ];
-      };
-
-      Install.WantedBy = [ "default.target" ];
-
-      Service = {
-        ExecStart = "${pkgs.vdirsyncer}/bin/vdirsyncer sync";
-        Type = "oneshot";
-      };
-    };
+    # systemd.user.timers.vdirsyncer = {
+    #   Unit = {
+    #     Description = "Timer to synchronize calendars";
+    #   };
+    #
+    #   Timer = {
+    #     OnStartupSec = "1m";
+    #     OnUnitActiveSec = "15m";
+    #   };
+    #
+    #   Install.WantedBy = [ "timers.target" ];
+    # };
+    #
+    # systemd.user.services.vdirsyncer = {
+    #   Unit = {
+    #     Description = "Synchronize your calendars";
+    #     After = [ "network-online.target" ];
+    #     Wants = [ "network-online.target" ];
+    #   };
+    #
+    #   Install.WantedBy = [ "default.target" ];
+    #
+    #   Service = {
+    #     ExecStart = "${pkgs.vdirsyncer}/bin/vdirsyncer sync";
+    #     Type = "oneshot";
+    #   };
+    # };
   };
 }

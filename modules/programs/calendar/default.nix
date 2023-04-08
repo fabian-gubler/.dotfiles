@@ -31,19 +31,6 @@ in
         "password.fetch" = [ "command" "${passStore}" ];
       };
 
-      # Description of Contacts
-      "storage contacts_local" = {
-        type = "filesystem";
-        path = "/data/nextcloud/.contacts/";
-        fileext = ".vcf";
-      };
-      "storage contacts_remote" = {
-        type = "carddav";
-        "url.fetch" = [ "command" "${urlStore}" ];
-        "username.fetch" = [ "command" "${usernameStore}" ];
-        "password.fetch" = [ "command" "${passStore}" ];
-      };
-
       # Pair Events and Contacts
       "pair calendars" = {
         a = "calendar_local";
@@ -51,11 +38,24 @@ in
         collections = [ "from a" "from b" ];
         metadata = [ "color" "displayname" ];
       };
-      "pair my_contacts" = {
-        a = "contacts_local";
-        b = "contacts_remote";
-        collections = [ "from a" "from b" ];
-      };
+
+      # Description of Contacts
+      # "storage contacts_local" = {
+      #   type = "filesystem";
+      #   path = "/data/nextcloud/.contacts/";
+      #   fileext = ".vcf";
+      # };
+      # "storage contacts_remote" = {
+      #   type = "carddav";
+      #   "url.fetch" = [ "command" "${urlStore}" ];
+      #   "username.fetch" = [ "command" "${usernameStore}" ];
+      #   "password.fetch" = [ "command" "${passStore}" ];
+      # };
+      # "pair my_contacts" = {
+      #   a = "contacts_local";
+      #   b = "contacts_remote";
+      #   collections = [ "from a" "from b" ];
+      # };
 
     };
   };
