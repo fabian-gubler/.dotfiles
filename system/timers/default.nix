@@ -32,22 +32,22 @@ in
     '';
   };
 
-  # Refresh mail every 5 minutes
-  systemd.user.services.mbsync = {
-    description = "mbsync mail synchronization";
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = "${pkgs.isync}/bin/mbsync -a";
-    };
-  };
-
-  systemd.user.timers.mbsync = {
-    description = "Timer for mbsync mail synchronization";
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnCalendar = "*/5 * * * *";
-    };
-  };
+  # # Refresh mail every 5 minutes
+  # systemd.user.services.mbsync = {
+  #   description = "mbsync mail synchronization";
+  #   serviceConfig = {
+  #     Type = "oneshot";
+  #     ExecStart = "${pkgs.isync}/bin/mbsync -a";
+  #   };
+  # };
+  #
+  # systemd.user.timers.mbsync = {
+  #   description = "Timer for mbsync mail synchronization";
+  #   wantedBy = [ "timers.target" ];
+  #   timerConfig = {
+  #     OnCalendar = "*/5 * * * *";
+  #   };
+  # };
 
   # Empty trash more than 30 days old every week
   systemd.timers."empty-trash" = {
