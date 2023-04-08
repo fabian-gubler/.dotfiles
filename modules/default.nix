@@ -29,7 +29,6 @@
       signal-desktop
 	  playerctl
 	  blanket
-      teams
       firefox
     ] ++
     [ python3 neovim cargo nodejs gcc gnumake cmake ccls go ] ++
