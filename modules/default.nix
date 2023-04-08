@@ -30,6 +30,7 @@
 	  playerctl
 	  blanket
       firefox
+	  jdk
     ] ++
     [ python3 neovim cargo nodejs gcc gnumake cmake ccls go ] ++
     [ rnix-lsp nodePackages.bash-language-server ] ++
