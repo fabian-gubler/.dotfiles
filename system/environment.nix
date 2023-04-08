@@ -3,8 +3,8 @@
 
   # Settings
   nixpkgs.config = {
-	  allowUnfree = true;
-	  permittedInsecurePackages = [ "electron-12.2.3" ];
+    allowUnfree = true;
+    permittedInsecurePackages = [ "electron-12.2.3" ];
   };
   nix.package = pkgs.nixStable;
 
@@ -66,10 +66,10 @@
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
       tree-sitter
       jq
-	  ncdu
-	  obsidian
-	  qbittorrent
-	  pavucontrol
+      ncdu
+      obsidian
+      qbittorrent
+      pavucontrol
     ]
   ;
 
@@ -81,6 +81,13 @@
     XDG_DATA_HOME = "\${HOME}/.local/share";
     XDG_DOWNLOAD_DIR = "\${HOME}/Downloads";
     QT_SCALE_FACTOR = "1.5";
+
+    # Duplicate: in home-manager
+    EDITOR = "nvim";
+    MANPAGER = "nvim +Man!";
+    ANKI_BASE = "/data/nextcloud/apps/anki-data";
+    PATH = "\${PATH}:\${XDG_BIN_HOME}:\${HOME}/.dotfiles/scripts/utils:\${HOME}/.dotfiles/scripts/dmenu:\${HOME}/.dotfiles/scripts/tmux";
+
   };
 
 }
