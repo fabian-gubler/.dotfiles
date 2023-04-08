@@ -34,11 +34,11 @@ in
       asvetliakov.vscode-neovim
 
       # abap
-      larshp.vscode-abap # syntax highlighting
-      larshp.vscode-abaplint # linter
-      hudakf.cds # cds language support
-      frehu.abap-snippets # snippets
-      murbani.vscode-abap-remote-fs # connector
+      # larshp.vscode-abap # syntax highlighting
+      # larshp.vscode-abaplint # linter
+      # hudakf.cds # cds language support
+      # frehu.abap-snippets # snippets
+      # murbani.vscode-abap-remote-fs # connector
     ];
     # keybindings = [];
   };
