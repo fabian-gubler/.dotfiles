@@ -69,47 +69,41 @@
     enableZshIntegration = true;
   };
 
-  programs.gnome-terminal = {
-    enable = true;
-    profile.nord = {
-      audioBell = false;
-      backgroundColor = "#2e3440";
-      boldColor = "#d8dee9";
-      boldColorSameAsFG = false;
-      cursorBlinkMode = "off";
-	  customCommand = "tmuxd";
-	  showMenubar = false;
-	  font = "SF Mono 15";
-	  foregroundColor = "#d8dee9";
-	  scrollbarPolicy = "never";
-	  useThemeColors = false;
-	  useThemeBackground = false;
-	};
-	  cursorColor = "#d8dee9";
-	  highlightColor = "#4c566a";
-      cursorShape = "block";
-      foregroundColor = "#d8dee9";
-      palette = [
-        "#3b4252"
-        "#bf616a"
-        "#a3be8c"
-        "#ebcb8b"
-        "#81a1c1"
-        "#b48ead"
-        "#88c0d0"
-        "#e5e9f0"
-        "#4c566a"
-        "#bf616a"
-        "#a3be8c"
-        "#ebcb8b"
-        "#81a1c1"
-        "#b48ead"
-        "#8fbcbb"
-        "#eceff4"
-      ];
-      useThemeColors = false;
-      useThemeBackground = false;
-    };
-  };
-
+  # programs.gnome-terminal = {
+  #   enable = true;
+  #   showMenubar = false;
+  #   profile.nord = {
+  #     default = true;
+  #     visibleName = "nord";
+  #     audibleBell = false;
+  #     cursorBlinkMode = "off";
+  #     customCommand = "tmuxd";
+  #     font = "SF Mono 15";
+  #     # useThemeColors = false;
+  #     # useThemeBackground = false;
+  #     cursorShape = "block";
+  #     colors = {
+  #       palette = [
+  #         "#3b4252"
+  #         "#bf616a"
+  #         "#a3be8c"
+  #         "#ebcb8b"
+  #         "#81a1c1"
+  #         "#b48ead"
+  #         "#88c0d0"
+  #         "#e5e9f0"
+  #         "#4c566a"
+  #         "#bf616a"
+  #         "#a3be8c"
+  #         "#ebcb8b"
+  #         "#81a1c1"
+  #         "#b48ead"
+  #         "#8fbcbb"
+  #         "#eceff4"
+  #       ];
+  #       backgroundColor = "#2e3440";
+  #       foregroundColor = "#d8dee9";
+  #     };
+  #   };
+  # };
 }
