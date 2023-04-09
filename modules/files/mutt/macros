@@ -28,6 +28,7 @@ macro compose m \
 
 # advanced
 macro index o "<shell-escape>mbsync -a<enter>" "run mbsync to sync mail"
+bind index,pager V noop
 macro index,pager V "<view-attachments><search>html<enter><view-mailcap><exit>"
 macro index,pager A "<save-message>=Archive<enter><sync-mailbox>" "Archive message"
 macro index \Cf "<enter-command>unset wait_key<enter><shell-escape>printf 'Enter a search term to find with notmuch: '; read x; echo \$x >~/.cache/mutt_terms<enter><limit>~i \"\`notmuch search --output=messages \$(cat ~/.cache/mutt_terms) | head -n 600 | perl -le '@a=<>;s/\^id:// for@a;$,=\"|\";print@a' | perl -le '@a=<>; chomp@a; s/\\+/\\\\+/ for@a;print@a' \`\"<enter>" "show only messages matching a notmuch pattern"
