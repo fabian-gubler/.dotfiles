@@ -9,10 +9,10 @@ let
 
     # appearance
     "window.zoomLevel" = 2;
+    "editor.minimap.enabled" = false;
     # "workbench.activityBar.visible" = false;
     # "workbench.statusBar.visible" = false;
     # "window.menuBarVisibility" = "toggle";
-    "editor.minimap.enabled" = false;
 
     # vscode neovim
     "extensions.experimental.affinity" = {
@@ -34,6 +34,7 @@ in
       asvetliakov.vscode-neovim
 
       # abap
+# refs/remotes/origin/main
       # larshp.vscode-abap # syntax highlighting
       # larshp.vscode-abaplint # linter
       # hudakf.cds # cds language support
