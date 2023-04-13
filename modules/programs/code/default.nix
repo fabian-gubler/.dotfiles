@@ -33,7 +33,8 @@ in
       ms-toolsai.jupyter
       asvetliakov.vscode-neovim
 
-      # abap (create derivations)
+      # abap
+# refs/remotes/origin/main
       # larshp.vscode-abap # syntax highlighting
       # larshp.vscode-abaplint # linter
       # hudakf.cds # cds language support
