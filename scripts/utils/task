@@ -2,7 +2,7 @@
 
 # Read the first argument
 ARG=$1
-BASEDIR=$HOME/nextcloud/todo
+BASEDIR=/data/nextcloud/todo
 
 CATEGORY=$(basename $(pwd))
 DIR="$BASEDIR/$CATEGORY"

@@ -9,10 +9,10 @@ let
 
     # appearance
     "window.zoomLevel" = 2;
+    "editor.minimap.enabled" = false;
     # "workbench.activityBar.visible" = false;
     # "workbench.statusBar.visible" = false;
     # "window.menuBarVisibility" = "toggle";
-    "editor.minimap.enabled" = false;
 
     # vscode neovim
     "extensions.experimental.affinity" = {
@@ -33,12 +33,12 @@ in
       ms-toolsai.jupyter
       asvetliakov.vscode-neovim
 
-      # abap
-      larshp.vscode-abap # syntax highlighting
-      larshp.vscode-abaplint # linter
-      hudakf.cds # cds language support
-      frehu.abap-snippets # snippets
-      murbani.vscode-abap-remote-fs # connector
+      # abap (create derivations)
+      # larshp.vscode-abap # syntax highlighting
+      # larshp.vscode-abaplint # linter
+      # hudakf.cds # cds language support
+      # frehu.abap-snippets # snippets
+      # murbani.vscode-abap-remote-fs # connector
     ];
     # keybindings = [];
   };
