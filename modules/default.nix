@@ -19,6 +19,7 @@
   # Packages that should be installed to the user profile.
   home.packages = with pkgs;
     [ notmuch-mutt notmuch lynx ] ++
+	[ python310Packages.pyarrow ] ++
     [ khal khard vdirsyncer inotify-tools ] ++
     [
       neomutt
