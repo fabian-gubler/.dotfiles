@@ -1,0 +1,110 @@
+#!/usr/bin/env bash
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+# Interface Vision:
+# - Rename "Study" entries with enter
+# - Toggle Fitness
+# - Select populated entries with spacebar
+
+
+if [ $# -eq 0 ]; then
+	echo -n "Please indicate time: "
+	read time
+	echo ""
+else
+	time=$1
+fi
+
+create_commute ()
+{
+	# Don't do anything if a commute already exists
+	if [[ $(khal list $time | grep "06:53") ]]; then
+		return
+	fi
+
+	if [[ $(khal list $time | grep "07:23") ]]; then
+		return
+	fi
+
+	# Determine Train Ride
+	echo "${bold}Where are you heading to?${normal}"
+	echo "1 - St. Gallen"
+	echo "2 - Frauenfeld"
+	echo "3 - Winterthur"
+	read destination
+	echo ""
+
+	case $destination in
+		1) 
+			timespan="06:53 08:11"
+			from="Steckborn"
+			arrival="St. Gallen"
+			echo "Selection: St. Gallen"
+			echo ""
+			;;
+		2) 
+			timespan="07:47 08:17"
+			from="Steckborn"
+			arrival="Frauenfeld"
+			echo "Selection: Frauenfeld"
+			echo ""
+			;;
+		3) 
+			timespan="06:53 07:59"
+			from="Steckborn"
+			arrival="Winterthur"
+			echo "Selection: Winterthur"
+			echo ""
+			;;
+		*) 
+			echo "Selection: No Selection"
+			echo ""
+			return
+			;;
+	esac
+
+	khal new $time $timespan $from to $arrival
+}
+
+create_commute
+
+while true; do
+	echo "${bold}Generate Study Entries${normal}" 
+    read -p "yes or no (y/n) " yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no. ";;
+    esac
+	echo ""
+done
+
+create_block ()
+{
+	arr=($1)
+	timespan="${arr[@]:0:2}"
+	existing_entry=$(khal at $time $timespan | grep "-" )
+	
+	if [[ -n $existing_entry ]]; then
+		echo "Existing: $existing_entry"
+	else
+		khal new -a uni $time $1 
+		echo $(khal at $time $timespan | sed -n '2p' | grep "-")
+	fi
+}
+
+# Create Entries
+echo ""
+echo "${bold}Entries${normal}"
+
+echo $(khal list $time | grep 06:53)
+create_block "08:30 10:00 Study -a uni"
+create_block "10:15 12:00 Study -a uni"
+create_block "12:15 14:00 Fitness -a pers"
+create_block "14:15 16:00 Study -a uni"
+
+# List Entries
+echo ""
+khal list $time
