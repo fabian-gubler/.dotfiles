@@ -1,110 +1,98 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python3
 
-bold=$(tput bold)
-normal=$(tput sgr0)
+import sys
+import subprocess
 
-# Interface Vision:
-# - Rename "Study" entries with enter
-# - Toggle Fitness
-# - Select populated entries with spacebar
+def create_commute(time: str, destination: str):
+    # TODO: Check if already exists
+    if destination == '4':
+        timespan, from_, arrival = "06:28 07:16", "St. Gallen", "Zurich Airport"
+        print(f"Selection: Zurich Airport\n")
+        subprocess.run(["khal", "new", time, timespan, from_, "to", arrival])
 
+def create_block(time: str, block: str):
+    arr = block.split()
+    timespan = f"{arr[0]} {arr[1]}"
+    result = subprocess.run(["khal", "at", time, timespan], capture_output=True, text=True)
 
-if [ $# -eq 0 ]; then
-	echo -n "Please indicate time: "
-	read time
-	echo ""
-else
-	time=$1
-fi
+    if result.stdout.strip() == '':
+        # No events for the given time range
+        subprocess.run(["khal", "new", time] + arr)
+        result = subprocess.run(["khal", "at", time, timespan], capture_output=True, text=True)
 
-create_commute ()
-{
-	# Don't do anything if a commute already exists
-	if [[ $(khal list $time | grep "06:53") ]]; then
-		return
-	fi
+    lines = result.stdout.splitlines()
+    if len(lines) >= 2:
+        existing_entry = [line for line in lines if '-' in line]
+        if existing_entry:
+            print(f"Existing: {existing_entry[0]}")
+        else:
+            subprocess.run(["khal", "new", time] + arr)
+            result = subprocess.run(["khal", "at", time, timespan], capture_output=True, text=True)
+            print(result.stdout.splitlines()[1])
+    else:
+        # No events found even after creating a new event
+        print("No events found")
 
-	if [[ $(khal list $time | grep "07:23") ]]; then
-		return
-	fi
+    # print(result.stdout.splitlines()[1])
 
-	# Determine Train Ride
-	echo "${bold}Where are you heading to?${normal}"
-	echo "1 - St. Gallen"
-	echo "2 - Frauenfeld"
-	echo "3 - Winterthur"
-	read destination
-	echo ""
+def main():
+    if len(sys.argv) > 1:
+        time = sys.argv[1]
+    else:
+        time = input("Please indicate time: ")
 
-	case $destination in
-		1) 
-			timespan="06:53 08:11"
-			from="Steckborn"
-			arrival="St. Gallen"
-			echo "Selection: St. Gallen"
-			echo ""
-			;;
-		2) 
-			timespan="07:47 08:17"
-			from="Steckborn"
-			arrival="Frauenfeld"
-			echo "Selection: Frauenfeld"
-			echo ""
-			;;
-		3) 
-			timespan="06:53 07:59"
-			from="Steckborn"
-			arrival="Winterthur"
-			echo "Selection: Winterthur"
-			echo ""
-			;;
-		*) 
-			echo "Selection: No Selection"
-			echo ""
-			return
-			;;
-	esac
+    print()
+    print("\033[1mIs it a study day or work day?\033[0m")
+    print("1 - Study day")
+    print("2 - Work day")
 
-	khal new $time $timespan $from to $arrival
-}
+    day_type = input()
 
-create_commute
+    if day_type == '1':
+        while True:
+            print()
+            yn = input("\033[1mGenerate Study Entries\033[0m\nyes or no (y/n): ")
+            if yn.lower() == 'y':
+                break
+            elif yn.lower() == 'n':
+                sys.exit()
 
-while true; do
-	echo "${bold}Generate Study Entries${normal}" 
-    read -p "yes or no (y/n) " yn
-    case $yn in
-        [Yy]* ) break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no. ";;
-    esac
-	echo ""
-done
+        blocks = [
+            "07:00 12:00 Study -a uni",
+            "12:15 13:00 Break -a pers",
+            "13:15 16:00 Study -a uni",
+        ]
 
-create_block ()
-{
-	arr=($1)
-	timespan="${arr[@]:0:2}"
-	existing_entry=$(khal at $time $timespan | grep "-" )
-	
-	if [[ -n $existing_entry ]]; then
-		echo "Existing: $existing_entry"
-	else
-		khal new -a uni $time $1 
-		echo $(khal at $time $timespan | sed -n '2p' | grep "-")
-	fi
-}
+        print("\n\033[1mEntries\033[0m")
+        for block in blocks:
+            create_block(time, block)
 
-# Create Entries
-echo ""
-echo "${bold}Entries${normal}"
+    elif day_type == '2':
+        create_commute(time, '4')
 
-echo $(khal list $time | grep 06:53)
-create_block "08:30 10:00 Study -a uni"
-create_block "10:15 12:00 Study -a uni"
-create_block "12:15 14:00 Fitness -a pers"
-create_block "14:15 16:00 Study -a uni"
+        while True:
+            yn = input("\033[1mGenerate Work Entries\033[0m\nyes or no (y/n): ")
+            if yn.lower() == 'y':
+                break
+            elif yn.lower() == 'n':
+                sys.exit()
 
-# List Entries
-echo ""
-khal list $time
+        blocks = [
+            "07:30 12:00 Work -a work",
+            "12:15 13:00 Break -a pers",
+            "13:15 16:00 Work -a work",
+        ]
+
+        print("\n\033[1mEntries\033[0m")
+        for block in blocks:
+            create_block(time, block)
+
+    else:
+        print("Invalid selection")
+        sys.exit()
+
+    print()
+    subprocess.run(["khal", "list", time])
+
+if __name__ == "__main__":
+    main()

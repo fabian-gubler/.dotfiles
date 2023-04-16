@@ -15,6 +15,11 @@ path = /data/nextcloud/.calendars/task
 type = calendar
 color = light red
 
+[[work]]
+path = /data/nextcloud/.calendars/work
+type = calendar
+color = brown
+
 [[event]]
 path = /data/nextcloud/.calendars/event
 type = calendar
