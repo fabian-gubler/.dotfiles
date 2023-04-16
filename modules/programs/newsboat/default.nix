@@ -48,10 +48,6 @@ in
       		feedlist-format     "  %t %?d?- %-65d&? %> %U Available"
       		articlelist-format  "%?T?  %-30T ?%-70t %> %D "
 
-			# urls-source "inoreader"
-			# inoreader-login "fabian.gubler@hotmail.com"
-			# inoreader-passwordeval "rbw get inoreader"
-
 			cache-file /data/nextcloud/apps/newsboat/cache.db
     '';
 
@@ -76,9 +72,8 @@ in
       # YOUTUBE CHANNELS
       ###################
 
-      # Ways to channel_id:
-      # - Search Channel on Insidious 
-      # - Google Channel (see link)
+      # Get channel_id -> Search Channel on Insidious 
+
       {
         # The Primeagen
         tags = [ "!" "youtube" ];
