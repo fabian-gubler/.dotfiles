@@ -47,6 +47,10 @@ in
       		datetime-format     "%d %B"
       		feedlist-format     "  %t %?d?- %-65d&? %> %U Available"
       		articlelist-format  "%?T?  %-30T ?%-70t %> %D "
+
+			urls-source "inoreader"
+			inoreader-login "fabian.gubler@hotmail.com"
+			inoreader-passwordeval "rbw get inoreader"
     '';
 
     queries = {
