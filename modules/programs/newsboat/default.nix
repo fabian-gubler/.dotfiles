@@ -48,9 +48,11 @@ in
       		feedlist-format     "  %t %?d?- %-65d&? %> %U Available"
       		articlelist-format  "%?T?  %-30T ?%-70t %> %D "
 
-			urls-source "inoreader"
-			inoreader-login "fabian.gubler@hotmail.com"
-			inoreader-passwordeval "rbw get inoreader"
+			# urls-source "inoreader"
+			# inoreader-login "fabian.gubler@hotmail.com"
+			# inoreader-passwordeval "rbw get inoreader"
+
+			cache-file /data/nextcloud/apps/newsboat/cache.db
     '';
 
     queries = {
