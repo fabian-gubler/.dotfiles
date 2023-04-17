@@ -35,6 +35,7 @@ in
       "pair calendars" = {
         a = "calendar_local";
         b = "calendar_remote";
+		conflict_resolution = "b wins";
         collections = [ "from a" "from b" ];
         metadata = [ "color" "displayname" ];
       };
