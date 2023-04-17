@@ -16,6 +16,7 @@
       pythonPackages = p: with p; [
         # ...
         pip
+		arrow
 
         browser-cookie3
 
