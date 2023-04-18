@@ -30,6 +30,7 @@
       signal-desktop
 	  playerctl
 	  blanket
+	  bitwig-studio
       firefox
 	  jdk
     ] ++
