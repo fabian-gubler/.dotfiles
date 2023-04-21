@@ -60,12 +60,6 @@
     #   gnome.adwaita-icon-theme
     # ] ++
 
-	[
-	  eclipses.eclipse-sdk
-	  gnome.gnome-keyring # needed for fs
-	] ++
-
-
     [
       # extra packages:
       texlive.combined.scheme-full
