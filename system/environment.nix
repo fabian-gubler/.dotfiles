@@ -60,6 +60,11 @@
     #   gnome.adwaita-icon-theme
     # ] ++
 
+	[
+	  eclipses.eclipse-sdk
+	  gnome.gnome-keyring # needed for fs
+	] ++
+
 
     [
       # extra packages:
@@ -71,7 +76,6 @@
       obsidian
       qbittorrent
       pavucontrol
-	  eclipses.eclipse-sdk
     ]
   ;
 
