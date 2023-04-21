@@ -71,6 +71,7 @@
       obsidian
       qbittorrent
       pavucontrol
+	  eclipses.eclipse-sdk
     ]
   ;
 
