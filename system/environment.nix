@@ -67,6 +67,7 @@
       tree-sitter
       jq
       ncdu
+	  python3
       obsidian
       qbittorrent
       pavucontrol
