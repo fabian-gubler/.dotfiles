@@ -16,7 +16,7 @@
       pythonPackages = p: with p; [
         # ...
         pip
-		arrow
+        arrow
 
         browser-cookie3
 
@@ -67,10 +67,13 @@
       tree-sitter
       jq
       ncdu
-	  python3
+      python3
       obsidian
       qbittorrent
       pavucontrol
+      vagrant
+      libvirt
+      qemu_kvm
     ]
   ;
 

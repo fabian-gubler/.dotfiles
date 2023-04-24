@@ -52,7 +52,7 @@ in
   # User Settings
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" ];
+    extraGroups = [ "wheel" "docker" "libvirtd" "qemu-libvirtd" ];
     shell = pkgs.zsh;
   };
 
