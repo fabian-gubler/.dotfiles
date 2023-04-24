@@ -34,8 +34,8 @@
       # export OPENAI_API_KEY=$(rbw get OPENAI_API_KEY)
 
 	# credentials
-	export SPEECH_KEY=$(rbw get SBB_SPEECH_KEY)
-	export SPEECH_REGION=westeurope
+	# export SPEECH_KEY=$(rbw get SBB_SPEECH_KEY)
+	# export SPEECH_REGION=westeurope
 
 
     '';

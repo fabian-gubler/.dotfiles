@@ -50,9 +50,12 @@ in
   # User Settings
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "docker" ];
     shell = pkgs.zsh;
   };
+
+  # virtualization
+  virtualisation.docker.enable = true;
 
   # Display Server
   services.xserver = {
