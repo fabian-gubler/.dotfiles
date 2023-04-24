@@ -28,6 +28,8 @@ in
     options = [ "defaults" ];
   };
 
+  virtualisation.libvirtd.enable = true;
+  boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
 
   # Nix Settings
   nix = {
