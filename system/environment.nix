@@ -75,6 +75,7 @@
       vagrant
       libvirt
       qemu_kvm
+	  virtualbox
     ]
   ;
 

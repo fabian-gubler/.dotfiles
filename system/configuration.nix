@@ -29,6 +29,8 @@ in
   };
 
   virtualisation.libvirtd.enable = true;
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "fabian" ];
   boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
 
   # Nix Settings
