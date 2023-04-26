@@ -67,6 +67,7 @@
       tree-sitter
       jq
       ncdu
+	  cloud-utils
       python3
       obsidian
       qbittorrent
