@@ -17,6 +17,9 @@
       gpush = "git add . && git commit -m 'manual update' && git push";
       ".." = "cd ..";
 	  gl = "nix run --override-input nixpkgs nixpkgs/nixos-21.11 --impure github:guibou/nixGL -- ";
+	  pandock = ''
+		  alias pandock='docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) pandoc/extra'
+	  '';
 
       # Tasks
       p = "todo.sh -d /data/nextcloud/todo/pers/config";
