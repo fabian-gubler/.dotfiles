@@ -18,7 +18,10 @@
       ".." = "cd ..";
 	  gl = "nix run --override-input nixpkgs nixpkgs/nixos-21.11 --impure github:guibou/nixGL -- ";
 	  pandock = ''
-		  alias pandock='docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) pandoc/extra'
+		  docker run --rm \
+		   --volume "$(pwd):/data" \
+		   --user $(id -u):$(id -g) \
+		   pandoc/extra example.md -o example.pdf --template eisvogel --listings
 	  '';
 
       # Tasks
