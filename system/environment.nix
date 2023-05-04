@@ -76,6 +76,7 @@
       libvirt
       qemu_kvm
 	  virtualbox
+	  pandoc-lua-filters
     ]
   ;
 
