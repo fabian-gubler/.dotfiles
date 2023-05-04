@@ -33,6 +33,7 @@
 	  bitwig-studio
       firefox
 	  jdk
+	  lazydocker
     ] ++
     [ neovim cargo nodejs gcc gnumake cmake ccls go ] ++
     [ rnix-lsp nodePackages.bash-language-server ] ++
