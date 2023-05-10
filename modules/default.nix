@@ -34,6 +34,7 @@
       firefox
 	  jdk
 	  lazydocker
+	  tree
     ] ++
     [ neovim cargo nodejs gcc gnumake cmake ccls go ] ++
     [ rnix-lsp nodePackages.bash-language-server ] ++
