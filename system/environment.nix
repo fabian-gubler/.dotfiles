@@ -72,6 +72,7 @@
       obsidian
       qbittorrent
       pavucontrol
+	  anki-bin
       vagrant
       libvirt
       qemu_kvm
