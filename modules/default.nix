@@ -13,7 +13,7 @@
     EDITOR = "nvim";
     MANPAGER = "nvim +Man!";
     ANKI_BASE = "/data/nextcloud/apps/anki-data";
-    PATH = "\${PATH}:\${XDG_BIN_HOME}:\${HOME}/.dotfiles/scripts/utils:\${HOME}/.dotfiles/scripts/dmenu:\${HOME}/.dotfiles/scripts/tmux";
+    PATH = "\${PATH}:\${XDG_BIN_HOME}:\${HOME}/.dotfiles/scripts/utils:\${HOME}/.dotfiles/scripts/dmenu:\${HOME}/.dotfiles/scripts/tmux:\${HOME}/go/bin";
   };
 
   # Packages that should be installed to the user profile.
@@ -30,13 +30,15 @@
       signal-desktop
 	  playerctl
 	  blanket
-	  bitwig-studio
+	  ncdu
+	  conda
+	  # bitwig-studio
       firefox
 	  jdk
 	  lazydocker
 	  tree
     ] ++
-    [ neovim cargo nodejs gcc gnumake cmake ccls go ] ++
+    [ neovim cargo  gcc gnumake cmake ccls go ] ++
     [ rnix-lsp nodePackages.bash-language-server ] ++
     [ texlive.combined.scheme-small ] ++
     [ todo-txt-cli ] ++
