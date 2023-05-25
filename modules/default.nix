@@ -30,6 +30,8 @@
       signal-desktop
 	  playerctl
 	  blanket
+	  ncdu
+	  conda
 	  # bitwig-studio
       firefox
 	  jdk
