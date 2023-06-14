@@ -32,6 +32,7 @@
 	  blanket
 	  ncdu
 	  conda
+	  jetbrains.idea-community
 	  # bitwig-studio
       firefox
 	  jdk

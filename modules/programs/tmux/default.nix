@@ -10,7 +10,7 @@
       keyMode = "vi";
       terminal = "xterm-256color";
 	  shell = "${pkgs.zsh}/bin/zsh";
-      mouse = true;
+      # mouse = true;
       plugins = with pkgs; [
         {
 
