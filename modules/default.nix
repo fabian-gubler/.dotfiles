@@ -29,6 +29,7 @@
       newsboat
       signal-desktop
 	  playerctl
+	  postman
 	  blanket
 	  ncdu
 	  conda
