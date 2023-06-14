@@ -10,7 +10,6 @@ in
 {
   # Boot loader
   boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
   boot.loader.grub.device = "/dev/vda";
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -55,7 +54,7 @@ in
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "docker" "libvirtd" "qemu-libvirtd" ];
-    shell = pkgs.zsh;
+    # shell = pkgs.zsh;
   };
 
   # virtualization
@@ -79,7 +78,7 @@ in
   time.timeZone = "Europe/Zurich";
 
   # TODO: System-wide GTK Theme
-  qt5 = {
+  qt = {
     enable = true;
     platformTheme = "gtk2";
     style = "gtk2";

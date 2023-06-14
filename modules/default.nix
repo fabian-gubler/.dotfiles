@@ -39,8 +39,8 @@
 	  lazydocker
 	  tree
     ] ++
-    [ neovim cargo  gcc gnumake cmake ccls go ] ++
-    [ rnix-lsp nodePackages.bash-language-server ] ++
+    [ rnix-lsp neovim cargo  gcc gnumake cmake ccls go ] ++
+    [ nodePackages.bash-language-server ] ++
     [ texlive.combined.scheme-small ] ++
     [ todo-txt-cli ] ++
     [ rbw authy protonmail-bridge ] ++
@@ -77,42 +77,4 @@
     enable = true;
     enableZshIntegration = true;
   };
-
-  # programs.gnome-terminal = {
-  #   enable = true;
-  #   showMenubar = false;
-  #   profile.nord = {
-  #     default = true;
-  #     visibleName = "nord";
-  #     audibleBell = false;
-  #     cursorBlinkMode = "off";
-  #     customCommand = "tmuxd";
-  #     font = "SF Mono 15";
-  #     # useThemeColors = false;
-  #     # useThemeBackground = false;
-  #     cursorShape = "block";
-  #     colors = {
-  #       palette = [
-  #         "#3b4252"
-  #         "#bf616a"
-  #         "#a3be8c"
-  #         "#ebcb8b"
-  #         "#81a1c1"
-  #         "#b48ead"
-  #         "#88c0d0"
-  #         "#e5e9f0"
-  #         "#4c566a"
-  #         "#bf616a"
-  #         "#a3be8c"
-  #         "#ebcb8b"
-  #         "#81a1c1"
-  #         "#b48ead"
-  #         "#8fbcbb"
-  #         "#eceff4"
-  #       ];
-  #       backgroundColor = "#2e3440";
-  #       foregroundColor = "#d8dee9";
-  #     };
-  #   };
-  # };
 }
