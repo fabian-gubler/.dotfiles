@@ -40,7 +40,7 @@
 	  lazydocker
 	  tree
     ] ++
-    [ rnix-lsp neovim cargo  gcc gnumake cmake ccls go ] ++
+    [ rnix-lsp neovim nodejs cargo gcc gnumake cmake ccls go ] ++
     [ nodePackages.bash-language-server ] ++
     [ texlive.combined.scheme-small ] ++
     [ todo-txt-cli ] ++
