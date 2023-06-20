@@ -80,7 +80,7 @@ static Key keys[] = {
 	{ MODKEY,						XK_a,      spawn,          SHCMD("dmenu_run -i")},
 	{ MODKEY,						XK_w,      spawn,          SHCMD("firefox")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
-	{ MODKEY,                       XK_m,      spawn,          SHCMD("xrandr --output Virtual-1  --auto")},
+	{ MODKEY,                       XK_j,      spawn,          SHCMD("xrandr --output Virtual-1  --auto")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("$HOME/.dotfiles/scripts/dmenu/logout")},
 	{ MODKEY,                       XK_o,      spawn,          SHCMD("~/.dotfiles/scripts/rofi/rbw")},
 	{ ShiftMask,					XK_Return, spawn,          SHCMD("dunstctl close-all")},
