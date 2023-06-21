@@ -30,6 +30,7 @@
       signal-desktop
 	  playerctl
 	  postman
+	  flameshot
 	  blanket
 	  ncdu
 	  conda
