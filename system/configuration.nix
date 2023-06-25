@@ -75,6 +75,10 @@ in
   services.atd.enable = true;
   programs.dconf.enable = true;
 
+  services.flatpak.enable = true;
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
   time.timeZone = "Europe/Zurich";
 
   # TODO: System-wide GTK Theme
