@@ -13,7 +13,10 @@
 subject=$1
 
 DIRS="lectures apkg --sync --delete"
-ARGS="--sync --delete --prefix"
+ARGS="--sync --delete"
+NAME=""
+PREFIX="--prefix \"$subject::$NAME\""
+# PREFIX=""
 SEMESTER="23SP"
 HOMEDIR=/data/nextcloud/mcs/23SP/$SEMESTER
 DOCSDIR=/data/nextcloud/mcs/23SP/docs/$subject/
@@ -21,9 +24,8 @@ DOCSDIR=/data/nextcloud/mcs/23SP/docs/$subject/
 
 sync() {
 	cd $DOCSDIR
-	mdankideck $DIRS $ARGS \"$subject::\"
+	mdankideck $DIRS $ARGS $PREFIX
 }
-
 
 # while true; do
 # 	sync
