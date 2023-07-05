@@ -67,7 +67,7 @@
       tree-sitter
       jq
 	  citrix_workspace
-      ncdu
+   #    ncdu
 	  cloud-utils
       python3
       obsidian
