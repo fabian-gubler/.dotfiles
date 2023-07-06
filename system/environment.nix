@@ -66,19 +66,20 @@
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
       tree-sitter
       jq
-	  citrix_workspace
-   #    ncdu
-	  cloud-utils
+      citrix_workspace
+      #    ncdu
+      cloud-utils
       python3
       obsidian
       qbittorrent
       pavucontrol
-	  anki-bin
+      anki-bin
+      tomcat9
       vagrant
       libvirt
       qemu_kvm
-	  virtualbox
-	  pandoc-lua-filters
+      virtualbox
+      pandoc-lua-filters
     ]
   ;
 
