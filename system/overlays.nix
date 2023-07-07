@@ -14,18 +14,18 @@
       #     sha256 = "sha256-qdqRvCmp6Q7lcTdOIEHeQKAAOLtJxs867gapopyeHuc=";
       #   };
       # });
-      overlays = [
-        (self: super:
-          let
-            extraCerts = [ ./path/to/certificate.crt ];
-          in
-          {
-            citrix_workspace = super.citrix_workspace.override {
-              inherit extraCerts;
-            };
-          }
-        )
-      ];
+      # overlays = [
+      #   (self: super:
+      #     let
+      #       extraCerts = [ ./path/to/certificate.crt ];
+      #     in
+      #     {
+      #       citrix_workspace = super.citrix_workspace.override {
+      #         inherit extraCerts;
+      #       };
+      #     }
+      #   )
+      # ];
 
       # stable -> 0.3.11
       # leetcode-cli = super.leetcode-cli.overrideAttrs (drv: rec {

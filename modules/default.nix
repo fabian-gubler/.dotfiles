@@ -11,6 +11,7 @@
 
   systemd.user.sessionVariables = rec {
     EDITOR = "nvim";
+	TIMEWARRIORDB = "/data/nextcloud/todo/timewarrior";
     MANPAGER = "nvim +Man!";
     ANKI_BASE = "/data/nextcloud/apps/anki-data";
     PATH = "\${PATH}:\${XDG_BIN_HOME}:\${HOME}/.dotfiles/scripts/utils:\${HOME}/.dotfiles/scripts/dmenu:\${HOME}/.dotfiles/scripts/tmux:\${HOME}/go/bin";
@@ -32,8 +33,10 @@
 	  postman
 	  flameshot
 	  blanket
+	  timewarrior
 	  ncdu
 	  conda
+	  timetrap
 	  jetbrains.idea-community
 	  # bitwig-studio
       firefox
