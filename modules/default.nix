@@ -39,6 +39,7 @@
       firefox
 	  jdk
 	  lazydocker
+	  gradle
 	  tree
     ] ++
     [ rnix-lsp neovim nodejs cargo gcc gnumake cmake ccls go ] ++
