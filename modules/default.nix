@@ -25,6 +25,7 @@
     [
       neomutt
       dunst
+	  remmina
       autorandr
       spicetify-cli
       newsboat
