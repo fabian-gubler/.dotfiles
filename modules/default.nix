@@ -32,6 +32,7 @@
       signal-desktop
 	  playerctl
 	  postman
+	  maven
 	  flameshot
 	  blanket
 	  timewarrior
