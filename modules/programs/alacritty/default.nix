@@ -3,12 +3,13 @@
   programs.alacritty = {
     enable = true;
     settings = {
+      env.TERM = "xterm-256color";
       window.padding = {
         x = 10;
         y = 10;
       };
       font = {
-        size = 12;
+        size = 16;
         normal = {
           family = "SFMono";
         };
