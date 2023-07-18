@@ -86,7 +86,8 @@ static Key keys[] = {
 	{ ShiftMask,					XK_Return, spawn,          SHCMD("dunstctl close-all")},
 
 	/* modifier                     key        function        argument */
-	{ MODKEY,						XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_Return, spawn,          SHCMD("alacritty -e /data/.dotfiles/scripts/tmux/tmuxd")},
+	{ MODKEY|ShiftMask,				XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_s,      togglebar,      {0} },
     // { MODKEY,						XK_a,      togglesystray,  {0} },
 	{ MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
