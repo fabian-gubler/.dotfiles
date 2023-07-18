@@ -5,6 +5,7 @@
     ./autojump
     ./sioyek
     ./tmux
+	./alacritty
     ./mail
     ./newsboat
     ./rofi

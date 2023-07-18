@@ -25,11 +25,13 @@
     [
       neomutt
       dunst
+	  remmina
       autorandr
       spicetify-cli
       newsboat
 	  playerctl
 	  postman
+	  maven
 	  flameshot
 	  blanket
 	  timewarrior
