@@ -66,7 +66,7 @@
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
       tree-sitter
       jq
-      citrix_workspace
+      # citrix_workspace
       #    ncdu
       cloud-utils
       python3
