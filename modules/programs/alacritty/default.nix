@@ -3,14 +3,14 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      windows.padding = {
+      window.padding = {
         x = 10;
         y = 10;
       };
       font = {
+        size = 12;
         normal = {
           family = "SFMono";
-          size = 12;
         };
         colors = {
           primary = {
