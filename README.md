@@ -16,11 +16,11 @@ The following commands for a fresh system build:
 ```bash
 # Clone the repository
 nix-env -iA nixpkgs.git
-git clone https://github.com/fabian-gubler/.dotfiles ~/.dotfiles
+git clone https://github.com/fabian-gubler/.dotfiles /data/.dotfiles
 
 # Generate hardware-configuration and replace it
 sudo nixos-generate config
-cd ~/.dotfiles/
+cd /data/.dotfiles/
 cp -f host/hardware-configuration /etc/nixos/hardware-configuration.nix 
 
 # Install NixOS system

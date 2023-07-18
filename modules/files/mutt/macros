@@ -5,7 +5,7 @@
 macro compose Y \
 "<enter-command>set pipe_decode<enter>\
 <first-entry>\
-<pipe-entry>pandoc -s -f markdown+hard_line_breaks+autolink_bare_uris-blank_before_blockquote --self-contained --variable=pagetitle:'message' -o ~/msg.html --resource-path ~/.dotfiles/modules/files/mutt/templates/ --template email <enter>\
+<pipe-entry>pandoc -s -f markdown+hard_line_breaks+autolink_bare_uris-blank_before_blockquote --self-contained --variable=pagetitle:'message' -o ~/msg.html --resource-path /data/.dotfiles/modules/files/mutt/templates/ --template email <enter>\
 <enter-command>unset pipe_decode<enter>\
 <attach-file>~/msg.html<enter>\
 <toggle-disposition><toggle-unlink>\
@@ -15,7 +15,7 @@ macro compose Y \
 macro compose m \
 "<enter-command>set pipe_decode<enter>\
 <first-entry>\
-<pipe-entry>pandoc -s -f markdown+hard_line_breaks+autolink_bare_uris-blank_before_blockquote --self-contained --variable=pagetitle:'message' -o ~/msg.html --resource-path ~/.dotfiles/modules/files/mutt/templates/ --template email <enter>\
+<pipe-entry>pandoc -s -f markdown+hard_line_breaks+autolink_bare_uris-blank_before_blockquote --self-contained --variable=pagetitle:'message' -o ~/msg.html --resource-path /data/.dotfiles/modules/files/mutt/templates/ --template email <enter>\
 <enter-command>unset pipe_decode<enter>\
 <attach-file>~/msg.html<enter>\
 <toggle-disposition><toggle-unlink>\

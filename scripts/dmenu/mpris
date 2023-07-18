@@ -44,7 +44,7 @@ sel=$(printf \
 ————————————————
 %s' "$status" | dmenu -i -l -1 -p '👑 MPRIS menu 👑')
 
-install_dir=$HOME/.dotfiles/scripts/dmenu/
+install_dir=/data/.dotfiles/scripts/dmenu/
 
 case "$sel" in
     ';'*) playerctl play-pause ;;

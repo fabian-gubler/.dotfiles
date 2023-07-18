@@ -11,7 +11,7 @@
 
     ];
     extraConfig = ''
-      source ~/.dotfiles/modules/programs/mail/files/variables| # pipe indicates executable
+      source /data/.dotfiles/modules/programs/mail/files/variables| # pipe indicates executable
 	  mailboxes "=INBOX" "=Drafts" "=Spam" "=Trash" "=Sent" "=Archive"
 
                       		'';

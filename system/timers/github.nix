@@ -23,7 +23,7 @@ in
     };
     path = with pkgs; [ git ];
     script = ''
-      	cd ${homeDirectory}/.dotfiles 
+      	cd /data/.dotfiles 
       	git add . 
       	git commit -m 'automated update' --allow-empty
       	(git push) || exit 0

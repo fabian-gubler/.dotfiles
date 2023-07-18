@@ -14,7 +14,7 @@
 	TIMEWARRIORDB = "/data/nextcloud/todo/timewarrior";
     MANPAGER = "nvim +Man!";
     ANKI_BASE = "/data/nextcloud/apps/anki-data";
-    PATH = "\${PATH}:\${XDG_BIN_HOME}:\${HOME}/.dotfiles/scripts/utils:\${HOME}/.dotfiles/scripts/dmenu:\${HOME}/.dotfiles/scripts/tmux:\${HOME}/go/bin";
+    PATH = "\${PATH}:\${XDG_BIN_HOME}:/data/.dotfiles/scripts/utils:/data/.dotfiles/scripts/dmenu:/data/.dotfiles/scripts/tmux:\${HOME}/go/bin";
   };
 
   # Packages that should be installed to the user profile.

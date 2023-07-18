@@ -31,7 +31,7 @@
       dv = "cd /data/nextcloud/todo/dev; nvim -c 'sort' dev.txt";
       u = "todo.sh -d /data/nextcloud/todo/uni/config";
       uv = "cd /data/nextcloud/todo/uni; nvim -c 'sort' uni.txt";
-      sc = "cd ~/.dotfiles/scripts/utils/ && exa -a";
+      sc = "cd /data/.dotfiles/scripts/utils/ && exa -a";
     };
 
     envExtra = ''
@@ -64,11 +64,11 @@
     # TODO: prompt_fix & lfcd.sh impure (e.g. with basedir)
     initExtra = '' 
 	source ${pkgs.pure-prompt}/share/zsh/site-functions/prompt_pure_setup
-	source ~/.dotfiles/modules/programs/zsh/prompt_fix
+	source /data/.dotfiles/modules/programs/zsh/prompt_fix
 	PURE_CMD_MAX_EXEC_TIME=99999999999999
 	zstyle ':prompt:pure:prompt:*' color "#D8DEE9"
 
-	source ~/.dotfiles/modules/programs/zsh/lfcd.sh
+	source /data/.dotfiles/modules/programs/zsh/lfcd.sh
 	bindkey -e 
 	bindkey -s '^f' 'lfcd\n'
 
@@ -79,7 +79,7 @@
 			:
 		else
 			echo ""
-			khal -c ~/.dotfiles/modules/files/khal/config.tasks list -a task now $@
+			khal -c /data/.dotfiles/modules/files/khal/config.tasks list -a task now $@
 		fi
 	}
 
