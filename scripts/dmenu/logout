@@ -20,7 +20,7 @@ declare -a options=(
 "Lock"
 "Suspend"
 "Shutdown"
-"Restart"
+"Reboot"
 "Monitor"
 )
 
