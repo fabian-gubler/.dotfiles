@@ -28,7 +28,6 @@
       autorandr
       spicetify-cli
       newsboat
-      signal-desktop
 	  playerctl
 	  postman
 	  flameshot
@@ -40,7 +39,7 @@
 	  jetbrains.idea-community
 	  # bitwig-studio
       firefox
-	  jdk
+	  # jdk
 	  lazydocker
 	  gradle
 	  tree
