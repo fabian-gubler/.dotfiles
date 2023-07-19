@@ -29,11 +29,11 @@ at $time << ENDMARKER
 ENDMARKER
 
 # do not disturb
-while true; do
-    read -p "Disable notifications? (y/n) " yn
-    case $yn in
-        [Yy]* ) dunstctl set-paused true; break;;
-        [Nn]* ) dunstctl set-paused false; break;;
-        * ) echo "Please answer yes or no. ";;
-    esac
-done
+# while true; do
+#     read -p "Disable notifications? (y/n) " yn
+#     case $yn in
+#         [Yy]* ) dunstctl set-paused true; break;;
+#         [Nn]* ) dunstctl set-paused false; break;;
+#         * ) echo "Please answer yes or no. ";;
+#     esac
+# done
