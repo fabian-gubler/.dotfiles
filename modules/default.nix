@@ -41,7 +41,7 @@
 	  jetbrains.idea-community
 	  # bitwig-studio
       firefox
-	  # jdk
+	  jdk17
 	  lazydocker
 	  gradle
 	  tree
