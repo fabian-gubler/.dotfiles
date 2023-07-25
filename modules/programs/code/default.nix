@@ -10,9 +10,9 @@ let
     # appearance
     "window.zoomLevel" = 2;
     "editor.minimap.enabled" = false;
-    "workbench.activityBar.visible" = false;
-    "workbench.statusBar.visible" = false;
-    "window.menuBarVisibility" = "toggle";
+    # "workbench.activityBar.visible" = false;
+    # "workbench.statusBar.visible" = false;
+    # "window.menuBarVisibility" = "toggle";
 
     # vscode neovim
     "extensions.experimental.affinity" = {

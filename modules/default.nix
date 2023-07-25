@@ -38,8 +38,9 @@
 	  ncdu
 	  conda
 	  timetrap
+	  at
 	  jetbrains.idea-community
-	  vscode
+	  obsidian
 	  # bitwig-studio
       firefox
 	  jdk17
