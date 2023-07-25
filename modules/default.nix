@@ -39,6 +39,7 @@
 	  conda
 	  timetrap
 	  jetbrains.idea-community
+	  vscode
 	  # bitwig-studio
       firefox
 	  jdk17
