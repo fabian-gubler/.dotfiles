@@ -29,6 +29,7 @@
       autorandr
       spicetify-cli
       newsboat
+	  sqlite
 	  playerctl
 	  postman
 	  maven
