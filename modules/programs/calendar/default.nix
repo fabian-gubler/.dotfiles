@@ -1,8 +1,8 @@
 { pkgs, config, ... }:
 let
   # TODO: Make pure (remove hardcoding)
-  urlStore = "${config.home.homeDirectory}/.dotfiles/modules/programs/calendar/files/get-url.sh";
-  usernameStore = "${config.home.homeDirectory}/.dotfiles/modules/programs/calendar/files/get-username.sh";
+  urlStore = "/data/.dotfiles/modules/programs/calendar/files/get-url.sh";
+  usernameStore = "/data/.dotfiles/modules/programs/calendar/files/get-username.sh";
   passStore = ''rbw", "get", "hosting'';
 
 in
