@@ -7,15 +7,12 @@
     shellAliases = {
 
       # Shorthands
-      ll = "exa -a";
-      lg = "lazygit";
       v = "nvim";
       nv = "nix run ~/neovim-nix";
       sv = "sudoedit";
       top = "gotop -l minimal";
       mutt = "neomutt";
       gpush = "git add . && git commit -m 'manual update' && git push";
-      ".." = "cd ..";
 	  gl = "nix run --override-input nixpkgs nixpkgs/nixos-21.11 --impure github:guibou/nixGL -- ";
 	  pandock = ''
 		  docker run --rm \
