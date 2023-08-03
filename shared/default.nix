@@ -25,6 +25,7 @@
     [
       neomutt
       dunst
+	  azure-cli
 	  remmina
       autorandr
       spicetify-cli
