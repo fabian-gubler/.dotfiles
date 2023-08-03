@@ -41,8 +41,8 @@
         "<ctrl-o>" = "back";
         "<ctrl-i>" = "forward";
         "xx" = "config-cycle tabs.show always never;; config-cycle statusbar.show always never";
-        "b" = "spawn --userscript /data/.dotfiles/modules/programs/qutebrowser/files/rofi-menu marks";
-        "B" = "spawn --userscript /data/.dotfiles/modules/programs/qutebrowser/files/rofi-menu marks-tab";
+        "b" = "spawn --userscript /data/.dotfiles/shared/programs/qutebrowser/files/rofi-menu marks";
+        "B" = "spawn --userscript /data/.dotfiles/shared/programs/qutebrowser/files/rofi-menu marks-tab";
         ",m" = "hint links spawn --detach mpv {hint-url}";
         "<ctrl-r>" = "reload";
         "d" = "nop";
@@ -87,7 +87,7 @@
           "https://easylist.to/easylist/easyprivacy.txt"
           "https://secure.fanboy.co.nz/fanboy-cookiemonster.txt"
         ];
-        user_stylesheets = "/data/.dotfiles/modules/programs/qutebrowser/files/userstyles.css";
+        user_stylesheets = "/data/.dotfiles/shared/programs/qutebrowser/files/userstyles.css";
       };
 
       colors = {

@@ -76,7 +76,7 @@
 			:
 		else
 			echo ""
-			khal -c /data/.dotfiles/modules/files/khal/config.tasks list -a task now $@
+			khal -c /data/.dotfiles/shared/files/khal/config.tasks list -a task now $@
 		fi
 	}
 

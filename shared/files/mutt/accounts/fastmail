@@ -1,9 +1,9 @@
 # vi: ft=muttrc
 
-source /data/.dotfiles/modules/files/mutt/colors
-source /data/.dotfiles/modules/files/mutt/macros
-source /data/.dotfiles/modules/files/mutt/notmuch
-source /data/.dotfiles/modules/files/mutt/variables| # pipe indicates executable
+source /data/.dotfiles/shared/files/mutt/colors
+source /data/.dotfiles/shared/files/mutt/macros
+source /data/.dotfiles/shared/files/mutt/notmuch
+source /data/.dotfiles/shared/files/mutt/variables| # pipe indicates executable
 
 # options
 set query_command = "khard email --parsable --search-in-source-files '%s'"
@@ -27,7 +27,7 @@ set include						# include message in replies
 auto_view text/html				# automatically show html (mailcap uses lynx)
 set editor = 'nvim'
 set sort = 'reverse-date'
-set mailcap_path = /data/.dotfiles/modules/files/mutt/mailcap
+set mailcap_path = /data/.dotfiles/shared/files/mutt/mailcap
 set sidebar_width = 20
 mailboxes "=INBOX" "=Sent" "=Trash" "=Spam" "=Archive" "=Drafts" 
 

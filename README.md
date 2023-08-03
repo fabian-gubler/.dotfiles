@@ -35,7 +35,7 @@ Check out many possible methods: [Link](https://unix.stackexchange.com/questions
 
 ## Structure
 - `host` everything that is system based (e.g. hardware, system packages, window manager)
-- `modules` home-manager and .dotfiles for my favorite programs
+- `shared` home-manager and .dotfiles for my favorite programs
 - `scripts` collection of personal or modified scripts
 
 ## Philosophy: Non Functional Properties
