@@ -74,7 +74,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.fabian = {
-                imports = [ ./modules spicetify-nix.homeManagerModules.default ];
+                imports = [ ./shared spicetify-nix.homeManagerModules.default ];
 
                 programs.spicetify = {
                   enable = true;
@@ -102,7 +102,7 @@
           inherit pkgs;
           modules = [
             {
-              imports = [ ./modules spicetify-nix.homeManagerModules.default ];
+              imports = [ ./shared spicetify-nix.homeManagerModules.default ];
 
               home = {
                 username = "${user}";

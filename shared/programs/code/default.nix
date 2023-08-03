@@ -28,7 +28,7 @@ in
 {
 
   programs.vscode = {
-    enable = false;
+    enable = true;
     extensions = with pkgs.vscode-extensions; [
       # ms-toolsai.jupyter
       asvetliakov.vscode-neovim
