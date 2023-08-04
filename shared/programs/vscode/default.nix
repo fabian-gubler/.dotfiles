@@ -8,12 +8,13 @@ let
     "update.mode" = "none";
 
     # appearance
-    "window.zoomLevel" = 2;
+    "window.zoomLevel" = 1.5;
     "editor.minimap.enabled" = false;
     # "workbench.activityBar.visible" = false;
     # "workbench.statusBar.visible" = false;
     # "window.menuBarVisibility" = "toggle";
 
+	editor.inlineSuggest.enabled = true;
     # vscode neovim
     "extensions.experimental.affinity" = {
       "asvetliakov.vscode-neovim" = 1;
@@ -30,11 +31,17 @@ in
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
-      # ms-toolsai.jupyter
+
+      # general
       asvetliakov.vscode-neovim
+      github.copilot
+
+      # data science
+      ms-toolsai.jupyter
+	  ms-toolsai.jupyter-keymap
+      ms-python.python
 
       # abap
-# refs/remotes/origin/main
       # larshp.vscode-abap # syntax highlighting
       # larshp.vscode-abaplint # linter
       # hudakf.cds # cds language support

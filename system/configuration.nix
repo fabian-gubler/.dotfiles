@@ -60,6 +60,9 @@ in
   # virtualization
   virtualisation.docker.enable = true;
 
+
+  services.gnome.gnome-keyring.enable = true; # required for some vs code extensions
+
   # Display Server
   services.xserver = {
     enable = true;

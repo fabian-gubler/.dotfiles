@@ -17,6 +17,7 @@
         # ...
         pip
         arrow
+		pyspark
 
         browser-cookie3
 
