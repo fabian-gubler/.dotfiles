@@ -25,6 +25,13 @@ let
     "vscode-neovim.neovimPath" = "${pkgs.neovim}/bin/nvim";
     "editor.scrollBeyondLastLine" = false;
     "editor.lineNumbers" = "relative";
+    "files.autoSave" = "afterDelay";
+    "notebook.lineNumbers" = "on";
+
+
+
+    # make shift + enter work with jupyter
+    "jupyter.sendSelectionToInteractiveWindow" = true;
 
   };
 in
