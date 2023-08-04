@@ -18,6 +18,7 @@
         pip
         arrow
 		pyspark
+		nbconvert
 
         browser-cookie3
 

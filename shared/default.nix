@@ -27,6 +27,7 @@
       dunst
 	  azure-cli
 	  remmina
+	  jupyter
       autorandr
       spicetify-cli
       newsboat

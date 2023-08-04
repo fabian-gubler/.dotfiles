@@ -10,11 +10,13 @@ let
     # appearance
     "window.zoomLevel" = 1.5;
     "editor.minimap.enabled" = false;
+    "breadcrumbs.enabled" = false;
     # "workbench.activityBar.visible" = false;
-    # "workbench.statusBar.visible" = false;
-    # "window.menuBarVisibility" = "toggle";
+    "workbench.sideBar.location" = "right";
+    "workbench.statusBar.visible" = false;
+    "window.menuBarVisibility" = "toggle";
 
-	editor.inlineSuggest.enabled = true;
+    editor.inlineSuggest.enabled = true;
     # vscode neovim
     "extensions.experimental.affinity" = {
       "asvetliakov.vscode-neovim" = 1;
@@ -38,7 +40,7 @@ in
 
       # data science
       ms-toolsai.jupyter
-	  ms-toolsai.jupyter-keymap
+      ms-toolsai.jupyter-keymap
       ms-python.python
 
       # abap
