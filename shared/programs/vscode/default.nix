@@ -33,6 +33,21 @@ let
     # make shift + enter work with jupyter
     "jupyter.sendSelectionToInteractiveWindow" = true;
 
+    # editor association
+    "workbench.editorAssociations" = {
+      "*.sql" = "databricks-notebook";
+      "*.scala" = "databricks-notebook";
+      "*.r" = "databricks-notebook";
+    };
+
+    "databricks.connection.default.exportFormats" = {
+      "Scala" = ".scala";
+      "Python" = ".py.ipynb";
+      "SQL" = ".sql";
+      "R" = ".r";
+    };
+
+
   };
 in
 {
@@ -57,7 +72,13 @@ in
       # frehu.abap-snippets # snippets
       # murbani.vscode-abap-remote-fs # connector
     ];
-    # keybindings = [];
+    keybindings = [
+	{
+			key = "shift+enter";
+			command = "jupyter.execSelectionInteractive";
+			when = "editorTextFocus";
+		}
+	];
   };
 
   home.activation.boforeCheckLinkTargets = {
