@@ -14,6 +14,7 @@
       mutt = "neomutt";
       gpush = "git add . && git commit -m 'manual update' && git push";
 	  gl = "nix run --override-input nixpkgs nixpkgs/nixos-21.11 --impure github:guibou/nixGL -- ";
+	  lg = "lazygit";
 	  pandock = ''
 		  docker run --rm \
 		   --volume "$(pwd):/data" \

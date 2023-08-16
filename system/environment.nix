@@ -19,6 +19,8 @@
         arrow
 		pyspark
 		nbconvert
+		databricks-cli
+		jupytext
 
         browser-cookie3
 

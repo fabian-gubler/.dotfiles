@@ -25,6 +25,7 @@
     [
       neomutt
       dunst
+	  dbx
 	  azure-cli
 	  remmina
 	  jupyter
