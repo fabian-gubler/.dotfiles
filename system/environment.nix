@@ -17,10 +17,10 @@
         # ...
         pip
         arrow
-		pyspark
-		nbconvert
-		databricks-cli
-		jupytext
+        pyspark
+        nbconvert
+        databricks-cli
+        jupytext
 
         browser-cookie3
 
@@ -84,6 +84,14 @@
       qemu_kvm
       virtualbox
       pandoc-lua-filters
+      # scala
+      dotty
+      coursier
+      scalafmt
+      sbt
+      # databases
+      pgadmin4-desktopmode
+
     ]
   ;
 
@@ -92,7 +100,7 @@
     XDG_CACHE_HOME = "\${HOME}/.cache";
     XDG_CONFIG_HOME = "\${HOME}/.config";
     XDG_BIN_HOME = "\${HOME}/.local/bin";
-	TIMEWARRIORDB = "/data/nextcloud/todo/timewarrior";
+    TIMEWARRIORDB = "/data/nextcloud/todo/timewarrior";
     XDG_DATA_HOME = "\${HOME}/.local/share";
     XDG_DOWNLOAD_DIR = "\${HOME}/Downloads";
     QT_SCALE_FACTOR = "1.5";
