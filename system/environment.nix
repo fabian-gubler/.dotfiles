@@ -76,7 +76,6 @@
       python3
       obsidian
       qbittorrent
-	  beeper
       pavucontrol
       anki-bin
       tomcat9

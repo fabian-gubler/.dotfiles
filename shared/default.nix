@@ -11,7 +11,7 @@
 
   systemd.user.sessionVariables = rec {
     EDITOR = "nvim";
-	TIMEWARRIORDB = "/data/nextcloud/todo/timewarrior";
+    TIMEWARRIORDB = "/data/nextcloud/todo/timewarrior";
     MANPAGER = "nvim +Man!";
     ANKI_BASE = "/data/nextcloud/apps/anki-data";
     PATH = "\${PATH}:\${XDG_BIN_HOME}:/data/.dotfiles/scripts/utils:/data/.dotfiles/scripts/dmenu:/data/.dotfiles/scripts/tmux:\${HOME}/go/bin";
@@ -20,37 +20,38 @@
   # Packages that should be installed to the user profile.
   home.packages = with pkgs;
     [ notmuch-mutt notmuch lynx ] ++
-	[ python310Packages.pyarrow ] ++
+    [ python310Packages.pyarrow ] ++
     [ khal khard vdirsyncer inotify-tools ] ++
     [
       neomutt
       dunst
-	  dbx
-	  azure-cli
-	  remmina
-	  jupyter
+      dbx
+      beeper
+      azure-cli
+      remmina
+      jupyter
       autorandr
       spicetify-cli
       newsboat
-	  sqlite
-	  playerctl
-	  postman
-	  maven
-	  flameshot
-	  blanket
-	  timewarrior
-	  ncdu
-	  conda
-	  timetrap
-	  at
-	  jetbrains.idea-community
-	  obsidian
-	  # bitwig-studio
+      sqlite
+      playerctl
+      postman
+      maven
+      flameshot
+      blanket
+      timewarrior
+      ncdu
+      conda
+      timetrap
+      at
+      jetbrains.idea-community
+      obsidian
+      # bitwig-studio
       firefox
-	  jdk17
-	  lazydocker
-	  gradle
-	  tree
+      jdk17
+      lazydocker
+      gradle
+      tree
     ] ++
     [ rnix-lsp neovim nodejs cargo gcc gnumake cmake ccls go ] ++
     [ nodePackages.bash-language-server ] ++
