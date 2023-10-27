@@ -89,7 +89,6 @@
       ncdu
       at
       obsidian
-      firefox
       rnix-lsp
       neovim
       nodejs
@@ -145,5 +144,12 @@
   programs.watson = {
     enable = true;
     enableZshIntegration = true;
+  };
+
+  programs.firefox = {
+    enable = true;
+    package = pkgs.firefox.override {
+      cfg = { enableTridactylNative = true; };
+    };
   };
 }

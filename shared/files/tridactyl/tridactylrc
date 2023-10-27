@@ -1,0 +1,65 @@
+" For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
+" vim: set filetype=tridactyl
+" Plug 'tridactyl/vim-tridactyl'
+
+
+set allowautofocus false
+set viewsource default
+
+" Sometimes the status bar in the bottom left corner overlaps the Tridactyl
+" command line, so set an option to move the status bar to the right.
+guiset_quiet hoverlink right
+guiset_quiet tabs count
+
+
+" 使用浏览器默认搜索
+unbind <C-f>
+
+bind n findnext 1
+bind N findnext -1
+
+" 平滑滚动
+set smoothscroll true
+
+" hint按键
+set hintchars "arstdhneio"
+
+" Handy multiwindow/multitasking binds
+bind gd tabdetach
+bind gD composite tabduplicate; tabdetach
+
+
+bind --mode=normal <C-P> winopen -private
+bind --mode=ex     <C-a> text.beginning_of_line
+bind --mode=insert <C-a> text.beginning_of_line
+bind --mode=input  <C-a> text.beginning_of_line
+bind --mode=ex     <C-e> text.end_of_line
+bind --mode=insert <C-e> text.end_of_line
+bind --mode=input  <C-e> text.end_of_line
+bind --mode=ex     <C-f> text.forward_word
+bind --mode=insert <C-f> text.forward_word
+bind --mode=input  <C-f> text.forward_word
+bind --mode=ex     <C-k> text.kill_line
+bind --mode=insert <C-k> text.kill_line
+bind --mode=input  <C-k> text.kill_line
+bind --mode=ex     <C-u> text.backward_kill_line
+bind --mode=insert <C-u> text.backward_kill_line
+bind --mode=input  <C-u> text.backward_kill_line
+bind --mode=ex     <C-V> composite getclip selection | text.insert_text
+bind --mode=insert <C-V> composite getclip selection | text.insert_text
+bind --mode=input  <C-V> composite getclip selection | text.insert_text
+bind --mode=ex     <C-w> text.backward_kill_word
+bind --mode=insert <C-w> text.backward_kill_word
+bind --mode=input  <C-w> text.backward_kill_word
+
+
+
+" ====================搜索引擎====================
+" ** Search Engines
+" Disable all searchurls
+jsb Object.keys(tri.config.get("searchurls")).reduce((prev, u) => prev.catch(()=>{}).then(_ => tri.excmds.setnull("searchurls." + u)), Promise.resolve())
+
+" Make Tridactyl work on more sites at the expense of some security. For
+" details, read the comment at the top of this file.
+fixamo_quiet
+
