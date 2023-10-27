@@ -1,0 +1,30 @@
+% LaTeX-modern-document package : header
+% 
+% (c) Thomas Bénas
+%
+%% This program can be redistributed and/or modified under the terms
+%% of the LaTeX Project Public License Distributed from CTAN archives
+%% in directory macros/latex/base/lppl.txt.
+% 
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+
+\RequirePackage{tikz}% draw with LaTeX
+\RequirePackage{etoolbox}% some tools for others packages
+\RequirePackage{fancyhdr}% for layout (header, footer)
+\RequirePackage{xcolor}% custom color
+\RequirePackage[scaled=.85]{helvet}
+\ProvidesPackage{core/packages/style/header}
+[2022/04/11 v1.0 LaTeX package for the header of each page]
+
+\pagestyle{fancy}
+\fancyhead[L,C]{}
+\fancyhead[R]{\textbf{\title}}
+\fancyfoot[L]{From: K. Grant}
+\fancyfoot[C]{To: Dean A. Smith}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{2pt}
+
+\endinput
+%%
+%% End of file `header.sty'.

@@ -1,0 +1,16 @@
+
+*.pdf
+*.log
+*.aux
+*.out
+*.fdb_latexmk
+*.*.gz
+*.fls
+*.toc
+
+!/examples/document.pdf
+*.bcf
+*.bbl
+*.blg
+*.xml
+.DS_Store
