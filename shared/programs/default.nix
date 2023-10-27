@@ -1,9 +1,7 @@
 { config, pkgs, lib, ... }: {
 
   imports = [
-    ./autorandr
     ./autojump
-    ./sioyek
     ./tmux
 	./alacritty
     ./mail
