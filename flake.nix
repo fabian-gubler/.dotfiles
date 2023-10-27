@@ -97,33 +97,33 @@
           ];
         };
       };
-      homeConfigurations = {
-        generic = inputs.home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            {
-              imports = [ ./shared spicetify-nix.homeManagerModules.default ];
-
-              home = {
-                username = "${user}";
-                homeDirectory = "/home/${user}";
-              };
-
-              targets.genericLinux.enable = true;
-
-              programs.spicetify = {
-                enable = true;
-
-                theme = spicePkgs.themes.catppuccin-mocha;
-                colorScheme = "Default";
-
-                enabledExtensions = with spicePkgs.extensions; [
-                  keyboardShortcut # vim-like navigation
-                ];
-              };
-            }
-          ];
-        };
-      };
+      # homeConfigurations = {
+      #   generic = inputs.home-manager.lib.homeManagerConfiguration {
+      #     inherit pkgs;
+      #     modules = [
+      #       {
+      #         imports = [ ./shared spicetify-nix.homeManagerModules.default ];
+      #
+      #         home = {
+      #           username = "${user}";
+      #           homeDirectory = "/home/${user}";
+      #         };
+      #
+      #         targets.genericLinux.enable = true;
+      #
+      #         programs.spicetify = {
+      #           enable = true;
+      #
+      #           theme = spicePkgs.themes.catppuccin-mocha;
+      #           colorScheme = "Default";
+      #
+      #           enabledExtensions = with spicePkgs.extensions; [
+      #             keyboardShortcut # vim-like navigation
+      #           ];
+      #         };
+      #       }
+      #     ];
+      #   };
+      # };
     };
 }

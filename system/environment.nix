@@ -4,7 +4,7 @@
   # Settings
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = [ "electron-12.2.3" ];
+    permittedInsecurePackages = [ "electron-24.8.6"];
   };
   nix.package = pkgs.nixStable;
 
