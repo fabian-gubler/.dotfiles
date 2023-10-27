@@ -18,53 +18,108 @@
   };
 
   # Packages that should be installed to the user profile.
-  home.packages = with pkgs;
-    [ notmuch-mutt notmuch lynx ] ++
-    [ python310Packages.pyarrow ] ++
-    [ khal khard vdirsyncer inotify-tools ] ++
+  home.packages =
+    let
+      pythonPackages = p: with p; [
+        # ...
+        pip
+        arrow
+        pyspark
+        nbconvert
+        databricks-cli
+        jupytext
+
+        browser-cookie3
+
+        # Custome Packages
+        (
+          buildPythonPackage
+            rec {
+              pname = "fahrplan";
+              version = "1.1.2";
+              src = fetchPypi {
+                inherit pname version;
+                sha256 = "sha256-2gg1rm7hrv5k+SuC+KnffzE+QexeQpmFlhp6kpTiS2w=";
+              };
+              doCheck = false;
+              propagatedBuildInputs = [
+                texttable
+                requests
+                python-dateutil
+              ];
+            }
+        )
+      ];
+    in
+    with pkgs;
+
+    # [ (python3.withPackages pythonPackages) ] ++
+
     [
+      notmuch-mutt
+      notmuch
+      lynx
+      dmenu
+      sxiv
+      hsetroot
+      xorg.xkill
+      xorg.xinit
+      xclip
+      clipnotify
+      clipmenu
+      khal
+      khard
+      vdirsyncer
+      inotify-tools
+      (mpv.override { scripts = [ mpvScripts.mpris ]; })
+      jq
+      python3
+      obsidian
+      qbittorrent
+      anki-bin
+      pgadmin4-desktopmode
       neomutt
       dunst
-      dbx
-      beeper
-      azure-cli
-      remmina
       jupyter
-      autorandr
-      spicetify-cli
       newsboat
       sqlite
-      playerctl
       postman
-      maven
       flameshot
-      blanket
       timewarrior
       ncdu
-      conda
-      timetrap
       at
-      jetbrains.idea-community
       obsidian
-      # bitwig-studio
       firefox
-      jdk17
-      lazydocker
-      gradle
-      tree
-    ] ++
-    [ rnix-lsp neovim nodejs cargo gcc gnumake cmake ccls go ] ++
-    [ nodePackages.bash-language-server ] ++
-    [ texlive.combined.scheme-small ] ++
-    [ todo-txt-cli ] ++
-    [ rbw authy protonmail-bridge ] ++
-    [ zathura okular pandoc poppler_utils ] ++
-    [ gimp xournalpp colorpicker libreoffice ] ++
-    [ lazygit lf exa fzf gotop trash-cli xdragon ] ++
-    [ xdotool pinentry ] ++
-    [ wget file ripgrep ] ++
-    [ zip unzip unrar steam-run ] ++
-    [ anki-bin markdown-anki-decks mkdocs ]
+      rnix-lsp
+      neovim
+      nodejs
+      rbw
+      authy
+      todo-txt-cli
+      okular
+      pandoc
+      poppler_utils
+      gimp
+      colorpicker
+      libreoffice
+      lazygit
+      lf
+      exa
+      fzf
+      gotop
+      trash-cli
+      xdragon
+      wget
+      file
+      ripgrep
+      xdotool
+      pinentry
+      zip
+      unzip
+      unrar
+      anki-bin
+      markdown-anki-decks
+    ]
   ;
 
 

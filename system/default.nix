@@ -3,8 +3,8 @@
   imports = [
     ./hardware-configuration.nix
 	./configuration.nix
-	./environment.nix
 	./overlays.nix
+	./services.nix
 	./timers
   ];
 

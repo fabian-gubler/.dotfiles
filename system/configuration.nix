@@ -8,14 +8,12 @@ let
 
 in
 {
+
   # Boot loader
+  boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/vda";
   boot.loader.efi.canTouchEfiVariables = true;
-
-  # Guest Agent
-  services.spice-vdagentd.enable = true;
-  services.qemuGuest.enable = true;
 
   # Enable OpenGL
   hardware.opengl.enable = true;
@@ -28,12 +26,19 @@ in
   };
 
   virtualisation.libvirtd.enable = true;
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "fabian" ];
-  boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
+  virtualisation.docker.enable = true;
+
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [ "electron-24.8.6" ];
+  };
+
+
+  system.stateVersion = "22.11";
 
   # Nix Settings
   nix = {
+	package = pkgs.nixStable;
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
     };
@@ -54,31 +59,9 @@ in
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "docker" "libvirtd" "qemu-libvirtd" ];
-    # shell = pkgs.zsh;
   };
 
-  # virtualization
-  virtualisation.docker.enable = true;
-
-
-  services.gnome.gnome-keyring.enable = true; # required for some vs code extensions
-
-  # Display Server
-  services.xserver = {
-    enable = true;
-    layout = "ch";
-    windowManager.dwm.enable = true;
-    displayManager = {
-      autoLogin.enable = true;
-      autoLogin.user = "fabian";
-      defaultSession = "none+dwm";
-    };
-  };
-
-  services.atd.enable = true;
   programs.dconf.enable = true;
-
-  services.flatpak.enable = true;
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
@@ -87,18 +70,6 @@ in
   # Databases
 
   # link: https://nixos.wiki/wiki/PostgreSQL
-  services.postgresql = {
-    enable = true;
-    # package = pkgs.postgresql_15; # current 15.4
-    ensureDatabases = [ "mydatabase" ];
-    authentication = pkgs.lib.mkOverride 10 ''
-      local all all              trust
-      host  all all 127.0.0.1/32 trust
-      host  all all ::1/128      trust
-    '';
-    enableTCPIP = true;
-    # port = 5432;
-  };
 
   # TODO: System-wide GTK Theme
   qt = {
@@ -109,5 +80,22 @@ in
 
   # Use same keyboard layout for tty
   console.useXkbConfig = true;
+
+  environment.sessionVariables = rec {
+    XDG_CACHE_HOME = "\${HOME}/.cache";
+    XDG_CONFIG_HOME = "\${HOME}/.config";
+    XDG_BIN_HOME = "\${HOME}/.local/bin";
+    TIMEWARRIORDB = "/data/nextcloud/todo/timewarrior";
+    XDG_DATA_HOME = "\${HOME}/.local/share";
+    XDG_DOWNLOAD_DIR = "\${HOME}/Downloads";
+    QT_SCALE_FACTOR = "1.5";
+
+    # Duplicate: in home-manager
+    EDITOR = "nvim";
+    MANPAGER = "nvim +Man!";
+    ANKI_BASE = "/data/nextcloud/apps/anki-data";
+    PATH = "\${PATH}:\${XDG_BIN_HOME}:/data/.dotfiles/scripts/utils:/data/.dotfiles/scripts/dmenu:/data/.dotfiles/scripts/tmux";
+
+  };
 
 }
