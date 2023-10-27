@@ -2,7 +2,6 @@
 " vim: set filetype=tridactyl
 " Plug 'tridactyl/vim-tridactyl'
 
-
 set allowautofocus false
 set viewsource default
 
