@@ -9,12 +9,22 @@ in
   programs = {
     msmtp.enable = true;
     mbsync.enable = true;
+	notmuch = {
+		enable = true;
+	};
+    astroid = {
+      enable = true;
+	  # externalEditor = "kitty -e nvim %1";
+
+    };
   };
 
   accounts.email.accounts = {
     fastmail = {
       address = "gubler@fastmail.com";
+	  notmuch.enable = true;
       maildir = { path = "~/mail/"; };
+realName = "Gubler";
       primary = true;
       folders = {
         inbox = "INBOX";
@@ -28,14 +38,23 @@ in
         host = "imap.fastmail.com";
         port = 993;
       };
-      thunderbird.enable = true;
+      astroid = {
+        enable = true;
+		sendMailCommand = "msmtpq --read-envelope-from --read-recipients";
+        # extraConfig = {
+        #   astroid.notmuch.db = "~/mail";
+        # };
+      };
+      thunderbird = {
+        enable = true;
+      };
       mbsync = {
         enable = true;
         create = "imap";
         expunge = "both";
         extraConfig.local = {
-          Path = "~/mail/";
-          Inbox = "~/mail/INBOX/";
+          Path = "~/Maildir/";
+          Inbox = "~/Maildir/INBOX/";
         };
         groups.fastmail.channels = {
           inbox.extraConfig = {

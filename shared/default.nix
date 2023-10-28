@@ -56,8 +56,6 @@
     # [ (python3.withPackages pythonPackages) ] ++
 
     [
-      notmuch-mutt
-      notmuch
       lynx
       dmenu
       sxiv
@@ -83,6 +81,7 @@
       jupyter
       newsboat
       sqlite
+	  thunderbird
       postman
       flameshot
       timewarrior
