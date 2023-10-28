@@ -86,6 +86,7 @@
       postman
       flameshot
 	  gcc
+	  tuir
       timewarrior
       ncdu
       at

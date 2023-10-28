@@ -4,14 +4,10 @@
   inputs = {
     nixpkgs.url = github:nixos/nixpkgs/nixos-23.05;
     unstable.url = github:nixos/nixpkgs/nixos-unstable;
-
     home-manager = {
       url = github:nix-community/home-manager/release-23.05;
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Additional Modules
-    hosts.url = github:StevenBlack/hosts; # blocks inappropriate websites
   };
 
   outputs =
@@ -19,7 +15,6 @@
     , nixpkgs
     , unstable
     , home-manager
-    , hosts
     , ...
     }:
     let
@@ -63,7 +58,7 @@
 
             ./system
 
-			# Include home-manager in nixos installations
+            # Include home-manager in nixos installations
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -74,14 +69,10 @@
               };
             }
 
-            hosts.nixosModule
-            {
-              networking.stevenBlackHosts.enable = true;
-            }
-
           ];
         };
       };
+
       # for other systems
       homeConfigurations = {
         generic = inputs.home-manager.lib.homeManagerConfiguration {
@@ -89,14 +80,11 @@
           modules = [
             {
               imports = [ ./shared ];
-
               home = {
                 username = "${user}";
                 homeDirectory = "/home/${user}";
               };
-
               targets.genericLinux.enable = true;
-
             }
           ];
         };
