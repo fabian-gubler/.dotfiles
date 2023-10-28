@@ -54,6 +54,7 @@
       plugins = [
         { name = "hlissner/zsh-autopair"; tags = [ defer:2 ]; } # fix: not working
         { name = "Aloxaf/fzf-tab"; }
+		{ name = "joshskidmore/zsh-fzf-history-search"; }
         { name = "mafredri/zsh-async"; }
         { name = "chisui/zsh-nix-shell"; }
       ];

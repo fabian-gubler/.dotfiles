@@ -1,0 +1,424 @@
+Initializing todesktop runtime
+19:14:59.341 › @todesktop/runtime: AutoUpdater: Setting up UpdaterAgent
+Platform: linux
+App path: /nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar
+App directory: /nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources
+Process path: /nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources
+User data path: /home/fabian/.config/Beeper
+iMessage log directory: /home/fabian/.config/Beeper/logs/mautrix-imessage
+This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). The promise rejected with the reason:
+undefined
+Gtk-Message: 17:14:59.443: Failed to load module "canberra-gtk-module"
+Gtk-Message: 17:14:59.444: Failed to load module "pk-gtk-module"
+Gtk-Message: 17:14:59.444: Failed to load module "canberra-gtk-module"
+Gtk-Message: 17:14:59.444: Failed to load module "pk-gtk-module"
+[47:1028/171459.467762:ERROR:angle_platform_impl.cc(43)] Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+ERR: Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+[47:1028/171459.467896:ERROR:gl_display.cc(504)] EGL Driver message (Critical) eglInitialize: glXQueryExtensionsString returned NULL
+[47:1028/171459.467935:ERROR:gl_display.cc(793)] eglInitialize OpenGL failed with error EGL_NOT_INITIALIZED, trying next display type
+[47:1028/171459.468152:ERROR:angle_platform_impl.cc(43)] Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+ERR: Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+[47:1028/171459.468203:ERROR:gl_display.cc(504)] EGL Driver message (Critical) eglInitialize: glXQueryExtensionsString returned NULL
+[47:1028/171459.468234:ERROR:gl_display.cc(793)] eglInitialize OpenGLES failed with error EGL_NOT_INITIALIZED
+[47:1028/171459.468266:ERROR:gl_display.cc(819)] Initialization of all EGL display types failed.
+[47:1028/171459.468298:ERROR:gl_ozone_egl.cc(26)] GLDisplayEGL::Initialize failed.
+[47:1028/171459.469479:ERROR:angle_platform_impl.cc(43)] Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+ERR: Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+[47:1028/171459.469563:ERROR:gl_display.cc(504)] EGL Driver message (Critical) eglInitialize: glXQueryExtensionsString returned NULL
+[47:1028/171459.469590:ERROR:gl_display.cc(793)] eglInitialize OpenGL failed with error EGL_NOT_INITIALIZED, trying next display type
+[47:1028/171459.469754:ERROR:angle_platform_impl.cc(43)] Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+ERR: Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+[47:1028/171459.469792:ERROR:gl_display.cc(504)] EGL Driver message (Critical) eglInitialize: glXQueryExtensionsString returned NULL
+[47:1028/171459.469821:ERROR:gl_display.cc(793)] eglInitialize OpenGLES failed with error EGL_NOT_INITIALIZED
+[47:1028/171459.469847:ERROR:gl_display.cc(819)] Initialization of all EGL display types failed.
+[47:1028/171459.469875:ERROR:gl_ozone_egl.cc(26)] GLDisplayEGL::Initialize failed.
+19:14:59.469 › @todesktop/runtime: AutoUpdater: electron will-finish-launching event emitted { appVersion: '3.71.16', runtimeVersion: '1.3.0' }
+[47:1028/171459.470890:ERROR:viz_main_impl.cc(186)] Exiting GPU process due to errors during initialization
+Web App Path is /nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/webapp.asar/
+iconsPath path is /nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/icons/
+Loading vector config for brand Beeper
+Fetching translation json for locale: en_EN
+Changing application language to en-us
+Fetching translation json for locale: en-us
+Could not fetch translation json for locale: 'en-us' Error: Cannot find module './i18n/strings/en-us.json'
+Require stack:
+- /nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/lib/language-helper.js
+- /nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/lib/electron-main.js
+- 
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1054:15)
+    at n._resolveFilename (node:electron/js2c/browser_init:2:109877)
+    at Module._load (node:internal/modules/cjs/loader:900:27)
+    at f._load (node:electron/js2c/asar_bundle:2:13330)
+    at Module.require (node:internal/modules/cjs/loader:1120:19)
+    at require (node:internal/modules/cjs/helpers:103:18)
+    at AppLocalization.fetchTranslationJson (/nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/lib/language-helper.js:76:20)
+    at /nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/lib/language-helper.js:89:39
+    at Array.forEach (<anonymous>)
+    at AppLocalization.setAppLocale (/nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/lib/language-helper.js:88:17) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/lib/language-helper.js',
+    '/nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/lib/electron-main.js',
+    undefined
+  ]
+}
+Resetting the UI components after locale change
+Resetting the UI components after locale change
+[MainWindowHttp] #1 POST https://o578031.ingest.sentry.io/api/5860012/envelope/?sentry_key=51b38ff78b5e42b3a44114247abf22d6&sentry_version=7&sentry_client=sentry.javascript.electron%2F4.4.0
+[MainWindowHttp] #2 POST https://o578031.ingest.sentry.io/api/5860012/envelope/?sentry_key=51b38ff78b5e42b3a44114247abf22d6&sentry_version=7&sentry_client=sentry.javascript.electron%2F4.4.0
+[75:1028/171459.584502:ERROR:angle_platform_impl.cc(43)] Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+ERR: Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+[75:1028/171459.584606:ERROR:gl_display.cc(504)] EGL Driver message (Critical) eglInitialize: glXQueryExtensionsString returned NULL
+[75:1028/171459.584640:ERROR:gl_display.cc(793)] eglInitialize OpenGL failed with error EGL_NOT_INITIALIZED, trying next display type
+[75:1028/171459.584858:ERROR:angle_platform_impl.cc(43)] Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+ERR: Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+[75:1028/171459.584903:ERROR:gl_display.cc(504)] EGL Driver message (Critical) eglInitialize: glXQueryExtensionsString returned NULL
+[75:1028/171459.584936:ERROR:gl_display.cc(793)] eglInitialize OpenGLES failed with error EGL_NOT_INITIALIZED
+[75:1028/171459.584967:ERROR:gl_display.cc(819)] Initialization of all EGL display types failed.
+[75:1028/171459.585001:ERROR:gl_ozone_egl.cc(26)] GLDisplayEGL::Initialize failed.
+[75:1028/171459.586292:ERROR:angle_platform_impl.cc(43)] Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+ERR: Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+[75:1028/171459.586351:ERROR:gl_display.cc(504)] EGL Driver message (Critical) eglInitialize: glXQueryExtensionsString returned NULL
+[75:1028/171459.586380:ERROR:gl_display.cc(793)] eglInitialize OpenGL failed with error EGL_NOT_INITIALIZED, trying next display type
+[75:1028/171459.586558:ERROR:angle_platform_impl.cc(43)] Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+ERR: Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+[75:1028/171459.586610:ERROR:gl_display.cc(504)] EGL Driver message (Critical) eglInitialize: glXQueryExtensionsString returned NULL
+[75:1028/171459.586640:ERROR:gl_display.cc(793)] eglInitialize OpenGLES failed with error EGL_NOT_INITIALIZED
+[75:1028/171459.586667:ERROR:gl_display.cc(819)] Initialization of all EGL display types failed.
+[75:1028/171459.586694:ERROR:gl_ozone_egl.cc(26)] GLDisplayEGL::Initialize failed.
+[75:1028/171459.588341:ERROR:viz_main_impl.cc(186)] Exiting GPU process due to errors during initialization
+[87:1028/171459.991521:ERROR:angle_platform_impl.cc(43)] Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+ERR: Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+[87:1028/171459.991642:ERROR:gl_display.cc(504)] EGL Driver message (Critical) eglInitialize: glXQueryExtensionsString returned NULL
+[87:1028/171459.991679:ERROR:gl_display.cc(793)] eglInitialize OpenGL failed with error EGL_NOT_INITIALIZED, trying next display type
+[87:1028/171459.991879:ERROR:angle_platform_impl.cc(43)] Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+ERR: Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+[87:1028/171459.991920:ERROR:gl_display.cc(504)] EGL Driver message (Critical) eglInitialize: glXQueryExtensionsString returned NULL
+[87:1028/171459.991949:ERROR:gl_display.cc(793)] eglInitialize OpenGLES failed with error EGL_NOT_INITIALIZED
+[87:1028/171459.991977:ERROR:gl_display.cc(819)] Initialization of all EGL display types failed.
+[87:1028/171459.992008:ERROR:gl_ozone_egl.cc(26)] GLDisplayEGL::Initialize failed.
+[87:1028/171459.993158:ERROR:angle_platform_impl.cc(43)] Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+ERR: Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+[87:1028/171459.993207:ERROR:gl_display.cc(504)] EGL Driver message (Critical) eglInitialize: glXQueryExtensionsString returned NULL
+[87:1028/171459.993235:ERROR:gl_display.cc(793)] eglInitialize OpenGL failed with error EGL_NOT_INITIALIZED, trying next display type
+[87:1028/171459.993383:ERROR:angle_platform_impl.cc(43)] Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+ERR: Display.cpp:1019 (initialize): ANGLE Display::initialize error 12289: glXQueryExtensionsString returned NULL
+[87:1028/171459.993418:ERROR:gl_display.cc(504)] EGL Driver message (Critical) eglInitialize: glXQueryExtensionsString returned NULL
+[87:1028/171459.993446:ERROR:gl_display.cc(793)] eglInitialize OpenGLES failed with error EGL_NOT_INITIALIZED
+[87:1028/171459.993472:ERROR:gl_display.cc(819)] Initialization of all EGL display types failed.
+[87:1028/171459.993497:ERROR:gl_ozone_egl.cc(26)] GLDisplayEGL::Initialize failed.
+[87:1028/171459.994522:ERROR:viz_main_impl.cc(186)] Exiting GPU process due to errors during initialization
+MESA-LOADER: failed to open iris: /run/opengl-driver/lib/dri/iris_dri.so: cannot open shared object file: No such file or directory (search paths /run/opengl-driver/lib/dri, suffix _dri)
+MESA-LOADER: failed to open zink: /run/opengl-driver/lib/dri/zink_dri.so: cannot open shared object file: No such file or directory (search paths /run/opengl-driver/lib/dri, suffix _dri)
+MESA-LOADER: failed to open kms_swrast: /run/opengl-driver/lib/dri/kms_swrast_dri.so: cannot open shared object file: No such file or directory (search paths /run/opengl-driver/lib/dri, suffix _dri)
+MESA-LOADER: failed to open swrast: /run/opengl-driver/lib/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /run/opengl-driver/lib/dri, suffix _dri)
+[67:1028/171500.014336:ERROR:command_buffer_proxy_impl.cc(128)] ContextResult::kTransientFailure: Failed to send GpuControl.CreateCommandBuffer.
+[MainWindowHttp] #2 POST https://o578031.ingest.sentry.io/api/5860012/envelope/?sentry_key=51b38ff78b5e42b3a44114247abf22d6&sentry_version=7&sentry_client=sentry.javascript.electron%2F4.4.0 completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #1 POST https://o578031.ingest.sentry.io/api/5860012/envelope/?sentry_key=51b38ff78b5e42b3a44114247abf22d6&sentry_version=7&sentry_client=sentry.javascript.electron%2F4.4.0 completed got 403 fromCache? false error? net::OK
+sending browser-window-focus to react
+[MainWindowHttp] #32 GET https://api.commandbar.com/latest/5c1d1fff?version=2
+Changing application language to en-us
+Fetching translation json for locale: en-us
+Could not fetch translation json for locale: 'en-us' Error: Cannot find module './i18n/strings/en-us.json'
+Require stack:
+- /nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/lib/language-helper.js
+- /nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/lib/electron-main.js
+- 
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1054:15)
+    at n._resolveFilename (node:electron/js2c/browser_init:2:109877)
+    at Module._load (node:internal/modules/cjs/loader:900:27)
+    at f._load (node:electron/js2c/asar_bundle:2:13330)
+    at Module.require (node:internal/modules/cjs/loader:1120:19)
+    at require (node:internal/modules/cjs/helpers:103:18)
+    at AppLocalization.fetchTranslationJson (/nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/lib/language-helper.js:76:20)
+    at /nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/lib/language-helper.js:89:39
+    at Array.forEach (<anonymous>)
+    at AppLocalization.setAppLocale (/nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/lib/language-helper.js:88:17) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/lib/language-helper.js',
+    '/nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/lib/electron-main.js',
+    undefined
+  ]
+}
+Resetting the UI components after locale change
+[MainWindowHttp] #39 GET https://api.beeper.com/app-manifest
+[MainWindowHttp] #39 GET https://api.beeper.com/app-manifest completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #40 GET https://matrix.beeper.com/_matrix/client/versions
+[MainWindowHttp] #40 GET https://matrix.beeper.com/_matrix/client/versions completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #44 GET https://matrix.beeper.com/_matrix/client/v3/thirdparty/protocols
+[MainWindowHttp] #45 OPTIONS https://matrix.beeper.com/_matrix/client/v3/thirdparty/protocols
+[MainWindowHttp] #45 OPTIONS https://matrix.beeper.com/_matrix/client/v3/thirdparty/protocols completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #32 GET https://api.commandbar.com/latest/5c1d1fff?version=2 completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #48 GET https://frames-commandbar-prod.commandbar.com/index.js
+[MainWindowHttp] #49 GET https://frames-commandbar-prod.commandbar.com/index.css
+[MainWindowHttp] #44 GET https://matrix.beeper.com/_matrix/client/v3/thirdparty/protocols completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #49 GET https://frames-commandbar-prod.commandbar.com/index.css completed got 200 fromCache? true error? net::OK
+[MainWindowHttp] #50 GET https://matrix.beeper.com/_matrix/client/v3/room_keys/version
+[MainWindowHttp] #48 GET https://frames-commandbar-prod.commandbar.com/index.js completed got 200 fromCache? true error? net::OK
+[MainWindowHttp] #51 OPTIONS https://matrix.beeper.com/_matrix/client/v3/room_keys/version
+[MainWindowHttp] #52 GET https://matrix.beeper.com/_matrix/client/v3/voip/turnServer
+[MainWindowHttp] #53 GET https://matrix.beeper.com/_matrix/client/v3/capabilities
+[MainWindowHttp] #54 OPTIONS https://matrix.beeper.com/_matrix/client/v3/voip/turnServer
+[MainWindowHttp] #55 OPTIONS https://matrix.beeper.com/_matrix/client/v3/capabilities
+[MainWindowHttp] #56 POST https://matrix.beeper.com/_matrix/client/v3/keys/upload
+[MainWindowHttp] #57 OPTIONS https://matrix.beeper.com/_matrix/client/v3/keys/upload
+[MainWindowHttp] #51 OPTIONS https://matrix.beeper.com/_matrix/client/v3/room_keys/version completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #55 OPTIONS https://matrix.beeper.com/_matrix/client/v3/capabilities completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #54 OPTIONS https://matrix.beeper.com/_matrix/client/v3/voip/turnServer completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #57 OPTIONS https://matrix.beeper.com/_matrix/client/v3/keys/upload completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #53 GET https://matrix.beeper.com/_matrix/client/v3/capabilities completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #50 GET https://matrix.beeper.com/_matrix/client/v3/room_keys/version completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #56 POST https://matrix.beeper.com/_matrix/client/v3/keys/upload completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #52 GET https://matrix.beeper.com/_matrix/client/v3/voip/turnServer completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #58 GET https://matrix.beeper.com/_matrix/client/v3/pushrules/
+[MainWindowHttp] #59 GET https://beeper.com/.well-known/matrix/client
+[MainWindowHttp] #60 OPTIONS https://matrix.beeper.com/_matrix/client/v3/pushrules/
+[MainWindowHttp] #61 GET https://matrix.beeper.com/_matrix/client/versions
+[MainWindowHttp] #60 OPTIONS https://matrix.beeper.com/_matrix/client/v3/pushrules/ completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #62 GET https://api.commandbar.com/organizations/5c1d1fff/config/?env=latest
+[MainWindowHttp] #63 OPTIONS https://api.commandbar.com/organizations/5c1d1fff/config/?env=latest
+[MainWindowHttp] #61 GET https://matrix.beeper.com/_matrix/client/versions completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #59 GET https://beeper.com/.well-known/matrix/client completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #64 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!EMFXlMXXOUulvhiOXf%3Abeeper.com/members?not_membership=leave&at=s732430433_2_155467_721888540_366329074_93022835_168704226_81154651_0_4447%2Ce8345_d2759_r7421_a5020_y223_t2634_f11
+[MainWindowHttp] #65 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!EMFXlMXXOUulvhiOXf%3Abeeper.com/members?not_membership=leave&at=s732430433_2_155467_721888540_366329074_93022835_168704226_81154651_0_4447%2Ce8345_d2759_r7421_a5020_y223_t2634_f11
+[MainWindowHttp] #65 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!EMFXlMXXOUulvhiOXf%3Abeeper.com/members?not_membership=leave&at=s732430433_2_155467_721888540_366329074_93022835_168704226_81154651_0_4447%2Ce8345_d2759_r7421_a5020_y223_t2634_f11 completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #58 GET https://matrix.beeper.com/_matrix/client/v3/pushrules/ completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #66 GET https://matrix.beeper.com/_matrix/client/v3/user/%40fabiangubler%3Abeeper.com/filter/0
+[MainWindowHttp] #67 OPTIONS https://matrix.beeper.com/_matrix/client/v3/user/%40fabiangubler%3Abeeper.com/filter/0
+[MainWindowHttp] #67 OPTIONS https://matrix.beeper.com/_matrix/client/v3/user/%40fabiangubler%3Abeeper.com/filter/0 completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #66 GET https://matrix.beeper.com/_matrix/client/v3/user/%40fabiangubler%3Abeeper.com/filter/0 completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #68 GET https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=0&beeper_previews=true&since=s732430433_2_155467_721888540_366329074_93022835_168704226_81154651_0_4447%2Ce8345_d2759_r7421_a5020_y223_t2634_f11
+[MainWindowHttp] #69 OPTIONS https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=0&beeper_previews=true&since=s732430433_2_155467_721888540_366329074_93022835_168704226_81154651_0_4447%2Ce8345_d2759_r7421_a5020_y223_t2634_f11
+[MainWindowHttp] #64 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!EMFXlMXXOUulvhiOXf%3Abeeper.com/members?not_membership=leave&at=s732430433_2_155467_721888540_366329074_93022835_168704226_81154651_0_4447%2Ce8345_d2759_r7421_a5020_y223_t2634_f11 completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #69 OPTIONS https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=0&beeper_previews=true&since=s732430433_2_155467_721888540_366329074_93022835_168704226_81154651_0_4447%2Ce8345_d2759_r7421_a5020_y223_t2634_f11 completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #68 GET https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=0&beeper_previews=true&since=s732430433_2_155467_721888540_366329074_93022835_168704226_81154651_0_4447%2Ce8345_d2759_r7421_a5020_y223_t2634_f11 completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #63 OPTIONS https://api.commandbar.com/organizations/5c1d1fff/config/?env=latest completed got 200 fromCache? false error? net::OK
+sending browser-window-blur to react
+[MainWindowHttp] #62 GET https://api.commandbar.com/organizations/5c1d1fff/config/?env=latest completed got 200 fromCache? true error? net::OK
+[MainWindowHttp] #87 POST https://matrix.beeper.com/_matrix/client/v3/keys/query
+[MainWindowHttp] #88 OPTIONS https://matrix.beeper.com/_matrix/client/v3/keys/query
+[MainWindowHttp] #88 OPTIONS https://matrix.beeper.com/_matrix/client/v3/keys/query completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #89 GET https://matrix.beeper.com/_matrix/client/v3/profile/%40fabiangubler%3Abeeper.com
+[MainWindowHttp] #90 OPTIONS https://matrix.beeper.com/_matrix/client/v3/profile/%40fabiangubler%3Abeeper.com
+[MainWindowHttp] #90 OPTIONS https://matrix.beeper.com/_matrix/client/v3/profile/%40fabiangubler%3Abeeper.com completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #87 POST https://matrix.beeper.com/_matrix/client/v3/keys/query completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #92 GET https://api.beeper.com/whoami
+Beeper : electron-main : contactOperation
+19:15:02.531 › Beeper : MacContacts : contactsHelper, returning early since contacts does not exist
+Beeper : electron-main : contactOperation
+19:15:02.532 › Beeper : MacContacts : contactsHelper, returning early since contacts does not exist
+[MainWindowHttp] #95 GET https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cphotos%2CphoneNumbers%2CemailAddresses&pageSize=1000&requestSyncToken=true
+[MainWindowHttp] #96 GET https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cnicknames%2Cphotos%2CphoneNumbers%2CemailAddresses%2Cmetadata&pageSize=1000&requestSyncToken=true
+[MainWindowHttp] #97 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!0KOzNp0ULDanPkjxpbtn%3Abeeper.local/context/%24qI6YH0bzSWdHWdnifPVWHJH_hGQ6KZu6l4OqQUwKX4k%3Abeeper.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #98 GET https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430454_2_155491_721888566_366329150_93022835_168704262_81154654_0_4447%2Ce8345_d2767_r7421_a5021_y223_t2634_f11
+[MainWindowHttp] #99 OPTIONS https://api.beeper.com/whoami
+[MainWindowHttp] #100 OPTIONS https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cphotos%2CphoneNumbers%2CemailAddresses&pageSize=1000&requestSyncToken=true
+[MainWindowHttp] #101 OPTIONS https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cnicknames%2Cphotos%2CphoneNumbers%2CemailAddresses%2Cmetadata&pageSize=1000&requestSyncToken=true
+[MainWindowHttp] #102 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!0KOzNp0ULDanPkjxpbtn%3Abeeper.local/context/%24qI6YH0bzSWdHWdnifPVWHJH_hGQ6KZu6l4OqQUwKX4k%3Abeeper.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #103 OPTIONS https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430454_2_155491_721888566_366329150_93022835_168704262_81154654_0_4447%2Ce8345_d2767_r7421_a5021_y223_t2634_f11
+[MainWindowHttp] #99 OPTIONS https://api.beeper.com/whoami completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #102 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!0KOzNp0ULDanPkjxpbtn%3Abeeper.local/context/%24qI6YH0bzSWdHWdnifPVWHJH_hGQ6KZu6l4OqQUwKX4k%3Abeeper.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #103 OPTIONS https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430454_2_155491_721888566_366329150_93022835_168704262_81154654_0_4447%2Ce8345_d2767_r7421_a5021_y223_t2634_f11 completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #92 GET https://api.beeper.com/whoami completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #89 GET https://matrix.beeper.com/_matrix/client/v3/profile/%40fabiangubler%3Abeeper.com completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #104 GET https://api.commandbar.com/organizations/5c1d1fff/end_users/?user=%40fabiangubler%3Abeeper.com
+[MainWindowHttp] #105 OPTIONS https://api.commandbar.com/organizations/5c1d1fff/end_users/?user=%40fabiangubler%3Abeeper.com
+[MainWindowHttp] #101 OPTIONS https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cnicknames%2Cphotos%2CphoneNumbers%2CemailAddresses%2Cmetadata&pageSize=1000&requestSyncToken=true completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #100 OPTIONS https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cphotos%2CphoneNumbers%2CemailAddresses&pageSize=1000&requestSyncToken=true completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #97 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!0KOzNp0ULDanPkjxpbtn%3Abeeper.local/context/%24qI6YH0bzSWdHWdnifPVWHJH_hGQ6KZu6l4OqQUwKX4k%3Abeeper.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #95 GET https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cphotos%2CphoneNumbers%2CemailAddresses&pageSize=1000&requestSyncToken=true completed got 401 fromCache? false error? net::OK
+[MainWindowHttp] #96 GET https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cnicknames%2Cphotos%2CphoneNumbers%2CemailAddresses%2Cmetadata&pageSize=1000&requestSyncToken=true completed got 401 fromCache? false error? net::OK
+[MainWindowHttp] #117 GET https://matrix.beeper.com/_matrix/media/v3/thumbnail/beeper.com/83ec31a151d7944dc87915f2071869bca84d9ac1?width=44&height=44&method=crop&allow_redirect=true
+[MainWindowHttp] #118 GET https://matrix.beeper.com/_matrix/media/v3/thumbnail/beeper.com/bb0409bdc0b6a460b465c9d835138956e6adc856?width=44&height=44&method=crop&allow_redirect=true
+[MainWindowHttp] #119 GET https://matrix.beeper.com/_matrix/media/v3/thumbnail/beeper.com/e041ce2234a4535497c72f5ae36036900a943e44?width=44&height=44&method=crop&allow_redirect=true
+[MainWindowHttp] #120 GET https://matrix.beeper.com/_matrix/media/v3/thumbnail/beeper.com/9a214455b1375716e0ff16aa61093b9be3a3c8a8?width=44&height=44&method=crop&allow_redirect=true
+[MainWindowHttp] #121 GET https://matrix.beeper.com/_matrix/media/v3/thumbnail/beeper.com/9a6c5412f80cef0aa9ff58385404274f7288f035?width=44&height=44&method=crop&allow_redirect=true
+[MainWindowHttp] #122 GET https://matrix.beeper.com/_matrix/media/v3/thumbnail/beeper.com/137e2876ca7bbd2d771208ec6a88fc7afa317696?width=44&height=44&method=crop&allow_redirect=true
+[MainWindowHttp] #123 GET https://matrix.beeper.com/_matrix/media/v3/thumbnail/beeper.com/112bb9ca8bdeeae652f421303c652047bf2b738a?width=44&height=44&method=crop&allow_redirect=true
+[MainWindowHttp] #124 GET https://matrix.beeper.com/_matrix/media/v3/thumbnail/beeper.com/484de776bf94606b8f1dab5062578a396692f221?width=44&height=44&method=crop&allow_redirect=true
+[MainWindowHttp] #125 GET https://matrix.beeper.com/_matrix/media/v3/thumbnail/beeper.com/b1822396be59b069972acb0b232eec815af33c44?width=44&height=44&method=crop&allow_redirect=true
+[MainWindowHttp] #126 POST https://oauth2.googleapis.com/token
+[MainWindowHttp] #127 POST https://oauth2.googleapis.com/token
+[MainWindowHttp] #117 GET https://thumbnails.eu-central-2.media.beeper.com/6b7/f58d0e8daa1927f06f3e975be7f2a5615c865
+[MainWindowHttp] #118 GET https://thumbnails.eu-central-2.media.beeper.com/600/7e172b4ca553ae7fdee0ad5f9a4b25497dbad
+[MainWindowHttp] #119 GET https://thumbnails.eu-central-2.media.beeper.com/c08/ec0466661db98b5d94b18a8c034b97bc901a5
+[MainWindowHttp] #120 GET https://thumbnails.eu-central-2.media.beeper.com/7f0/efc1d4febe0ceebf0f84637d06f81a504522f
+[MainWindowHttp] #121 GET https://thumbnails.eu-central-2.media.beeper.com/668/fe11826264a351368f48290ca1e656153c78a
+[MainWindowHttp] #122 GET https://thumbnails.eu-central-2.media.beeper.com/8dc/677803afcd3f60c0a89cd8d1546f3b3e71e64
+[MainWindowHttp] #123 GET https://thumbnails.eu-central-2.media.beeper.com/680/85a57ffec16a8a4fceb6c1d449a3e86cb278e
+[MainWindowHttp] #124 GET https://thumbnails.eu-central-2.media.beeper.com/a67/9967ce9c2ddaeb8af2cd3f63e7021aa3136e0
+[MainWindowHttp] #125 GET https://thumbnails.eu-central-2.media.beeper.com/6ab/099a7fe7ab05796b7896af961917a921c2dbd
+[MainWindowHttp] #117 GET https://thumbnails.eu-central-2.media.beeper.com/6b7/f58d0e8daa1927f06f3e975be7f2a5615c865 completed got 200 fromCache? true error? net::OK
+[MainWindowHttp] #118 GET https://thumbnails.eu-central-2.media.beeper.com/600/7e172b4ca553ae7fdee0ad5f9a4b25497dbad completed got 200 fromCache? true error? net::OK
+[MainWindowHttp] #119 GET https://thumbnails.eu-central-2.media.beeper.com/c08/ec0466661db98b5d94b18a8c034b97bc901a5 completed got 200 fromCache? true error? net::OK
+[MainWindowHttp] #120 GET https://thumbnails.eu-central-2.media.beeper.com/7f0/efc1d4febe0ceebf0f84637d06f81a504522f completed got 200 fromCache? true error? net::OK
+[MainWindowHttp] #121 GET https://thumbnails.eu-central-2.media.beeper.com/668/fe11826264a351368f48290ca1e656153c78a completed got 200 fromCache? true error? net::OK
+[MainWindowHttp] #122 GET https://thumbnails.eu-central-2.media.beeper.com/8dc/677803afcd3f60c0a89cd8d1546f3b3e71e64 completed got 200 fromCache? true error? net::OK
+[MainWindowHttp] #123 GET https://thumbnails.eu-central-2.media.beeper.com/680/85a57ffec16a8a4fceb6c1d449a3e86cb278e completed got 200 fromCache? true error? net::OK
+[MainWindowHttp] #124 GET https://thumbnails.eu-central-2.media.beeper.com/a67/9967ce9c2ddaeb8af2cd3f63e7021aa3136e0 completed got 200 fromCache? true error? net::OK
+[MainWindowHttp] #125 GET https://thumbnails.eu-central-2.media.beeper.com/6ab/099a7fe7ab05796b7896af961917a921c2dbd completed got 200 fromCache? true error? net::OK
+[MainWindowHttp] #129 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!5RxQkbqSLxFQtLQ8gTCW%3Abeeper.local/context/%247w5fpLkj9uEYa9-cVl6LJJs9gjb27Jw78cqcORzVAOc%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #130 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!5RxQkbqSLxFQtLQ8gTCW%3Abeeper.local/context/%247w5fpLkj9uEYa9-cVl6LJJs9gjb27Jw78cqcORzVAOc%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #105 OPTIONS https://api.commandbar.com/organizations/5c1d1fff/end_users/?user=%40fabiangubler%3Abeeper.com completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #130 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!5RxQkbqSLxFQtLQ8gTCW%3Abeeper.local/context/%247w5fpLkj9uEYa9-cVl6LJJs9gjb27Jw78cqcORzVAOc%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #126 POST https://oauth2.googleapis.com/token completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #127 POST https://oauth2.googleapis.com/token completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #132 POST https://api.commandbar.com/search/helpexplorer/5c1d1fff/
+[MainWindowHttp] #133 OPTIONS https://api.commandbar.com/search/helpexplorer/5c1d1fff/
+[MainWindowHttp] #134 GET https://edge.beeper.com/_matrix/client/unstable/com.beeper.bridge/whatsapp/_matrix/provision/v1/contacts?user_id=@fabiangubler:beeper.com
+[MainWindowHttp] #135 OPTIONS https://edge.beeper.com/_matrix/client/unstable/com.beeper.bridge/whatsapp/_matrix/provision/v1/contacts?user_id=@fabiangubler:beeper.com
+[MainWindowHttp] #136 GET https://matrix.beeper.com/_matrix/media/v3/download/beeper.com/137e2876ca7bbd2d771208ec6a88fc7afa317696?allow_redirect=true
+[MainWindowHttp] #137 GET https://matrix.beeper.com/_matrix/media/v3/download/beeper.com/a4dbee3948a32fa212f0f36f29ef60576006122f?allow_redirect=true
+[MainWindowHttp] #129 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!5RxQkbqSLxFQtLQ8gTCW%3Abeeper.local/context/%247w5fpLkj9uEYa9-cVl6LJJs9gjb27Jw78cqcORzVAOc%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #139 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!8PXL9nG5PsmdsnPEtOnT%3Abeeper.local/context/%24MJ6kG9LOdMD88AkWBHUNQ8-UdSKIqYRoRx88v5DuhtQ%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #136 GET https://local.eu-central-2.media.beeper.com/fd3/a90107765094d633cf67d594b92a632b43d90
+[MainWindowHttp] #137 GET https://local.us-east-1.media.beeper.com/885/12b95adf81aeb7af1a93ce7ad631108f71c04
+[MainWindowHttp] #140 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!8PXL9nG5PsmdsnPEtOnT%3Abeeper.local/context/%24MJ6kG9LOdMD88AkWBHUNQ8-UdSKIqYRoRx88v5DuhtQ%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #141 GET https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cphotos%2CphoneNumbers%2CemailAddresses&pageSize=1000&requestSyncToken=true
+[MainWindowHttp] #143 GET https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cnicknames%2Cphotos%2CphoneNumbers%2CemailAddresses%2Cmetadata&pageSize=1000&requestSyncToken=true
+[MainWindowHttp] #136 GET https://local.eu-central-2.media.beeper.com/fd3/a90107765094d633cf67d594b92a632b43d90 completed got 200 fromCache? true error? net::OK
+[MainWindowHttp] #137 GET https://local.us-east-1.media.beeper.com/885/12b95adf81aeb7af1a93ce7ad631108f71c04 completed got 200 fromCache? true error? net::OK
+[MainWindowHttp] #140 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!8PXL9nG5PsmdsnPEtOnT%3Abeeper.local/context/%24MJ6kG9LOdMD88AkWBHUNQ8-UdSKIqYRoRx88v5DuhtQ%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #135 OPTIONS https://edge.beeper.com/_matrix/client/unstable/com.beeper.bridge/whatsapp/_matrix/provision/v1/contacts?user_id=@fabiangubler:beeper.com completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #139 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!8PXL9nG5PsmdsnPEtOnT%3Abeeper.local/context/%24MJ6kG9LOdMD88AkWBHUNQ8-UdSKIqYRoRx88v5DuhtQ%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #134 GET https://edge.beeper.com/_matrix/client/unstable/com.beeper.bridge/whatsapp/_matrix/provision/v1/contacts?user_id=@fabiangubler:beeper.com completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #144 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!FYLYSxMzQmS8CG4m43YJ%3Abeeper.local/context/%24zUnd4WBU0JTEm4KKmWLkXhAMkQPdWU-Q1ay-PqFfvwg%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #145 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!FYLYSxMzQmS8CG4m43YJ%3Abeeper.local/context/%24zUnd4WBU0JTEm4KKmWLkXhAMkQPdWU-Q1ay-PqFfvwg%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #145 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!FYLYSxMzQmS8CG4m43YJ%3Abeeper.local/context/%24zUnd4WBU0JTEm4KKmWLkXhAMkQPdWU-Q1ay-PqFfvwg%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #104 GET https://api.commandbar.com/organizations/5c1d1fff/end_users/?user=%40fabiangubler%3Abeeper.com completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #141 GET https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cphotos%2CphoneNumbers%2CemailAddresses&pageSize=1000&requestSyncToken=true completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #133 OPTIONS https://api.commandbar.com/search/helpexplorer/5c1d1fff/ completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #146 POST https://t.commandbar.com/t/
+[MainWindowHttp] #147 OPTIONS https://t.commandbar.com/t/
+[MainWindowHttp] #144 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!FYLYSxMzQmS8CG4m43YJ%3Abeeper.local/context/%24zUnd4WBU0JTEm4KKmWLkXhAMkQPdWU-Q1ay-PqFfvwg%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #143 GET https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cnicknames%2Cphotos%2CphoneNumbers%2CemailAddresses%2Cmetadata&pageSize=1000&requestSyncToken=true completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #148 GET https://matrix.beeper.com/_matrix/client/v3/room_keys/version
+[MainWindowHttp] #149 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!KSyxljvF3ciWfDR1AIrF%3Abeeper.local/context/%24-9oJN_vKzF3M1z03bxVEmUzIzVEky02BpmxnHxW_kJI%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #150 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!KSyxljvF3ciWfDR1AIrF%3Abeeper.local/context/%24-9oJN_vKzF3M1z03bxVEmUzIzVEky02BpmxnHxW_kJI%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #150 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!KSyxljvF3ciWfDR1AIrF%3Abeeper.local/context/%24-9oJN_vKzF3M1z03bxVEmUzIzVEky02BpmxnHxW_kJI%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #149 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!KSyxljvF3ciWfDR1AIrF%3Abeeper.local/context/%24-9oJN_vKzF3M1z03bxVEmUzIzVEky02BpmxnHxW_kJI%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #148 GET https://matrix.beeper.com/_matrix/client/v3/room_keys/version completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #151 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!MrzH0HfBeiv3FJ05Wa9R%3Abeeper.local/context/%2472Y3AucGQhTIMKnHXw6akMcvZP5mx6YupE7haNG_SkY%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #152 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!MrzH0HfBeiv3FJ05Wa9R%3Abeeper.local/context/%2472Y3AucGQhTIMKnHXw6akMcvZP5mx6YupE7haNG_SkY%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #152 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!MrzH0HfBeiv3FJ05Wa9R%3Abeeper.local/context/%2472Y3AucGQhTIMKnHXw6akMcvZP5mx6YupE7haNG_SkY%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #151 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!MrzH0HfBeiv3FJ05Wa9R%3Abeeper.local/context/%2472Y3AucGQhTIMKnHXw6akMcvZP5mx6YupE7haNG_SkY%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #153 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!Nedm73eTxOO2OUYBL8DE%3Abeeper.local/context/%24aZpRraDZI734srHCF0a1UfYlBs74jIRQqOJHgHujDDA%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #154 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!Nedm73eTxOO2OUYBL8DE%3Abeeper.local/context/%24aZpRraDZI734srHCF0a1UfYlBs74jIRQqOJHgHujDDA%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #154 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!Nedm73eTxOO2OUYBL8DE%3Abeeper.local/context/%24aZpRraDZI734srHCF0a1UfYlBs74jIRQqOJHgHujDDA%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #153 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!Nedm73eTxOO2OUYBL8DE%3Abeeper.local/context/%24aZpRraDZI734srHCF0a1UfYlBs74jIRQqOJHgHujDDA%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #155 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!Vppyeqa1fLGJtVTRiOee%3Abeeper.local/context/%24MdJM0wwMtLkriVcs-LZCdPRjo-jTLDH4pF4sWtitJSY%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #156 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!Vppyeqa1fLGJtVTRiOee%3Abeeper.local/context/%24MdJM0wwMtLkriVcs-LZCdPRjo-jTLDH4pF4sWtitJSY%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #147 OPTIONS https://t.commandbar.com/t/ completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #156 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!Vppyeqa1fLGJtVTRiOee%3Abeeper.local/context/%24MdJM0wwMtLkriVcs-LZCdPRjo-jTLDH4pF4sWtitJSY%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #155 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!Vppyeqa1fLGJtVTRiOee%3Abeeper.local/context/%24MdJM0wwMtLkriVcs-LZCdPRjo-jTLDH4pF4sWtitJSY%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #157 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!WZgrtjeGQer4coIgvH0D%3Abeeper.local/context/%24T4Q_FlckyA52PXNh7fC8_6bJ_6yR1N4YJcZIY8oIaJo%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #158 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!WZgrtjeGQer4coIgvH0D%3Abeeper.local/context/%24T4Q_FlckyA52PXNh7fC8_6bJ_6yR1N4YJcZIY8oIaJo%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #158 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!WZgrtjeGQer4coIgvH0D%3Abeeper.local/context/%24T4Q_FlckyA52PXNh7fC8_6bJ_6yR1N4YJcZIY8oIaJo%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #157 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!WZgrtjeGQer4coIgvH0D%3Abeeper.local/context/%24T4Q_FlckyA52PXNh7fC8_6bJ_6yR1N4YJcZIY8oIaJo%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #159 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!X8EINy9HT860E6Edytd9%3Abeeper.local/context/%24LkHhXIGXoqs53Lp8L4_gU43MESgcixeg1ss4UDmapI4%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #160 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!X8EINy9HT860E6Edytd9%3Abeeper.local/context/%24LkHhXIGXoqs53Lp8L4_gU43MESgcixeg1ss4UDmapI4%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #160 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!X8EINy9HT860E6Edytd9%3Abeeper.local/context/%24LkHhXIGXoqs53Lp8L4_gU43MESgcixeg1ss4UDmapI4%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #146 POST https://t.commandbar.com/t/ completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #132 POST https://api.commandbar.com/search/helpexplorer/5c1d1fff/ completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #159 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!X8EINy9HT860E6Edytd9%3Abeeper.local/context/%24LkHhXIGXoqs53Lp8L4_gU43MESgcixeg1ss4UDmapI4%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #161 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!iPP3Znpan1sgbVO6bE5y%3Abeeper.local/context/%24fkOMpXmeGnmWMsH4uWd7qne5hsBesWDnkClTrCZrKfE%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #162 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!iPP3Znpan1sgbVO6bE5y%3Abeeper.local/context/%24fkOMpXmeGnmWMsH4uWd7qne5hsBesWDnkClTrCZrKfE%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D
+[MainWindowHttp] #162 OPTIONS https://matrix.beeper.com/_matrix/client/v3/rooms/!iPP3Znpan1sgbVO6bE5y%3Abeeper.local/context/%24fkOMpXmeGnmWMsH4uWd7qne5hsBesWDnkClTrCZrKfE%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #161 GET https://matrix.beeper.com/_matrix/client/v3/rooms/!iPP3Znpan1sgbVO6bE5y%3Abeeper.local/context/%24fkOMpXmeGnmWMsH4uWd7qne5hsBesWDnkClTrCZrKfE%3Asms.android.local?filter=%7B%22lazy_load_members%22%3Atrue%7D completed got 200 fromCache? false error? net::OK
+sending browser-window-focus to react
+sending browser-window-blur to react
+19:15:29.556 › @todesktop/runtime: AutoUpdater: .checkForUpdates called
+19:15:29.557 › @todesktop/runtime: AutoUpdater: _check called {
+  source: 'programmatic-call',
+  pendingCheckSources: [ 'programmatic-call' ]
+}
+19:15:29.558 › @todesktop/runtime: AutoUpdater: _actuallyPerformCheck called
+19:15:29.559 › @todesktop/runtime: Checking for update
+19:15:29.559 › @todesktop/runtime: AutoUpdater: checking-for-update
+19:15:30.797 › @todesktop/runtime: Found version 3.83.13 (url: beeper-3.83.13-build-231024j9x7ova5e.AppImage, beeper-3.83.13-build-231024j9x7ova5e.deb, beeper-3.83.13-build-231024j9x7ova5e.rpm)
+19:15:30.798 › @todesktop/runtime: AutoUpdater: update-available {
+  version: '3.83.13',
+  files: [
+    {
+      url: 'beeper-3.83.13-build-231024j9x7ova5e.AppImage',
+      sha512: 'zUjRBIbkRphCfWWIarbRUTero4DON8FXH7EoteTaH0RgpRL1Q5d9GO03vInzJjuNveT4sq7DBzRQRmjtV1hLvQ==',
+      size: 198682899,
+      blockMapSize: 207143
+    },
+    {
+      url: 'beeper-3.83.13-build-231024j9x7ova5e.deb',
+      sha512: '7+/pyz7Zh3YxJ7f0+2tEzAFHaKezonHtQnMsXlOAE3C0poFTQad2PgXc5ppohfObMrtFGFT7W7Tj6IFblih5wA==',
+      size: 149558976
+    },
+    {
+      url: 'beeper-3.83.13-build-231024j9x7ova5e.rpm',
+      sha512: '04X5gKXHXZEZPI7NheZrJvqcYeETfyFYgRFFgqrocobAnZ2GEcUMILY6pL5vf4FcRvIRP5P5GzmwDeJygzu1/g==',
+      size: 149187556
+    }
+  ],
+  path: 'beeper-3.83.13-build-231024j9x7ova5e.AppImage',
+  sha512: 'zUjRBIbkRphCfWWIarbRUTero4DON8FXH7EoteTaH0RgpRL1Q5d9GO03vInzJjuNveT4sq7DBzRQRmjtV1hLvQ==',
+  releaseDate: '2023-10-24T18:27:54.821Z'
+}
+19:15:30.800 › @todesktop/runtime: AutoUpdater: UpdaterAgent: UpdaterAgent: Analysing autoUpdater.checkForUpdates result {
+  currentVersion: '3.71.16',
+  latestVersion: '3.83.13',
+  updateInfo: {
+    version: '3.83.13',
+    files: [ '[object]', '[object]', '[object]' ],
+    path: 'beeper-3.83.13-build-231024j9x7ova5e.AppImage',
+    sha512: 'zUjRBIbkRphCfWWIarbRUTero4DON8FXH7EoteTaH0RgpRL1Q5d9GO03vInzJjuNveT4sq7DBzRQRmjtV1hLvQ==',
+    releaseDate: '2023-10-24T18:27:54.821Z'
+  }
+}
+19:15:30.801 › @todesktop/runtime: Downloading update from beeper-3.83.13-build-231024j9x7ova5e.AppImage, beeper-3.83.13-build-231024j9x7ova5e.deb, beeper-3.83.13-build-231024j9x7ova5e.rpm
+19:15:30.803 › @todesktop/runtime: updater cache dir: /home/fabian/.cache/beeper-updater
+19:15:30.814 › @todesktop/runtime: Error: Error: APPIMAGE env is not defined
+    at Object.newError (/nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/node_modules/electron-updater/node_modules/builder-util-runtime/out/index.js:47:19)
+    at Object.task (/nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/node_modules/electron-updater/out/AppImageUpdater.js:40:50)
+    at AppImageUpdater.executeDownload (/nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/node_modules/electron-updater/out/AppUpdater.js:516:31)
+Couldn't check for update Error: APPIMAGE env is not defined
+    at Object.newError (/nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/node_modules/electron-updater/node_modules/builder-util-runtime/out/index.js:47:19)
+    at Object.task (/nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/node_modules/electron-updater/out/AppImageUpdater.js:40:50)
+    at AppImageUpdater.executeDownload (/nix/store/qr9sjdnqls7x5ymxjlv456dq9h4myjc5-beeper-3.71.16-extracted/resources/app.asar/node_modules/electron-updater/out/AppUpdater.js:516:31) {
+  code: 'ERR_UPDATER_OLD_FILE_NOT_FOUND'
+}
+[MainWindowHttp] #167 POST https://o578031.ingest.sentry.io/api/5860012/envelope/?sentry_key=51b38ff78b5e42b3a44114247abf22d6&sentry_version=7&sentry_client=sentry.javascript.electron%2F4.4.0
+[MainWindowHttp] #167 POST https://o578031.ingest.sentry.io/api/5860012/envelope/?sentry_key=51b38ff78b5e42b3a44114247abf22d6&sentry_version=7&sentry_client=sentry.javascript.electron%2F4.4.0 completed got 403 fromCache? false error? net::OK
+[MainWindowHttp] #98 GET https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430454_2_155491_721888566_366329150_93022835_168704262_81154654_0_4447%2Ce8345_d2767_r7421_a5021_y223_t2634_f11 completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #168 GET https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430454_2_155491_721888566_366329150_93022835_168704262_81154654_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11
+[MainWindowHttp] #169 OPTIONS https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430454_2_155491_721888566_366329150_93022835_168704262_81154654_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11
+[MainWindowHttp] #169 OPTIONS https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430454_2_155491_721888566_366329150_93022835_168704262_81154654_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11 completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #168 GET https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430454_2_155491_721888566_366329150_93022835_168704262_81154654_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11 completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #170 GET https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430454_2_155491_721888567_366329150_93022835_168704265_81154654_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11
+[MainWindowHttp] #171 OPTIONS https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430454_2_155491_721888567_366329150_93022835_168704265_81154654_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11
+[MainWindowHttp] #171 OPTIONS https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430454_2_155491_721888567_366329150_93022835_168704265_81154654_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11 completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #172 GET https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cnicknames%2Cphotos%2CphoneNumbers%2CemailAddresses%2Cmetadata&pageSize=1000&syncToken=MisAMGJ_FQAAABIIqLWUk5-ZggMQqLWUk5-ZggNXjDaLISBUCrvp8FuDsNi9OiQ2NTNjMDNiZC0wMDAwLTIwNzUtODczYy0zYzI4NmQ0MzEyMjY%3D&requestSyncToken=true
+[MainWindowHttp] #173 OPTIONS https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cnicknames%2Cphotos%2CphoneNumbers%2CemailAddresses%2Cmetadata&pageSize=1000&syncToken=MisAMGJ_FQAAABIIqLWUk5-ZggMQqLWUk5-ZggNXjDaLISBUCrvp8FuDsNi9OiQ2NTNjMDNiZC0wMDAwLTIwNzUtODczYy0zYzI4NmQ0MzEyMjY%3D&requestSyncToken=true
+[MainWindowHttp] #173 OPTIONS https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cnicknames%2Cphotos%2CphoneNumbers%2CemailAddresses%2Cmetadata&pageSize=1000&syncToken=MisAMGJ_FQAAABIIqLWUk5-ZggMQqLWUk5-ZggNXjDaLISBUCrvp8FuDsNi9OiQ2NTNjMDNiZC0wMDAwLTIwNzUtODczYy0zYzI4NmQ0MzEyMjY%3D&requestSyncToken=true completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #172 GET https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cnicknames%2Cphotos%2CphoneNumbers%2CemailAddresses%2Cmetadata&pageSize=1000&syncToken=MisAMGJ_FQAAABIIqLWUk5-ZggMQqLWUk5-ZggNXjDaLISBUCrvp8FuDsNi9OiQ2NTNjMDNiZC0wMDAwLTIwNzUtODczYy0zYzI4NmQ0MzEyMjY%3D&requestSyncToken=true completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #170 GET https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430454_2_155491_721888567_366329150_93022835_168704265_81154654_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11 completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #174 GET https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430503_2_155538_721888630_366329274_93022835_168704352_81154667_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11
+[MainWindowHttp] #175 OPTIONS https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430503_2_155538_721888630_366329274_93022835_168704352_81154667_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11
+[MainWindowHttp] #175 OPTIONS https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430503_2_155538_721888630_366329274_93022835_168704352_81154667_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11 completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #176 GET https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cnicknames%2Cphotos%2CphoneNumbers%2CemailAddresses%2Cmetadata&pageSize=1000&syncToken=MisAMGJ_FQAAABIIqLWUk5-ZggMQqLWUk5-ZggNXjDaLISBUCrvp8FuDsNi9OiQ2NTNjMDNiZC0wMDAwLTIwNzUtODczYy0zYzI4NmQ0MzEyMjY%3D&requestSyncToken=true
+[MainWindowHttp] #176 GET https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cnicknames%2Cphotos%2CphoneNumbers%2CemailAddresses%2Cmetadata&pageSize=1000&syncToken=MisAMGJ_FQAAABIIqLWUk5-ZggMQqLWUk5-ZggNXjDaLISBUCrvp8FuDsNi9OiQ2NTNjMDNiZC0wMDAwLTIwNzUtODczYy0zYzI4NmQ0MzEyMjY%3D&requestSyncToken=true completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #174 GET https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430503_2_155538_721888630_366329274_93022835_168704352_81154667_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11 completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #177 GET https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430546_2_155586_721888686_366329413_93022835_168704424_81154674_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11
+[MainWindowHttp] #178 OPTIONS https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430546_2_155586_721888686_366329413_93022835_168704424_81154674_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11
+[MainWindowHttp] #178 OPTIONS https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430546_2_155586_721888686_366329413_93022835_168704424_81154674_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11 completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #179 GET https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cnicknames%2Cphotos%2CphoneNumbers%2CemailAddresses%2Cmetadata&pageSize=1000&syncToken=MisAMGJ_FQAAABIIqLWUk5-ZggMQqLWUk5-ZggNXjDaLISBUCrvp8FuDsNi9OiQ2NTNjMDNiZC0wMDAwLTIwNzUtODczYy0zYzI4NmQ0MzEyMjY%3D&requestSyncToken=true
+[MainWindowHttp] #179 GET https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cnicknames%2Cphotos%2CphoneNumbers%2CemailAddresses%2Cmetadata&pageSize=1000&syncToken=MisAMGJ_FQAAABIIqLWUk5-ZggMQqLWUk5-ZggNXjDaLISBUCrvp8FuDsNi9OiQ2NTNjMDNiZC0wMDAwLTIwNzUtODczYy0zYzI4NmQ0MzEyMjY%3D&requestSyncToken=true completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #180 GET https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cnicknames%2Cphotos%2CphoneNumbers%2CemailAddresses%2Cmetadata&pageSize=1000&syncToken=MisAMGJ_FQAAABIIqLWUk5-ZggMQqLWUk5-ZggNXjDaLISBUCrvp8FuDsNi9OiQ2NTNjMDNiZC0wMDAwLTIwNzUtODczYy0zYzI4NmQ0MzEyMjY%3D&requestSyncToken=true
+[MainWindowHttp] #177 GET https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430546_2_155586_721888686_366329413_93022835_168704424_81154674_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11 completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #181 GET https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430578_2_155639_721888736_366329523_93022836_168704607_81154683_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11
+[MainWindowHttp] #182 OPTIONS https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430578_2_155639_721888736_366329523_93022836_168704607_81154683_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11
+[MainWindowHttp] #182 OPTIONS https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430578_2_155639_721888736_366329523_93022836_168704607_81154683_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11 completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #180 GET https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cnicknames%2Cphotos%2CphoneNumbers%2CemailAddresses%2Cmetadata&pageSize=1000&syncToken=MisAMGJ_FQAAABIIqLWUk5-ZggMQqLWUk5-ZggNXjDaLISBUCrvp8FuDsNi9OiQ2NTNjMDNiZC0wMDAwLTIwNzUtODczYy0zYzI4NmQ0MzEyMjY%3D&requestSyncToken=true completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #183 GET https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cnicknames%2Cphotos%2CphoneNumbers%2CemailAddresses%2Cmetadata&pageSize=1000&syncToken=MisAMGJ_FQAAABIIqLWUk5-ZggMQqLWUk5-ZggNXjDaLISBUCrvp8FuDsNi9OiQ2NTNjMDNiZC0wMDAwLTIwNzUtODczYy0zYzI4NmQ0MzEyMjY%3D&requestSyncToken=true
+[MainWindowHttp] #181 GET https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430578_2_155639_721888736_366329523_93022836_168704607_81154683_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11 completed got 200 fromCache? false error? net::OK
+[MainWindowHttp] #184 GET https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430611_2_155687_721888779_366329653_93022836_168704711_81154694_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11
+[MainWindowHttp] #185 OPTIONS https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430611_2_155687_721888779_366329653_93022836_168704711_81154694_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11
+[MainWindowHttp] #185 OPTIONS https://matrix.beeper.com/_matrix/client/v3/sync?filter=0&timeout=30000&beeper_previews=true&since=s732430611_2_155687_721888779_366329653_93022836_168704711_81154694_0_4447%2Ce8345_r7421_a5021_y223_t2634_f11 completed got 204 fromCache? false error? net::OK
+[MainWindowHttp] #183 GET https://people.googleapis.com/v1/people/me/connections?personFields=names%2Cnicknames%2Cphotos%2CphoneNumbers%2CemailAddresses%2Cmetadata&pageSize=1000&syncToken=MisAMGJ_FQAAABIIqLWUk5-ZggMQqLWUk5-ZggNXjDaLISBUCrvp8FuDsNi9OiQ2NTNjMDNiZC0wMDAwLTIwNzUtODczYy0zYzI4NmQ0MzEyMjY%3D&requestSyncToken=true completed got 200 fromCache? false error? net::OK

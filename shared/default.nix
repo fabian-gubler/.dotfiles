@@ -72,6 +72,7 @@
       inotify-tools
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
       jq
+	  beeper
       python3
       # obsidian
       qbittorrent
