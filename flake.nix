@@ -14,7 +14,6 @@
 
     # Additional Modules
     hosts.url = github:StevenBlack/hosts; # blocks inappropriate websites
-    spicetify-nix.url = github:the-argus/spicetify-nix; # spotify ricing & configuration
   };
 
   outputs =
@@ -23,7 +22,6 @@
     , unstable
     , home-manager
     , hosts
-    , spicetify-nix
     , ...
     }:
     let
@@ -35,7 +33,6 @@
       };
       unstable = import inputs.unstable { system = pkgs.system; };
       lib = nixpkgs.lib;
-      spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
     in
     {
       overlays = {
@@ -61,8 +58,7 @@
                 # Note, `${pkgs.system}` is the "architecture" of the machine evaluating and building
                 nixpkgs.overlays = [ overlay-unstable ];
                 environment.systemPackages = with inputs.unstable.legacyPackages.${pkgs.system}; [
-                  # protonmail-bridge
-                  # virtualbox
+                  # obsidian # Electron EOL Insecure -> Change when Secure
                 ];
               }
             )
@@ -74,18 +70,8 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.fabian = {
-                imports = [ ./shared spicetify-nix.homeManagerModules.default ];
+                imports = [ ./shared ];
 
-                programs.spicetify = {
-                  enable = true;
-
-                  theme = spicePkgs.themes.catppuccin-mocha;
-                  colorScheme = "Default";
-
-                  enabledExtensions = with spicePkgs.extensions; [
-                    keyboardShortcut # vim-like navigation
-                  ];
-                };
               };
             }
 
@@ -97,13 +83,13 @@
           ];
         };
       };
-# for other systems
+      # for other systems
       homeConfigurations = {
         generic = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
             {
-              imports = [ ./shared spicetify-nix.homeManagerModules.default ];
+              imports = [ ./shared ];
 
               home = {
                 username = "${user}";
@@ -112,16 +98,6 @@
 
               targets.genericLinux.enable = true;
 
-              programs.spicetify = {
-                enable = true;
-
-                theme = spicePkgs.themes.catppuccin-mocha;
-                colorScheme = "Default";
-
-                enabledExtensions = with spicePkgs.extensions; [
-                  keyboardShortcut # vim-like navigation
-                ];
-              };
             }
           ];
         };

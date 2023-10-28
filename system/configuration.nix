@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 
 
@@ -30,7 +30,8 @@ in
 
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = [ "electron-24.8.6" ];
+    # permittedInsecurePackages = [ "electron-24.8.6" ];
+
   };
 
 
@@ -38,7 +39,7 @@ in
 
   # Nix Settings
   nix = {
-	package = pkgs.nixStable;
+    package = pkgs.nixStable;
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
     };

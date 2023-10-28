@@ -72,7 +72,7 @@
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
       jq
       python3
-      obsidian
+      # obsidian
       qbittorrent
       anki-bin
       pgadmin4-desktopmode
@@ -87,7 +87,6 @@
       timewarrior
       ncdu
       at
-      obsidian
       rnix-lsp
       neovim
       nodejs
