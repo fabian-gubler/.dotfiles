@@ -6,11 +6,9 @@
     unstable.url = github:nixos/nixpkgs/nixos-unstable;
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.05";
+      url = github:nix-community/home-manager/release-23.05;
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-
 
     # Additional Modules
     hosts.url = github:StevenBlack/hosts; # blocks inappropriate websites
@@ -65,6 +63,7 @@
 
             ./system
 
+			# Include home-manager in nixos installations
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
