@@ -72,7 +72,6 @@
       inotify-tools
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
       jq
-	  beeper
       python3
       # obsidian
       qbittorrent
@@ -86,6 +85,7 @@
 	  thunderbird
       postman
       flameshot
+	  gcc
       timewarrior
       ncdu
       at

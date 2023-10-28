@@ -11,7 +11,6 @@
       nv = "nix run ~/neovim-nix";
       sv = "sudoedit";
       top = "gotop -l minimal";
-      mutt = "neomutt";
       gpush = "git add . && git commit -m 'manual update' && git push";
 	  gl = "nix run --override-input nixpkgs nixpkgs/nixos-21.11 --impure github:guibou/nixGL -- ";
 	  lg = "lazygit";
@@ -36,12 +35,6 @@
       export DIRENV_LOG_FORMAT=
       export WATSON_DIR=/data/nextcloud/todo/watson
       # export OPENAI_API_KEY=$(rbw get OPENAI_API_KEY)
-
-	# credentials
-	# export SPEECH_KEY=$(rbw get SBB_SPEECH_KEY)
-	# export SPEECH_REGION=westeurope
-
-
     '';
 
     history = {
@@ -54,7 +47,6 @@
       plugins = [
         { name = "hlissner/zsh-autopair"; tags = [ defer:2 ]; } # fix: not working
         { name = "Aloxaf/fzf-tab"; }
-		{ name = "joshskidmore/zsh-fzf-history-search"; }
         { name = "mafredri/zsh-async"; }
         { name = "chisui/zsh-nix-shell"; }
       ];
