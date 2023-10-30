@@ -10,31 +10,17 @@ set viewsource default
 guiset_quiet hoverlink right
 guiset_quiet tabs count
 
-
-" 使用浏览器默认搜索
-unbind <C-f>
-
-bind n findnext 1
-bind N findnext -1
-
 " 平滑滚动
 set smoothscroll true
 
 " hint按键
-set hintchars "arstdhneio"
+set hintchars "arstdhneiolp"
 
 " Handy multiwindow/multitasking binds
 bind gd tabdetach
 bind gD composite tabduplicate; tabdetach
 
-
 bind --mode=normal <C-P> winopen -private
-bind --mode=ex     <C-a> text.beginning_of_line
-bind --mode=insert <C-a> text.beginning_of_line
-bind --mode=input  <C-a> text.beginning_of_line
-bind --mode=ex     <C-e> text.end_of_line
-bind --mode=insert <C-e> text.end_of_line
-bind --mode=input  <C-e> text.end_of_line
 bind --mode=ex     <C-f> text.forward_word
 bind --mode=insert <C-f> text.forward_word
 bind --mode=input  <C-f> text.forward_word
@@ -62,3 +48,18 @@ jsb Object.keys(tri.config.get("searchurls")).reduce((prev, u) => prev.catch(()=
 " details, read the comment at the top of this file.
 fixamo_quiet
 
+
+" ====================Custom===================="
+
+" Comment toggler for Reddit, Hacker News and Lobste.rs
+ bind ;c hint -Jc [class*="expand"],[class*="togg"],[class="comment_folder"]
+
+ " Make gu take you back to subreddit from comments
+bindurl reddit.com gu urlparent 4
+
+" Binds for new reader mode
+bind gr reader
+bind gR reader --tab
+
+" New reddit is bad
+autocmd DocStart ^http(s?)://www.reddit.com js tri.excmds.urlmodify("-t", "www", "old")
