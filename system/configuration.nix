@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, input, outputs, ... }:
 
 
 
@@ -28,41 +28,34 @@ in
   virtualisation.libvirtd.enable = true;
   virtualisation.docker.enable = true;
 
-  nixpkgs.config = {
-    allowUnfree = true;
-    firefox = {
-      enableTridactylNative = true;
+
+  nixpkgs = {
+    # You can add overlays here from the overlays folder
+    overlays = [
+      outputs.overlays.additions
+      outputs.overlays.modifications
+      outputs.overlays.unstable-packages
+
+    ];
+    # Configure your nixpkgs instance
+    config = {
+      allowUnfree = true;
     };
-    # permittedInsecurePackages = [ "electron-24.8.6" ];
-
   };
-
-
-  system.stateVersion = "22.11";
 
   # Nix Settings
   nix = {
-    package = pkgs.nixStable;
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-    };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 14d";
-    };
-
-    # protects nix shell against garbage collection
-    extraOptions = ''
-        keep-outputs = true
-          keep-derivations = true
-      	  '';
+	optimise.automatic = true;
+    gc.automatic = true; 
+    settings.experimental-features = [ "nix-command" "flakes" ];
   };
 
   # User Settings
   users.users.${user} = {
+    # Be sure to change it (using passwd) after rebooting!
+    initialPassword = "password";
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "libvirtd" "qemu-libvirtd" ];
+    extraGroups = [ "wheel" "docker" ];
   };
 
   programs.dconf.enable = true;
@@ -70,10 +63,6 @@ in
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   time.timeZone = "Europe/Zurich";
-
-  # Databases
-
-  # link: https://nixos.wiki/wiki/PostgreSQL
 
   # TODO: System-wide GTK Theme
   qt = {
@@ -101,5 +90,8 @@ in
     PATH = "\${PATH}:\${XDG_BIN_HOME}:/data/.dotfiles/scripts/utils:/data/.dotfiles/scripts/dmenu:/data/.dotfiles/scripts/tmux";
 
   };
+
+  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+  system.stateVersion = "22.11";
 
 }
