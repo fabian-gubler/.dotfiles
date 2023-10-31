@@ -38,6 +38,8 @@ Check out many possible methods: [Link](https://unix.stackexchange.com/questions
 - `shared` home-manager and .dotfiles for my favorite programs
 - `scripts` collection of personal or modified scripts
 - `templates` reproducible development environments
+- `pkgs` custom written packages
+- `overlays` extend or change packages
 
 ## Philosophy: Non Functional Properties
 The following are some personal non-functional benefits of using a nix-based system.
