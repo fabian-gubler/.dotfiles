@@ -6,10 +6,21 @@
   # This one contains whatever you want to overlay
   # You can change versions, add patches, set compilation flags, anything really.
   # https://nixos.wiki/wiki/Overlays
-  modifications = final: prev: {
+
+  system = final: prev: {
     dwm = prev.dwm.overrideAttrs (oldAttrs: rec { src = ./dwm; });
+  };
+
+  home = final: prev: {
     dmenu = prev.dmenu.overrideAttrs (oldAttrs: rec { src = ./dmenu; });
   };
+
+  modifications = final: prev: {
+    # example = prev.example.overrideAttrs (oldAttrs: rec {
+    # ...
+    # });
+  };
+
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.unstable'
