@@ -8,6 +8,7 @@
     PATH = "\${PATH}:\${XDG_BIN_HOME}:/data/.dotfiles/scripts/utils:/data/.dotfiles/scripts/dmenu:/data/.dotfiles/scripts/tmux:\${HOME}/go/bin";
   };
 
+
   # Packages that should be installed to the user profile.
   home.packages =
     let
@@ -38,7 +39,9 @@
     with pkgs;
 
     [
-      # obsidian
+
+
+      unstable.obsidian
       (python3.withPackages pythonPackages)
       lynx
       dmenu

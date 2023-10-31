@@ -14,12 +14,6 @@
       gpush = "git add . && git commit -m 'manual update' && git push";
 	  gl = "nix run --override-input nixpkgs nixpkgs/nixos-21.11 --impure github:guibou/nixGL -- ";
 	  lg = "lazygit";
-	  pandock = ''
-		  docker run --rm \
-		   --volume "$(pwd):/data" \
-		   --user $(id -u):$(id -g) \
-		   pandoc/extra example.md -o example.pdf --template eisvogel --listings
-	  '';
 
       # Tasks
       p = "todo.sh -d /data/nextcloud/todo/pers/config";
@@ -62,6 +56,13 @@
 	source /data/.dotfiles/shared/programs/zsh/lfcd.sh
 	bindkey -e 
 	bindkey -s '^f' 'lfcd\n'
+
+	  eisvogel() {
+		  docker run --rm \
+		   --volume "$(pwd):/data" \
+		   --user $(id -u):$(id -g) \
+		   pandoc/extra "$1".md -o "$1".pdf --template eisvogel --listings
+	  }
 
 	t() {
 		date +"%A, %d.%m.%Y   (%W)"

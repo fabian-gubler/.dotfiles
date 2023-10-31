@@ -1,9 +1,14 @@
+# nixos starter configuration
+# https://github.com/Misterio77/nix-starter-configs
 {
   description = "Personal NixOS Configuration Flake";
 
   inputs = {
+    #	nixpkgs
     nixpkgs.url = github:nixos/nixpkgs/nixos-23.05;
-    unstable.url = github:nixos/nixpkgs/nixos-unstable;
+    nixpkgs-unstable.url = github:nixos/nixpkgs/nixos-unstable;
+
+    # home manager
     home-manager = {
       url = github:nix-community/home-manager/release-23.05;
       inputs.nixpkgs.follows = "nixpkgs";
@@ -11,79 +16,61 @@
   };
 
   outputs =
-    inputs@{ self
+    { self
     , nixpkgs
-    , unstable
     , home-manager
     , ...
-    }:
+    } @ inputs:
     let
+      inherit (self) outputs;
+
+      # Supported systems for your flake packages, shell, etc.
       system = "x86_64-linux";
+
       user = "fabian";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-      unstable = import inputs.unstable { system = pkgs.system; };
+
+      # pkgs = import nixpkgs {
+      #   inherit system;
+      #   config.allowUnfree = true;
+      # };
       lib = nixpkgs.lib;
+
     in
     {
-      overlays = {
-        pkg-sets = (
-          final: prev: {
-            unstable = import inputs.unstable { system = final.system; };
-            trunk = import inputs.trunk { system = final.system; };
-          }
-        );
-      };
+
+      # Your custom packages and modifications, exported as overlays
+      overlays = import ./overlays { inherit inputs; };
+
+      # NixOS configuration entrypoint
+      # Available through 'nixos-rebuild --flake .#'
       nixosConfigurations = {
         nixos = lib.nixosSystem {
-          inherit system;
+          specialArgs = { inherit inputs outputs; };
           modules = [
-            ({ config, pkgs, unstable, ... }:
-              let
-                overlay-unstable = final: prev: {
-                  unstable = unstable.legacyPackages.x86_64-linux;
-                };
-              in
-              {
-                # unstable packages
-                # Note, `${pkgs.system}` is the "architecture" of the machine evaluating and building
-                nixpkgs.overlays = [ overlay-unstable ];
-                environment.systemPackages = with inputs.unstable.legacyPackages.${pkgs.system}; [
-                  # obsidian # Electron EOL Insecure -> Change when Secure
-                ];
-              }
-            )
-
+            # > Our main nixos configuration file <
             ./system
 
             # Include home-manager in nixos installations
             home-manager.nixosModules.home-manager
             {
-              home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.fabian = {
-                imports = [ ./shared ];
-
-              };
+              home-manager.extraSpecialArgs = { inherit inputs outputs; };
+              home-manager.users.fabian = import ./shared;
             }
 
           ];
         };
       };
 
-      # for other systems
+      # Standalone home-manager configuration entrypoint
+      # Available through 'home-manager --flake .#generic'
       homeConfigurations = {
-        generic = inputs.home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
+        generic = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${system};
+		  extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             {
               imports = [ ./shared ];
-              home = {
-                username = "${user}";
-                homeDirectory = "/home/${user}";
-              };
               targets.genericLinux.enable = true;
             }
           ];

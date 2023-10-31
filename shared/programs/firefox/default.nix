@@ -1,5 +1,10 @@
 { config, pkgs, lib, ... }:
 {
+
+	imports = [
+./bookmarks.nix
+	];
+
   # nixpkgs.config.firefox = {
   #   enableTridactylNative = true;
   # };
@@ -28,9 +33,6 @@
           definedAliases = [ "y" ];
         };
       };
-      bookmarks = [
-        { } # name = <str>; keyword = <str>; url = <str>
-      ];
       settings = {
         "services.sync.prefs.sync.browser.uiCustomization.state" = true;
         "browser.aboutConfig.showWarning" = false;
