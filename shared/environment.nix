@@ -47,6 +47,7 @@
       lynx
       sxiv
       hsetroot
+	  pavucontrol
       xorg.xkill
       xorg.xinit
       xclip
