@@ -16,6 +16,7 @@
     ./calendar
     ./qutebrowser
     ./vscode
+	./firefox
   ];
 
 }

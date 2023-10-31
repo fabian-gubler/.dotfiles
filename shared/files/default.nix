@@ -4,7 +4,6 @@ let
   configFilesToLink = {
     # TODO: custom
     "khal" = ./khal; # TODO: create custom service
-    # "tridactyl" = ./tridactyl;
     "dunst" = ./dunst; # TODO: create custom service
     "khard" = ./khard; # TODO: create custom service
     "touchegg/touchegg.conf" = ./touchegg/touchegg.conf; # create custom service

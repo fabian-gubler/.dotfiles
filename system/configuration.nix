@@ -30,6 +30,9 @@ in
 
   nixpkgs.config = {
     allowUnfree = true;
+    firefox = {
+      enableTridactylNative = true;
+    };
     # permittedInsecurePackages = [ "electron-24.8.6" ];
 
   };
