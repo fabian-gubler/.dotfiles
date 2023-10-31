@@ -52,11 +52,12 @@
     };
   };
 
+  # TODO: Firefox Touchscreen not working
   home.sessionVariables = {
     MOZ_USE_XINPUT2 = "1";
   };
 
-  # Tridactyl
+  # TODO: Tridactyl not working
   # xdg.configFile."tridactyl/tridactylrc".source = ./tridactylrc;
   # };
 }
