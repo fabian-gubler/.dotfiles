@@ -39,13 +39,13 @@
     with pkgs;
 
     [
-
-
       unstable.obsidian
+
       (python3.withPackages pythonPackages)
+
+	  dmenu
       lynx
       sxiv
-	  dmenu
       hsetroot
       xorg.xkill
       xorg.xinit
