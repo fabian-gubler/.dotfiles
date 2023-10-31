@@ -31,7 +31,7 @@ in
     # You can add overlays here from the overlays folder
     overlays = [
       outputs.overlays.additions
-      outputs.overlays.modifications
+      outputs.overlays.system
       outputs.overlays.unstable-packages
 
     ];
@@ -40,6 +40,11 @@ in
       allowUnfree = true;
     };
   };
+
+  # Packages installed in only for system profile.
+  environment.systemPackages = with pkgs; [
+    # ...
+  ];
 
   # Nix Settings
   nix = {
