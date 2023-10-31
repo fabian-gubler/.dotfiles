@@ -57,6 +57,6 @@
   };
 
   # Tridactyl
-  xdg.configFile."tridactyl/tridactylrc".source = ./tridactylrc;
+  # xdg.configFile."tridactyl/tridactylrc".source = ./tridactylrc;
   # };
 }
