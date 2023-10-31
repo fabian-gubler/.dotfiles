@@ -7,10 +7,8 @@
   # You can change versions, add patches, set compilation flags, anything really.
   # https://nixos.wiki/wiki/Overlays
   modifications = final: prev: {
-
     dwm = prev.dwm.overrideAttrs (oldAttrs: rec { src = ./dwm; });
     dmenu = prev.dmenu.overrideAttrs (oldAttrs: rec { src = ./dmenu; });
-
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will

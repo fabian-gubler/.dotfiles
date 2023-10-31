@@ -1,7 +1,5 @@
 { config, pkgs, lib, input, outputs, ... }:
 
-
-
 let
   # TODO: should be imported from initial flake
   user = "fabian";
@@ -25,10 +23,10 @@ in
     options = [ "defaults" ];
   };
 
-  virtualisation.libvirtd.enable = true;
+  # Virtualization
   virtualisation.docker.enable = true;
 
-
+  # Nixpkgs settings
   nixpkgs = {
     # You can add overlays here from the overlays folder
     overlays = [
@@ -45,8 +43,8 @@ in
 
   # Nix Settings
   nix = {
-	optimise.automatic = true;
-    gc.automatic = true; 
+    optimise.automatic = true;
+    gc.automatic = true;
     settings.experimental-features = [ "nix-command" "flakes" ];
   };
 

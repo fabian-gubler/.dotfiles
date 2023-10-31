@@ -44,8 +44,8 @@
       unstable.obsidian
       (python3.withPackages pythonPackages)
       lynx
-      dmenu
       sxiv
+	  dmenu
       hsetroot
       xorg.xkill
       xorg.xinit
