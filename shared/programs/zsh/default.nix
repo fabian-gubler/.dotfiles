@@ -12,8 +12,8 @@
       sv = "sudoedit";
       top = "gotop -l minimal";
       gpush = "git add . && git commit -m 'manual update' && git push";
-	  gl = "nix run --override-input nixpkgs nixpkgs/nixos-21.11 --impure github:guibou/nixGL -- ";
-	  lg = "lazygit";
+      gl = "nix run --override-input nixpkgs nixpkgs/nixos-21.11 --impure github:guibou/nixGL -- ";
+      lg = "lazygit";
 
       # Tasks
       p = "todo.sh -d /data/nextcloud/todo/pers/config";
@@ -23,6 +23,11 @@
       u = "todo.sh -d /data/nextcloud/todo/uni/config";
       uv = "cd /data/nextcloud/todo/uni; nvim -c 'sort' uni.txt";
       sc = "cd /data/.dotfiles/scripts/utils/ && exa -a";
+
+      # Habits
+      h = "harsh";
+      hc = "nvim /data/nextcloud/todo/harsh/habits";
+      hl = "nvim /data/nextcloud/todo/harsh/log";
     };
 
     envExtra = ''

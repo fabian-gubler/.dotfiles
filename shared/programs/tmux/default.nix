@@ -17,6 +17,9 @@
           plugin = tmuxPlugins.fzf-tmux-url;
           extraConfig = "set -g @fzf-url-bind 'V'";
         }
+		{
+			plugin = tmuxPlugins.resurrect;
+		}
         {
           plugin = tmuxPlugins.yank;
 
