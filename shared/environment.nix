@@ -3,6 +3,7 @@
   systemd.user.sessionVariables = rec {
     EDITOR = "nvim";
     TIMEWARRIORDB = "/data/nextcloud/todo/timewarrior";
+	HARSHPATH = "/data/nextcloud/todo/harsh";
     MANPAGER = "nvim +Man!";
     ANKI_BASE = "/data/nextcloud/apps/anki-data";
     PATH = "\${PATH}:\${XDG_BIN_HOME}:/data/.dotfiles/scripts/utils:/data/.dotfiles/scripts/dmenu:/data/.dotfiles/scripts/tmux:\${HOME}/go/bin";

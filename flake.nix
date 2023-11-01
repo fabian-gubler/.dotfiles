@@ -13,12 +13,16 @@
       url = github:nix-community/home-manager/release-23.05;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # additional
+    hosts.url = github:StevenBlack/hosts;
   };
 
   outputs =
     { self
     , nixpkgs
     , home-manager
+    , hosts
     , ...
     } @ inputs:
     let
@@ -50,6 +54,17 @@
             # > Our main nixos configuration file <
             ./system
 
+            hosts.nixosModule
+            {
+              networking.stevenBlackHosts = {
+                enable = true;
+                blockFakenews = true;
+                blockGambling = true;
+                blockPorn = true;
+                blockSocial = false;
+              };
+            }
+
             # Include home-manager in nixos installations
             home-manager.nixosModules.home-manager
             {
@@ -67,11 +82,12 @@
       homeConfigurations = {
         generic = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
-		  extraSpecialArgs = { inherit inputs outputs; };
+          extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             {
               imports = [ ./shared ];
               targets.genericLinux.enable = true;
+
             }
           ];
         };
