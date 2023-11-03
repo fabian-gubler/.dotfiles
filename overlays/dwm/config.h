@@ -79,7 +79,6 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,						XK_a,      spawn,          SHCMD("dmenu_run -i")},
 	{ MODKEY,						XK_w,      spawn,          SHCMD("firefox")},
-	{ MODKEY,                       XK_u,      spawn,          SHCMD("thunderbird")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
 	{ MODKEY,                       XK_j,      spawn,          SHCMD("xrandr --output Virtual-1  --auto")},
 	{ MODKEY,                       XK_k,      spawn,          SHCMD("/data/.dotfiles/scripts/dmenu/logout")},

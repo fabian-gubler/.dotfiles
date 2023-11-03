@@ -76,10 +76,14 @@ main_menu() {
     "Start NixOS")
 	suspend_vm "$DOMAIN_WIN10" "$DEVICE_WIN_XML"
       manage_vm "start" "$DOMAIN_NIXOS" "$DEVICE_NIX_XML"
+	  virt-manager --connect qemu:///system --show-domain-console "$DOMAIN_NIXOS"
+
       ;;
     "Start Windows 10")
-	suspend_vm "$DOMAIN_WIN10" "$DEVICE_WIN_XML"
+	suspend_vm "$DOMAIN_NIXOS" "$DEVICE_NIX_XML"
       manage_vm "start" "$DOMAIN_WIN10" "$DEVICE_WIN_XML"
+	  virt-manager --connect qemu:///system --show-domain-console "$DOMAIN_WIN10"
+
       ;;
     "Suspend VM")
       suspend_menu
