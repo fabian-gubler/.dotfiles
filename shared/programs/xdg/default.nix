@@ -7,6 +7,11 @@
         mimeType = [ "application/pdf" ];
       };
 
+	  kitty = {
+		  name = "kitty";
+		  exec = "nixGLIntel kitty";
+	  };
+
       foliate = {
         name = "foliate";
         exec = "foliate";

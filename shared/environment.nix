@@ -41,6 +41,7 @@
 
     [
       unstable.obsidian
+	  nixgl.nixGLIntel
 
       (python3.withPackages pythonPackages)
 
@@ -60,7 +61,6 @@
       vdirsyncer
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
       qbittorrent
-      anki-bin
       pgadmin4-desktopmode
       dunst
       newsboat
@@ -78,7 +78,6 @@
       okular
       pandoc
       gimp
-	  gcolor3
       libreoffice
       lazygit
       lf
@@ -86,11 +85,12 @@
       gotop
       xdragon
       wget
+	  gpick
       ripgrep
       zip
       unzip
       unrar
-      anki-bin
+      anki
       markdown-anki-decks
     ]
   ;

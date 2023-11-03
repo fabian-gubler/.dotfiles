@@ -16,6 +16,7 @@
 
     # additional
     hosts.url = github:StevenBlack/hosts;
+    nixgl.url = github:guibou/nixGL;
   };
 
   outputs =
@@ -23,6 +24,7 @@
     , nixpkgs
     , home-manager
     , hosts
+	, nixgl
     , ...
     } @ inputs:
     let
@@ -33,10 +35,6 @@
 
       user = "fabian";
 
-      # pkgs = import nixpkgs {
-      #   inherit system;
-      #   config.allowUnfree = true;
-      # };
       lib = nixpkgs.lib;
 
     in
