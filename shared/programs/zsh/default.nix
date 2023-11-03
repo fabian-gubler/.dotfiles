@@ -12,7 +12,8 @@
       sv = "sudoedit";
       top = "gotop -l minimal";
       gpush = "git add . && git commit -m 'manual update' && git push";
-      gl = "nix run --override-input nixpkgs nixpkgs/nixos-21.11 --impure github:guibou/nixGL -- ";
+      # TODO: Automate replace with current nix version
+      gl = "nix run --override-input nixpkgs nixpkgs/nixos-23.05 --impure github:guibou/nixGL -- ";
       lg = "lazygit";
 
       # Tasks
