@@ -4,10 +4,6 @@
   services.spice-vdagentd.enable = true;
   services.qemuGuest.enable = true;
 
-  # Quick Fix 
-  # could overwrite derivation
-  # might be because dwm doesn't load .desktop files
-
   # Display Server
   services.xserver = {
     enable = true;
@@ -22,7 +18,7 @@
 
   services.gnome.gnome-keyring.enable = true; # required for some vs code extensions
   services.atd.enable = true;
-  services.flatpak.enable = true;
+  services.flatpak.enable = false;
 
   services.postgresql = {
     enable = true;
