@@ -4,6 +4,7 @@
 hsetroot -solid "#252A34" & # solid background
 xbindkeys & # playerctl with headphones ~/.xbindkeysrc
 clipmenud & # clipboard manager daemon
+spicevdagent & # ${pkgs.spice-vdagent}/bin/spice-vdagent
 
 # $HOME/.dotfiles/scripts/watchers/autovdirsyncer & # sync calendar/contacts on write
 # /data/.dotfiles/scripts/watchers/autombsyncer & # sync mail on write

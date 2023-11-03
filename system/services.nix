@@ -4,6 +4,10 @@
   services.spice-vdagentd.enable = true;
   services.qemuGuest.enable = true;
 
+  # Quick Fix 
+  # could overwrite derivation
+  # might be because dwm doesn't load .desktop files
+
   # Display Server
   services.xserver = {
     enable = true;
