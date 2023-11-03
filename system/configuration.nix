@@ -23,13 +23,6 @@ in
     options = [ "defaults" ];
   };
 
-  # Shared virtual images
-  fileSystems."/var/lib/libvirt" = {
-    device = "var/lib/libvirt"; # Replace this with the correct device path
-    fsType = "virtiofs"; # Replace this with the correct filesystem type
-    options = [ "defaults" ];
-  };
-
   # Virtualization
   virtualisation = {
     docker.enable = true;
