@@ -24,7 +24,11 @@ in
   };
 
   # Virtualization
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    docker.enable = true;
+    libvirtd.enable = true;
+  };
+
 
   # Nixpkgs settings
   nixpkgs = {
@@ -54,7 +58,7 @@ in
 
   # Packages installed in only for system profile.
   environment.systemPackages = with pkgs; [
-    # ...
+    virt-manager
   ];
 
   # Nix Settings
@@ -93,7 +97,7 @@ in
     XDG_CONFIG_HOME = "\${HOME}/.config";
     XDG_BIN_HOME = "\${HOME}/.local/bin";
     TIMEWARRIORDB = "/data/nextcloud/todo/timewarrior";
-	HARSHPATH = "/data/nextcloud/todo/harsh";
+    HARSHPATH = "/data/nextcloud/todo/harsh";
     XDG_DATA_HOME = "\${HOME}/.local/share";
     XDG_DOWNLOAD_DIR = "\${HOME}/Downloads";
     QT_SCALE_FACTOR = "1.5";
