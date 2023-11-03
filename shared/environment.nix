@@ -80,7 +80,6 @@
       neovim
       nodejs
       rbw
-      authy
       todo-txt-cli
       okular
       pandoc
