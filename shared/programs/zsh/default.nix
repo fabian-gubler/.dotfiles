@@ -7,23 +7,12 @@
     shellAliases = {
 
       # Shorthands
-      v = "nvim";
-      nv = "nix run ~/neovim-nix";
       sv = "sudoedit";
-      top = "gotop -l minimal";
+      v = "${pkgs.neovim}/bin/nvim";
+      top = "${pkgs.gotop}/bin/gotop -l minimal";
       gpush = "git add . && git commit -m 'manual update' && git push";
-      # TODO: Automate replace with current nix version
-      gl = "nix run --impure github:guibou/nixGL -- ";
-      lg = "lazygit";
-
-      # Tasks
-      p = "todo.sh -d /data/nextcloud/todo/pers/config";
-      pv = "cd /data/nextcloud/todo/pers; nvim -c 'sort' todo.txt";
-      d = "todo.sh -d /data/nextcloud/todo/dev/config";
-      dv = "cd /data/nextcloud/todo/dev; nvim -c 'sort' dev.txt";
-      u = "todo.sh -d /data/nextcloud/todo/uni/config";
-      uv = "cd /data/nextcloud/todo/uni; nvim -c 'sort' uni.txt";
-      sc = "cd /data/.dotfiles/scripts/utils/ && exa -a";
+      gl = "${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel";
+      lg = "${pkgs.lazygit}/bin/lazygit";
 
       # Habits
       h = "harsh";

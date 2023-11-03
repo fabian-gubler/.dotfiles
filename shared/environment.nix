@@ -41,7 +41,7 @@
 
     [
       unstable.obsidian
-	  nixgl.nixGLIntel
+	  nixgl.nixGLIntel # TODO: Only for Non-NixOS
 
       (python3.withPackages pythonPackages)
 

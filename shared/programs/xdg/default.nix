@@ -12,6 +12,11 @@
 		  exec = "nixGLIntel kitty";
 	  };
 
+	  anki = {
+		  name = "anki";
+		  exec = "nixGLIntel anki";
+	  };
+
       foliate = {
         name = "foliate";
         exec = "foliate";
