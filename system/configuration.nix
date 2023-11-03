@@ -58,7 +58,7 @@ in
 
   # Packages installed in only for system profile.
   environment.systemPackages = with pkgs; [
-    virt-manager
+    # ...
   ];
 
   # Nix Settings
@@ -73,7 +73,7 @@ in
     # Be sure to change it (using passwd) after rebooting!
     initialPassword = "password";
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "libvirtd"];
+    extraGroups = [ "wheel" "docker" "libvirtd" ];
   };
 
   programs.dconf.enable = true;

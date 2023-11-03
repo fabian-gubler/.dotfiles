@@ -46,61 +46,47 @@
 
       # eclipse: https://github.com/NixOS/nixpkgs/blob/master/doc/builders/packages/eclipse.section.md
       dmenu
-      lynx
+      virt-manager
       sxiv
       hsetroot
-      citrix_workspace
       pavucontrol
       xorg.xkill
       xorg.xinit
-      xclip
       clipnotify
       clipmenu
+      xclip
       khal
       khard
       vdirsyncer
-      inotify-tools
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
-      jq
       qbittorrent
       anki-bin
       pgadmin4-desktopmode
-      neomutt
       dunst
-      jupyter
       newsboat
-      sqlite
       thunderbird
       postman
       flameshot
       gcc
-      tuir
       timewarrior
       ncdu
       at
       rnix-lsp
       neovim
-      nodejs
       rbw
-      todo-txt-cli
+      pinentry
       okular
       pandoc
-      poppler_utils
       gimp
-      colorpicker
+	  gcolor3
       libreoffice
       lazygit
       lf
-      exa
       fzf
       gotop
-      trash-cli
       xdragon
       wget
-      file
       ripgrep
-      xdotool
-      pinentry
       zip
       unzip
       unrar
