@@ -1,0 +1,8 @@
+<filesystem type='mount' accessmode='passthrough'>
+  <driver type='virtiofs'/>
+  <binary path='/usr/libexec/virtiofsd'/>
+  <source dir='/data'/>
+  <target dir='data'/>
+  <alias name='fs0'/>
+  <address type='pci' domain='0x0000' bus='0x07' slot='0x00' function='0x0'/>
+</filesystem>

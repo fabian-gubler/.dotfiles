@@ -1,0 +1,107 @@
+#!/bin/bash
+#
+sudo -v
+
+# Define the paths to the XML files for detachment
+DEVICE_NIX_XML="/data/.dotfiles/scripts/vm/detach-fs0.xml"
+DEVICE_WIN_XML="/path/to/detach-win-fs.xml"  # Placeholder path, update this later
+
+# Define the domain names
+DOMAIN_NIXOS="nixos-22.05"
+DOMAIN_WIN10="win10-vm"  # Placeholder name, update this later
+
+# Function to check if a domain exists
+domain_exists() {
+  sudo virsh dominfo "$1" &>/dev/null
+}
+
+# Function to start the network bridge
+start_network_bridge() {
+  sudo ip link set virbr0 down
+  sudo brctl delbr virbr0
+  sudo virsh net-start default
+  notify-send "VM Manager" "Network bridge setup complete."
+}
+
+# Function to suspend VM
+suspend_vm() {
+  local domain="$1"
+  local device_xml="$2"
+  if domain_exists "$domain" && sudo virsh domstate "$domain" | grep -qi running; then
+    # TODO: Detach device and suspend
+    # sudo virsh detach-device "$domain" "$device_xml" --persistent
+    # sudo virsh managedsave "$domain"
+
+	# power off vm
+	sudo virsh shutdown "$domain"
+	  notify-send "VM Manager" "$domain suspended."
+  else
+	  notify-send "VM Manager" "$domain is not running or does not exist."
+  fi
+}
+
+# Function to attach device and start VM
+start_vm() {
+  local domain="$1"
+  local device_xml="$2"
+  # Attach device and start VM
+  sudo virsh attach-device "$domain" "$device_xml" --persistent
+  # sudo virsh start "$domain"
+  notify-send "VM Manager" "$domain started."
+}
+
+# Function to manage VMs
+manage_vm() {
+  local action="$1"
+  local domain="$2"
+  local device_xml="$3"
+
+  if [[ $action == "suspend" ]]; then
+    suspend_vm "$domain" "$device_xml"
+  elif [[ $action == "start" ]]; then
+    start_vm "$domain" "$device_xml"
+  else
+    echo "Invalid action."
+  fi
+}
+
+# Main menu with dmenu
+main_menu() {
+  local selection=$(echo -e "Start Network Bridge\nStart NixOS\nStart Windows 10\nSuspend VM" | dmenu -i -p "Choose VM Operation:")
+  case "$selection" in
+    "Start Network Bridge")
+      start_network_bridge
+      ;;
+    "Start NixOS")
+      manage_vm "start" "$DOMAIN_NIXOS" "$DEVICE_NIX_XML"
+      ;;
+    "Start Windows 10")
+      manage_vm "start" "$DOMAIN_WIN10" "$DEVICE_WIN_XML"
+      ;;
+    "Suspend VM")
+      suspend_menu
+      ;;
+    *)
+    notify-send "VM Manager" "No valid option selected or operation cancelled."
+      ;;
+  esac
+}
+
+# Suspend menu with dmenu
+suspend_menu() {
+  local vm_selection=$(echo -e "$DOMAIN_NIXOS\n$DOMAIN_WIN10" | dmenu -i -p "Select VM to suspend:")
+  case "$vm_selection" in
+    "$DOMAIN_NIXOS")
+      manage_vm "suspend" "$DOMAIN_NIXOS" "$DEVICE_NIX_XML"
+      ;;
+    "$DOMAIN_WIN10")
+      manage_vm "suspend" "$DOMAIN_WIN10" "$DEVICE_WIN_XML"
+      ;;
+    *)
+    notify-send "VM Manager" "No valid option selected or operation cancelled."
+      ;;
+  esac
+}
+
+# Call the main menu function
+main_menu
