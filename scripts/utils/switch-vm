@@ -9,7 +9,7 @@ DEVICE_WIN_XML="/path/to/detach-win-fs.xml"  # Placeholder path, update this lat
 
 # Define the domain names
 DOMAIN_NIXOS="nixos-22.05"
-DOMAIN_WIN10="win10-vm"  # Placeholder name, update this later
+DOMAIN_WIN10="win10"  # Placeholder name, update this later
 
 # Function to check if a domain exists
 domain_exists() {
@@ -46,8 +46,8 @@ start_vm() {
   local domain="$1"
   local device_xml="$2"
   # Attach device and start VM
-  sudo virsh attach-device "$domain" "$device_xml" --persistent
-  # sudo virsh start "$domain"
+  # sudo virsh attach-device "$domain" "$device_xml" --persistent
+  sudo virsh start "$domain"
   notify-send "VM Manager" "$domain started."
 }
 
@@ -74,9 +74,11 @@ main_menu() {
       start_network_bridge
       ;;
     "Start NixOS")
+	suspend_vm "$DOMAIN_WIN10" "$DEVICE_WIN_XML"
       manage_vm "start" "$DOMAIN_NIXOS" "$DEVICE_NIX_XML"
       ;;
     "Start Windows 10")
+	suspend_vm "$DOMAIN_WIN10" "$DEVICE_WIN_XML"
       manage_vm "start" "$DOMAIN_WIN10" "$DEVICE_WIN_XML"
       ;;
     "Suspend VM")
