@@ -23,6 +23,13 @@ in
     options = [ "defaults" ];
   };
 
+  # Shared 
+  fileSystems."/var/lib/libvirt" = {
+    device = "var/lib/libvirt"; # Replace this with the correct device path
+    fsType = "virtiofs"; # Replace this with the correct filesystem type
+    options = [ "defaults" ];
+  };
+
   # Virtualization
   virtualisation = {
     docker.enable = true;
@@ -73,7 +80,7 @@ in
     # Be sure to change it (using passwd) after rebooting!
     initialPassword = "password";
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" ];
+    extraGroups = [ "wheel" "docker" "libvirtd"];
   };
 
   programs.dconf.enable = true;
