@@ -35,9 +35,9 @@ suspend_vm() {
 
 	# power off vm
 	sudo virsh shutdown "$domain"
-	  notify-send "VM Manager" "$domain suspended."
+	  # notify-send "VM Manager" "$domain suspended."
   else
-	  notify-send "VM Manager" "$domain is not running or does not exist."
+	  # notify-send "VM Manager" "$domain is not running or does not exist."
   fi
 }
 
@@ -48,7 +48,7 @@ start_vm() {
   # Attach device and start VM
   # sudo virsh attach-device "$domain" "$device_xml" --persistent
   sudo virsh start "$domain"
-  notify-send "VM Manager" "$domain started."
+  # notify-send "VM Manager" "$domain started."
 }
 
 # Function to manage VMs
@@ -89,7 +89,7 @@ main_menu() {
       suspend_menu
       ;;
     *)
-    notify-send "VM Manager" "No valid option selected or operation cancelled."
+    # notify-send "VM Manager" "No valid option selected or operation cancelled."
       ;;
   esac
 }
@@ -105,7 +105,7 @@ suspend_menu() {
       manage_vm "suspend" "$DOMAIN_WIN10" "$DEVICE_WIN_XML"
       ;;
     *)
-    notify-send "VM Manager" "No valid option selected or operation cancelled."
+    # notify-send "VM Manager" "No valid option selected or operation cancelled."
       ;;
   esac
 }
