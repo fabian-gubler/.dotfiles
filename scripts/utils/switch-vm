@@ -37,7 +37,7 @@ suspend_vm() {
 	sudo virsh shutdown "$domain"
 	  # notify-send "VM Manager" "$domain suspended."
   else
-	  # notify-send "VM Manager" "$domain is not running or does not exist."
+	  notify-send "VM Manager" "$domain is not running or does not exist."
   fi
 }
 
