@@ -90,6 +90,7 @@
       zip
       unzip
       unrar
+	  nodejs_20
       anki
       markdown-anki-decks
     ]
