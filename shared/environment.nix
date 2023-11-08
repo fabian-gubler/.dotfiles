@@ -41,7 +41,7 @@
 
     [
       unstable.obsidian
-	  nixgl.nixGLIntel # TODO: Only for Non-NixOS
+      nixgl.nixGLIntel # TODO: Only for Non-NixOS
 
       (python3.withPackages pythonPackages)
 
@@ -53,7 +53,7 @@
       xorg.xkill
       xorg.xinit
       clipnotify
-	  arandr
+      arandr
       clipmenu
       xclip
       khal
@@ -64,7 +64,6 @@
       pgadmin4-desktopmode
       dunst
       newsboat
-      thunderbird
       postman
       flameshot
       gcc
@@ -73,6 +72,7 @@
       at
       rnix-lsp
       neovim
+	  foliate
       rbw
       pinentry
       okular
@@ -85,13 +85,14 @@
       gotop
       xdragon
       wget
-	  gpick
+      gpick
       ripgrep
       zip
       unzip
       unrar
-	  nodejs_20
+      nodejs_20
       anki
+	  thunderbird
       markdown-anki-decks
     ]
   ;
@@ -101,6 +102,12 @@
       enable = true;
       nix-direnv.enable = true;
     };
+   #  thunderbird = {
+   #    enable = true;
+   #    profiles.default = {
+		 #  isDefault = true;
+	  # };
+   #  };
   };
 
   gtk = {

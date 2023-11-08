@@ -9,22 +9,17 @@ in
   programs = {
     msmtp.enable = true;
     mbsync.enable = true;
-	notmuch = {
-		enable = true;
-	};
-    astroid = {
+    notmuch = {
       enable = true;
-	  # externalEditor = "kitty -e nvim %1";
-
     };
   };
 
   accounts.email.accounts = {
     fastmail = {
       address = "gubler@fastmail.com";
-	  notmuch.enable = true;
+      notmuch.enable = true;
       maildir = { path = "~/mail/"; };
-realName = "Gubler";
+      realName = "Gubler";
       primary = true;
       folders = {
         inbox = "INBOX";
@@ -40,13 +35,16 @@ realName = "Gubler";
       };
       astroid = {
         enable = true;
-		sendMailCommand = "msmtpq --read-envelope-from --read-recipients";
+        sendMailCommand = "msmtpq --read-envelope-from --read-recipients";
         # extraConfig = {
         #   astroid.notmuch.db = "~/mail";
         # };
       };
       thunderbird = {
         enable = true;
+          # perIdentitySettings = id: {
+          #   "mail.identity.id_${id}.protectSubject" = false;
+          # };
       };
       mbsync = {
         enable = true;
