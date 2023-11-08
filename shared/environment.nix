@@ -53,6 +53,7 @@
       xorg.xkill
       xorg.xinit
       clipnotify
+	  arandr
       clipmenu
       xclip
       khal
