@@ -47,7 +47,6 @@
 
       # eclipse: https://github.com/NixOS/nixpkgs/blob/master/doc/builders/packages/eclipse.section.md
       dmenu
-      virt-manager
       sxiv
       hsetroot
       pavucontrol
