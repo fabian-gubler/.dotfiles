@@ -97,18 +97,12 @@
     ]
   ;
 
-  programs = {
-    direnv = {
+  
+    programs.direnv = {
       enable = true;
       nix-direnv.enable = true;
     };
-   #  thunderbird = {
-   #    enable = true;
-   #    profiles.default = {
-		 #  isDefault = true;
-	  # };
-   #  };
-  };
+  
 
   gtk = {
     enable = true;
