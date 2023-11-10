@@ -76,6 +76,7 @@
       rbw
       pinentry
 	  nil
+	  nixpkgs-fmt
 	  foliate
       okular
       pandoc
