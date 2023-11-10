@@ -58,6 +58,12 @@ in
 
   # Packages installed in only for system profile.
   environment.systemPackages = with pkgs; [
+
+	# necessary for fresh install
+	dmenu
+	alacritty # Note: xterm should be installed by default
+
+    # explicitly for system only
     # ...
   ];
 

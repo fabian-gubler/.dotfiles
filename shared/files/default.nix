@@ -31,7 +31,7 @@ in
   home.file = pkgs.lib.attrsets.mapAttrs toSource homeFilesToLink // {
     # Add custom .xprofile
     ".xprofile".source = pkgs.writeShellScript "xprofile" ''
-      ${pkgs.hsetroot}/bin/hsetroot -solid "#252A34" &
+      ${pkgs.xorg.xsetroot}/bin/xsetroot -solid "#252A34" &
       ${pkgs.xbindkeys}/bin/xbindkeys &
       ${pkgs.clipmenu}/bin/clipmenud &
       ${pkgs.spice-vdagent}/bin/spice-vdagent &

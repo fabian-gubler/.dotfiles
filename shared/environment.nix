@@ -40,21 +40,21 @@
     with pkgs;
 
     [
+
+
       unstable.obsidian
       nixgl.nixGLIntel # TODO: Only for Non-NixOS
 
       (python3.withPackages pythonPackages)
 
-      # eclipse: https://github.com/NixOS/nixpkgs/blob/master/doc/builders/packages/eclipse.section.md
+      # xorg.xinit # validate need of a package
       dmenu
+      neovim
+      lf
       sxiv
-      hsetroot
-      pavucontrol
-      xorg.xkill
-      xorg.xinit
       clipnotify
-      arandr
       clipmenu
+      arandr
       xclip
       khal
       khard
@@ -70,17 +70,15 @@
       timewarrior
       ncdu
       at
-      neovim
-	  nil
-	  foliate
       rbw
       pinentry
+	  nil
+	  foliate
       okular
       pandoc
       gimp
       libreoffice
       lazygit
-      lf
       fzf
       gotop
       xdragon

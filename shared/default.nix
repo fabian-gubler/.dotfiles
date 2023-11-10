@@ -1,5 +1,6 @@
 { config, inputs, outputs, pkgs, ... }: {
 
+  # comment imports out for faster installation
   imports = [
     ./files
     ./programs

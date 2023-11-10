@@ -6,6 +6,7 @@
 	./alacritty
     ./mail
     ./newsboat
+	./eclipse
     ./rofi
     ./git
     ./kitty
