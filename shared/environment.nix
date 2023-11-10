@@ -47,7 +47,11 @@
 
       (python3.withPackages pythonPackages)
 
-      # xorg.xinit # validate need of a package
+# temporary
+      pgadmin4-desktopmode
+
+# main packages
+      xorg.xinit # find built-in alternative
       dmenu
       neovim
       lf
@@ -61,7 +65,6 @@
       vdirsyncer
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
       qbittorrent
-      pgadmin4-desktopmode
       dunst
       newsboat
       postman
@@ -90,8 +93,8 @@
       unrar
       nodejs_20
       anki
-	  thunderbird
       markdown-anki-decks
+	  thunderbird
     ]
   ;
 
