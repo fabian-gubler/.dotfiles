@@ -27,10 +27,6 @@ cp -f host/hardware-configuration /etc/nixos/hardware-configuration.nix
 sudo nixos-install --flake .#<host>
 
 ```
-## TODO
-- Split into essentials & extras
-- System variables in one place
-
 ## Helpful tips
 ### Running Non-Nix binaries
 `nix-shell -p steam-run --run "steam-run ./the-binary"`
