@@ -70,8 +70,8 @@
       timewarrior
       ncdu
       at
-      rnix-lsp
       neovim
+	  nil
 	  foliate
       rbw
       pinentry
