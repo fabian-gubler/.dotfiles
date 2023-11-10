@@ -7,7 +7,6 @@
     ./mail
     ./newsboat
 	./eclipse
-    ./rofi
     ./git
     ./kitty
     ./lf
@@ -15,7 +14,6 @@
     ./yt-dlp
     ./zsh
     ./calendar
-    ./qutebrowser
     ./vscode
 	./firefox
   ];

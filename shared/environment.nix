@@ -42,15 +42,15 @@
     [
 
 
-      unstable.obsidian
-      nixgl.nixGLIntel # TODO: Only for Non-NixOS
 
       (python3.withPackages pythonPackages)
 
-# temporary
-      pgadmin4-desktopmode
+      # temporary
+      pgadmin4-desktopmode # This Semester's Uni Course
+      nixgl.nixGLIntel # Only needed for Non-NixOS
+      unstable.obsidian # Wait until unfree issue is resolved
 
-# main packages
+      # main packages
       xorg.xinit # find built-in alternative
       dmenu
       neovim
@@ -75,9 +75,8 @@
       at
       rbw
       pinentry
-	  nil
-	  nixpkgs-fmt
-	  foliate
+      rnix-lsp
+      foliate
       okular
       pandoc
       gimp
@@ -95,16 +94,16 @@
       nodejs_20
       anki
       markdown-anki-decks
-	  thunderbird
+      thunderbird
     ]
   ;
 
-  
-    programs.direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-    };
-  
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
 
   gtk = {
     enable = true;
