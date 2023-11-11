@@ -9,11 +9,20 @@
         y = 10;
       };
       font = {
-        size = 13;
+        size = 10;
         normal = {
           family = "SFMono";
         };
       };
+      key_bindings = [
+        
+        {
+          key = "Plus"; # Fix Zoom in with Plus (shift needed)
+          mods = "Control|Shift";
+          action = "IncreaseFontSize";
+        }
+
+      ];
       colors = {
         primary = {
           background = "0x2E3440";
