@@ -41,8 +41,6 @@
 
     [
 
-
-
       (python3.withPackages pythonPackages)
 
       # temporary

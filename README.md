@@ -41,6 +41,11 @@ Check out many possible methods: [Link](https://unix.stackexchange.com/questions
 - `pkgs` custom written packages
 - `overlays` extend or change packages
 
+## TODO - Things I am considering at the moment
+- Wayland: Porting my setup from `dwm` to `dwl`
+    - Identify conflicting packages (e.g. xinit, dmenu etc.)
+    - Porting dwm configuration & patches
+
 ## Philosophy: Non Functional Properties
 The following are some personal non-functional benefits of using a nix-based system.
 
