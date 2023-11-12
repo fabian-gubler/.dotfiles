@@ -62,7 +62,6 @@
       khard
       vdirsyncer
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
-	  vlc
       qbittorrent
       dunst
       newsboat
