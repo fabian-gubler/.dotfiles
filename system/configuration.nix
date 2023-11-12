@@ -9,7 +9,7 @@ in
 
   # Boot loader
   boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
-  boot.loader.grub.enable = enable;
+  boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/vda";
   boot.loader.efi.canTouchEfiVariables = true;
 
