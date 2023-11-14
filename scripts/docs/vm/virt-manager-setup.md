@@ -27,3 +27,4 @@ lsmod | grep kvm
 
 1. Add shared filesystem (requires shared memory)
 2. Change video driver to virtio
+    -> Now QXL with vgamem="16384" (for 4k displays)
