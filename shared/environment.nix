@@ -47,7 +47,14 @@
       pgadmin4-desktopmode # This Semester's Uni Course
       nixgl.nixGLIntel # Only needed for Non-NixOS
       unstable.obsidian # Wait until unfree issue is resolved
-	  ffmpeg # for jellyfin
+      ffmpeg # for jellyfin
+	  microsoft-edge-beta # beta for better wayland support
+		# todo: chrome://flags/#enable-webrtc-pipewire-capturer -> enable
+		# after fix: use pkg 'microsoft-edge'
+
+      # only on home-manager
+		  # beeper
+		  # microsoft edge (teams)
 
       # main packages
       xorg.xinit # find built-in alternative
