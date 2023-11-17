@@ -33,4 +33,7 @@
     # port = 5432;
   };
 
+  # misc applications
+  services.jellyfin.enable = true;
+
 }

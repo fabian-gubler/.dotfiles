@@ -47,6 +47,7 @@
       pgadmin4-desktopmode # This Semester's Uni Course
       nixgl.nixGLIntel # Only needed for Non-NixOS
       unstable.obsidian # Wait until unfree issue is resolved
+	  ffmpeg # for jellyfin
 
       # main packages
       xorg.xinit # find built-in alternative
