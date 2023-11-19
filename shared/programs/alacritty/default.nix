@@ -9,7 +9,7 @@
         y = 10;
       };
       font = {
-        size = 13;
+        size = 14;
         normal = {
           family = "SFMono";
         };
