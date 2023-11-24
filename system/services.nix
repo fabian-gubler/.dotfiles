@@ -20,6 +20,8 @@
   services.atd.enable = true;
   services.flatpak.enable = false;
 
+  # services.mongodb.enable = true;
+
   services.postgresql = {
     enable = true;
     # package = pkgs.postgresql_15; # current 15.4

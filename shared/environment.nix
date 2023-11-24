@@ -48,13 +48,15 @@
       nixgl.nixGLIntel # Only needed for Non-NixOS
       unstable.obsidian # Wait until unfree issue is resolved
       ffmpeg # for jellyfin
-	  microsoft-edge-beta # beta for better wayland support
-		# todo: chrome://flags/#enable-webrtc-pipewire-capturer -> enable
-		# after fix: use pkg 'microsoft-edge'
+      microsoft-edge-beta # beta for better wayland support
+      # todo: chrome://flags/#enable-webrtc-pipewire-capturer -> enable
+      # after fix: use pkg 'microsoft-edge'
+
+      mongodb-compass
 
       # only on home-manager
-		  # beeper
-		  # microsoft edge (teams)
+      # beeper
+      # microsoft edge (teams)
 
       # main packages
       xorg.xinit # find built-in alternative
