@@ -52,7 +52,6 @@
       # todo: chrome://flags/#enable-webrtc-pipewire-capturer -> enable
       # after fix: use pkg 'microsoft-edge'
 
-      mongodb-compass
 
       # only on home-manager
       # beeper
