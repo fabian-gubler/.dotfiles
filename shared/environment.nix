@@ -58,6 +58,7 @@
       # microsoft edge (teams)
 
       # main packages
+	  timeshift
       xorg.xinit # find built-in alternative
       dmenu
       neovim
