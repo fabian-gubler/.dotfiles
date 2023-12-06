@@ -19,7 +19,7 @@ in
   programs.newsboat = {
     enable = true;
     autoReload = false;
-    browser = "qutebrowser";
+    browser = "firefox";
     maxItems = 1000;
     reloadThreads = 8;
     reloadTime = 2;
