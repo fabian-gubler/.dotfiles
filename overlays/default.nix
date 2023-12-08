@@ -15,6 +15,9 @@
   # Shared 
   modifications = final: prev: {
     dmenu = prev.dmenu.overrideAttrs (oldAttrs: rec { src = ./dmenu; });
+    # eclipse = prev.exclipse.overrideAttrs (oldAttrs: rec {
+    #   eclipse = eclipse-platform;
+    # });
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
