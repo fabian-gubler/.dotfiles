@@ -94,6 +94,7 @@
       dmenu
       neovim
       lf
+	  pavucontrol
       sxiv
       clipnotify
       clipmenu
