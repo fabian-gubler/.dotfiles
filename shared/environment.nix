@@ -9,35 +9,35 @@
     PATH = "\${PATH}:\${XDG_BIN_HOME}:/data/.dotfiles/scripts/utils:/data/.dotfiles/scripts/dmenu:/data/.dotfiles/scripts/tmux:\${HOME}/go/bin";
   };
 
-  nixpkgs.config.packageOverrides = pkgs: rec {
-    myEclipse = with pkgs.eclipses; eclipseWithPlugins {
-      eclipse = eclipse-platform;
-      jvmArgs = [ "-Xmx2048m" ];
-      plugins = [
-        plugins.color-theme
-		plugins.vrapper
-        # (plugins.buildEclipsePlugin {
-        #   name = "myplugin1-1.0";
-        #   srcFeature = fetchurl {
-        #     url = "http://…/features/myplugin1.jar";
-        #     hash = "sha256-123…";
-        #   };
-        #   srcPlugin = fetchurl {
-        #     url = "http://…/plugins/myplugin1.jar";
-        #     hash = "sha256-123…";
-        #   };
-        # })
-        (plugins.buildEclipseUpdateSite {
-          name = "adt";
-          src = builtins.fetchurl {
-            # stripRoot = false;
-            url = "https://tools.hana.ondemand.com/latest";
-            sha256 = "sha256:0m13nb6r0bxh82magfvsvw6mrf3sp62ydsmnrqy11r7bhgx15gdw";
-          };
-        })
-      ];
-    };
-  };
+  # nixpkgs.config.packageOverrides = pkgs: rec {
+  #   myEclipse = with pkgs.eclipses; eclipseWithPlugins {
+  #     eclipse = eclipse-platform;
+  #     jvmArgs = [ "-Xmx2048m" ];
+  #     plugins = [
+  #       plugins.color-theme
+		# plugins.vrapper
+  #       # (plugins.buildEclipsePlugin {
+  #       #   name = "myplugin1-1.0";
+  #       #   srcFeature = fetchurl {
+  #       #     url = "http://…/features/myplugin1.jar";
+  #       #     hash = "sha256-123…";
+  #       #   };
+  #       #   srcPlugin = fetchurl {
+  #       #     url = "http://…/plugins/myplugin1.jar";
+  #       #     hash = "sha256-123…";
+  #       #   };
+  #       # })
+  #       (plugins.buildEclipseUpdateSite {
+  #         name = "adt";
+  #         src = builtins.fetchurl {
+  #           # stripRoot = false;
+  #           url = "https://tools.hana.ondemand.com/latest";
+  #           sha256 = "sha256:0m13nb6r0bxh82magfvsvw6mrf3sp62ydsmnrqy11r7bhgx15gdw";
+  #         };
+  #       })
+  #     ];
+  #   };
+  # };
 
   # Packages that should be installed to the user profile.
   home.packages =
@@ -85,7 +85,7 @@
       # only on home-manager
       # beeper
       # microsoft edge (teams)
-      myEclipse
+      # myEclipse
 
 
       # main packages

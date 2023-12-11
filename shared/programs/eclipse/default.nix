@@ -10,10 +10,10 @@
 # - Try out oomph for eclipse configuration
 
 
-programs.eclipse = {
-	enable = false;
-	# jvmArgs = [ "-javaagent:${pkgs.lombok.out}/share/java/lombok.jar" ];
-	# plugins = [ ];
-};
+# programs.eclipse = {
+# 	enable = false;
+# 	# jvmArgs = [ "-javaagent:${pkgs.lombok.out}/share/java/lombok.jar" ];
+# 	# plugins = [ ];
+# };
 
 }
