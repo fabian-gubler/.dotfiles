@@ -15,7 +15,7 @@
   #     jvmArgs = [ "-Xmx2048m" ];
   #     plugins = [
   #       plugins.color-theme
-		# plugins.vrapper
+  # plugins.vrapper
   #       # (plugins.buildEclipsePlugin {
   #       #   name = "myplugin1-1.0";
   #       #   srcFeature = fetchurl {
@@ -80,7 +80,7 @@
       microsoft-edge-beta # beta for better wayland support
       # todo: chrome://flags/#enable-webrtc-pipewire-capturer -> enable
       # after fix: use pkg 'microsoft-edge'
-
+      xwayland
 
       # only on home-manager
       # beeper
@@ -94,7 +94,7 @@
       dmenu
       neovim
       lf
-	  pavucontrol
+      pavucontrol
       sxiv
       clipnotify
       clipmenu
