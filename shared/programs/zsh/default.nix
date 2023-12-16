@@ -3,7 +3,6 @@
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
-    # SyntaxHighlighting.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
 
@@ -14,17 +13,10 @@
       gpush = "git add . && git commit -m 'manual update' && git push";
       gl = "${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel";
       lg = "${pkgs.lazygit}/bin/lazygit";
-
-      # Habits
-      h = "harsh";
-      hc = "nvim /data/nextcloud/todo/harsh/habits";
-      hl = "nvim /data/nextcloud/todo/harsh/log";
     };
 
     envExtra = ''
       export DIRENV_LOG_FORMAT=
-      export WATSON_DIR=/data/nextcloud/todo/watson
-      # export OPENAI_API_KEY=$(rbw get OPENAI_API_KEY)
     '';
 
     history = {
@@ -71,15 +63,6 @@
 		fi
 	}
 
-	ut (){
-		todo.sh -d /data/nextcloud/todo/uni/config 
-		if [ -z "$1" ]; then
-			:
-		else
-			echo ""
-			t $@
-		fi
-		}
 	'';
   };
 }
