@@ -9,6 +9,10 @@
     PATH = "\${PATH}:\${XDG_BIN_HOME}:/data/.dotfiles/scripts/utils:/data/.dotfiles/scripts/dmenu:/data/.dotfiles/scripts/tmux:\${HOME}/go/bin";
   };
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0" # Obsidian 
+  ];
+
   # nixpkgs.config.packageOverrides = pkgs: rec {
   #   myEclipse = with pkgs.eclipses; eclipseWithPlugins {
   #     eclipse = eclipse-platform;
@@ -75,7 +79,7 @@
       # temporary
       pgadmin4-desktopmode # This Semester's Uni Course
       nixgl.nixGLIntel # Only needed for Non-NixOS
-      # unstable.obsidian # Wait until unfree issue is resolved
+      obsidian # Wait until unfree issue is resolved
       ffmpeg # for jellyfin
       microsoft-edge-beta # beta for better wayland support
       # todo: chrome://flags/#enable-webrtc-pipewire-capturer -> enable
