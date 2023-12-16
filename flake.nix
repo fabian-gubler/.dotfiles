@@ -24,7 +24,7 @@
     , nixpkgs
     , home-manager
     , hosts
-	, nixgl
+    , nixgl
     , ...
     } @ inputs:
     let
