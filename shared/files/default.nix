@@ -7,6 +7,7 @@ let
     "dunst" = ./dunst; # TODO: create custom service
     "khard" = ./khard; # TODO: create custom service
     "touchegg/touchegg.conf" = ./touchegg/touchegg.conf; # create custom service
+    "lazygit/config.yml" = ./lazygit/config.yml; # TODO: create custom service
 
     # Leave it
     "mutt" = ./mutt; # TODO: declarable in home-manager
@@ -38,6 +39,8 @@ in
     '';
 
   };
+
+  # TODO: Delete original files before symlinking
 
   # Symlink files under ~/.config, e.g. ~/.config/alacritty/alacritty.yml
   xdg.configFile = pkgs.lib.attrsets.mapAttrs toSource configFilesToLink;
