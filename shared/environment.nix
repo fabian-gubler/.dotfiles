@@ -91,8 +91,11 @@
 
       obsidian # Wait until unfree issue is resolved
 
-      # programming
-	  shellcheck
+      # lsp server
+      shellcheck
+      nodePackages.bash-language-server
+	  statix
+      rnix-lsp
 
       # main packages
       timeshift
@@ -121,7 +124,6 @@
       at
       rbw
       pinentry
-      rnix-lsp
       foliate
       okular
       pandoc
