@@ -4,7 +4,7 @@
     enableAutosuggestions = true;
     enableCompletion = true;
     # SyntaxHighlighting.enable = true;
-	syntaxHighlighting.enable = true;
+    syntaxHighlighting.enable = true;
     shellAliases = {
 
       # Shorthands
