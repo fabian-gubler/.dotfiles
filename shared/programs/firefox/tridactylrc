@@ -2,6 +2,9 @@
 " vim: set filetype=tridactyl
 " Plug 'tridactyl/vim-tridactyl'
 
+" This resets all default settings
+sanitize tridactyllocal tridactylsync
+
 set allowautofocus false
 set viewsource default
 
@@ -37,19 +40,17 @@ bind --mode=ex     <C-w> text.backward_kill_word
 bind --mode=insert <C-w> text.backward_kill_word
 bind --mode=input  <C-w> text.backward_kill_word
 
+" Binds for new reader mode
+bind gr reader
+bind gR reader --tab
 
+""""""""""""""""
+" Custom Sites "
+""""""""""""""""
 
-" ====================搜索引擎====================
 " ** Search Engines
 " Disable all searchurls
-jsb Object.keys(tri.config.get("searchurls")).reduce((prev, u) => prev.catch(()=>{}).then(_ => tri.excmds.setnull("searchurls." + u)), Promise.resolve())
 
-" Make Tridactyl work on more sites at the expense of some security. For
-" details, read the comment at the top of this file.
-fixamo_quiet
-
-
-" ====================Custom===================="
 
 " Comment toggler for Reddit, Hacker News and Lobste.rs
  bind ;c hint -Jc [class*="expand"],[class*="togg"],[class="comment_folder"]
@@ -57,9 +58,20 @@ fixamo_quiet
  " Make gu take you back to subreddit from comments
 bindurl reddit.com gu urlparent 4
 
-" Binds for new reader mode
-bind gr reader
-bind gR reader --tab
+" ;f and ;F are used to hint only the urls I'm most likely to click (like search results)
 
-" New reddit is bad
-autocmd DocStart ^http(s?)://www.reddit.com js tri.excmds.urlmodify("-t", "www", "old")
+bindurl www\.google\.com ;f hint -Jc .rc > .yuRUbf > a
+bindurl www\.google\.com ;F hint -Jbc .rc > .yuRUbf > a
+
+bindurl next\.duckduckgo\.com ;f hint -Jc  a.result__a
+bindurl next\.duckduckgo\.com ;F hint -Jbc a.result__a
+
+bindurl news\.ycombinator\.com/news ;f hint -Jc .age > a
+bindurl news\.ycombinator\.com/news ;F hint -Jbc .age > a
+bindurl news\.ycombinator\.com/item ;f hint -Jc .comment .commtext a
+bindurl news\.ycombinator\.com/item ;F hint -Jbc .comment .commtext a
+
+
+" Make Tridactyl work on more sites at the expense of some security. For
+" details, read the comment at the top of this file.
+fixamo_quiet
