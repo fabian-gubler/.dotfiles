@@ -10,7 +10,7 @@
       sv = "sudoedit";
       v = "${pkgs.neovim}/bin/nvim";
       top = "${pkgs.gotop}/bin/gotop -l minimal";
-      gpush = "git add . && git commit -m 'manual update' && git push";
+      gpush = "${pkgs.git}/bin/git add . && git commit -m 'manual update' && git push";
       gl = "${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel";
       lg = "${pkgs.lazygit}/bin/lazygit";
     };
@@ -46,7 +46,7 @@
 	bindkey -s '^f' 'lfcd\n'
 
 	  eisvogel() {
-		  docker run --rm \
+		  ${pkgs.docker}/bin/docker run --rm \
 		   --volume "$(pwd):/data" \
 		   --user $(id -u):$(id -g) \
 		   pandoc/extra "$1".md -o "$1".pdf --template eisvogel --listings
