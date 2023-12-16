@@ -107,7 +107,7 @@
       qbittorrent
       dunst
       newsboat
-      postman
+      # postman		# FIX: currently no mirror found
       flameshot
       gcc
       timewarrior

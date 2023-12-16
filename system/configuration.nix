@@ -10,7 +10,7 @@ in
   # Boot loader
   boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
   boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/vda";
+  boot.loader.grub.devices = [ "/dev/vda" ];
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable OpenGL
@@ -59,9 +59,9 @@ in
   # Packages installed in only for system profile.
   environment.systemPackages = with pkgs; [
 
-	# necessary for fresh install
-	dmenu
-	alacritty # Note: xterm should be installed by default
+    # necessary for fresh install
+    dmenu
+    alacritty # Note: xterm should be installed by default
 
     # explicitly for system only
     # ...
@@ -83,8 +83,11 @@ in
   };
 
   programs.dconf.enable = true;
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+	config.common.default = "*";
+  };
 
   time.timeZone = "Europe/Zurich";
 
