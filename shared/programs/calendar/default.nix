@@ -14,7 +14,7 @@ in
   programs.zsh.shellAliases."vdirsyncer" = "vdirsyncer -c ${config.services.vdirsyncer.configFile}";
 
   services.vdirsyncer = {
-    enable = true;
+    enable = false;
     settings = {
       general."status_path" = "${config.home.homeDirectory}/.config/vdirsyncer";
 
