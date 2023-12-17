@@ -6,7 +6,6 @@
     MANPAGER = "nvim +Man!";
     ANKI_BASE = "/data/nextcloud/apps/anki-data";
     PATH = "\${PATH}:\${XDG_BIN_HOME}:/data/.dotfiles/scripts/utils:/data/.dotfiles/scripts/dmenu:/data/.dotfiles/scripts/tmux:\${HOME}/go/bin";
-	XDG_CONFIG_DIRS = "/etc/xdg:/data";
   };
 
   nixpkgs.config.permittedInsecurePackages = [

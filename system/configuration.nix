@@ -86,7 +86,7 @@ in
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-	config.common.default = "*";
+    config.common.default = "*";
   };
 
   time.timeZone = "Europe/Zurich";
@@ -109,10 +109,6 @@ in
     HARSHPATH = "/data/nextcloud/todo/harsh";
     XDG_DATA_HOME = "\${HOME}/.local/share";
     XDG_DOWNLOAD_DIR = "\${HOME}/Downloads";
-	XDG_CONFIG_DIRS = [
-	"${XDG_CONFIG_DIRS}",
-	"/data"
-	]
     QT_SCALE_FACTOR = "1.5";
 
     # Duplicate: in home-manager
@@ -122,6 +118,8 @@ in
     PATH = "\${PATH}:\${XDG_BIN_HOME}:/data/.dotfiles/scripts/utils:/data/.dotfiles/scripts/dmenu:/data/.dotfiles/scripts/tmux";
 
   };
+
+
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
