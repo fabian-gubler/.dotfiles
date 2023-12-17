@@ -109,6 +109,7 @@ in
     HARSHPATH = "/data/nextcloud/todo/harsh";
     XDG_DATA_HOME = "\${HOME}/.local/share";
     XDG_DOWNLOAD_DIR = "\${HOME}/Downloads";
+	XDG_CONFIG_DIRS = "/etc/xdg:/data";
     QT_SCALE_FACTOR = "1.5";
 
     # Duplicate: in home-manager
