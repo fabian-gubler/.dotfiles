@@ -109,6 +109,7 @@
       arandr
       xclip
       khal
+	  jq
       khard
       vdirsyncer
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
