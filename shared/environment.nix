@@ -75,6 +75,8 @@
 
       (python3.withPackages pythonPackages)
 
+# --- Experimental ---
+
       # temporary
       pgadmin4-desktopmode # This Semester's Uni Course
 
@@ -88,12 +90,17 @@
       # myEclipse
       nixgl.nixGLIntel # Only needed for Non-NixOS
 
-      obsidian # Wait until unfree issue is resolved
+      obsidian # Current electron-25 marked as insecure
+
+# --------------------
+
+      # programming
+      nodejs_20
 
       # lsp server
       shellcheck
       nodePackages.bash-language-server
-	  statix
+      statix
       rnix-lsp
 
       # main packages
@@ -109,14 +116,13 @@
       arandr
       xclip
       khal
-	  jq
+      jq
       khard
       vdirsyncer
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
       qbittorrent
       dunst
       newsboat
-      # postman		# FIX: currently no mirror found
       flameshot
       gcc
       timewarrior
@@ -139,7 +145,6 @@
       zip
       unzip
       unrar
-      nodejs_20
       anki
       markdown-anki-decks
       thunderbird
