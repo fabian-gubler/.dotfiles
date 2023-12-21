@@ -27,6 +27,14 @@ cp -f host/hardware-configuration /etc/nixos/hardware-configuration.nix
 sudo nixos-install --flake .#<host>
 
 ```
+
+## Refactoring Ideas
+
+Currently I am considering adding...
+
+- [git-credential-oauth](https://github.com/hickford/git-credential-oauth)  using home-manager `programs.git-credential-oauth`
+
+
 ## Helpful tips
 ### Running Non-Nix binaries
 `nix-shell -p steam-run --run "steam-run ./the-binary"`
