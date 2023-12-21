@@ -7,10 +7,6 @@ let
 in
 {
 
-  imports = [
-    ./github.nix # push repos daily
-  ];
-
   # Refresh newsboat in background
   systemd.timers."newsboat" = {
     wantedBy = [ "timers.target" ];
