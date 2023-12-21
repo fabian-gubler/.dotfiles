@@ -14,6 +14,7 @@
     ./yt-dlp
     ./zsh
     ./calendar
+    ./eza
     # ./vscode
 	./firefox
   ];
