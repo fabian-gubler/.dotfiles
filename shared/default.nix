@@ -33,6 +33,6 @@
 
 
   # https://nix-community.github.io/home-manager/release-notes.html
-  home.stateVersion = "23.05";
+  home.stateVersion = "23.11";
 
 }
