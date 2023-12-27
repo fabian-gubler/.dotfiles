@@ -3,17 +3,23 @@
 
   programs.khal = {
     enable = true;
-
     locale = {
-      timeformat = "%I:%M %p";
-      dateformat = "%Y-%m-%d";
-      longdateformat = "%Y-%m-%d";
-      datetimeformat = "%Y-%m-%d %I:%M %p";
-      longdatetimeformat = "%Y-%m-%d %I:%M %p";
-
-      firstweekday = 0;
-
-      weeknumbers = "left";
+      timeformat = "%H:%M";
+      dateformat = "%d.%m.";
+      longdateformat = "%d.%m.%Y";
+      datetimeformat = " %d.%m. %H:%M";
+      longdatetimeformat = "%d.%m.%Y %H:%M";
+    };
+    settings = {
+      default = {
+        show_all_days = true;
+        timedelta = "1d";
+      };
+      view = {
+        blank_line_before_day = true;
+        event_view_always_visible = false;
+        agenda_event_format = "{calendar-color}{start-end-time-style} {title}{repeat-symbol}{reset} {location}{reset}";
+      };
     };
   };
 
@@ -47,6 +53,7 @@
     khal = {
       enable = true;
       type = "discover";
+      color = "dark blue";
     };
 
     vdirsyncer = {

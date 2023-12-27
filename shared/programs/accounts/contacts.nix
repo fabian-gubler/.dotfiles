@@ -2,12 +2,10 @@
 
 {
 
+  programs.khard.enable = true;
+
   accounts.contact.accounts.main = {
 
-    khal = {
-      enable = true;
-      readOnly = true;
-    };
 
     khard.enable = true;
 

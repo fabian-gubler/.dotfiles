@@ -1,8 +1,7 @@
 {
   imports = [
-    ./mbsync.nix
+    ./mail.nix
     ./calendar.nix
     ./contacts.nix
-	# ./neomutt.nix
   ];
 }
