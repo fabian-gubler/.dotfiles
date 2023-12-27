@@ -75,7 +75,7 @@
 
       (python3.withPackages pythonPackages)
 
-# --- Experimental ---
+      # --- Experimental ---
 
       # temporary
       pgadmin4-desktopmode # This Semester's Uni Course
@@ -92,7 +92,7 @@
 
       obsidian # Current electron-25 marked as insecure
 
-# --------------------
+      # --------------------
 
       # programming
       nodejs_20
@@ -128,7 +128,6 @@
       timewarrior
       ncdu
       at
-      rbw
       pinentry
       foliate
       okular
@@ -151,6 +150,14 @@
     ]
   ;
 
+  programs.rbw = {
+    enable = true;
+    settings = {
+      email = "fabian.gubler@protonmail.com";
+      pinentry = "pinentry";
+      lock_timeout = 2419200;
+    };
+  };
 
   programs.direnv = {
     enable = true;
