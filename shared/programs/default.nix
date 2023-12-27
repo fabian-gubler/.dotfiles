@@ -4,7 +4,7 @@
     ./autojump
     ./tmux
 	./alacritty
-    ./mail
+    ./accounts
     ./newsboat
 	./eclipse
     ./git
@@ -13,7 +13,7 @@
     ./xdg
     ./yt-dlp
     ./zsh
-    ./calendar
+    # ./calendar
     ./eza
     # ./vscode
 	./firefox

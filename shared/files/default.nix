@@ -3,10 +3,7 @@
 let
   configFilesToLink = {
     # TODO: custom
-    "khal" = ./khal; # TODO: create custom service
     "dunst" = ./dunst; # TODO: create custom service
-    "khard" = ./khard; # TODO: create custom service
-    "touchegg/touchegg.conf" = ./touchegg/touchegg.conf; # create custom service
     "lazygit/config.yml" = ./lazygit/config.yml; # TODO: create custom service
 
     # Leave it
