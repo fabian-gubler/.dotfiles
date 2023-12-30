@@ -30,9 +30,9 @@
       Description = "vdirsyncer calendar&contacts synchronization";
       OnFailure = [ "send-notification@vdirsyncer.service" ];
     };
-    Install = {
-      partOf = [ "network-online.target" ];
-    };
+    # Install = {
+    #   partOf = [ "network-online.target" ];
+    # };
     Service = {
       ExecStart = [
         "${pkgs.vdirsyncer}/bin/vdirsyncer metasync"
