@@ -3,6 +3,7 @@
   # comment imports out for faster installation
   imports = [
     ./files
+    ./timers
     ./programs
     ./environment.nix
   ];

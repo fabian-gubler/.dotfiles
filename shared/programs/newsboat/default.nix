@@ -17,6 +17,8 @@ let
 in
 {
 
+  imports = [ ./timer.nix ]; # systemd reload
+
   programs.newsboat = {
     enable = true;
 

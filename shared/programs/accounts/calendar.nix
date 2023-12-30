@@ -1,4 +1,5 @@
 { pkgs, ... }:
+
 {
 
   programs.khal = {
@@ -24,9 +25,34 @@
   };
 
 
+  systemd.user.services."vdirsyncer" = {
+    Unit = {
+      Description = "vdirsyncer calendar&contacts synchronization";
+      OnFailure = [ "send-notification@vdirsyncer.service" ];
+    };
+    Install = {
+      partOf = [ "network-online.target" ];
+    };
+    Service = {
+      ExecStart = [
+        "${pkgs.vdirsyncer}/bin/vdirsyncer metasync"
+        "${pkgs.vdirsyncer}/bin/vdirsyncer sync"
+      ];
+      Type = "oneshot";
+    };
+  };
 
-  services.vdirsyncer = {
-    enable = true;
+  systemd.user.timers."vdirsyncer" = {
+    Unit = {
+      Description = "vdirsyncer calendar&contacts synchronization";
+    };
+    Install = {
+      wantedBy = [ "timers.target" ];
+    };
+    Timer = {
+      OnCalendar = "*:0/5";
+      Unit = "vdirsyncer.service";
+    };
   };
 
   programs.vdirsyncer = {

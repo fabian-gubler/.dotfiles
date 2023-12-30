@@ -87,6 +87,7 @@
       arandr
       xclip
       khal
+      trash-cli
       jq
       khard
       vdirsyncer
