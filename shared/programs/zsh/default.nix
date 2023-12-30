@@ -11,6 +11,7 @@
       v = "${pkgs.neovim}/bin/nvim";
       top = "${pkgs.gotop}/bin/gotop -l minimal";
       gpush = "${pkgs.git}/bin/git add . && git commit -m 'manual update' && git push";
+      k = "khal";
       gl = "${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel";
       lg = "${pkgs.lazygit}/bin/lazygit";
     };
@@ -52,16 +53,7 @@
 		   pandoc/extra "$1".md -o "$1".pdf --template eisvogel --listings
 	  }
 
-	t() {
-		date +"%A, %d.%m.%Y   (%W)"
-
-		if [ -z "$1" ]; then
-			:
-		else
-			echo ""
-			khal -c /data/.dotfiles/shared/files/khal/config.tasks list -a task now $@
-		fi
-	}
+    eval "$(_KHAL_COMPLETE=zsh_source khal)"
 
 	'';
   };
