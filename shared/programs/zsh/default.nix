@@ -12,6 +12,7 @@
       top = "${pkgs.gotop}/bin/gotop -l minimal";
       gpush = "${pkgs.git}/bin/git add . && git commit -m 'manual update' && git push";
       k = "khal";
+      ik = "ikhal";
       gl = "${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel";
       lg = "${pkgs.lazygit}/bin/lazygit";
     };
