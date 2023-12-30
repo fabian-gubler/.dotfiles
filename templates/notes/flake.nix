@@ -47,14 +47,14 @@
         ];
 
         dev-packages = with pkgs; [
-		  pandoc
+          pandoc
           texlab
           okular
         ];
       in
       rec {
         devShell = pkgs.mkShell {
-			name = "notes";
+          name = "notes";
           buildInputs = [ latex-packages dev-packages ];
         };
 

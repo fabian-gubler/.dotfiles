@@ -42,9 +42,9 @@ in
       };
       thunderbird = {
         enable = true;
-          # perIdentitySettings = id: {
-          #   "mail.identity.id_${id}.protectSubject" = false;
-          # };
+        # perIdentitySettings = id: {
+        #   "mail.identity.id_${id}.protectSubject" = false;
+        # };
       };
       mbsync = {
         enable = true;

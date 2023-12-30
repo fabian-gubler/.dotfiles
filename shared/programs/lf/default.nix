@@ -18,13 +18,13 @@
       zip = '' %zip -r "$f" "$f" '';
       tar = '' %tar cvf "$f.tar" "$f" '';
       open = ''
-        ''${{
-          case $(file --mime-type "$(readlink -f $f)" -b) in
-            text/*) $EDITOR $fx;;
-			video/*) nohup mpv $fx &;;
-            *) for f in $fx; do xdg-open $f > /dev/null 2> /dev/null & done;;
-          esac
-        }}
+                ''${{
+                  case $(file --mime-type "$(readlink -f $f)" -b) in
+                    text/*) $EDITOR $fx;;
+        			video/*) nohup mpv $fx &;;
+                    *) for f in $fx; do xdg-open $f > /dev/null 2> /dev/null & done;;
+                  esac
+                }}
       '';
       extract = ''
          ''${{

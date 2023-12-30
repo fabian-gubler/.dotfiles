@@ -10,7 +10,7 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         python = "python310"; # <--- change here
-        pythonPackages = pkgs.python310Packages;# <--- change here
+        pythonPackages = pkgs.python310Packages; # <--- change here
         pkgs = import nixpkgs {
           inherit system;
         };
@@ -33,7 +33,7 @@
             pythonPackages.pytest
             pythonPackages.flake8
             pythonPackages.isort
-			pythonPackages.debugpy
+            pythonPackages.debugpy
             pkgs.black
             pkgs.nodePackages.pyright
           ];

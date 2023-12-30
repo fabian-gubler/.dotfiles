@@ -15,7 +15,7 @@
         };
       };
       key_bindings = [
-        
+
         {
           key = "Plus"; # Fix Zoom in with Plus (shift needed)
           mods = "Control|Shift";

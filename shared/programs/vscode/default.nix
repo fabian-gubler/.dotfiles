@@ -73,12 +73,12 @@ in
       # murbani.vscode-abap-remote-fs # connector
     ];
     keybindings = [
-	{
-			key = "shift+enter";
-			command = "jupyter.execSelectionInteractive";
-			when = "editorTextFocus";
-		}
-	];
+      {
+        key = "shift+enter";
+        command = "jupyter.execSelectionInteractive";
+        when = "editorTextFocus";
+      }
+    ];
   };
 
   home.activation.boforeCheckLinkTargets = {

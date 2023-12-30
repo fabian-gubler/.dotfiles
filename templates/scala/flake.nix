@@ -6,20 +6,23 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    flake-utils,
-  }: let
-    supportedSystems = [
-      "aarch64-darwin"
-      "aarch64-linux"
-      "x86_64-linux"
-      "x86_64-darwin"
-    ];
-  in
+  outputs =
+    { self
+    , nixpkgs
+    , flake-utils
+    ,
+    }:
+    let
+      supportedSystems = [
+        "aarch64-darwin"
+        "aarch64-linux"
+        "x86_64-linux"
+        "x86_64-darwin"
+      ];
+    in
     flake-utils.lib.eachSystem supportedSystems (
-      system: let
+      system:
+      let
         pkgs = import ./pkgs.nix nixpkgs system;
 
         makeShell = p:
@@ -30,12 +33,13 @@
               jdk
               mill
               sbt
-			  metals # LSP server for Scala
+              metals # LSP server for Scala
               scala-cli
               scalafmt
             ];
           };
-      in {
+      in
+      {
         devShells = {
           default = makeShell pkgs.default;
           java17 = makeShell pkgs.pkgs17;

@@ -10,7 +10,7 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         python = "python310"; # <--- change here
-        pythonPackages = pkgs.python310Packages;# <--- change here
+        pythonPackages = pkgs.python310Packages; # <--- change here
         pkgs = import nixpkgs {
           inherit system;
 
@@ -100,9 +100,9 @@
           ];
 
           # shellHook = ''
-            # export CUDA_PATH=${pkgs.cudatoolkit}
-            # export EXTRA_CCFLAGS="-I/usr/include"
-            # export EXTRA_LDFLAGS="-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib"
+          # export CUDA_PATH=${pkgs.cudatoolkit}
+          # export EXTRA_CCFLAGS="-I/usr/include"
+          # export EXTRA_LDFLAGS="-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib"
           # '';
 
           # Run this command, only after creating the virtual environment

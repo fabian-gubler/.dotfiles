@@ -25,9 +25,9 @@
   # system architecture
   targetPkgs = pkgs: with pkgs; [
 
-	# bitwig dependencies
-	yabridge
-	yabridgectl
+    # bitwig dependencies
+    yabridge
+    yabridgectl
 
     # custom added (was needed for vital)
     xorg.libSM

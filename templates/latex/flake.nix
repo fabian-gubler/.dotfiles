@@ -55,12 +55,12 @@
           texlab
           zathura
           wmctrl
-		  pandoc
+          pandoc
         ];
       in
       rec {
         devShell = pkgs.mkShell {
-			name = "latex";
+          name = "latex";
           buildInputs = [ latex-packages dev-packages ];
         };
 

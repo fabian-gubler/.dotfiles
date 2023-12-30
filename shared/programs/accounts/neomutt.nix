@@ -11,10 +11,10 @@
 
     ];
     extraConfig = ''
-      source /data/.dotfiles/shared/programs/mail/files/variables| # pipe indicates executable
-	  mailboxes "=INBOX" "=Drafts" "=Spam" "=Trash" "=Sent" "=Archive"
+            source /data/.dotfiles/shared/programs/mail/files/variables| # pipe indicates executable
+      	  mailboxes "=INBOX" "=Drafts" "=Spam" "=Trash" "=Sent" "=Archive"
 
-                      		'';
+                            		'';
     settings = {
       query_command = "khard email --parsable --search-in-source-files '%s'";
       from = "$my_mail";
@@ -22,7 +22,7 @@
       folder = "~/Mail";
       spoolfile = "+INBOX";
       smtp_url = "smtp://$my_mail:$my_pass@localhost:1025";
-	  smtp_pass = "this";
+      smtp_pass = "this";
       smtp_authenticators = "gssapi:login";
     };
   };

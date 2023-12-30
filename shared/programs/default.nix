@@ -3,10 +3,10 @@
   imports = [
     ./autojump
     ./tmux
-	./alacritty
+    ./alacritty
     ./accounts
     ./newsboat
-	./eclipse
+    ./eclipse
     ./git
     ./kitty
     ./lf
@@ -16,7 +16,7 @@
     # ./calendar
     ./eza
     # ./vscode
-	./firefox
+    ./firefox
   ];
 
 }
