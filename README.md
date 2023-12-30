@@ -33,6 +33,7 @@ sudo nixos-install --flake .#<host>
 Currently I am considering adding...
 
 - [git-credential-oauth](https://github.com/hickford/git-credential-oauth)  using home-manager `programs.git-credential-oauth`
+- [toggle-theme](https://discourse.nixos.org/t/home-manager-toggle-between-themes/32907)  to switch up aesthetics
 
 
 ## Helpful tips
