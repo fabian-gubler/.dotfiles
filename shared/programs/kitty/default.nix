@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let
   kittyColors = import ./kitty-colors.nix { inherit (pkgs) lib config; };
 in

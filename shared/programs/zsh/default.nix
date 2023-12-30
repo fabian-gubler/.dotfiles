@@ -27,7 +27,7 @@
     zplug = {
       enable = true;
       plugins = [
-        { name = "hlissner/zsh-autopair"; tags = [ defer:2 ]; } # fix: not working
+        { name = "hlissner/zsh-autopair"; tags = [ "defer:2" ]; }
         { name = "Aloxaf/fzf-tab"; }
         { name = "mafredri/zsh-async"; }
         { name = "chisui/zsh-nix-shell"; }

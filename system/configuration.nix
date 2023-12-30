@@ -1,4 +1,4 @@
-{ config, pkgs, lib, input, outputs, ... }:
+{ pkgs, outputs, ... }:
 
 let
   # TODO: should be imported from initial flake
@@ -101,7 +101,7 @@ in
   # Use same keyboard layout for tty
   console.useXkbConfig = true;
 
-  environment.sessionVariables = rec {
+  environment.sessionVariables = {
     XDG_CACHE_HOME = "\${HOME}/.cache";
     XDG_CONFIG_HOME = "\${HOME}/.config";
     XDG_BIN_HOME = "\${HOME}/.local/bin";

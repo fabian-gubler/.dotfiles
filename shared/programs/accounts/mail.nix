@@ -1,11 +1,7 @@
-{ pkgs, config, ... }:
-# TODO: Mail directory creation
-let
-  # TODO: Make pure (remove hardcoding)
-  bridgePass = "${config.home.homeDirectory}/.dotfiles/shared/programs/mail/files/get-pass.sh";
-in
-
 {
+
+# TODO: Mail directory creation
+
   programs = {
     msmtp.enable = true;
     mbsync.enable = true;

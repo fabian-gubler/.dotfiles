@@ -1,7 +1,4 @@
-{ nixosConfig
-, lib
-, ...
-}: {
+{
   programs.firefox.profiles.default.bookmarks = [
 
     {

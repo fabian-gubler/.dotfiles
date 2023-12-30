@@ -9,12 +9,12 @@
 
   # NixOS
   system = final: prev: {
-    dwm = prev.dwm.overrideAttrs (oldAttrs: rec { src = ./dwm; });
+    dwm = prev.dwm.overrideAttrs (oldAttrs: { src = ./dwm; });
   };
 
   # Shared 
   modifications = final: prev: {
-    dmenu = prev.dmenu.overrideAttrs (oldAttrs: rec { src = ./dmenu; });
+    dmenu = prev.dmenu.overrideAttrs (oldAttrs: { src = ./dmenu; });
     # eclipse = prev.exclipse.overrideAttrs (oldAttrs: rec {
     #   eclipse = eclipse-platform;
     # });

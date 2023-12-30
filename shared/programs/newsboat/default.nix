@@ -10,7 +10,6 @@
 # - Distill.io (https://distill.io/)
 # - ChangeTower (https://changetower.com/)
 
-{ config, pkgs, lib, ... }:
 let
   youtubeFeeds = import ./youtube.nix;
   blogFeeds = import ./blogs.nix;

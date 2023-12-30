@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{
 
   # Guest Agent
   services.spice-vdagentd.enable = true;

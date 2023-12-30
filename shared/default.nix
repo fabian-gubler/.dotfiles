@@ -1,4 +1,4 @@
-{ config, inputs, outputs, pkgs, ... }: {
+{ inputs, outputs, ... }: {
 
   # comment imports out for faster installation
   imports = [
