@@ -101,7 +101,8 @@
       shellcheck
       nodePackages.bash-language-server
       statix
-      rnix-lsp
+      nil # replaces: rnix-lsp
+      nixpkgs-fmt
 
       # main packages
       timeshift

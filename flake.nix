@@ -1,4 +1,4 @@
-# nixos starter configuration
+# nixos starter configurationflake
 # https://github.com/Misterio77/nix-starter-configs
 {
   description = "Personal NixOS Configuration Flake";
@@ -32,9 +32,6 @@
 
       # Supported systems for your flake packages, shell, etc.
       system = "x86_64-linux";
-
-      user = "fabian";
-
       lib = nixpkgs.lib;
 
     in
