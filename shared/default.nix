@@ -1,4 +1,11 @@
-{ inputs, outputs, ... }: {
+{ inputs, outputs, ... }:
+
+let
+  user = "fabian";
+in
+
+{
+
 
   # comment imports out for faster installation
   imports = [
@@ -7,6 +14,11 @@
     ./programs
     ./environment.nix
   ];
+
+  home = {
+    username = user;
+    homeDirectory = "/home/${user}";
+  };
 
   nixpkgs = {
     # You can add overlays here
@@ -24,12 +36,6 @@
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
     };
-  };
-
-
-  home = {
-    username = "fabian";
-    homeDirectory = "/home/fabian";
   };
 
   # disable unread news notification for home-manager

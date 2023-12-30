@@ -1,3 +1,6 @@
+let
+  user = "fabian";
+in
 {
 
   # Guest Agent
@@ -11,7 +14,7 @@
     windowManager.dwm.enable = true;
     displayManager = {
       autoLogin.enable = true;
-      autoLogin.user = "fabian";
+      autoLogin.user = "${user}";
       defaultSession = "none+dwm";
     };
   };

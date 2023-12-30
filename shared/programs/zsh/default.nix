@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -21,7 +21,7 @@
 
     history = {
       size = 10000;
-      path = "/home/fabian/.config/zsh/history";
+      path = "${config.home.homeDirectory}/.config/zsh/history";
     };
 
     zplug = {
