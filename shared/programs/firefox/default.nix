@@ -1,8 +1,7 @@
-{ config, pkgs, lib, ... }:
 {
-
   imports = [
     ./bookmarks.nix
+    ./search.nix
   ];
 
   nixpkgs.config.firefox = {
@@ -13,43 +12,6 @@
   programs.firefox = {
     enable = true;
     profiles.default = {
-      search = {
-        # Override the existing search configuration
-        force = true;
-        engines = {
-          # TODO: Problems rebuilding
-          "Nix Packages" = {
-            urls = [{
-              template = "https://search.nixos.org/packages";
-              params = [
-                { name = "type"; value = "packages"; }
-                { name = "query"; value = "{searchTerms}"; }
-              ];
-            }];
-
-            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = [ "np" ];
-          };
-          "Nix Options" = {
-            urls = [{
-              template = "https://search.nixos.org/options";
-              params = [
-                { name = "type"; value = "packages"; }
-                { name = "query"; value = "{searchTerms}"; }
-              ];
-            }];
-
-            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = [ "no" ];
-          };
-          "YouTube" = {
-            urls = [{
-              template = "https://www.youtube.com/results?search_query={searchTerms}";
-            }];
-            definedAliases = [ "y" ];
-          };
-        };
-      };
       settings = {
         "services.sync.prefs.sync.browser.uiCustomization.state" = true;
         "browser.aboutConfig.showWarning" = false;
