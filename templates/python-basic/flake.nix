@@ -5,11 +5,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
   };
 
-  outputs = inputs@{ self, nixpkgs, flake-utils, ... }:
+  outputs = { self, nixpkgs, flake-utils, ... }:
 
     flake-utils.lib.eachDefaultSystem (system:
       let
-        python = "python310"; # <--- change here
         pythonPackages = pkgs.python310Packages; # <--- change here
         pkgs = import nixpkgs {
           inherit system;
