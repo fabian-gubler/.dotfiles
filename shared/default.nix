@@ -13,7 +13,7 @@
       # Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
-	  inputs.nixgl.overlay
+      inputs.nixgl.overlay
 
     ];
     # Configure your nixpkgs instance
@@ -30,6 +30,9 @@
     username = "fabian";
     homeDirectory = "/home/fabian";
   };
+
+  # disable unread news notification for home-manager
+  news.display = "silent";
 
 
   # https://nix-community.github.io/home-manager/release-notes.html
