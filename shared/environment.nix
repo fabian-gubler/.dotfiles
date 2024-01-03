@@ -45,24 +45,19 @@
 
       (python3.withPackages pythonPackages)
 
-      # --- Experimental ---
+      # --- TODO ---
 
-      # temporary
-      pgadmin4-desktopmode # This Semester's Uni Course
-
-      microsoft-edge-beta # beta for better wayland support
-      # todo: chrome://flags/#enable-webrtc-pipewire-capturer -> enable
-      # after fix: use pkg 'microsoft-edge'
-
-      # only on home-manager
-      # beeper
-      # microsoft edge (teams)
-      # myEclipse
+      # have only on home-manager:
+      beeper
       nixgl.nixGLIntel # Only needed for Non-NixOS
 
+      # find fix:
       obsidian # Current electron-25 marked as insecure
 
-      # --------------------
+      # trying out:
+      smplayer # mpv frontend for toucht
+
+      # -------------
 
       # programming
       nodejs_20
@@ -81,6 +76,7 @@
       neovim
       lf
       pavucontrol
+      microsoft-edge
       sxiv
       clipnotify
       clipmenu
