@@ -54,6 +54,16 @@
 		   pandoc/extra "$1".md -o "$1".pdf --template eisvogel --listings
 	  }
 
+
+    sun() {
+    curl -s "https://api.sunrisesunset.io/json?lat=47.55776&lng=8.89893" | \
+    ${pkgs.jq}/bin/jq -r  '"Date: " + .results.date,
+            "Dawn: " + .results.dawn,
+            "Sunrise: " + .results.sunrise,
+            "Sunset: "+ .results.sunset' | \
+    column
+    }
+
     eval "$(_KHAL_COMPLETE=zsh_source khal)"
 
 	'';
