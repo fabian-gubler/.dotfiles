@@ -64,7 +64,7 @@ in
     alacritty # Note: xterm should be installed by default
 
     # explicitly for system only
-    # ...
+    at # home-manager requires: services.atd.enable 
   ];
 
   # Nix Settings

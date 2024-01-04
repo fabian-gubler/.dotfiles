@@ -95,7 +95,6 @@
       gcc
       timewarrior
       ncdu
-      at
       pinentry
       foliate
       okular
