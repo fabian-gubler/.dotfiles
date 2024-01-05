@@ -8,6 +8,7 @@
   stdenvNoCC,
   fetchzip,
 }:
+
 stdenvNoCC.mkDerivation rec {
   pname = "apple-font";
   version = "v18.0d1e1.0";
