@@ -13,7 +13,6 @@ let
 
   homeFilesToLink = {
     # TODO: custom
-    ".local/share/fonts" = ./fonts; # TODO: write nix package for sf font or find alternative font
     ".xinitrc" = ./xorg/.xinitrc; # TODO: is there a nix way?
 
   };

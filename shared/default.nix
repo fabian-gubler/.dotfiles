@@ -26,6 +26,7 @@ in
       # Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
+      outputs.overlays.additions
       inputs.nixgl.overlay
 
     ];
@@ -40,6 +41,7 @@ in
 
   # disable unread news notification for home-manager
   news.display = "silent";
+
 
 
   # https://nix-community.github.io/home-manager/release-notes.html

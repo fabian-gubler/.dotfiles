@@ -54,8 +54,11 @@
       # find fix:
       obsidian # Current electron-25 marked as insecure
 
+
+
       # trying out:
-      smplayer # mpv frontend for toucht
+      smplayer # mpv frontend for touch
+      (nerdfonts.override { fonts = [ "SourceCodePro" ]; }) # fallback font
 
       # -------------
 
@@ -68,6 +71,9 @@
       statix
       nil # replaces: rnix-lsp
       nixpkgs-fmt
+
+
+      nodePackages.typescript-language-server
 
       # main packages
       timeshift
@@ -116,6 +122,10 @@
       thunderbird
     ]
   ;
+
+
+  # fonts
+  fonts.fontconfig.enable = true;
 
   programs.rbw = {
     enable = true;
