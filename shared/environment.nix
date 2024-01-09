@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
 
   systemd.user.sessionVariables = {
     EDITOR = "nvim";
@@ -9,7 +9,7 @@
   };
 
   nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0" # Obsidian 
+    lib.optional (pkgs.obsidian.version == "1.4.16") "electron-25.9.0"
   ];
 
   # Packages that should be installed to the user profile.
@@ -108,6 +108,7 @@
       gimp
       libreoffice
       lazygit
+      lazydocker
       fzf
       gotop
       xdragon
