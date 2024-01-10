@@ -1,8 +1,6 @@
-# Todo: Music Production
-
 # Getting Started
 
-## Consolidated advice from multiple reddit posts:
+## Consolidated advice (multiple Reddit Posts) on best wya to start with Nix:
 
 Start with Package Manager
 
