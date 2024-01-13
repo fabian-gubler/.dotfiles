@@ -1,15 +1,22 @@
+{ pkgs, ... }:
+
 {
   imports = [
     ./bookmarks.nix
     ./search.nix
   ];
 
-  nixpkgs.config.firefox = {
-    enableTridactylNative = true;
-  };
+  # nixpkgs.config.firefox = {
+  #   enableTridactylNative = true;
+  # };
 
   # home-manager.users."${user}" = {
   programs.firefox = {
+    package = pkgs.firefox.override {
+        nativeMessagingHosts = with pkgs; [
+          tridactyl-native
+        ];
+    };
     enable = true;
     profiles.default = {
       settings = {

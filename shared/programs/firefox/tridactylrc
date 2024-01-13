@@ -40,10 +40,6 @@ bind --mode=ex     <C-w> text.backward_kill_word
 bind --mode=insert <C-w> text.backward_kill_word
 bind --mode=input  <C-w> text.backward_kill_word
 
-" Binds for new reader mode
-bind gr reader
-bind gR reader --tab
-
 """"""""""""""""
 " Custom Sites "
 """"""""""""""""
