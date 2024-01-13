@@ -71,6 +71,7 @@
       statix
       nil # replaces: rnix-lsp
       nixpkgs-fmt
+      marksman
 
 
       nodePackages.typescript-language-server
