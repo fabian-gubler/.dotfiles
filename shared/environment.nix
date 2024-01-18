@@ -87,6 +87,7 @@
       sxiv
       clipnotify
       clipmenu
+      visidata
       arandr
       xclip
       khal
