@@ -14,6 +14,7 @@
     commands = {
       drag = "%dragon $fx";
       trash = "%trash-put $fx";
+      copy-path = "%echo -n $f | xclip -sel c";
       aj = '' %lf -remote "send $id cd '$(autojump $1)'" '';
       zip = '' %zip -r "$f" "$f" '';
       tar = '' %tar cvf "$f.tar" "$f" '';
@@ -57,6 +58,7 @@
       "f" = ":fzf_jump";
       "j" = "push :aj<space>";
       "<enter>" = "open";
+      "Y" = "copy-path";
     };
   };
 }
