@@ -69,7 +69,8 @@
       shellcheck
       nodePackages.bash-language-server
       statix
-      nil # replaces: rnix-lsp
+      nil 
+      # nixd # nix-community
       nixpkgs-fmt
       marksman
 
