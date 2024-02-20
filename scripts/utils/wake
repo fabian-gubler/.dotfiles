@@ -18,6 +18,8 @@
 soothing_file="/data/nextcloud/media/music/soothing/weightless.mp3"
 normal_file="/data/nextcloud/media/music/regular/resonance.opus"
 force_file="/data/nextcloud/media/music/force/wake-up.mp3"
+screen_off_cmd="ddcutil setvcp D6 4"
+screen_on_cmd="ddcutil setvcp D6 1"
 
 # Declare the volumes of the mp3 files as variables
 soothing_volume=70
@@ -96,6 +98,15 @@ schedule_alarm() {
 
 	# Schedule the third mp3 file to play 20 minutes after the first alarm with high volume
 	echo "mpv --volume=$force_volume --loop=inf $force_file" | at "$time" + 20 minutes > /dev/null 2>&1
+
+}
+
+manage_screens() {
+    # Turn off screen now
+    eval "$screen_off_cmd"
+
+    # Turn on screen at the given time
+    echo "eval $screen_on_cmd" | at "$time" > /dev/null 2>&1
 }
 
 confirm_schedule() {
@@ -127,6 +138,13 @@ test_sound() {
 	mpv --volume=$normal_volume --length=3 $normal_file
 }
 
+test_screen() {
+    echo "Verify screen management..."
+    echo "Turning off screen now..."
+    eval "$screen_off_cmd"
+    echo "Turning on screen in 5 seconds..."
+    echo "sleep 5; eval $screen_on_cmd" | at now
+}
 
 # Main Function
 main() {
@@ -143,6 +161,12 @@ main() {
 if [[ $1  == "-t" ]]; then
 	test_sound
 	exit 0
+fi
+
+# Test screen
+if [[ $1  == "-s" ]]; then
+    test_screen
+    exit 0
 fi
 
 # Check if the Script is being run directly
