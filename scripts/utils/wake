@@ -101,7 +101,7 @@ schedule_alarm() {
 
 }
 
-manage_screens() {
+manage_screen() {
     # Turn off screen now
     eval "$screen_off_cmd"
 
@@ -153,6 +153,7 @@ main() {
 	validate_time
 	check_files
 	schedule_alarm
+    manage_screen
 	confirm_schedule
 	test_sound
 }
