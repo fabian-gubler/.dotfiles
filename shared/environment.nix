@@ -54,8 +54,6 @@
       # find fix:
       obsidian # Current electron-25 marked as insecure
 
-
-
       # trying out:
       smplayer # mpv frontend for touch
       (nerdfonts.override { fonts = [ "SourceCodePro" ]; }) # fallback font
@@ -73,8 +71,6 @@
       # nixd # nix-community
       nixpkgs-fmt
       marksman
-
-
       nodePackages.typescript-language-server
 
       # main packages
