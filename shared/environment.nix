@@ -9,7 +9,9 @@
   };
 
   nixpkgs.config.permittedInsecurePackages = [
-    lib.optional (pkgs.obsidian.version == "1.4.16") "electron-25.9.0"
+    lib.optional
+    (pkgs.obsidian.version == "1.4.16")
+    "electron-25.9.0"
   ];
 
   # Packages that should be installed to the user profile.
@@ -46,7 +48,8 @@
       (python3.withPackages pythonPackages)
 
       # --- TODO ---
-nextcloud-client
+      nextcloud-client
+      wofi
 
       # have only on home-manager:
       beeper
@@ -68,7 +71,7 @@ nextcloud-client
       shellcheck
       nodePackages.bash-language-server
       statix
-      nil 
+      nil
       # nixd # nix-community
       nixpkgs-fmt
       marksman
@@ -137,6 +140,7 @@ nextcloud-client
       lock_timeout = 2419200;
     };
   };
+
 
   programs.direnv = {
     enable = true;
