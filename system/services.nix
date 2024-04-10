@@ -15,7 +15,9 @@ in
     displayManager = {
       autoLogin.enable = true;
       autoLogin.user = "${user}";
-      defaultSession = "none+dwm";
+      # defaultSession = "none+dwm";
+      gdm.enable = true;
+      gnome.enable = true;
     };
   };
 
