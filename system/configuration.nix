@@ -1,3 +1,4 @@
+{ inputs, pkgs, outputs, ... }:
 
 let
   # TODO: should be imported from initial flake
@@ -63,14 +64,17 @@ in
   };
 
   # User Settings
+  users.defaultUserShell = pkgs.zsh;
   users.users.${user} = {
     # Be sure to change it (using passwd) after rebooting!
     initialPassword = "password";
+    useDefaultShell = true;
     isNormalUser = true;
     extraGroups = [ "wheel" "docker" "libvirtd" ];
   };
 
   programs.dconf.enable = true;
+  programs.zsh.enable = true;
   # xdg.portal = {
   #   enable = true;
   #   extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
