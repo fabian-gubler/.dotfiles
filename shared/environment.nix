@@ -46,6 +46,7 @@
       (python3.withPackages pythonPackages)
 
       # --- TODO ---
+nextcloud-client
 
       # have only on home-manager:
       beeper
@@ -126,6 +127,7 @@
 
   # fonts
   fonts.fontconfig.enable = true;
+
 
   programs.rbw = {
     enable = true;

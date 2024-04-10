@@ -7,21 +7,12 @@ let
 in
 {
 
-  # Boot loader
-  boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
-  boot.loader.grub.enable = true;
-  boot.loader.grub.devices = [ "/dev/vda" ];
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable OpenGL
-  hardware.opengl.enable = true;
-
-  # Shared Filesystem
-  fileSystems."/data" = {
-    device = "data"; # Replace this with the correct device path
-    fsType = "virtiofs"; # Replace this with the correct filesystem type
-    options = [ "defaults" ];
-  };
+  # hardware.opengl.enable = true;
 
   # Virtualization
   virtualisation = {
@@ -48,14 +39,6 @@ in
 
     # rtkit is optional but recommended
     security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-  };
 
   # Packages installed in only for system profile.
   environment.systemPackages = with pkgs; [
@@ -84,11 +67,11 @@ in
   };
 
   programs.dconf.enable = true;
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    config.common.default = "*";
-  };
+  # xdg.portal = {
+  #   enable = true;
+  #   extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  #   config.common.default = "*";
+  # };
 
   time.timeZone = "Europe/Zurich";
 
@@ -106,8 +89,8 @@ in
     XDG_CACHE_HOME = "\${HOME}/.cache";
     XDG_CONFIG_HOME = "\${HOME}/.config";
     XDG_BIN_HOME = "\${HOME}/.local/bin";
-    TIMEWARRIORDB = "/data/nextcloud/todo/timewarrior";
-    HARSHPATH = "/data/nextcloud/todo/harsh";
+    TIMEWARRIORDB = "\${HOME}/nextcloud/todo/timewarrior";
+    HARSHPATH = "\${HOME}/nextcloud/todo/harsh";
     XDG_DATA_HOME = "\${HOME}/.local/share";
     XDG_DOWNLOAD_DIR = "\${HOME}/Downloads";
     QT_SCALE_FACTOR = "1.5";
@@ -115,8 +98,8 @@ in
     # Duplicate: in home-manager
     EDITOR = "nvim";
     MANPAGER = "nvim +Man!";
-    ANKI_BASE = "/data/nextcloud/apps/anki-data";
-    PATH = "\${PATH}:\${XDG_BIN_HOME}:/data/.dotfiles/scripts/utils:/data/.dotfiles/scripts/dmenu:/data/.dotfiles/scripts/tmux";
+    ANKI_BASE = "\${HOME}/nextcloud/apps/anki-data";
+    PATH = "\${PATH}:\${XDG_BIN_HOME}:\${HOME}/.dotfiles/scripts/utils:\${HOME}/.dotfiles/scripts/dmenu:\${HOME}/.dotfiles/scripts/tmux";
 
   };
 

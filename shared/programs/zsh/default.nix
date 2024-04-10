@@ -38,11 +38,11 @@
     # TODO: prompt_fix & lfcd.sh impure (e.g. with basedir)
     initExtra = '' 
 	source ${pkgs.pure-prompt}/share/zsh/site-functions/prompt_pure_setup
-	source /data/.dotfiles/shared/programs/zsh/prompt_fix
+	source ~/.dotfiles/shared/programs/zsh/prompt_fix
 	PURE_CMD_MAX_EXEC_TIME=99999999999999
 	zstyle ':prompt:pure:prompt:*' color "#D8DEE9"
 
-	source /data/.dotfiles/shared/programs/zsh/lfcd.sh
+	source ~/.dotfiles/shared/programs/zsh/lfcd.sh
 	bindkey -e 
 	bindkey -s '^f' 'lfcd\n'
 

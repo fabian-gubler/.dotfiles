@@ -82,11 +82,11 @@ static Key keys[] = {
 	{ MODKEY,						XK_w,      spawn,          SHCMD("firefox")},
 	{ MODKEY,                       XK_y,      spawn,          SHCMD("clipmenu")},
 	{ MODKEY,                       XK_j,      spawn,          SHCMD("xrandr --output Virtual-1  --auto")},
-	{ MODKEY,                       XK_k,      spawn,          SHCMD("/data/.dotfiles/scripts/dmenu/logout")},
+	{ MODKEY,                       XK_k,      spawn,          SHCMD("~/.dotfiles/scripts/dmenu/logout")},
 	{ ShiftMask,					XK_Return, spawn,          SHCMD("dunstctl close-all")},
 
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_Return, spawn,          SHCMD("alacritty -e /data/.dotfiles/scripts/tmux/tmuxd")},
+	{ MODKEY,                       XK_Return, spawn,          SHCMD("alacritty -e ~/.dotfiles/scripts/tmux/tmuxd")},
 	{ MODKEY|ShiftMask,				XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_s,      togglebar,      {0} },
 	{ MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
