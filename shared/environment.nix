@@ -50,6 +50,7 @@
       # --- TODO ---
       nextcloud-client
       wofi
+      waybar
 
       # have only on home-manager:
       beeper
