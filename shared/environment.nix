@@ -51,6 +51,8 @@
       nextcloud-client
       wofi
       waybar
+      networkmanagerapplet
+      swaynotificationcenter
 
       # have only on home-manager:
       beeper

@@ -14,6 +14,7 @@
     ./eza
     # ./vscode
     ./firefox
+    ./waybar
   ];
 
 }
