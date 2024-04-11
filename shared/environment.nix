@@ -50,6 +50,8 @@
       # --- TODO ---
       nextcloud-client
       wofi
+      wl-clipboard
+      unstable.swayosd
       waybar
       networkmanagerapplet
       swaynotificationcenter
@@ -101,7 +103,6 @@
       vdirsyncer
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
       qbittorrent
-      dunst
       newsboat
       flameshot
       gcc

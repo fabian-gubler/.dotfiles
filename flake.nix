@@ -16,7 +16,7 @@
 
     # additional
     hosts.url = "github:StevenBlack/hosts";
-    hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland.url = "github:hyprwm/Hyprland";
     nixgl.url = "github:guibou/nixGL";
   };
 
