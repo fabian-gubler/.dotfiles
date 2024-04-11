@@ -15,6 +15,8 @@
     # ./vscode
     ./firefox
     ./waybar
+    ./hyprland
+    ./wofi
   ];
 
 }

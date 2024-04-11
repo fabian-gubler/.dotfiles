@@ -1,6 +1,6 @@
 {
   programs.waybar = {
-    enable = true;
+    enable = false;
     settings = [
       {
         layer = "top";
@@ -8,7 +8,7 @@
         height = 22;
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [ "privacy" "tray" "pulseaudio" "battery" ];
+        modules-right = [ "tray" "pulseaudio" "battery" ];
         tray = { spacing = 10; };
         clock = {
           format = "{:%a %Y-%m-%d %H:%M}";
