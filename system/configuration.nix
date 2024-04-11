@@ -14,6 +14,8 @@ in
   # Enable OpenGL
   # hardware.opengl.enable = true;
 
+  # services.tlp.enable = true;
+
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
@@ -42,8 +44,8 @@ in
   };
 
 
-    # rtkit is optional but recommended
-    security.rtkit.enable = true;
+  # rtkit is optional but recommended
+  security.rtkit.enable = true;
 
   # Packages installed in only for system profile.
   environment.systemPackages = with pkgs; [
