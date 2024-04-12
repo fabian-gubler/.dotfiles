@@ -12,12 +12,9 @@ in
     enable = true;
     layout = "ch";
     desktopManager.gnome.enable = true;
-    # windowManager.dwm.enable = true;
     displayManager = {
       autoLogin.enable = false;
       autoLogin.user = "${user}";
-      # defaultSession = "none+dwm";
-      # defaultSession = "none+awesome";
       gdm.enable = true;
     };
   };

@@ -38,9 +38,6 @@ in
     #media-session.enable = true;
   };
 
-
-  programs.sway.enable = true;
-
   # Virtualization
   virtualisation = {
     docker.enable = true;
