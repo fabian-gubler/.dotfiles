@@ -4,7 +4,7 @@
 sudo -v
 
 # Define the paths to the XML files for detachment
-DEVICE_NIX_XML="/data/.dotfiles/scripts/vm/detach-fs0.xml"
+DEVICE_NIX_XML="$HOME/.dotfiles/scripts/vm/detach-fs0.xml"
 DEVICE_WIN_XML="/path/to/detach-win-fs.xml"  # Placeholder path, update this later
 
 # Define the domain names

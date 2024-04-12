@@ -4,7 +4,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find /data/nextcloud/mcs/23AS  \
+    selected=$(find "$HOME"/nextcloud/mcs/23AS  \
 		-mindepth 1 -maxdepth 1 -type d \
 		| fzf --prompt="select workspace > ")
 fi
@@ -23,9 +23,9 @@ if ! tmux has-session -t=$selected_name 2> /dev/null; then
 fi
 
 # open notes (if exists)
-semester_dir=/data/nextcloud/mcs/23AS
+semester_dir=$HOME/nextcloud/mcs/23AS
 docs_dir=$semester_dir/docs/
-obsidian_dir=/data/nextcloud/obsidian/mcs/
+obsidian_dir=$HOME/nextcloud/obsidian/mcs/
 
 # if [[ -d $docs_dir/$selected_name ]]; then
 # 	tmux neww -dn notes -t $selected_name

@@ -15,9 +15,9 @@
 
 
 # Declare the paths to the mp3 files as variables
-soothing_file="/data/nextcloud/media/music/soothing/weightless.mp3"
-normal_file="/data/nextcloud/media/music/regular/resonance.opus"
-force_file="/data/nextcloud/media/music/force/wake-up.mp3"
+soothing_file="$HOME/nextcloud/media/music/soothing/weightless.mp3"
+normal_file="$HOME/nextcloud/media/music/regular/resonance.opus"
+force_file="$HOME/nextcloud/media/music/force/wake-up.mp3"
 screen_off_cmd="ddcutil setvcp D6 4"
 screen_on_cmd="ddcutil setvcp D6 1"
 
@@ -57,7 +57,7 @@ validate_time() {
     # Regular expression to match the time format (HH:MM)
     local time_regex="^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$"
 
-    if [[ $time =~ $time_regex ]]; then
+    if [[ $time =$HOME $time_regex ]]; then
 		return 0
     else
         echo "Invalid input. Please use the format HH:MM (e.g. 14:30)"

@@ -92,6 +92,7 @@
       # main packages
       timeshift
       xorg.xinit # find built-in alternative
+      neomutt
       dmenu
       neovim
       lf
