@@ -14,12 +14,15 @@ in
   # Enable OpenGL
   # hardware.opengl.enable = true;
 
-  # services.tlp.enable = true;
+  services.power-profiles-daemon.enable = false; # avoid conflicts with tlp
+  services.tlp.enable = true;
+
 
   programs.hyprland = {
     enable = true;
     # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
+
 
 
   # Enable sound with pipewire.
