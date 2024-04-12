@@ -51,6 +51,7 @@
       nextcloud-client
       unstable.swayosd
       waybar
+      ripgrep
       networkmanagerapplet
       swaynotificationcenter
       neofetch
