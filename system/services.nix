@@ -11,13 +11,17 @@ in
   services.xserver = {
     enable = true;
     layout = "ch";
-    desktopManager.gnome.enable = true;
+    desktopManager = {
+        gnome.enable = true;
+    };
     displayManager = {
+        defaultSession = "hyprland";
       autoLogin.enable = false;
       autoLogin.user = "${user}";
       gdm.enable = true;
     };
   };
+
 
   services.gnome.gnome-keyring.enable = true; # required for some vs code extensions
   services.atd.enable = true;
