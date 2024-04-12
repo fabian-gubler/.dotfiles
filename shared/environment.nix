@@ -99,6 +99,7 @@
       khal
       trash-cli
       jq
+      neofetch
       khard
       vdirsyncer
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
