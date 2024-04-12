@@ -49,12 +49,18 @@
 
       # --- TODO ---
       nextcloud-client
-      wofi
-      wl-clipboard
       unstable.swayosd
       waybar
       networkmanagerapplet
       swaynotificationcenter
+      neofetch
+      gammastep
+      kickoff
+      wpaperd
+      cargo
+      blueberry
+      brightnessctl
+      wl-clipboard
 
       # have only on home-manager:
       beeper
@@ -95,11 +101,9 @@
       clipmenu
       visidata
       arandr
-      xclip
       khal
       trash-cli
       jq
-      neofetch
       khard
       vdirsyncer
       (mpv.override { scripts = [ mpvScripts.mpris ]; })
