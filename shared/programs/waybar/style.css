@@ -1,0 +1,139 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "SFMono";
+    /* font-family: JetBrainsMono; */
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    /* background: rgba(28,32,35, 0.8); */
+    background: transparent;
+    color: #eceff4;
+}
+
+#window {
+    background: #282828;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 16px;
+    /*border-left: solid 1px #282738;*/
+    /*border-right: solid 1px #282738;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-style: normal;
+}
+/*
+#workspaces {
+    padding: 0 5px;
+}
+*/
+
+
+#custom-hyprpicker {
+    background-color: #282828;
+    /*color: #8EC07C;*/
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 11px 0px 9px;
+    font-weight: bold;
+}
+
+
+#workspaces {
+	background: #282828;
+	margin: 5px 5px 5px 5px;
+  padding: 0px 5px 0px 5px;
+	border-radius: 16px;
+  border: solid 0px #f4d9e1;
+  font-weight: normal;
+  font-style: normal;
+}
+#workspaces button {
+    padding: 0px 5px;
+    border-radius: 16px;
+    color: #928374;
+}
+
+#workspaces button.active {
+    color: #f4d9e1;
+    background-color: transparent;
+    border-radius: 16px;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#clock, #battery, #cpu, #memory, #network, #pulseaudio, #tray, #mode, #pulseaudio.muted {
+    padding: 0 4px;
+    margin: 0 6px;
+}
+
+#window, #workspaces {
+    padding: 0 4px;
+}
+
+#clock {
+    font-weight: normal;
+}
+
+#battery {
+}
+
+#battery icon {
+    color: red;
+}
+
+#battery.charging {
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#network {
+}
+
+#network.disconnected {
+}
+
+#pulseaudio {
+}
+
+#pulseaudio.muted {
+}
+
+
+#tray {
+    background: #282828;
+    margin: 5px 5px 5px 5px;
+    border-radius: 16px;
+    padding: 0px 5px;
+    /*border-right: solid 1px #282738;*/
+}
+
+
