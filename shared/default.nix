@@ -1,4 +1,4 @@
-{ inputs, outputs, ... }:
+{ inputs, outputs, pkgs, ... }:
 
 let
   user = "fabian";
@@ -18,7 +18,15 @@ in
   home = {
     username = user;
     homeDirectory = "/home/${user}";
+    pointerCursor = {
+      gtk.enable = true;
+      x11.enable = true;
+      name = "Yaru";
+      package = pkgs.yaru-theme;
+      size = 28;
+    };
   };
+
 
   nixpkgs = {
     # You can add overlays here
