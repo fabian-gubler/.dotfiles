@@ -33,7 +33,7 @@
 
       # Supported systems for your flake packages, shell, etc.
       system = "x86_64-linux";
-      lib = nixpkgs.lib;
+      inherit (nixpkgs) lib;
 
     in
     {
@@ -46,6 +46,7 @@
       nixosConfigurations = {
         nixos = lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
+          specialArgs.user = "fabian";
           modules = [
             # > Our main nixos configuration file <
             ./system

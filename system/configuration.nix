@@ -1,53 +1,56 @@
-{ inputs, pkgs, outputs, ... }:
-
-let
-  # TODO: should be imported from initial flake
-  user = "fabian";
-
-in
-{
+{ pkgs, outputs, user, ... }: {
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Enable OpenGL
-  # hardware.opengl.enable = true;
+  # Display Server
+  programs.hyprland.enable = true;
+  programs.zsh.enable = true;
+  services = {
+    xserver = {
+      enable = true;
+      layout = "ch";
+      desktopManager = {
+        gnome.enable = true;
+      };
+      displayManager = {
+        defaultSession = "hyprland";
+        autoLogin.enable = false;
+        autoLogin.user = "${user}";
+        gdm.enable = true;
+      };
+    };
 
-  services.power-profiles-daemon.enable = false; # avoid conflicts with tlp
-  services.tlp.enable = true;
+    # Extras
+    gnome.gnome-keyring.enable = true; # required for some vs code extensions
+    atd.enable = true;
+    flatpak.enable = false;
+
+    # Power
+    power-profiles-daemon.enable = false; # avoid conflicts with tlp
+    tlp.enable = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      # If you want to use JACK applications, uncomment this
+      #jack.enable = true;
+
+      # use the example session manager (no others are packaged yet so this is enabled by default,
+      # no need to redefine it in your config for now)
+      #media-session.enable = true;
+    };
 
 
-  programs.hyprland = {
-    enable = true;
-    # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    # OSD
+    udev.packages = [ pkgs.swayosd ];
   };
 
-  services.udev.packages = [ pkgs.swayosd ];
-  system.activationScripts = {
-    # swayosd cannot set brightness issue on NixOS
-    # see https://github.com/ErikReider/SwayOSD/issues/12#issuecomment-1950581102
-    fix-brightness-file-permission.text = ''
-      chgrp video /sys/class/backlight/*/brightness
-      chmod g+w /sys/class/backlight/*/brightness
-    '';
-  };
-
-  # Enable sound with pipewire.
+  # Sound
   sound.enable = true;
   hardware.pulseaudio.enable = false;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
 
   # Virtualization
   virtualisation = {
@@ -70,7 +73,14 @@ in
       allowUnfree = true;
     };
   };
-
+  system.activationScripts = {
+    # swayosd cannot set brightness issue on NixOS
+    # see https://github.com/ErikReider/SwayOSD/issues/12#issuecomment-1950581102
+    fix-brightness-file-permission.text = ''
+      chgrp video /sys/class/backlight/*/brightness
+      chmod g+w /sys/class/backlight/*/brightness
+    '';
+  };
 
   # rtkit is optional but recommended
   security.rtkit.enable = true;
@@ -103,13 +113,6 @@ in
     extraGroups = [ "wheel" "docker" "libvirtd" "video" ];
   };
 
-  programs.dconf.enable = true;
-  programs.zsh.enable = true;
-  # xdg.portal = {
-  #   enable = true;
-  #   extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  #   config.common.default = "*";
-  # };
 
   time.timeZone = "Europe/Zurich";
 
@@ -141,9 +144,6 @@ in
 
   };
 
-
-
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
-
 }

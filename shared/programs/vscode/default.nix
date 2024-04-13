@@ -1,6 +1,5 @@
-{ pkgs, ... }:
+{ pkgs, user, ... }:
 let
-  user = "fabian";
   programs.vscode.userSettings = {
 
     # general
