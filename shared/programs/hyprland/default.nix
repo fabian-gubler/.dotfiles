@@ -122,8 +122,8 @@
         ",XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
         ",XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
         ",XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
-        ",XF86MonBrightnessDown, exec, brightnessctl set 5%-"
-        ",XF86MonBrightnessUp, exec, brightnessctl set 5%+"
+        ",XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
+        ",XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
       ];
 
       windowrule = [

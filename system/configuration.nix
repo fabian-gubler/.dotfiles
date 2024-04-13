@@ -23,7 +23,7 @@ in
     # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
-
+  services.udev.packages = [ pkgs.swayosd ];
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -92,7 +92,7 @@ in
     initialPassword = "password";
     useDefaultShell = true;
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "libvirtd" ];
+    extraGroups = [ "wheel" "docker" "libvirtd" "video" ];
   };
 
   programs.dconf.enable = true;
