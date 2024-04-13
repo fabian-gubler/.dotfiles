@@ -2,7 +2,7 @@
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
-    enableCompletion = true;
+    enableCompletion = false; # impacts startup time by ~ 0.4s
     syntaxHighlighting.enable = true;
     shellAliases = {
 
@@ -28,7 +28,6 @@
     zplug = {
       enable = true;
       plugins = [
-        { name = "hlissner/zsh-autopair"; tags = [ "defer:2" ]; }
         { name = "Aloxaf/fzf-tab"; }
         { name = "mafredri/zsh-async"; }
         { name = "chisui/zsh-nix-shell"; }
