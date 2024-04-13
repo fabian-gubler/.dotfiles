@@ -6,7 +6,7 @@ source $HOME/.dotfiles/shared/files/mutt/variables| # pipe indicates executable
 # options
 set query_command = "khard email --parsable --search-in-source-files '%s'"
 set from = "gubler@fastmail.com"
-set folder = "~/mail"
+set folder = "~/Maildir"
 set edit_headers = yes
 set charset = "utf-8"
 set send_charset = "us-ascii:utf-8"

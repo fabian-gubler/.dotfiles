@@ -12,7 +12,7 @@
     local = {
       fileExt = ".vcf";
       type = "filesystem";
-      path = "/data/nextcloud/.contacts/";
+      path = "$HOME/nextcloud/.contacts/";
     };
 
     remote = {

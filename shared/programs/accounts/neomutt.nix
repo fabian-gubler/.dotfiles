@@ -19,7 +19,7 @@
       query_command = "khard email --parsable --search-in-source-files '%s'";
       from = "$my_mail";
       sendmail = "msmtp -a $my_mail";
-      folder = "~/Mail";
+      folder = "~/Maildir";
       spoolfile = "+INBOX";
       smtp_url = "smtp://$my_mail:$my_pass@localhost:1025";
       smtp_pass = "this";

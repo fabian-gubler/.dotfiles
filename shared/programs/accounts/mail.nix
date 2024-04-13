@@ -14,7 +14,7 @@
     fastmail = {
       address = "gubler@fastmail.com";
       notmuch.enable = true;
-      maildir = { path = "~/mail/"; };
+      maildir = { path = "~/Maildir/"; };
       realName = "Gubler";
       primary = true;
       folders = {

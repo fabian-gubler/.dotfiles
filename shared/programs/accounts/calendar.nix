@@ -64,7 +64,7 @@
     local = {
       fileExt = ".ics";
       type = "filesystem";
-      path = "/data/nextcloud/.calendars";
+      path = "$HOME/nextcloud/.calendars";
     };
 
     remote = {
