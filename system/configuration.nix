@@ -24,6 +24,14 @@ in
   };
 
   services.udev.packages = [ pkgs.swayosd ];
+  system.activationScripts = {
+    # swayosd cannot set brightness issue on NixOS
+    # see https://github.com/ErikReider/SwayOSD/issues/12#issuecomment-1950581102
+    fix-brightness-file-permission.text = ''
+      chgrp video /sys/class/backlight/*/brightness
+      chmod g+w /sys/class/backlight/*/brightness
+    '';
+  };
 
   # Enable sound with pipewire.
   sound.enable = true;
