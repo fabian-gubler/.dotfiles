@@ -8,7 +8,7 @@ in
     extraConfig = kittyColors;
     # theme = "Nord";
     font = {
-      size = 12;
+      size = 11;
       name = "SF Mono";
     };
     settings = {
