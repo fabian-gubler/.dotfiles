@@ -57,6 +57,7 @@
       neofetch
       gammastep
       kickoff
+      hyprpicker
       wpaperd
       cargo
       blueberry

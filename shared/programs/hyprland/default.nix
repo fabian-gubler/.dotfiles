@@ -158,7 +158,6 @@
       exec-once = [
         "nm-applet"
         "swayosd-server"
-        "tmux new -s main -d"
         "waybar"
         "wpaperd"
         "swaync"
