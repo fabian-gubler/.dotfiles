@@ -57,7 +57,7 @@
       master = {
         new_is_master = true;
         new_on_top = true;
-        # no_gaps_when_only = true
+        # no_gaps_when_only = 1;
         mfact = 0.55;
       };
 
@@ -83,7 +83,8 @@
         "$mod, Q, killactive"
         "$mod, P, exec, swaync-client -t"
         "$mod, V, togglefloating"
-        "$mod, F, fullscreen"
+        "$mod, F, fullscreen, 0"
+        "$mod SHIFT, F, fullscreen, 1"
         "$mod, S, exec, pkill -SIGUSR1 waybar"
         "$mod SHIFT, Q, exit"
         "$mod, N, layoutmsg, cyclenext"
