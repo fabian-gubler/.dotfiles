@@ -39,7 +39,7 @@
 
         battery = {
           bat = "BAT0";
-          interval = 10;
+          interval = 2;
           states = {
             warning = 30;
             critical = 15;
