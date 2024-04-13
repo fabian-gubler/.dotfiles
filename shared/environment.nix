@@ -62,6 +62,7 @@
       blueberry
       brightnessctl
       wl-clipboard
+      vscode
 
       # have only on home-manager:
       beeper

@@ -12,7 +12,7 @@
     ./yt-dlp
     ./zsh
     ./eza
-    # ./vscode
+    ./vscode
     ./firefox
     ./waybar
     ./hyprland
