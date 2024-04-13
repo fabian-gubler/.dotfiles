@@ -48,38 +48,26 @@
       (python3.withPackages pythonPackages)
 
       # --- TODO ---
-      nextcloud-client
+
+      # wayland / hyprland additions
+
       unstable.swayosd
       waybar
-      ripgrep
-      networkmanagerapplet
       swaynotificationcenter
-      neofetch
       gammastep
       kickoff
       hyprpicker
       wpaperd
-      cargo
-      blueberry
-      brightnessctl
       wl-clipboard
-      vscode
-
-      # have only on home-manager:
-      beeper
-      nixgl.nixGLIntel # Only needed for Non-NixOS
 
       # find fix:
       obsidian # Current electron-25 marked as insecure
-
-      # trying out:
-      smplayer # mpv frontend for touch
-      (nerdfonts.override { fonts = [ "SourceCodePro" ]; }) # fallback font
 
       # -------------
 
       # programming
       nodejs_20
+      cargo
 
       # lsp server
       shellcheck
@@ -92,20 +80,22 @@
       nodePackages.typescript-language-server
 
       # main packages
+      beeper
       timeshift
-      xorg.xinit # find built-in alternative
       neomutt
-      dmenu
       neovim
       lf
       pavucontrol
-      microsoft-edge
+      vscode
+      blueberry
+      neofetch
+      brightnessctl
+      nextcloud-client
+      networkmanagerapplet
       sxiv
-      clipnotify
-      clipmenu
       visidata
-      arandr
       khal
+      wlr-randr
       trash-cli
       jq
       khard
@@ -129,7 +119,6 @@
       gotop
       xdragon
       wget
-      gpick
       ripgrep
       zip
       unzip
