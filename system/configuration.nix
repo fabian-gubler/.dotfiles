@@ -135,6 +135,7 @@
     XDG_DATA_HOME = "\${HOME}/.local/share";
     XDG_DOWNLOAD_DIR = "\${HOME}/Downloads";
     QT_SCALE_FACTOR = "1.5";
+    NIXOS_OZONE_WL = "1";  # fixes vscode/obsidian/beeper blur
 
     # Duplicate: in home-manager
     EDITOR = "nvim";
