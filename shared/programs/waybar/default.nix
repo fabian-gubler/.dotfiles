@@ -33,7 +33,7 @@
           format-icons = {
             "urgent" = "";
             "active" = "";
-            "default" = "";
+            "default" = "";
           };
         };
 
