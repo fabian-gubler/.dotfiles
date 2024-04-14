@@ -83,7 +83,10 @@
   };
 
   # rtkit is optional but recommended
-  security.rtkit.enable = true;
+  security = {
+      rtkit.enable = true;
+      polkit.enable = true;
+  };
 
   # Packages installed in only for system profile.
   environment.systemPackages = with pkgs; [
