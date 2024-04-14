@@ -1,6 +1,6 @@
 {
   imports = [
-    ./mail.nix
+    ./email.nix
     ./calendar.nix
     ./contacts.nix
   ];

@@ -6,7 +6,7 @@ let
     "lazygit/config.yml" = ./lazygit/config.yml; # TODO: create custom service
 
     # Leave it
-    "mutt" = ./mutt; # TODO: declarable in home-manager
+    # "mutt" = ./mutt; # TODO: declarable in home-manager
     "mpv" = ./mpv; # TODO: declarable in home-manager
   };
 
