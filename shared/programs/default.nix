@@ -17,6 +17,7 @@
     ./waybar
     ./hyprland
     ./wofi
+    ./mpv
   ];
 
 }

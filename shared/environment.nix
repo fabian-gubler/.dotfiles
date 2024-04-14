@@ -100,7 +100,6 @@
       jq
       khard
       vdirsyncer
-      # (mpv.override { scripts = [ mpvScripts.mpris ]; })
       qbittorrent
       newsboat
       flameshot
