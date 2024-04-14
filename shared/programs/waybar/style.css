@@ -1,10 +1,11 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "SFMono, JetBrainsMono";
+    font-family: "SFMono Nerd Font, JetBrainsMono"; /* src = https://github.com/humbornjo/SF-Mono-Nerd-Font */
     font-size: 14px;
     min-height: 0;
 }
+
 
 window#waybar {
     /* background: rgba(28,32,35, 0.8); */
@@ -24,11 +25,6 @@ window#waybar {
     font-weight: normal;
     font-style: normal;
 }
-/*
-#workspaces {
-    padding: 0 5px;
-}
-*/
 
 
 #custom-hyprpicker {
@@ -72,6 +68,7 @@ window#waybar {
 #clock, #battery, #cpu, #memory, #network, #pulseaudio, #tray, #mode, #pulseaudio.muted {
     padding: 0 4px;
     margin: 0 6px;
+    color: #eceff4;
 }
 
 #window, #workspaces {
@@ -82,12 +79,7 @@ window#waybar {
     font-weight: normal;
 }
 
-#battery {
-}
 
-#battery icon {
-    color: red;
-}
 
 #battery.charging {
 }
@@ -99,42 +91,10 @@ window#waybar {
     }
 }
 
-/* #battery.warning:not(.charging) { */
-/*     color: white; */
-/*     animation-name: blink; */
-/*     animation-duration: 0.5s; */
-/*     animation-timing-function: linear; */
-/*     animation-iteration-count: 10; */
-/*     animation-direction: alternate; */
-/* } */
-
 #battery.critical:not(.charging) {
-    color: white;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    color: red;
 }
 
-
-#cpu {
-}
-
-#memory {
-}
-
-#network {
-}
-
-#network.disconnected {
-}
-
-#pulseaudio {
-}
-
-#pulseaudio.muted {
-}
 
 
 #tray {
@@ -144,5 +104,3 @@ window#waybar {
     padding: 0px 5px;
     /*border-right: solid 1px #282738;*/
 }
-
-

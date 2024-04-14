@@ -9,7 +9,7 @@ in
     # theme = "Nord";
     font = {
       size = 11;
-      name = "SF Mono";
+      name = "SF Mono Nerd Font"; # src = https://github.com/humbornjo/SF-Mono-Nerd-Font
     };
     settings = {
       enable_audio_bell = false;

@@ -41,12 +41,14 @@
           bat = "BAT0";
           interval = 2;
           states = {
-            warning = 30;
+            # warning = 30;
             critical = 15;
           };
-          format = " {icon} ";
+          format = "󱐋{icon} ";
+          # 󰂄
           format-discharging = "{icon} ";
-          format-icons = [ "" "" "" "" "" ];
+          # format-icons = [ "" "" "" "" "" ];
+          format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
           tooltip = true;
           tooltip-format = "{capacity}% - {timeTo}";
         };
@@ -54,7 +56,7 @@
         pulseaudio = {
           format = "{icon}";
           format-bluetooth = " {icon}";
-          format-muted = "";
+          format-muted = "";
           format-icons = {
             headphone = "";
             hands-free = "";
