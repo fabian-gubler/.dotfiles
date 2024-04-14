@@ -33,7 +33,7 @@
           format-icons = {
             "urgent" = "";
             "active" = "";
-            "default" = "󰧞";
+            "default" = "";
           };
         };
 
@@ -44,30 +44,17 @@
             warning = 30;
             critical = 15;
           };
-          format = "󱐋 {icon} ";
+          format = " {icon} ";
           format-discharging = "{icon} ";
           format-icons = [ "" "" "" "" "" ];
           tooltip = true;
           tooltip-format = "{capacity}% - {timeTo}";
         };
 
-        network = {
-          interval = 5;
-          format-wifi = "{icon}";
-          format-ethernet = "󰌘";
-          format-disconnected = "󰌙";
-          tooltip = true;
-          format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
-          tooltip-format-wifi = "{essid} ({signalStrength}%) at {ipaddr}";
-          tooltip-format-ethernet = "{ifname}: {ipaddr}/{cidr}";
-          on-click = "nm-connection-editor";
-          on-click-right = "if [[ $(nmcli radio wifi) == 'enabled' ]]; then nmcli radio wifi off; else nmcli radio wifi on; fi";
-        };
-
         pulseaudio = {
           format = "{icon}";
           format-bluetooth = " {icon}";
-          format-muted = "󰸈";
+          format-muted = "";
           format-icons = {
             headphone = "";
             hands-free = "";
@@ -75,7 +62,7 @@
             phone = "";
             portable = "";
             car = "";
-            default = [ "" "" ];
+            default = [ "" "" "" ];
           };
           scroll-step = 1;
           on-click = "pavucontrol";

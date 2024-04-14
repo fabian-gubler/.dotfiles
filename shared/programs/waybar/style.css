@@ -1,8 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "SFMono";
-    /* font-family: JetBrainsMono; */
+    font-family: "SFMono, JetBrainsMono";
     font-size: 14px;
     min-height: 0;
 }
