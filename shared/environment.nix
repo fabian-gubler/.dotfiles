@@ -68,6 +68,8 @@
       # programming
       nodejs_20
       cargo
+      gopls
+      go
 
       # lsp server
       shellcheck
