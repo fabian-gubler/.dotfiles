@@ -68,8 +68,11 @@
       # programming
       nodejs_20
       cargo
-      gopls
-      go
+
+      # go
+      gopls # language server
+      go # programming language
+      golangci-lint # linter++
 
       # lsp server
       shellcheck
