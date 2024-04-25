@@ -52,6 +52,7 @@
       # wayland / hyprland additions
 
       unstable.swayosd
+      unstable.beeper
       waybar
       swaynotificationcenter
       gammastep
@@ -85,7 +86,6 @@
       nodePackages.typescript-language-server
 
       # main packages
-      beeper
       timeshift
       neomutt
       neovim
