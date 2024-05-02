@@ -60,6 +60,7 @@
       hyprpicker
       wpaperd
       wl-clipboard
+      dunst
 
       # find fix:
       obsidian # Current electron-25 marked as insecure
