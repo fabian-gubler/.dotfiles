@@ -75,6 +75,7 @@
       gopls # language server
       go # programming language
       golangci-lint # linter++
+      delve # debugger
 
       # lsp server
       shellcheck
