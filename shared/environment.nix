@@ -73,7 +73,7 @@
 
       # go
       gopls # language server
-      go # programming language
+      unstable.go # programming language
       golangci-lint # linter++
       delve # debugger
 
