@@ -61,7 +61,8 @@
       wpaperd
       wl-clipboard
       dunst
-      bluetuith
+      bluetuith # cli
+      blueberry # graphical (fallback)
 
       # find fix:
       obsidian # Current electron-25 marked as insecure
