@@ -95,7 +95,6 @@
       lf
       pavucontrol
       vscode
-      blueberry
       neofetch
       brightnessctl
       nextcloud-client

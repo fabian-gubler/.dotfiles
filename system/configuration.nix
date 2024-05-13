@@ -26,6 +26,7 @@
     gnome.gnome-keyring.enable = true; # required for some vs code extensions
     atd.enable = true;
     flatpak.enable = false;
+    services.blueman.enable = true;
 
     # Power
     power-profiles-daemon.enable = false; # avoid conflicts with tlp
