@@ -61,7 +61,7 @@
       wpaperd
       wl-clipboard
       dunst
-      unstable.postman # note: got 404 installing stable
+      bluetuith
 
       # find fix:
       obsidian # Current electron-25 marked as insecure
