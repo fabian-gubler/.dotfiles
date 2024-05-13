@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   # boot.kernelParams = [ "radeon.cik_support=0" "amdgpu.cik_support=1" ];
@@ -17,18 +18,24 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/9ed79c9c-7507-4dca-ad75-eff4f4a0fc5a";
+    {
+      device = "/dev/disk/by-uuid/9ed79c9c-7507-4dca-ad75-eff4f4a0fc5a";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/738F-2F4F";
+    {
+      device = "/dev/disk/by-uuid/738F-2F4F";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/d6b7ec14-c9e7-4606-b3ba-3e6d7026aa6c"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/d6b7ec14-c9e7-4606-b3ba-3e6d7026aa6c"; }];
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
