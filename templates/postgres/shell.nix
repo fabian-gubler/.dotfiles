@@ -12,7 +12,7 @@ in
 with nixpkgs;
 
 stdenv.mkDerivation {
-  name = "postgres-env";
+  name = "postgres";
   buildInputs = [ ];
 
   nativeBuildInputs = [
@@ -52,14 +52,17 @@ stdenv.mkDerivation {
 
   # Post Shell Hook
   shellHook = ''
-    echo "Using ${postgresql_15.name}."
+    echo "Using ${pkgs.postgresql_15.name}."
 
     # Setup: other env variables
     export PGHOST="$PGDATA"
+
     # Setup: DB
-    [ ! -d $PGDATA ] && pg_ctl initdb -o "-U postgres" && cat "$postgresConf" >> $PGDATA/postgresql.conf
-    pg_ctl -o "-p 5432 -k $PGDATA" start
-    alias fin="pg_ctl stop && exit"
-    alias pg="psql -p 5432 -U postgres"
+    if [[ ! -d $PGDATA ]]; then
+      pg_ctl initdb -o "-U postgres"
+      cat "$postgresConf" >> "$PGDATA/postgresql.conf"
+      pg_ctl -o "-p 5555 -k $PGDATA" start
+    fi
+
   '';
 }
