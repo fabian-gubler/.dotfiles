@@ -14,28 +14,30 @@
       ik = "ikhal";
       gl = "${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel";
       lg = "${pkgs.lazygit}/bin/lazygit";
-    };
+      fin = "pg_ctl stop && exit";
+      pg = "psql -p 5555 -U postgres";
+        };
 
-    envExtra = ''
-      export DIRENV_LOG_FORMAT=
-    '';
+      envExtra = ''
+        export DIRENV_LOG_FORMAT=
+      '';
 
-    history = {
-      size = 10000;
-      path = "${config.home.homeDirectory}/.config/zsh/history";
-    };
+      history = {
+        size = 10000;
+        path = "${config.home.homeDirectory}/.config/zsh/history";
+      };
 
-    zplug = {
-      enable = true;
-      plugins = [
-        { name = "Aloxaf/fzf-tab"; }
-        { name = "mafredri/zsh-async"; }
-        { name = "chisui/zsh-nix-shell"; }
-      ];
-    };
+      zplug = {
+        enable = true;
+        plugins = [
+          { name = "Aloxaf/fzf-tab"; }
+          { name = "mafredri/zsh-async"; }
+          { name = "chisui/zsh-nix-shell"; }
+        ];
+      };
 
-    # TODO: prompt_fix & lfcd.sh impure (e.g. with basedir)
-    initExtra = '' 
+      # TODO: prompt_fix & lfcd.sh impure (e.g. with basedir)
+      initExtra = '' 
 	source ${pkgs.pure-prompt}/share/zsh/site-functions/prompt_pure_setup
 	source ~/.dotfiles/shared/programs/zsh/prompt_fix
 	PURE_CMD_MAX_EXEC_TIME=99999999999999
@@ -65,5 +67,5 @@
     eval "$(_KHAL_COMPLETE=zsh_source khal)"
 
 	'';
-  };
-}
+    };
+  }
