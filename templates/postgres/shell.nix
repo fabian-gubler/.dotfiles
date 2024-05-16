@@ -58,11 +58,8 @@ stdenv.mkDerivation {
     export PGHOST="$PGDATA"
 
     # Setup: DB
-    if [[ ! -d $PGDATA ]]; then
-      pg_ctl initdb -o "-U postgres"
-      cat "$postgresConf" >> "$PGDATA/postgresql.conf"
-      pg_ctl -o "-p 5555 -k $PGDATA" start
-    fi
+    [ ! -d $PGDATA ] && pg_ctl initdb -o "-U postgres" && cat "$postgresConf" >> $PGDATA/postgresql.conf
+    pg_ctl -o "-p 5555 -k $PGDATA" start
 
   '';
 }
