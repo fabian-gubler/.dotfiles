@@ -47,7 +47,7 @@
         		set -g window-status-current-format " #[fg=#434C5E]#[bg=#434C5E, fg=#E5E9F0]#I #W#[fg=#434C5E, bg=#2E3440]"
         		set -g window-status-format " #[bg=#2E3440, fg=#B0B2B6] #I #W "
         		set -g pane-border-style fg=#4C566A
-        		set -g pane-active-border-style fg=#4C566A
+        		set -g pane-active-border-style fg=#D8DEE9
         		set -g status-left "#[fg=#81A1C1]#S#[fg=#B0B2B6]#(/data/.dotfiles/scripts/tmux/has-session)"
         		set -g status-interval 1
         		set -g focus-events on
