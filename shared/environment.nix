@@ -84,6 +84,11 @@
       nodePackages.bash-language-server
       statix
       nil
+      postgres-lsp
+
+      # formatters
+      pgformatter
+
       # nixd # nix-community
       nixpkgs-fmt
       marksman
