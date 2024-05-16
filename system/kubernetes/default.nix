@@ -26,6 +26,7 @@ in
     kubectl
     kubernetes
     minikube
+    k9s
   ];
 
   services.kubernetes = {
