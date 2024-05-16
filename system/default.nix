@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ./configuration.nix
     ./jellyfin
+    ./kubernetes
   ];
 
 
