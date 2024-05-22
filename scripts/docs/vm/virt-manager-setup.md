@@ -1,6 +1,12 @@
 # QEMU/KVM Guide
 
-## Fedora Installation:
+## Installation:
+
+**NixOS:**
+
+Declared in virtualization.nix
+
+**Fedora:**
 
 https://docs.fedoraproject.org/en-US/quick-docs/virtualization-getting-started
 
@@ -21,9 +27,11 @@ lsmod | grep kvm
 ## Create Connection
 
 1. File > Add Connection > Qemu (w/ Autoload)
-2. Create a new Virtual Machine > Import Existing disk image
+2. Create a new Virtual Machine 
+    - a) Import Existing disk image
+    - b) Select Installation ISO
 
-## Machine Settings:
+## Additional Machine Settings:
 
 1. Add shared filesystem (requires shared memory)
 2. Change video driver to virtio
