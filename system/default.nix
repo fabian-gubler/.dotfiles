@@ -5,6 +5,7 @@
     ./configuration.nix
     ./jellyfin
     ./kubernetes
+    ./virtualization.nix
   ];
 
 
