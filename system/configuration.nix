@@ -84,8 +84,8 @@
 
   # rtkit is optional but recommended
   security = {
-      rtkit.enable = true;
-      polkit.enable = true;
+    rtkit.enable = true;
+    polkit.enable = true;
   };
 
   # Packages installed in only for system profile.
@@ -140,7 +140,7 @@
     XDG_DATA_HOME = "\${HOME}/.local/share";
     XDG_DOWNLOAD_DIR = "\${HOME}/Downloads";
     QT_SCALE_FACTOR = "1.5";
-    NIXOS_OZONE_WL = "1";  # fixes vscode/obsidian/beeper blur
+    NIXOS_OZONE_WL = "1"; # fixes vscode/obsidian/beeper blur
 
     # Duplicate: in home-manager
     EDITOR = "nvim";
@@ -149,6 +149,13 @@
     PATH = "\${PATH}:\${XDG_BIN_HOME}:\${HOME}/.dotfiles/scripts/utils:\${HOME}/.dotfiles/scripts/dmenu:\${HOME}/.dotfiles/scripts/tmux";
 
   };
+
+  # Extra hsots
+  networking.extraHosts =
+    ''
+      127.0.0.1 synchat.internal
+      127.0.0.1 synchatapi.internal
+    '';
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
