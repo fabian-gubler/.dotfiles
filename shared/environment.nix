@@ -85,6 +85,7 @@
       statix
       nil
       postgres-lsp
+      yaml-language-server 
 
       # formatters
       pgformatter
