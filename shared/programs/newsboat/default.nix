@@ -54,7 +54,7 @@ in
             		feedlist-format     "  %t %?d?- %-65d&? %> %U Available"
             		articlelist-format  "%?T?  %-30T ?%-70t %> %D "
 
-      			cache-file /data/nextcloud/apps/newsboat/cache.db
+      			cache-file ~/nextcloud/apps/newsboat/cache.db
     '';
 
     queries = {
