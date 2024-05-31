@@ -16,7 +16,7 @@
 
         clock = {
           format = "{:%H:%M}";
-          on-click = "swaync-client -t";
+          # on-click = "swaync-client -t";
           tooltip-format = "<span size='9pt' font='Fragment Mono'>{calendar}</span>";
         };
 
