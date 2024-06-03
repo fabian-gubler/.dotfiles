@@ -8,16 +8,16 @@
   programs.hyprland.enable = true;
   programs.zsh.enable = true;
   services = {
+    displayManager = {
+      defaultSession = "hyprland";
+    };
     xserver = {
       enable = true;
-      layout = "ch";
+      xkb.layout = "ch";
       desktopManager = {
         gnome.enable = true;
       };
       displayManager = {
-        defaultSession = "hyprland";
-        autoLogin.enable = false;
-        autoLogin.user = "${user}";
         gdm.enable = true;
       };
     };
