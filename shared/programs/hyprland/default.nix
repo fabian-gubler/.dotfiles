@@ -162,7 +162,8 @@
         "wpaperd"
         "swaync"
         "obsidian"
-        "nextcloud --background"
+        # TODO: nextcloud keeps asking for keyring
+        # "nextcloud --background"
         "wl-paste --watch cliphist store"
       ];
 
