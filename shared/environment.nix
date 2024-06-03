@@ -55,7 +55,6 @@
       unstable.beeper
       waybar
       swaynotificationcenter
-      gammastep
       kickoff
       hyprpicker
       wpaperd
