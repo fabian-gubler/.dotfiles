@@ -15,13 +15,6 @@
   # Shared 
   modifications = final: prev: {
     dmenu = prev.dmenu.overrideAttrs (oldAttrs: { src = ./dmenu; });
-    rbw = prev.rbw.overrideAttrs (oldAttrs: {
-      patches =
-        oldAttrs.patches
-        ++ [
-          ./rbw-patch.txt
-        ];
-    });
     # eclipse = prev.exclipse.overrideAttrs (oldAttrs: rec {
     #   eclipse = eclipse-platform;
     # });
