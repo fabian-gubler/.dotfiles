@@ -1,7 +1,7 @@
 { pkgs, config, ... }: {
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = false; # impacts startup time by ~ 0.4s
     syntaxHighlighting.enable = true;
     shellAliases = {
