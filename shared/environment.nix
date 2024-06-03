@@ -152,7 +152,7 @@
     enable = true;
     settings = {
       email = "fabian.gubler@protonmail.com";
-      pinentry = "gnome3";
+      pinentry = pkgs.pinentry-gnome3;
       lock_timeout = 2419200;
     };
   };
