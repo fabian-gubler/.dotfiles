@@ -1,7 +1,6 @@
 {
   programs.eza = {
     enable = true;
-    enableAliases = true;
 
     # 'ls': Basic file listing
     # 'll': Detailed file listing
