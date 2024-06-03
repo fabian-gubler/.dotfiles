@@ -164,6 +164,7 @@
         "obsidian"
         "gammastep -l 47.36667:8.55"
         "nextcloud --background"
+        "wl-paste --watch cliphist store"
       ];
 
     };

@@ -60,6 +60,7 @@
       hyprpicker
       wpaperd
       wl-clipboard
+      cliphist
       dunst
       bluetuith # cli
       blueberry # graphical (fallback)
