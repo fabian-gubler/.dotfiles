@@ -54,7 +54,10 @@
 
   # Virtualization
   virtualisation = {
-    docker.enable = true;
+    docker = {
+      enable = true;
+      package = pkgs.docker_26;
+    };
     libvirtd.enable = true;
   };
 
