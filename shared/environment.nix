@@ -63,6 +63,7 @@
       dunst
       bluetuith # cli
       blueberry # graphical (fallback)
+      pulumi
 
       # find fix:
       obsidian # Current electron-25 marked as insecure
