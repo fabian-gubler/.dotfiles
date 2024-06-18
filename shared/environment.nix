@@ -64,6 +64,7 @@
       bluetuith # cli
       blueberry # graphical (fallback)
       pulumi
+      discord
 
       # find fix:
       obsidian # Current electron-25 marked as insecure
