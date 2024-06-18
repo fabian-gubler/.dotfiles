@@ -13,9 +13,11 @@
   # home-manager.users."${user}" = {
   programs.firefox = {
     package = pkgs.firefox.override {
-        nativeMessagingHosts = with pkgs; [
-          tridactyl-native
-        ];
+      nativeMessagingHosts = with pkgs; [
+        tridactyl-native
+      ];
+      # TODO: this should be released in next version
+      # nativeMessagingHosts.tridactyl = true;
     };
     enable = true;
     profiles.default = {

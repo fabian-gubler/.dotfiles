@@ -40,6 +40,9 @@ bind --mode=ex     <C-w> text.backward_kill_word
 bind --mode=insert <C-w> text.backward_kill_word
 bind --mode=input  <C-w> text.backward_kill_word
 
+unbind d
+bind d tabgrab 2.1
+
 """"""""""""""""
 " Custom Sites "
 """"""""""""""""
@@ -67,6 +70,9 @@ bindurl news\.ycombinator\.com/news ;F hint -Jbc .age > a
 bindurl news\.ycombinator\.com/item ;f hint -Jc .comment .commtext a
 bindurl news\.ycombinator\.com/item ;F hint -Jbc .comment .commtext a
 
+" Do not activate tridactyl on these sites
+
+blacklist add portal.azure.com
 
 " Make Tridactyl work on more sites at the expense of some security. For
 " details, read the comment at the top of this file.
