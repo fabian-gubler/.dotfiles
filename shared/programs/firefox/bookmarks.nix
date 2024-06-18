@@ -5,6 +5,10 @@
       url = "https://chat.openai.com/?model=gpt-4";
     }
     {
+      name = "Portal Azure";
+      url = "https://portal.azure.com/#home";
+    }
+    {
       name = "Digital Nomad";
       toolbar = true;
       bookmarks = [
