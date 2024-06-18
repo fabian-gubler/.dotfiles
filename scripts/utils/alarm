@@ -23,17 +23,7 @@ shift $((OPTIND-1))
 
 
 # notification
-at $time << ENDMARKER
+at "$time" << ENDMARKER
 	dunstify "Alarm: ${message}" 
 	dunstctl set-paused false
 ENDMARKER
-
-# do not disturb
-# while true; do
-#     read -p "Disable notifications? (y/n) " yn
-#     case $yn in
-#         [Yy]* ) dunstctl set-paused true; break;;
-#         [Nn]* ) dunstctl set-paused false; break;;
-#         * ) echo "Please answer yes or no. ";;
-#     esac
-# done
