@@ -65,6 +65,8 @@
       blueberry # graphical (fallback)
       pulumi
       discord
+      azure-cli
+      azuredatastudio
 
       # find fix:
       obsidian # Current electron-25 marked as insecure
@@ -87,7 +89,7 @@
       statix
       nil
       postgres-lsp
-      yaml-language-server 
+      yaml-language-server
 
       # formatters
       pgformatter
