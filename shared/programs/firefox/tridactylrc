@@ -19,9 +19,13 @@ set smoothscroll true
 " hint按键
 set hintchars "arstdhneiolp"
 
+" unbind annoying
+unbind d
+
 " Handy multiwindow/multitasking binds
-bind gd tabdetach
-bind gD composite tabduplicate; tabdetach
+bind gb tabdetach
+" bind gB composite tabduplicate; tabdetach
+bind gB tabgrab 2.1
 
 bind --mode=normal <C-P> winopen -private
 bind --mode=ex     <C-f> text.forward_word
@@ -40,8 +44,6 @@ bind --mode=ex     <C-w> text.backward_kill_word
 bind --mode=insert <C-w> text.backward_kill_word
 bind --mode=input  <C-w> text.backward_kill_word
 
-unbind d
-bind d tabgrab 2.1
 
 """"""""""""""""
 " Custom Sites "
