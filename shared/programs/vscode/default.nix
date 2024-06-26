@@ -8,7 +8,7 @@ let
     "update.mode" = "none";
 
     # appearance
-    "window.zoomLevel" = 1.5;
+    "window.zoomLevel" = 1.25;
     "editor.minimap.enabled" = false;
     "breadcrumbs.enabled" = false;
     # "workbench.activityBar.visible" = false;
@@ -27,8 +27,6 @@ let
     "editor.lineNumbers" = "relative";
     "files.autoSave" = "afterDelay";
     "notebook.lineNumbers" = "on";
-
-
 
     # make shift + enter work with jupyter
     "jupyter.sendSelectionToInteractiveWindow" = true;

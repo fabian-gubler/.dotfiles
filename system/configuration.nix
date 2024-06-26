@@ -121,7 +121,8 @@
 
 
   # time.timeZone = "Europe/Zurich";
-  time.timeZone = "Asia/Bangkok";
+  time.timeZone = "Europe/London";
+  # time.timeZone = "Asia/Bangkok";
 
 
   # TODO: System-wide GTK Theme
