@@ -1,28 +1,5 @@
 {
   xdg = {
-    desktopEntries = {
-      okular = {
-        name = "okular";
-        exec = "okular";
-        mimeType = [ "application/pdf" ];
-      };
-
-      kitty = {
-        name = "kitty";
-        exec = "nixGLIntel kitty";
-      };
-
-      anki = {
-        name = "anki";
-        exec = "nixGLIntel anki";
-      };
-
-      foliate = {
-        name = "foliate";
-        exec = "foliate";
-        mimeType = [ "application/epub+zip" ];
-      };
-    };
     mimeApps = {
       enable = true;
       defaultApplications = {

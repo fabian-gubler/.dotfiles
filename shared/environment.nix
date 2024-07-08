@@ -4,7 +4,6 @@
     EDITOR = "nvim";
     TIMEWARRIORDB = "\${HOME}/nextcloud/todo/timewarrior";
     MANPAGER = "nvim +Man!";
-    ANKI_BASE = "/data/nextcloud/apps/anki-data";
     PATH = "\${PATH}:\${XDG_BIN_HOME}:/data/.dotfiles/scripts/utils:/data/.dotfiles/scripts/dmenu:/data/.dotfiles/scripts/tmux:\${HOME}/go/bin";
   };
 
@@ -170,8 +169,8 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Adwaita";
-      package = pkgs.gnome.gnome-themes-extra;
+      name = "Nordic";
+      package = pkgs.nordic;
     };
   };
 #

@@ -2,7 +2,7 @@
   programs.firefox.profiles.default.bookmarks = [
     {
       name = "ChatGPT";
-      url = "https://chat.openai.com/?model=gpt-4";
+      url = "https://chat.openai.com/?model=gpt-4o";
     }
     {
       name = "Portal Azure";

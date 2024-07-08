@@ -126,8 +126,8 @@
   # TODO: System-wide GTK Theme
   qt = {
     enable = true;
-    platformTheme = "gtk2";
-    style = "gtk2";
+    platformTheme = "qt5ct";
+    style = "adwaita-dark";
   };
 
   # Use same keyboard layout for tty
@@ -147,7 +147,6 @@
     # Duplicate: in home-manager
     EDITOR = "nvim";
     MANPAGER = "nvim +Man!";
-    ANKI_BASE = "\${HOME}/nextcloud/apps/anki-data";
     PATH = "\${PATH}:\${XDG_BIN_HOME}:\${HOME}/.dotfiles/scripts/utils:\${HOME}/.dotfiles/scripts/dmenu:\${HOME}/.dotfiles/scripts/tmux";
 
   };
