@@ -120,6 +120,7 @@
       binde = [
         "$mod, I, resizeactive, 20 0"
         "$mod, M, resizeactive, -20 0"
+        ",Print, exec, grim -g \"$(slurp -d)\" - | wl-copy"
         ",XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
         ",XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
         ",XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
