@@ -1,5 +1,13 @@
 {
   xdg = {
+    desktopEntries = {
+      okular = {
+        name = "okular";
+        exec = "okular";
+        mimeType = [ "application/pdf" ];
+      };
+
+    };
     mimeApps = {
       enable = true;
       defaultApplications = {
