@@ -13,7 +13,7 @@ let
     "breadcrumbs.enabled" = false;
     # "workbench.activityBar.visible" = false;
     "workbench.sideBar.location" = "right";
-    "workbench.statusBar.visible" = false;
+    "workbench.statusBar.visible" = true;
     "window.menuBarVisibility" = "toggle";
 
     editor.inlineSuggest.enabled = true;
