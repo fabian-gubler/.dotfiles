@@ -62,10 +62,10 @@
       dunst
       bluetuith # cli
       blueberry # graphical (fallback)
-      pulumi
       discord
       azure-cli
-      azuredatastudio
+      grim
+      slurp
 
       # find fix:
       obsidian # Current electron-25 marked as insecure
