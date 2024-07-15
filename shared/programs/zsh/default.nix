@@ -14,8 +14,6 @@
       ik = "ikhal";
       gl = "${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel";
       lg = "${pkgs.lazygit}/bin/lazygit";
-      fin = "pg_ctl stop && exit";
-      pg = "psql -p 5555 -U postgres";
         };
 
       envExtra = ''
