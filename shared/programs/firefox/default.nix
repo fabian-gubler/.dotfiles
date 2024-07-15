@@ -17,10 +17,38 @@
         tridactyl-native
       ];
       # TODO: this should be released in next version
+
       # nativeMessagingHosts.tridactyl = true;
     };
     enable = true;
+    policies = {
+      # FIX: More manual, but less maintained way to add extensions (might use both)
+
+      # ExtensionSettings = {
+      #   "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
+      #   # uBlock Origin:
+      #   "uBlock0@raymondhill.net" = {
+      #     install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+      #     installation_mode = "force_installed";
+      #   };
+      # };
+    };
     profiles.default = {
+      # FIX: One way to add extensions
+      # TODO: Get Nur working
+
+      # missing: 
+      # - thumbnail rating bar
+      # - unhook
+
+      # extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+      #   ublock-origin
+      #   toolkit-for-ynab
+      #   hoppscotch
+      #   tridactyl
+      #   bitwarden
+      #   multi-account-containers
+      # ];
       settings = {
         "services.sync.prefs.sync.browser.uiCustomization.state" = true;
         "browser.aboutConfig.showWarning" = false;
