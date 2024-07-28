@@ -8,6 +8,9 @@ sanitize tridactyllocal tridactylsync
 set allowautofocus false
 set viewsource default
 
+" Need to source once before we can use shortcut
+bind ;r fillcmdline source ~/.config/tridactyl/tridactylrc
+
 " Sometimes the status bar in the bottom left corner overlaps the Tridactyl
 " command line, so set an option to move the status bar to the right.
 guiset_quiet hoverlink right
@@ -24,8 +27,6 @@ unbind d
 
 " Handy multiwindow/multitasking binds
 bind gb tabdetach
-" bind gB composite tabduplicate; tabdetach
-bind gB tabgrab 2.1
 
 bind --mode=normal <C-P> winopen -private
 bind --mode=ex     <C-f> text.forward_word
@@ -44,22 +45,15 @@ bind --mode=ex     <C-w> text.backward_kill_word
 bind --mode=insert <C-w> text.backward_kill_word
 bind --mode=input  <C-w> text.backward_kill_word
 
-
 """"""""""""""""
 " Custom Sites "
 """"""""""""""""
-
-" ** Search Engines
-" Disable all searchurls
-
 
 " Comment toggler for Reddit, Hacker News and Lobste.rs
  bind ;c hint -Jc [class*="expand"],[class*="togg"],[class="comment_folder"]
 
  " Make gu take you back to subreddit from comments
 bindurl reddit.com gu urlparent 4
-
-" ;f and ;F are used to hint only the urls I'm most likely to click (like search results)
 
 bindurl www\.google\.com ;f hint -Jc .rc > .yuRUbf > a
 bindurl www\.google\.com ;F hint -Jbc .rc > .yuRUbf > a
@@ -72,8 +66,10 @@ bindurl news\.ycombinator\.com/news ;F hint -Jbc .age > a
 bindurl news\.ycombinator\.com/item ;f hint -Jc .comment .commtext a
 bindurl news\.ycombinator\.com/item ;F hint -Jbc .comment .commtext a
 
-" Do not activate tridactyl on these sites
+unbindurl youtube\.com/watch\?v=.* f
+unbindurl youtube\.com/watch\?v=.* k
 
+" Do not activate tridactyl on these sites
 blacklist add portal.azure.com
 
 " Make Tridactyl work on more sites at the expense of some security. For
