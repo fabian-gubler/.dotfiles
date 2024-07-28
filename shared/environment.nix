@@ -66,11 +66,14 @@
       azure-cli
       grim
       slurp
+      killall
 
       # find fix:
       obsidian # Current electron-25 marked as insecure
 
       # -------------
+
+    # TODO: Isolate programming languages
 
       # programming
       nodejs_20
@@ -89,6 +92,7 @@
       nil
       postgres-lsp
       yaml-language-server
+      bicep
 
       # formatters
       pgformatter
