@@ -55,7 +55,7 @@
       };
 
       master = {
-        new_is_master = true;
+        new_status = "master";
         new_on_top = true;
         # no_gaps_when_only = 1;
         mfact = 0.55;
