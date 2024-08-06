@@ -105,7 +105,7 @@
       # main packages
       timeshift
       neomutt
-      neovim
+      unstable.neovim
       lf
       pavucontrol
       vscode
