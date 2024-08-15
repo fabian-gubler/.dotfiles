@@ -9,7 +9,7 @@
   programs.zsh.enable = true;
   services = {
     displayManager = {
-      defaultSession = "hyprland";
+      defaultSession = "gnome";
     };
     xserver = {
       enable = true;
@@ -116,7 +116,7 @@
     initialPassword = "password";
     useDefaultShell = true;
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "libvirtd" "video" ];
+    extraGroups = [ "wheel" "docker" "libvirtd" "video" "input"];
   };
 
 
