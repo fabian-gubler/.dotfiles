@@ -18,7 +18,8 @@
     ./hyprland
     ./wofi
     ./mpv
-    ./espanso
   ];
+
+
 
 }
