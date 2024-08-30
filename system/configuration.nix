@@ -4,23 +4,19 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Display Server
-  programs.hyprland.enable = true;
-  programs.zsh.enable = true;
+  # Desktop Environment
+  services.xserver.enable = true;
+  services.xserver.xkb.layout = "ch";
+  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.sddm.enable = true;
+  # services.displayManager.defaultSession = "hyprland";
+
+  # TODO: GDM Not starting
+  # services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.displayManager.gdm.wayland = true;
+  services.displayManager.defaultSession = "gnome";
+
   services = {
-    displayManager = {
-      defaultSession = "gnome";
-    };
-    xserver = {
-      enable = true;
-      xkb.layout = "ch";
-      desktopManager = {
-        gnome.enable = true;
-      };
-      displayManager = {
-        gdm.enable = true;
-      };
-    };
 
     # Extras
     gnome.gnome-keyring.enable = true; # required for some vs code extensions
@@ -47,6 +43,9 @@
     # OSD
     udev.packages = [ pkgs.swayosd ];
   };
+
+
+  programs.zsh.enable = true;
 
   # Sound
   sound.enable = true;
@@ -116,7 +115,7 @@
     initialPassword = "password";
     useDefaultShell = true;
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "libvirtd" "video" "input"];
+    extraGroups = [ "wheel" "docker" "libvirtd" "video" "input" ];
   };
 
 

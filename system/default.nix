@@ -4,7 +4,7 @@
     ./hardware-configuration.nix
     ./configuration.nix
     ./jellyfin
-    # ./kubernetes
+    ./kubernetes
     ./virtualization.nix
   ];
 
