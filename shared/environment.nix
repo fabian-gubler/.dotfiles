@@ -78,6 +78,7 @@
       # programming
       nodejs_20
       cargo
+      tree-sitter
 
       # go
       gopls # language server
@@ -105,6 +106,7 @@
       # main packages
       timeshift
       neomutt
+      chromium
       unstable.neovim
       lf
       pavucontrol
