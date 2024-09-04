@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # default params
-time="now + 90 minutes"
+time="now + 45 minutes"
 message="Session Finished"
 
 # flags
@@ -25,5 +25,4 @@ shift $((OPTIND-1))
 # notification
 at "$time" << ENDMARKER
 	dunstify "Alarm: ${message}" 
-	dunstctl set-paused false
 ENDMARKER
