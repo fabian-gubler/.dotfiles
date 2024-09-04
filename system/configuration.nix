@@ -4,6 +4,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Hyprland
+  programs.hyprland.enable = true;
+
   # Desktop Environment
   services.xserver.enable = true;
   services.xserver.xkb.layout = "ch";
