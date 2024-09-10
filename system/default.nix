@@ -3,9 +3,9 @@
   imports = [
     ./hardware-configuration.nix
     ./configuration.nix
-    ./jellyfin
+    # ./jellyfin
     ./kubernetes
-    ./virtualization.nix
+    # ./virtualization.nix
   ];
 
 
