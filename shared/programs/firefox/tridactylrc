@@ -70,7 +70,8 @@ unbindurl youtube\.com/watch\?v=.* f
 unbindurl youtube\.com/watch\?v=.* k
 
 " Do not activate tridactyl on these sites
-blacklist add portal.azure.com
+blacklistadd portal.azure.com
+blacklistadd pipedrive.com
 
 " Make Tridactyl work on more sites at the expense of some security. For
 " details, read the comment at the top of this file.

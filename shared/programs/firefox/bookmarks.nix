@@ -5,6 +5,10 @@
       url = "https://chat.openai.com/?model=gpt-4o";
     }
     {
+      name = "Pipedrive";
+      url = "https://fabiangubler.pipedrive.com";
+    }
+    {
       name = "Portal Azure";
       url = "https://portal.azure.com/#home";
     }
