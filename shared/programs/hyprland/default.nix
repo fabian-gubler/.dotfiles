@@ -8,10 +8,11 @@
       input = {
         kb_layout = "ch, us";
         follow_mouse = 1;
+        force_no_accel = 0;
         touchpad = {
           natural_scroll = "yes";
         };
-        sensitivity = 0.2;
+        sensitivity = 1.0;
       };
 
       general = {
