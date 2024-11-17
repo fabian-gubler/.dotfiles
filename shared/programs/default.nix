@@ -19,6 +19,7 @@
     ./wofi
     ./mpv
     ./k9s
+    ./dunst
   ];
 
 
