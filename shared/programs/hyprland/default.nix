@@ -12,7 +12,7 @@
         touchpad = {
           natural_scroll = "yes";
         };
-        sensitivity = 1.0;
+        sensitivity = 0.5;
       };
 
       general = {
