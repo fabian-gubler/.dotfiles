@@ -14,6 +14,7 @@
       border = false;
       gpu-context = "wayland";
       slang = "en";
+      keepaspect-window = false; # proper scaling for tiling
       save-position-on-quit = true;
     };
     bindings = {
