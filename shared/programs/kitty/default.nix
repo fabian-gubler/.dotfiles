@@ -20,6 +20,7 @@ in
       confirm_os_window_close = 0;
       listen_on = "unix:/tmp/kitty";
       allow_remote_control = "socket-only";
+      hide_window_decorations = true;
 
     };
     keybindings = {
