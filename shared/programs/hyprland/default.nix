@@ -83,6 +83,7 @@
         "$mod, A, exec, $menu"
         "$mod, Q, killactive"
         "$mod, P, exec, swaync-client -t"
+        "$mod, G, exec, google-chrome-stable"
         "$mod, V, togglefloating"
         "$mod, F, fullscreen, 0"
         "$mod SHIFT, F, fullscreen, 1"
