@@ -11,7 +11,11 @@
     lib.optional
     (pkgs.obsidian.version == "1.4.16")
     "electron-25.9.0"
+    "qbittorrent-4.6.4"
   ];
+
+  # Chromium native wayland support
+  nixpkgs.config.chromium.commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
 
   # Packages that should be installed to the user profile.
   home.packages =
@@ -57,9 +61,12 @@
       kickoff
       hyprpicker
       wpaperd
+      google-chrome
       wl-clipboard
+      wl-color-picker
+      wally-cli
+      gnomeExtensions.pop-shell
       cliphist
-      dunst
       bluetuith # cli
       blueberry # graphical (fallback)
       discord
@@ -73,7 +80,7 @@
 
       # -------------
 
-    # TODO: Isolate programming languages
+      # TODO: Isolate programming languages
 
       # programming
       nodejs_20
@@ -113,7 +120,7 @@
       vscode
       neofetch
       brightnessctl
-      nextcloud-client
+      # nextcloud-client
       networkmanagerapplet
       sxiv
       visidata
@@ -179,5 +186,5 @@
       package = pkgs.nordic;
     };
   };
-#
+  #
 }
