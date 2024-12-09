@@ -162,7 +162,6 @@
   # fonts
   fonts.fontconfig.enable = true;
 
-
   programs.rbw = {
     enable = true;
     settings = {
