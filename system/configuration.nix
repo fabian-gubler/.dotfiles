@@ -91,10 +91,6 @@
     extraGroups = [ "wheel" "docker" "libvirtd" "video" "input" ];
   };
 
-
-  # Set time zone
-  time.timeZone = "Asia/Bangkok";
-
   # Use same keyboard layout for tty
   console.useXkbConfig = true;
 
