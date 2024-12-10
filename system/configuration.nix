@@ -20,7 +20,6 @@
   services = {
 
     # Extras
-    gnome.gnome-keyring.enable = true; # required for some vs code extensions
     atd.enable = true;
     flatpak.enable = false;
 
