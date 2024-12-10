@@ -49,6 +49,9 @@
 
       # --- TODO ---
 
+      # gnome
+      eyedropper
+
       # wayland / hyprland additions
 
       unstable.swayosd
@@ -56,7 +59,6 @@
       waybar
       swaynotificationcenter
       kickoff
-      hyprpicker
       wpaperd
       google-chrome
       wl-clipboard

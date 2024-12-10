@@ -10,7 +10,6 @@
       sv = "sudoedit";
       v = "${pkgs.neovim}/bin/nvim";
       gpush = "${pkgs.git}/bin/git add . && git commit -m 'manual update' && git push";
-      gl = "${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel";
       k = "kubectl";
       lg = "${pkgs.lazygit}/bin/lazygit";
         };
