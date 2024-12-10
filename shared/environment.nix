@@ -55,7 +55,7 @@
       # wayland / hyprland additions
 
       unstable.swayosd
-      beeper
+      unstable.beeper
       waybar
       swaynotificationcenter
       kickoff
@@ -65,6 +65,9 @@
       wl-color-picker
       wally-cli
       gnomeExtensions.pop-shell
+      gnomeExtensions.appindicator
+      gnomeExtensions.just-perfection
+      gnomeExtensions.night-theme-switcher
       cliphist
       bluetuith # cli
       blueberry # graphical (fallback)
