@@ -5,23 +5,17 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Hyprland
-  programs.hyprland.enable = true;
-
   # Desktop Environment
   services.xserver.enable = true;
   services.xserver.xkb.layout = "ch";
   services.xserver.desktopManager.gnome.enable = true;
-  services.displayManager.defaultSession = "hyprland";
 
-  # Working Display manager
-  services.displayManager.sddm.enable = true;
+  # Hyprland
+  programs.hyprland.enable = true;
 
   # TODO: GDM Not starting
   # services.xserver.displayManager.gdm.enable = true;
   # services.xserver.displayManager.gdm.wayland = true;
-
-
 
   services = {
 
@@ -34,9 +28,6 @@
     power-profiles-daemon.enable = false; # avoid conflicts with tlp
     tlp.enable = true;
 
-
-    # OSD
-    udev.packages = [ pkgs.swayosd ];
   };
 
 
@@ -57,7 +48,6 @@
   virtualisation = {
     docker = {
       enable = true;
-      package = pkgs.docker_26;
     };
     libvirtd.enable = true;
   };
@@ -77,31 +67,12 @@
       allowUnfree = true;
     };
   };
-  system.activationScripts = {
-    # swayosd cannot set brightness issue on NixOS
-    # see https://github.com/ErikReider/SwayOSD/issues/12#issuecomment-1950581102
-    fix-brightness-file-permission.text = ''
-      chgrp video /sys/class/backlight/*/brightness
-      chmod g+w /sys/class/backlight/*/brightness
-    '';
-  };
 
   # rtkit is optional but recommended
   security = {
     rtkit.enable = true;
     polkit.enable = true;
   };
-
-  # Packages installed in only for system profile.
-  environment.systemPackages = with pkgs; [
-
-    # necessary for fresh install
-    dmenu
-    alacritty # Note: xterm should be installed by default
-
-    # explicitly for system only
-    at # home-manager requires: services.atd.enable 
-  ];
 
   # Nix Settings
   nix = {
@@ -121,15 +92,8 @@
   };
 
 
+  # Set time zone
   time.timeZone = "Asia/Bangkok";
-
-
-  # TODO: System-wide GTK Theme
-  qt = {
-    enable = true;
-    platformTheme = "qt5ct";
-    style = "adwaita-dark";
-  };
 
   # Use same keyboard layout for tty
   console.useXkbConfig = true;
@@ -139,11 +103,8 @@
     XDG_CONFIG_HOME = "\${HOME}/.config";
     XDG_BIN_HOME = "\${HOME}/.local/bin";
     TIMEWARRIORDB = "\${HOME}/nextcloud/todo/timewarrior";
-    HARSHPATH = "\${HOME}/nextcloud/todo/harsh";
     XDG_DATA_HOME = "\${HOME}/.local/share";
     XDG_DOWNLOAD_DIR = "\${HOME}/Downloads";
-    QT_SCALE_FACTOR = "1.5";
-    NIXOS_OZONE_WL = "1"; # fixes vscode/obsidian/beeper blur
 
     # Duplicate: in home-manager
     EDITOR = "nvim";
@@ -151,13 +112,6 @@
     PATH = "\${PATH}:\${XDG_BIN_HOME}:\${HOME}/.dotfiles/scripts/utils:\${HOME}/.dotfiles/scripts/dmenu:\${HOME}/.dotfiles/scripts/tmux";
 
   };
-
-  # Extra hsots
-  networking.extraHosts =
-    ''
-      127.0.0.1 synchat.internal
-      127.0.0.1 synchatapi.internal
-    '';
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";

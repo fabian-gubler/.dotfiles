@@ -17,13 +17,6 @@ in
   home = {
     username = user;
     homeDirectory = "/home/${user}";
-    pointerCursor = {
-      gtk.enable = true;
-      x11.enable = true;
-      name = "Yaru";
-      package = pkgs.yaru-theme;
-      size = 28;
-    };
   };
 
 
@@ -48,8 +41,6 @@ in
 
   # disable unread news notification for home-manager
   news.display = "silent";
-
-
 
   # https://nix-community.github.io/home-manager/release-notes.html
   home.stateVersion = "23.11";

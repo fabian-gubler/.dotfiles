@@ -14,9 +14,6 @@
     "qbittorrent-4.6.4"
   ];
 
-  # Chromium native wayland support
-  nixpkgs.config.chromium.commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
-
   # Packages that should be installed to the user profile.
   home.packages =
     let
@@ -177,13 +174,4 @@
     nix-direnv.enable = true;
   };
 
-
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Nordic";
-      package = pkgs.nordic;
-    };
-  };
-  #
 }
