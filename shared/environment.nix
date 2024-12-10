@@ -55,7 +55,7 @@
       # wayland / hyprland additions
 
       unstable.swayosd
-      unstable.beeper
+      beeper
       waybar
       swaynotificationcenter
       kickoff

@@ -169,9 +169,8 @@
         "wpaperd"
         "swaync"
         "obsidian"
-        # TODO: nextcloud keeps asking for keyring
-        # "nextcloud --background"
-            "wl-paste --watch cliphist store"
+        "beeper --hidden"
+        "wl-paste --watch cliphist store"
       ];
 
     };
