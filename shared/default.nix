@@ -6,10 +6,7 @@ in
 
 {
 
-
-  # comment imports out for faster installation
   imports = [
-    ./timers
     ./programs
     ./environment.nix
   ];
@@ -24,10 +21,8 @@ in
     # You can add overlays here
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):
-      outputs.overlays.modifications
       outputs.overlays.unstable-packages
       outputs.overlays.additions
-      inputs.nixgl.overlay
 
     ];
     # Configure your nixpkgs instance

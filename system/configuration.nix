@@ -30,7 +30,9 @@
   };
 
 
-  programs.zsh.enable = true;
+  programs = {
+    zsh.enable = true;
+  };
 
   # Sound
   hardware.pulseaudio.enable = false;
@@ -57,7 +59,6 @@
     # You can add overlays here from the overlays folder
     overlays = [
       outputs.overlays.additions
-      outputs.overlays.system
       outputs.overlays.unstable-packages
 
     ];

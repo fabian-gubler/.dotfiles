@@ -14,17 +14,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # additional
-    hosts.url = "github:StevenBlack/hosts";
-    nixgl.url = "github:guibou/nixGL";
   };
 
   outputs =
     { self
     , nixpkgs
     , home-manager
-    , hosts
-    , nixgl
     , ...
     } @ inputs:
     let
@@ -50,23 +45,14 @@
             # > Our main nixos configuration file <
             ./system
 
-            hosts.nixosModule
-            {
-              networking.stevenBlackHosts = {
-                enable = true;
-                blockFakenews = true;
-                blockGambling = true;
-                blockPorn = true;
-                blockSocial = false;
-              };
-            }
-
             # Include home-manager in nixos installations
             home-manager.nixosModules.home-manager
             {
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs outputs; };
-              home-manager.users.fabian = import ./shared;
+              home-manager = {
+                useUserPackages = true;
+                extraSpecialArgs = { inherit inputs outputs; };
+                users.fabian = import ./shared;
+              };
             }
 
           ];

@@ -47,53 +47,9 @@
 
       (python3.withPackages pythonPackages)
 
-      # --- TODO ---
-
-      # gnome
-      eyedropper
-
-      # wayland / hyprland additions
-
-      unstable.swayosd
-      unstable.beeper
-      waybar
-      swaynotificationcenter
-      kickoff
-      wpaperd
-      google-chrome
-      wl-clipboard
-      wl-color-picker
-      wally-cli
-      gnomeExtensions.pop-shell
-      gnomeExtensions.appindicator
-      gnomeExtensions.just-perfection
-      gnomeExtensions.night-theme-switcher
-      cliphist
-      bluetuith # cli
-      blueberry # graphical (fallback)
-      discord
-      azure-cli
-      grim
-      slurp
-      killall
-
-      # find fix:
-      obsidian # Current electron-25 marked as insecure
-
-      # -------------
-
-      # TODO: Isolate programming languages
-
       # programming
       nodejs_20
       cargo
-      tree-sitter
-
-      # go
-      gopls # language server
-      unstable.go # programming language
-      golangci-lint # linter++
-      delve # debugger
 
       # lsp server
       shellcheck
@@ -103,43 +59,44 @@
       postgres-lsp
       yaml-language-server
       bicep
-
-      # formatters
-      pgformatter
-
-      # nixd # nix-community
       nixpkgs-fmt
       marksman
       nodePackages.typescript-language-server
 
       # main packages
+      unstable.beeper
+      unstable.neovim
+
+      gnomeExtensions.pop-shell
+      gnomeExtensions.appindicator
+      gnomeExtensions.just-perfection
+      gnomeExtensions.night-theme-switcher
+
+      waybar
+      eyedropper
+      kickoff
+      google-chrome
+      wl-clipboard
+      wally-cli
+      bluetuith
+      discord
+      killall
+      obsidian 
       timeshift
       neomutt
       chromium
-      unstable.neovim
       lf
       pavucontrol
       vscode
       neofetch
       brightnessctl
-      # nextcloud-client
       networkmanagerapplet
       sxiv
-      visidata
-      khal
-      wlr-randr
-      trash-cli
       jq
-      khard
-      vdirsyncer
       qbittorrent
-      newsboat
-      flameshot
       gcc
       timewarrior
       ncdu
-      pinentry
-      foliate
       okular
       pandoc
       gimp
@@ -155,24 +112,11 @@
       unzip
       unrar
       anki
-      markdown-anki-decks
-      thunderbird
     ]
   ;
 
-
   # fonts
   fonts.fontconfig.enable = true;
-
-  programs.rbw = {
-    enable = true;
-    settings = {
-      email = "fabian.gubler@protonmail.com";
-      pinentry = pkgs.pinentry-gnome3;
-      lock_timeout = 2419200;
-    };
-  };
-
 
   programs.direnv = {
     enable = true;

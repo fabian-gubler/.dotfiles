@@ -3,23 +3,6 @@
   # This one brings our custom packages from the 'pkgs' directory
   additions = final: _prev: import ../pkgs { pkgs = final; };
 
-  # This one contains whatever you want to overlay
-  # You can change versions, add patches, set compilation flags, anything really.
-  # https://nixos.wiki/wiki/Overlays
-
-  # NixOS
-  system = final: prev: {
-    dwm = prev.dwm.overrideAttrs (oldAttrs: { src = ./dwm; });
-  };
-
-  # Shared 
-  modifications = final: prev: {
-    dmenu = prev.dmenu.overrideAttrs (oldAttrs: { src = ./dmenu; });
-    # eclipse = prev.exclipse.overrideAttrs (oldAttrs: rec {
-    #   eclipse = eclipse-platform;
-    # });
-  };
-
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.unstable'
   unstable-packages = final: _prev: {

@@ -3,7 +3,6 @@
     ./autojump
     ./tmux
     ./alacritty
-    ./accounts
     ./newsboat
     ./git
     ./kitty
@@ -16,7 +15,6 @@
     ./firefox
     ./waybar
     ./hyprland
-    ./wofi
     ./mpv
     ./k9s
     ./dunst
