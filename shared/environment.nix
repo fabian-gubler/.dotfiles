@@ -91,7 +91,6 @@
       neofetch
       brightnessctl
       networkmanagerapplet
-      sxiv
       jq
       qbittorrent
       gcc

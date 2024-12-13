@@ -14,9 +14,7 @@
         "text/plain" = [ "neovim.desktop" ];
         "application/pdf" = [ "okular.desktop" ];
         "text/html" = [ "qutebrowser.desktop" ];
-        "image/jpeg" = [ "sxiv.desktop" ];
         "application/epub+zip" = [ "foliate.desktop" ];
-        "image/png" = [ "sxiv.desktop" ];
         "video/mp4" = [ "mpv.desktop" ];
         "video/x-matroska" = [ "mpv.desktop" ];
         "audo/mpeg" = [ "mpv.desktop" ];
