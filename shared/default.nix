@@ -17,6 +17,7 @@ in
   };
 
 
+
   nixpkgs = {
     # You can add overlays here
     overlays = [
@@ -39,5 +40,6 @@ in
 
   # https://nix-community.github.io/home-manager/release-notes.html
   home.stateVersion = "23.11";
+
 
 }

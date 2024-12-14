@@ -9,9 +9,8 @@
       # Shorthands
       sv = "sudoedit";
       v = "${pkgs.neovim}/bin/nvim";
-      gpush = "${pkgs.git}/bin/git add . && git commit -m 'manual update' && git push";
-      k = "kubectl";
       lg = "${pkgs.lazygit}/bin/lazygit";
+      gpush = "${pkgs.git}/bin/git add . && git commit -m 'manual update' && git push";
     };
 
     envExtra = ''
