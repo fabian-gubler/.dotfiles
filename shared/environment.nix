@@ -48,6 +48,7 @@
       (python3.withPackages pythonPackages)
 
       # programming
+      unstable.code-cursor
       nodejs_20
       cargo
 
