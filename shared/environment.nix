@@ -49,6 +49,7 @@
 
       # programming
       unstable.code-cursor
+      unstable.shadcn
       nodejs_20
       cargo
 
