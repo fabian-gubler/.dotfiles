@@ -8,13 +8,18 @@ let
     "update.mode" = "none";
 
     # appearance
-    "window.zoomLevel" = 1.25;
+    "window.zoomLevel" = 1;
     "editor.minimap.enabled" = false;
+      "editor.fontSize" = 14;
     "breadcrumbs.enabled" = false;
-    # "workbench.activityBar.visible" = false;
+      "editor.cursorBlinking" = "solid";
+        "workbench.editor.showTabs" = "single";
     "workbench.sideBar.location" = "right";
     "workbench.statusBar.visible" = true;
     "window.menuBarVisibility" = "toggle";
+      "workbench.colorTheme" = "Catppuccin Mocha";
+      "window.titleBarStyle" = "custom";
+        "workbench.activityBar.location" = "hidden";
 
     editor.inlineSuggest.enabled = true;
     # vscode neovim
@@ -27,9 +32,6 @@ let
     "editor.lineNumbers" = "relative";
     "files.autoSave" = "afterDelay";
     "notebook.lineNumbers" = "on";
-
-    # make shift + enter work with jupyter
-    "jupyter.sendSelectionToInteractiveWindow" = true;
 
     # editor association
     "workbench.editorAssociations" = {
@@ -52,53 +54,39 @@ in
 
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [
-
-      # general
-      asvetliakov.vscode-neovim
-      github.copilot
-
-      # data science
-      ms-toolsai.jupyter
-      ms-toolsai.jupyter-keymap
-      ms-python.python
-
-      # abap
-      # larshp.vscode-abap # syntax highlighting
-      # larshp.vscode-abaplint # linter
-      # hudakf.cds # cds language support
-      # frehu.abap-snippets # snippets
-      # murbani.vscode-abap-remote-fs # connector
-    ];
-    keybindings = [
-      {
-        key = "shift+enter";
-        command = "jupyter.execSelectionInteractive";
-        when = "editorTextFocus";
-      }
-    ];
-  };
-
-  home.activation.boforeCheckLinkTargets = {
-    after = [ ];
-    before = [ "checkLinkTargets" ];
-    data = ''
-      userDir=/home/${user}/.config/Code/User
-      rm -rf $userDir/settings.json
-    '';
-  };
-
-  home.activation.afterWriteBoundary = {
-    after = [ "writeBoundary" ];
-    before = [ ];
-    data = ''
-      userDir=/home/${user}/.config/Code/User
-      rm -rf $userDir/settings.json
-      cat \
-        ${(pkgs.formats.json {}).generate "blabla"
-          programs.vscode.userSettings} \
-        > $userDir/settings.json
-    '';
+  #   extensions = with pkgs.vscode-extensions; [
+  #
+  #     # general
+  #     asvetliakov.vscode-neovim
+  #     github.copilot
+  #     catppuccin.catppuccin-vsc
+  #
+  #     # lsp
+  #     ms-python.python
+  #
+  #   ];
+  # };
+  #
+  # home.activation.boforeCheckLinkTargets = {
+  #   after = [ ];
+  #   before = [ "checkLinkTargets" ];
+  #   data = ''
+  #     userDir=/home/${user}/.config/Code/User
+  #     rm -rf $userDir/settings.json
+  #   '';
+  # };
+  #
+  # home.activation.afterWriteBoundary = {
+  #   after = [ "writeBoundary" ];
+  #   before = [ ];
+  #   data = ''
+  #     userDir=/home/${user}/.config/Code/User
+  #     rm -rf $userDir/settings.json
+  #     cat \
+  #       ${(pkgs.formats.json {}).generate "blabla"
+  #         programs.vscode.userSettings} \
+  #       > $userDir/settings.json
+  #   '';
   };
 
 
