@@ -63,7 +63,7 @@
       bicep
       nixpkgs-fmt
       marksman
-      nodePackages.typescript-language-server
+      # nodePackages.typescript-language-server
 
       # main packages
       unstable.beeper
