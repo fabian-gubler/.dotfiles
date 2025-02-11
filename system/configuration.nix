@@ -45,12 +45,6 @@
   # Virtualization
   virtualisation.docker.enable = true;
 
-
-
-
-
-
-
   # Nixpkgs settings
   nixpkgs = {
     # You can add overlays here from the overlays folder
