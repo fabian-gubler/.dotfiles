@@ -76,6 +76,7 @@
 
       waybar
       eyedropper
+      postman
       kickoff
       google-chrome
       wl-clipboard
@@ -86,7 +87,6 @@
       obsidian 
       timeshift
       neomutt
-      chromium
       lf
       pavucontrol
       vscode
