@@ -43,12 +43,12 @@
   };
 
   # Virtualization
-  virtualisation = {
-    docker = {
-      enable = true;
-    };
-    libvirtd.enable = true;
-  };
+  virtualisation.docker.enable = true;
+
+
+
+
+
 
 
   # Nixpkgs settings
@@ -85,7 +85,7 @@
     initialPassword = "password";
     useDefaultShell = true;
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "libvirtd" "video" "input" ];
+    extraGroups = [ "wheel" "docker" "video" "input" ];
   };
 
   # Use same keyboard layout for tty
