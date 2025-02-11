@@ -7,9 +7,6 @@
     shellAliases = {
 
       # Shorthands
-      sv = "sudoedit";
-      v = "${pkgs.neovim}/bin/nvim";
-      lg = "${pkgs.lazygit}/bin/lazygit";
       gpush = "${pkgs.git}/bin/git add . && git commit -m 'manual update' && git push";
     };
 
