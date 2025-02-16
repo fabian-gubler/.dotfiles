@@ -80,6 +80,7 @@
       kickoff
       google-chrome
       wl-clipboard
+      nextcloud-client
       wally-cli
       bluetuith
       discord
